@@ -98,6 +98,7 @@
       "Position": "5374.594,889.874,2352.784",
       "Rotation": "0.08516905,0.02815916,-0.972101,0.2167323",
       "Tags": "maincamera",
+      "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.CameraComponent",
@@ -1466,6 +1467,12 @@
     },
     {
       "__guid": "82236379-ce9b-433c-a109-d8480f51af6a",
+      "Flags": 0,
+      "Name": "GameObject",
+      "Enabled": true
+    },
+    {
+      "__guid": "7d771197-cc07-41d5-96a7-6c21f413cae6",
       "Flags": 0,
       "Name": "GameObject",
       "Enabled": true

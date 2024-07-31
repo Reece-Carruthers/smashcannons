@@ -1,0 +1,32 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+        <div class="title">
+            Smash Cannon
+        </div>
+
+    	<div class="container">
+        	<div class="box box1"><p>Cannon</p><p>0/2</p></div>
+        	<div class="box box2"><p>Runner</p><p>0/0</p></div>
+    	</div>
+</root>
+
+@code
+{
+	private void PlayScene()
+	{
+		Game.ActiveScene.LoadFromFile( "scenes/minimal.scene" );
+	}
+	
+
+	
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}
