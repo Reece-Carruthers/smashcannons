@@ -176,20 +176,7 @@
             "_type": "gameobject",
             "prefab": "prefab/gpcplayer.prefab"
           },
-          "SpawnPoints": [
-            {
-              "_type": "gameobject",
-              "go": "1bb32a62-b911-4337-b752-bdc5d1484456"
-            },
-            {
-              "_type": "gameobject",
-              "go": "1b72f150-86c6-4fc9-9de2-410bf2018143"
-            },
-            {
-              "_type": "gameobject",
-              "go": "1c4fa994-f6d9-4d73-b081-ecd29bc309b6"
-            }
-          ],
+          "SpawnPoints": [],
           "StartServer": true
         }
       ]
@@ -1476,6 +1463,12 @@
           "Enabled": true
         }
       ]
+    },
+    {
+      "__guid": "82236379-ce9b-433c-a109-d8480f51af6a",
+      "Flags": 0,
+      "Name": "GameObject",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
