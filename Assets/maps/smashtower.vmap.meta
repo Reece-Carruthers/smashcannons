@@ -1,0 +1,25 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "smashtower",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "smashtower",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "fatcisdev.transperent#19985",
+        "quack.devgen01#11247",
+        "tiowevolve.dev_light_07#52982",
+        "tiowevolve.dev_light_01#52976"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/smashtower.vmap"
+      }
+    }
+  }
+}

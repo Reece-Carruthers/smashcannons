@@ -1,0 +1,1507 @@
+{
+  "__guid": "7e4f823e-a42c-4316-b804-3416f842873c",
+  "GameObjects": [
+    {
+      "__guid": "5372e293-a570-43ea-9d44-ef04a0b1c05c",
+      "Flags": 0,
+      "Name": "Directional Light",
+      "Position": "0,0,200",
+      "Rotation": "-0.2459842,0.5938582,0.2931525,0.7077327",
+      "Tags": "light_directional,light",
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "df11de7f-6ce6-4500-a4b8-3c26bb324da2",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "__guid": "d2b70381-7f8e-4245-b9b7-ff08b9b65cc3",
+      "Flags": 0,
+      "Name": "Map",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "57658463-90d6-48c3-b8ba-e94ef3dd6454",
+          "__version": 1,
+          "EnableCollision": true,
+          "MapName": "maps/smashtower.vmap",
+          "NoOrigin": true,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "e37f3faf-e1b8-417e-8669-7de37956ad3a",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-2552.441,-272,1696",
+      "Rotation": "0,0.1305262,0,0.9914449",
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "5d4cd34e-3d35-459e-b9cc-10c353505dd7",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 107.88,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "__guid": "227e123c-d250-49ad-b8d8-ec44cbd3da1f",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "5233.297,623.5334,2305.019",
+      "Rotation": "0.1305262,0.00000002541439,-0.9914449,0.0000001930414",
+      "Tags": "maincamera",
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "10eac7f6-72b2-498e-a5f1-9ef2e5ff8361",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 83,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "__guid": "7435a05e-fff9-4687-852f-3d1ea7d10379",
+      "Flags": 0,
+      "Name": "Camera (1)",
+      "Position": "5374.594,889.874,2352.784",
+      "Rotation": "0.08516905,0.02815916,-0.972101,0.2167323",
+      "Tags": "maincamera",
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "da84c88e-2bc7-4c29-826a-284809e0ba68",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 82.88,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "__guid": "6edfc06f-798c-4088-aaab-d70c05403ba7",
+      "Flags": 0,
+      "Name": "KillCollider",
+      "Position": "1408,40,144",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.PlaneCollider",
+          "__guid": "1c0c07ee-dbe3-4c91-897c-bd175cbe55fd",
+          "Center": "0,-32.99998,0",
+          "IsTrigger": true,
+          "Scale": "9000,6000",
+          "Static": true
+        }
+      ]
+    },
+    {
+      "__guid": "0ab66485-2240-42b6-ba8e-e51d3b2caa54",
+      "Flags": 0,
+      "Name": "FloorCollider",
+      "Position": "1344,0,0",
+      "Scale": "176.5997,122.6998,-0.00000001490116",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "58114bfc-fa48-4dd8-a3bc-f8aef3b94782",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "ef5488b3-0a2d-4b6e-83fd-85f05d9c1720",
+      "Flags": 0,
+      "Name": "OldNetworkObject",
+      "Position": "5704,3588.167,40",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d9885637-e457-4324-9b78-ca7313cf5e1c",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.NetworkHelper",
+          "__guid": "bb1e8801-edd9-4181-aaf8-f7b44ab38cf4",
+          "__enabled": false,
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefab/gpcplayer.prefab"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "1bb32a62-b911-4337-b752-bdc5d1484456"
+            },
+            {
+              "_type": "gameobject",
+              "go": "1b72f150-86c6-4fc9-9de2-410bf2018143"
+            },
+            {
+              "_type": "gameobject",
+              "go": "1c4fa994-f6d9-4d73-b081-ecd29bc309b6"
+            }
+          ],
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "__guid": "5d8fda91-e097-4ec0-9b62-adb6c9f68bd9",
+      "Flags": 0,
+      "Name": "Cannon",
+      "Position": "5152,624,2208",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CannonComponent",
+          "__guid": "8b7e204c-4182-43c5-9a71-966cd26b88ea",
+          "Bullet": {
+            "_type": "gameobject",
+            "go": "a4228063-4a55-4522-ad25-3c59374a38dc"
+          },
+          "Gun": {
+            "_type": "gameobject",
+            "go": "5d8fda91-e097-4ec0-9b62-adb6c9f68bd9"
+          },
+          "GunModel": {
+            "_type": "gameobject",
+            "go": "d3d7d1e5-2540-445d-81cf-0da3ab53116b"
+          },
+          "Muzzle": {
+            "_type": "gameobject",
+            "go": "148d9a78-7aca-484e-9385-b945ffcafe80"
+          },
+          "TurretPitchSpeed": 0.2,
+          "TurretYawSpeed": 0.08952
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "d3d7d1e5-2540-445d-81cf-0da3ab53116b",
+          "Flags": 0,
+          "Name": "CannonBase",
+          "Position": "-104,0,-16",
+          "Scale": "4.199998,1,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3a788d85-175b-4e73-9837-c1db8c118a8e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.10698,0.10698,0.10698,1"
+            }
+          ]
+        },
+        {
+          "__guid": "148d9a78-7aca-484e-9385-b945ffcafe80",
+          "Flags": 0,
+          "Name": "Muzzle",
+          "Position": "-211.7002,0,-16",
+          "Rotation": "0,-1,0,0.0000001947072",
+          "Scale": "0.2999996,1.2,1.2",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "dcef0b82-6846-4ea9-b000-6324b74020d0",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.10698,0.10698,0.10698,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "1a9136c9-653c-4600-8a29-4c24c2e9b7a2",
+      "Flags": 0,
+      "Name": "Map Objects",
+      "Position": "1002.036,-2696.452,3034.954",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "f1c61ba2-a348-4033-82ca-b61ccf6aa528",
+          "Flags": 0,
+          "Name": "Platforms",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Children": [
+            {
+              "__guid": "76d167e2-6733-4ca3-a30d-6cb6e063bb81",
+              "Flags": 0,
+              "Name": "tunnel",
+              "Position": "-1650.036,658.1692,-1866.954",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "80d240ad-7359-40c6-a891-cf9c099acaac",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/tunnel.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "0e7c302e-8523-4b8a-b361-f565f09bf3f9",
+              "Flags": 0,
+              "Name": "square_platform",
+              "Position": "-2446.409,688.5032,-1910.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "c7ea1e1b-5b67-4108-9746-ff34bb1471b7",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "d997a5c4-a3d4-4fc1-b3f4-83bf862e6e16",
+              "Flags": 0,
+              "Name": "rect_platform",
+              "Position": "-2426.417,1495.366,-1882.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "88f93560-2c13-41ba-b8ec-a523ddbc89b0",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/rect_platform/rect_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "f5c62872-4ce0-49cc-a0d7-012f559219bf",
+              "Flags": 0,
+              "Name": "starting_platform",
+              "Position": "-2426.036,2694.545,-1882.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "b3cbb618-7944-4cd6-9c58-b9818f8714d0",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/starting_platform/starting_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "2acc8af8-e69b-4436-a321-07efb244ff5a",
+              "Flags": 0,
+              "Name": "rect_platform",
+              "Position": "-2426.036,3904.577,-1882.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "a412fea3-3c13-4d26-95e8-08d656498029",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/rect_platform/rect_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "88ca94fd-ca1f-469a-9a5c-120ef99c26e2",
+              "Flags": 0,
+              "Name": "square_platform",
+              "Position": "-2434.036,4718.336,-1910.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "deee48bd-d7f6-4800-8a48-ee0690e27721",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "bdd26f9b-bd91-4ebf-b900-cd37bae044f4",
+              "Flags": 0,
+              "Name": "tunnel",
+              "Position": "-1650.036,4704.452,-1882.954",
+              "Rotation": "0,0,0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "9f63c44f-6a80-417c-8df7-2fb7a7bca2a8",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/tunnel.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "de91a5c8-5d0d-4454-953f-f215f62d2372",
+              "Flags": 0,
+              "Name": "square_platform",
+              "Position": "-879.838,4707.569,-1910.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "8d23344a-d8b4-481b-a282-2f530fa25bd0",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "2830c642-ac20-408f-b936-d611155f1e26",
+              "Flags": 0,
+              "Name": "tunnel",
+              "Position": "-112.5049,4702.085,-1882.954",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "11dfa334-01bd-4229-a9da-3a24b87aa247",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/tunnel.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "3f1b130b-7d0d-4c90-954f-a5dc1aca1b3c",
+              "Flags": 0,
+              "Name": "square_platform",
+              "Position": "705.7336,4688.461,-1910.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "0502ad46-2d18-4764-aa63-865b87f4374a",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "a55ac1e5-b714-457a-b0cf-ebe106168293",
+              "Flags": 0,
+              "Name": "rect_platform",
+              "Position": "709.9636,3865.568,-1882.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "98819738-7a8b-47a2-9891-f1782533ffbd",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/rect_platform/rect_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "274a154f-013c-4c8c-af57-ce4c36fd7634",
+              "Flags": 0,
+              "Name": "square_platform",
+              "Position": "756.2426,3040.452,-1910.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "f28dd990-08a8-41b0-80bb-75bc542be08f",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "931a84d4-e0ca-40f4-b0de-2caaaecc9621",
+              "Flags": 0,
+              "Name": "square_platform",
+              "Position": "759.6845,2328.452,-1914.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "7b923670-5f17-4104-b055-797462b1124f",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "a989692c-8b15-4b6d-a15d-e3a987621bd7",
+              "Flags": 0,
+              "Name": "rect_platform",
+              "Position": "712.9206,1520.452,-1882.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "2c824000-12fa-442b-8602-f2b8e99ddf14",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/rect_platform/rect_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "2915ad9a-19a8-4643-88e3-73123c99d4f5",
+              "Flags": 0,
+              "Name": "square_platform (1)",
+              "Position": "-866.0364,688.5032,-1910.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "d6b2fd6a-24e6-459e-a828-d4a92f88acce",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "3ae6b848-a79f-4c02-a570-d82d3e483b96",
+              "Flags": 0,
+              "Name": "small_platform",
+              "Position": "-676.4293,1392.452,-1918.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "977aef9b-a396-4fd0-ab92-7d56363e2480",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/small_platform/small_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "5b0ec987-56e7-4bc3-81af-f15e3f704c6b",
+              "Flags": 0,
+              "Name": "triangle_platform",
+              "Position": "-498.5765,1842.267,-1874.954",
+              "Rotation": "0,0,0.9238795,0.3826834",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "4a173d02-9e3f-43a9-93a6-01b226865c51",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/triangle_platform/triangle_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "5b90a923-419e-48fe-854b-e9af1e2935c3",
+              "Flags": 0,
+              "Name": "tunnel",
+              "Position": "-992.992,2329.421,-1882.954",
+              "Rotation": "0,0,0.5,0.8660254",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "26de9528-b5de-4afa-b603-ad13e25af54a",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/tunnel.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "167007b0-4195-4016-87d9-101ab451e935",
+              "Flags": 0,
+              "Name": "tunnel",
+              "Position": "-53.59271,2237.699,-1882.954",
+              "Rotation": "0,0,-0.5,0.8660254",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "9bc132f0-1e86-4333-adf3-29a0d7bb3406",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/tunnel.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "b562a475-a0eb-43dc-bd1f-17889ca3b553",
+              "Flags": 0,
+              "Name": "tunnel",
+              "Position": "-991.7596,3062.652,-1882.954",
+              "Rotation": "0,0,-0.5,0.8660254",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "e15df81a-2768-4648-82e7-ded05e3e1354",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/tunnel.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "7470a473-59c4-448b-8873-472e1616cde8",
+              "Flags": 0,
+              "Name": "tunnel",
+              "Position": "-43.04352,3129.393,-1882.954",
+              "Rotation": "0,0,0.5,0.8660254",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "4b7cc7a2-73ed-4e7b-ba34-db3b5fe5a76c",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/tunnel.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "bd9813fe-fbf4-46c3-9a98-bbfc16344585",
+              "Flags": 0,
+              "Name": "triangle_platform",
+              "Position": "-555.145,3516.696,-1874.954",
+              "Rotation": "0,0,-0.3826834,0.9238796",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "fd8a6856-dd30-488a-bda1-2d7d4ec8046f",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/triangle_platform/triangle_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "54185e24-41c1-4930-880b-eafd43d4cc43",
+              "Flags": 0,
+              "Name": "small_platform",
+              "Position": "-677.1195,4002.119,-1918.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "a765e996-2b7b-4232-aa7a-185945c63535",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/small_platform/small_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "5974daa8-67ca-4f13-befe-b8276a26b3f6",
+              "Flags": 0,
+              "Name": "square_platform",
+              "Position": "-1810.036,2672.76,-1910.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "98784275-af0b-4fa3-9eab-273f8892c0af",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "080a8b38-8141-4989-88c5-9ebe418d01e7",
+              "Flags": 0,
+              "Name": "tunnel (1)",
+              "Position": "-82.03613,658.1702,-1866.954",
+              "Rotation": "0,0,-0.7071067,0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "f828fdd3-c6e0-43fc-abae-334b703e7c12",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/tunnel.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "4aebaaf8-7fbd-408f-9fb6-4385174d1a35",
+              "Flags": 0,
+              "Name": "square_platform (2)",
+              "Position": "701.9636,688.5032,-1910.954",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "922c27e2-ae32-4175-b640-eaacd96b8664",
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 0,
+                  "IsStatic": false,
+                  "Model": "models/square_platform/square_platform.vmdl",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "6d4e92dc-ce86-4658-b343-9f48fe8424f7",
+          "Flags": 0,
+          "Name": "Pillars",
+          "Position": "0,0,0",
+          "Enabled": true
+        }
+      ]
+    },
+    {
+      "__guid": "3b3f51f2-bea6-4258-8f96-5f86ec4cd167",
+      "Flags": 0,
+      "Name": "GameObjects",
+      "Position": "-605.8846,-2688.445,2620.481",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "361aa710-2041-47c2-9763-d28ba510a0f4",
+          "Flags": 0,
+          "Name": "CannonBall",
+          "Position": "-1178.115,1416.445,-2420.481",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "f3d32a62-585f-4b79-b8aa-6f3b045be877",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderType": "On",
+              "Tint": "0.04186,0.04186,0.04186,1"
+            }
+          ]
+        },
+        {
+          "__guid": "a4228063-4a55-4522-ad25-3c59374a38dc",
+          "Flags": 0,
+          "Name": "CannonBall2",
+          "Position": "-1114.242,1627.832,-2521.231",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ab156fda-9e68-4506-aec9-8cd1e08864ff",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderType": "On",
+              "Tint": "0.23721,0.23721,0.23721,1"
+            },
+            {
+              "__type": "Sandbox.SphereCollider",
+              "__guid": "7da17aef-4e13-40b8-8cc6-59d82a761cfb",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Radius": 10,
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "22c4d96f-1095-4571-b2b3-4cfb55a23f44",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 50000,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        },
+        {
+          "__guid": "e9345629-53d9-4f5a-96d3-a25c419c10b7",
+          "Flags": 0,
+          "Name": "Test Cube",
+          "Position": "4460.239,1221.843,-2133.556",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "251b3488-301d-47fa-a7ee-82dffbef2bdf",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "db3f30db-1bec-4b8c-a209-7c0c17cc43d7",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "0a8b3f56-28d4-40bf-84a8-8ba91a7c5f65",
+              "AngularDamping": 500,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 5000000,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": true
+            }
+          ]
+        },
+        {
+          "__guid": "6191a49d-9f30-49c4-a97c-8f3bb04bbb91",
+          "Flags": 0,
+          "Name": "Physics Test Cube",
+          "Position": "4373.467,1506.836,-1635.529",
+          "Rotation": "0,0,-0.1305262,0.9914449",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "7dcf06be-2fc2-42ec-b914-921c477beacc",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "2bee14a7-68a6-40b3-bfcb-2bc340a173cc",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "bc0cd0c1-d649-4d65-92e9-b431ebc9146f",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 500000,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": true
+            }
+          ]
+        },
+        {
+          "__guid": "4e1f5b84-b37b-48fa-89cf-c1ef63147958",
+          "Flags": 0,
+          "Name": "TestBall",
+          "Position": "4348.187,712.4451,-1844.546",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "d0ac6b6b-f440-435f-93f6-8eae23e8f458",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.SphereCollider",
+              "__guid": "a4d37c9a-d8d8-4ee2-9acf-686e2f13b5dc",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Radius": 10,
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "c0786a0c-177c-4759-9cab-465561f8514a",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 1000000,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "00b4ee31-b39f-4568-a690-b604cb5c4abc",
+      "Flags": 0,
+      "Name": "PlayerObjects",
+      "Position": "5044.25,558.5426,2227.454",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "e76a20b0-71ea-4fc5-8a28-57e78db0e9c2",
+          "Flags": 0,
+          "Name": "GPC0.1 (2)",
+          "Position": "163.7495,57.45538,-19.4541",
+          "Rotation": "0,0,1,0.0000001947072",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "GeneralPlayerController",
+              "__guid": "b631aada-d4b0-4e66-899e-3bcaec911b3c",
+              "Animator": {
+                "_type": "component",
+                "component_id": "799631ea-1516-42ae-bf11-b6b7f68e2ce3",
+                "go": "e76a20b0-71ea-4fc5-8a28-57e78db0e9c2",
+                "component_type": "CitizenAnimationHelper"
+              },
+              "Camera": {
+                "_type": "gameobject",
+                "go": "f951ff70-0203-457f-abb8-9259a32ddb16"
+              },
+              "CameraPosition": "-160,-32,96",
+              "Controller": {
+                "_type": "component",
+                "component_id": "ca6b85d3-2ba7-4835-aa3a-0eadf4ccd0f7",
+                "go": "e76a20b0-71ea-4fc5-8a28-57e78db0e9c2",
+                "component_type": "CharacterController"
+              },
+              "CrouchSpeed": 120,
+              "EyePosition": "0,0,0",
+              "JumpHeight": 300,
+              "RunSpeed": 300,
+              "WalkSpeed": 200
+            },
+            {
+              "__type": "Sandbox.CharacterController",
+              "__guid": "ca6b85d3-2ba7-4835-aa3a-0eadf4ccd0f7",
+              "Acceleration": 10,
+              "Bounciness": 0.3,
+              "GroundAngle": 45,
+              "Height": 64,
+              "IgnoreLayers": "",
+              "Radius": 16,
+              "StepHeight": 18,
+              "UseCollisionRules": false
+            },
+            {
+              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+              "__guid": "799631ea-1516-42ae-bf11-b6b7f68e2ce3",
+              "BodyWeight": 1,
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "component_id": "28031272-c97d-4b58-b59a-5b757077ff54",
+                "go": "e76a20b0-71ea-4fc5-8a28-57e78db0e9c2",
+                "component_type": "SkinnedModelRenderer"
+              }
+            },
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "28031272-c97d-4b58-b59a-5b757077ff54",
+              "BodyGroups": 341,
+              "CreateBoneObjects": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            },
+            {
+              "__type": "Sandbox.CapsuleCollider",
+              "__guid": "4dd549d2-97d1-4119-a7e8-610c6b0b00f7",
+              "End": "0,0,64.8233",
+              "IsTrigger": false,
+              "Radius": 5.799993,
+              "Start": "0,0,6.999996",
+              "Static": true
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "f951ff70-0203-457f-abb8-9259a32ddb16",
+              "Flags": 0,
+              "Name": "Camera",
+              "Position": "0,0,0",
+              "Tags": "maincamera",
+              "Components": [
+                {
+                  "__type": "Sandbox.CameraComponent",
+                  "__guid": "dccf2c23-d6cf-478b-beeb-dbe5835ad08d",
+                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                  "ClearFlags": "All",
+                  "FieldOfView": 90,
+                  "IsMainCamera": true,
+                  "Orthographic": false,
+                  "OrthographicHeight": 1204,
+                  "Priority": 1,
+                  "RenderExcludeTags": "",
+                  "RenderTags": "",
+                  "TargetEye": "None",
+                  "Viewport": "0,0,1,1",
+                  "ZFar": 10000,
+                  "ZNear": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "8214ab08-8dd5-47e8-99e5-8b841afff94e",
+          "Flags": 0,
+          "Name": "GPC0.1 (1)",
+          "Position": "-6484.25,-622.5426,-1075.454",
+          "Components": [
+            {
+              "__type": "GeneralPlayerController",
+              "__guid": "0a8e6b3a-b16a-4f16-ad22-db5f9a523db4",
+              "Animator": {
+                "_type": "component",
+                "component_id": "0105a0d1-0f15-40f2-96e5-9bcc191d8d2e",
+                "go": "8214ab08-8dd5-47e8-99e5-8b841afff94e",
+                "component_type": "CitizenAnimationHelper"
+              },
+              "Camera": {
+                "_type": "gameobject",
+                "go": "849e6288-9d22-42b8-bc71-9346261ff778"
+              },
+              "CameraPosition": "-160,-32,96",
+              "Controller": {
+                "_type": "component",
+                "component_id": "e3f1a090-55da-49f5-b44f-d36d0c4fa426",
+                "go": "8214ab08-8dd5-47e8-99e5-8b841afff94e",
+                "component_type": "CharacterController"
+              },
+              "CrouchSpeed": 120,
+              "EyePosition": "0,0,0",
+              "JumpHeight": 300,
+              "RunSpeed": 300,
+              "WalkSpeed": 200
+            },
+            {
+              "__type": "Sandbox.CharacterController",
+              "__guid": "e3f1a090-55da-49f5-b44f-d36d0c4fa426",
+              "Acceleration": 10,
+              "Bounciness": 0.3,
+              "GroundAngle": 45,
+              "Height": 64,
+              "IgnoreLayers": "",
+              "Radius": 16,
+              "StepHeight": 18,
+              "UseCollisionRules": false
+            },
+            {
+              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+              "__guid": "0105a0d1-0f15-40f2-96e5-9bcc191d8d2e",
+              "BodyWeight": 1,
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "component_id": "8ef62614-b116-4247-8ed7-98592b0affa6",
+                "go": "8214ab08-8dd5-47e8-99e5-8b841afff94e",
+                "component_type": "SkinnedModelRenderer"
+              }
+            },
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "8ef62614-b116-4247-8ed7-98592b0affa6",
+              "BodyGroups": 341,
+              "CreateBoneObjects": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            },
+            {
+              "__type": "Sandbox.CapsuleCollider",
+              "__guid": "622e7148-bb55-4b43-930e-d9fcc9cca285",
+              "End": "0,0,64.8233",
+              "IsTrigger": false,
+              "Radius": 5.799993,
+              "Start": "0,0,6.999996",
+              "Static": true
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "849e6288-9d22-42b8-bc71-9346261ff778",
+              "Flags": 0,
+              "Name": "Camera",
+              "Position": "0,0,0",
+              "Tags": "maincamera",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.CameraComponent",
+                  "__guid": "931b9ef7-256d-4e4f-ba56-f0ff473feff3",
+                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                  "ClearFlags": "All",
+                  "FieldOfView": 90,
+                  "IsMainCamera": true,
+                  "Orthographic": false,
+                  "OrthographicHeight": 1204,
+                  "Priority": 1,
+                  "RenderExcludeTags": "",
+                  "RenderTags": "",
+                  "TargetEye": "None",
+                  "Viewport": "0,0,1,1",
+                  "ZFar": 10000,
+                  "ZNear": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "a78ddb0f-9196-4ac1-8235-cd924c7db024",
+          "Flags": 0,
+          "Name": "GeneralPlayerControllerPlayer",
+          "Position": "-6484.25,-622.5426,-1075.454",
+          "__Prefab": "prefab/gpcplayer.prefab",
+          "__PrefabVariables": {}
+        },
+        {
+          "__guid": "8c00ff3e-a316-436b-a094-7ef5b753e9be",
+          "Flags": 0,
+          "Name": "GPC0.1",
+          "Position": "-6484.25,-622.5426,-1075.454",
+          "Components": [
+            {
+              "__type": "GeneralPlayerController",
+              "__guid": "693a1422-6427-4f42-b228-39048918d13e",
+              "Animator": {
+                "_type": "component",
+                "component_id": "9747163f-7d3d-4c9f-858f-35de55131679",
+                "go": "8c00ff3e-a316-436b-a094-7ef5b753e9be",
+                "component_type": "CitizenAnimationHelper"
+              },
+              "Camera": {
+                "_type": "gameobject",
+                "go": "caa5b536-ee84-41ea-bf26-b365a7fb8762"
+              },
+              "CameraPosition": "-160,-32,96",
+              "Controller": {
+                "_type": "component",
+                "component_id": "8017d381-ff9a-412c-a715-ad83b9b47683",
+                "go": "8c00ff3e-a316-436b-a094-7ef5b753e9be",
+                "component_type": "CharacterController"
+              },
+              "CrouchSpeed": 120,
+              "EyePosition": "0,0,0",
+              "JumpHeight": 300,
+              "RunSpeed": 300,
+              "WalkSpeed": 200
+            },
+            {
+              "__type": "Sandbox.CharacterController",
+              "__guid": "8017d381-ff9a-412c-a715-ad83b9b47683",
+              "Acceleration": 10,
+              "Bounciness": 0.3,
+              "GroundAngle": 45,
+              "Height": 64,
+              "IgnoreLayers": "",
+              "Radius": 16,
+              "StepHeight": 18,
+              "UseCollisionRules": false
+            },
+            {
+              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+              "__guid": "9747163f-7d3d-4c9f-858f-35de55131679",
+              "BodyWeight": 1,
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "component_id": "4008fc1b-76d6-4e92-8444-9c46dc2f8f76",
+                "go": "8c00ff3e-a316-436b-a094-7ef5b753e9be",
+                "component_type": "SkinnedModelRenderer"
+              }
+            },
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "4008fc1b-76d6-4e92-8444-9c46dc2f8f76",
+              "BodyGroups": 341,
+              "CreateBoneObjects": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            },
+            {
+              "__type": "Sandbox.CapsuleCollider",
+              "__guid": "b28e680e-a60e-42c9-b83d-0ab370eba368",
+              "End": "0,0,64.8233",
+              "IsTrigger": false,
+              "Radius": 5.799993,
+              "Start": "0,0,6.999996",
+              "Static": true
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "caa5b536-ee84-41ea-bf26-b365a7fb8762",
+              "Flags": 0,
+              "Name": "Camera",
+              "Position": "0,0,0",
+              "Tags": "maincamera",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.CameraComponent",
+                  "__guid": "94da2d00-9174-47b7-a89c-61b162b453d0",
+                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                  "ClearFlags": "All",
+                  "FieldOfView": 90,
+                  "IsMainCamera": true,
+                  "Orthographic": false,
+                  "OrthographicHeight": 1204,
+                  "Priority": 1,
+                  "RenderExcludeTags": "",
+                  "RenderTags": "",
+                  "TargetEye": "None",
+                  "Viewport": "0,0,1,1",
+                  "ZFar": 10000,
+                  "ZNear": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "da620aa3-9439-4fb8-a08e-88f11e3ecb16",
+          "Flags": 0,
+          "Name": "GeneralPlayerController",
+          "Position": "-6484.25,-622.5426,-1075.454",
+          "__Prefab": "prefab/gpc.prefab",
+          "__PrefabVariables": {}
+        },
+        {
+          "__guid": "48fcbbea-c1a3-4213-b8b7-d16ce70f9d61",
+          "Flags": 0,
+          "Name": "FPSPlayer",
+          "Position": "-6500.25,-370.6411,-1059.454",
+          "Tags": "player",
+          "Components": [
+            {
+              "__type": "PlayerController",
+              "__guid": "8f2067c3-88ea-4711-9263-54e9511afc55",
+              "CrouchMoveSpeed": 64,
+              "RunMoveSpeed": 190,
+              "SprintMoveSpeed": 320,
+              "WalkMoveSpeed": 190
+            },
+            {
+              "__type": "Sandbox.CharacterController",
+              "__guid": "ddcd423a-aadf-4185-bc23-b0833c05cacc",
+              "Acceleration": 10,
+              "Bounciness": 0.3,
+              "GroundAngle": 45,
+              "Height": 64,
+              "IgnoreLayers": "",
+              "Radius": 16,
+              "StepHeight": 18,
+              "UseCollisionRules": false
+            },
+            {
+              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+              "__guid": "f8d144fb-41ec-4ef9-bddc-cc55c1695d48",
+              "BodyWeight": 1,
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "component_id": "3c4edb23-4eaa-46e9-ac2e-f6f772498210",
+                "go": "48fcbbea-c1a3-4213-b8b7-d16ce70f9d61",
+                "component_type": "SkinnedModelRenderer"
+              }
+            },
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "3c4edb23-4eaa-46e9-ac2e-f6f772498210",
+              "BodyGroups": 341,
+              "CreateBoneObjects": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            },
+            {
+              "__type": "Sandbox.CapsuleCollider",
+              "__guid": "3deb3b2b-5dbb-41f4-adfd-97a5b829034f",
+              "End": "0,0,66.59991",
+              "IsTrigger": false,
+              "Radius": 5,
+              "Start": "0,0,5.099998",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "20cac57d-8090-43db-a631-5edd4d77c8c7",
+          "Flags": 0,
+          "Name": "Player",
+          "Position": "-6580.25,-656.0254,-1075.454",
+          "Components": [
+            {
+              "__type": "Sandbox.CharacterController",
+              "__guid": "5df7380a-3a64-4bc6-a133-97a4b1bc26fe",
+              "Acceleration": 10,
+              "Bounciness": 0.3,
+              "GroundAngle": 45,
+              "Height": 64,
+              "IgnoreLayers": "player,trigger",
+              "Radius": 16,
+              "StepHeight": 18,
+              "UseCollisionRules": false
+            },
+            {
+              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+              "__guid": "deb05638-16ad-41e1-8f7d-a8ac451a9ebd",
+              "BodyWeight": 1,
+              "EyeSource": {
+                "_type": "gameobject",
+                "go": "d4d86363-d8dd-4cc4-bf40-c93f2921a267"
+              },
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "component_id": "47e8b8a8-799c-4863-b873-213f5b3fd03d",
+                "go": "cd538afb-fbe2-4242-9ebc-a6455bf8a4ba",
+                "component_type": "SkinnedModelRenderer"
+              }
+            },
+            {
+              "__type": "PlayerController",
+              "__guid": "08fe14d9-c77b-4cc5-9f67-0c9f92bc9dc3",
+              "CrouchMoveSpeed": 64,
+              "RunMoveSpeed": 190,
+              "SprintMoveSpeed": 320,
+              "WalkMoveSpeed": 190
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "cd538afb-fbe2-4242-9ebc-a6455bf8a4ba",
+              "Flags": 0,
+              "Name": "Body",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "47e8b8a8-799c-4863-b873-213f5b3fd03d",
+                  "BodyGroups": 341,
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen/citizen.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
+                }
+              ]
+            },
+            {
+              "__guid": "d4d86363-d8dd-4cc4-bf40-c93f2921a267",
+              "Flags": 0,
+              "Name": "Head",
+              "Position": "0,0,64",
+              "Enabled": true
+            },
+            {
+              "__guid": "5c021f5d-6f01-4fb6-8190-63efb4ff9a67",
+              "Flags": 0,
+              "Name": "Camera",
+              "Position": "-154.8552,-14.51723,79.59106",
+              "Rotation": "0,0.1305262,0,0.9914449",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.CameraComponent",
+                  "__guid": "78dc652a-3a74-40cd-b810-1357f4f85ced",
+                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                  "ClearFlags": "All",
+                  "FieldOfView": 83.18,
+                  "IsMainCamera": true,
+                  "Orthographic": false,
+                  "OrthographicHeight": 1204,
+                  "Priority": 1,
+                  "RenderExcludeTags": "",
+                  "RenderTags": "",
+                  "TargetEye": "None",
+                  "Viewport": "0,0,1,1",
+                  "ZFar": 10000,
+                  "ZNear": 10
+                },
+                {
+                  "__type": "CameraMovement",
+                  "__guid": "73413548-e9d6-40f6-8985-2a8c339ad554",
+                  "Body": {
+                    "_type": "gameobject",
+                    "go": "cd538afb-fbe2-4242-9ebc-a6455bf8a4ba"
+                  },
+                  "Distance": 0,
+                  "Head": {
+                    "_type": "gameobject",
+                    "go": "d4d86363-d8dd-4cc4-bf40-c93f2921a267"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "82612898-9f89-4dea-81a2-a92581f79753",
+          "Flags": 0,
+          "Name": "GeneralController",
+          "Position": "203.7495,65.45941,12.5459",
+          "Rotation": "0,0,-1,0.0000001947072",
+          "Tags": "player",
+          "Enabled": true
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 60,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "smashtower",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
