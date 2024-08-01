@@ -9,6 +9,8 @@ This project has made use of Github's project board, this can be found here [Sma
 # Team
 This project was a joint effort with the team consisting of  [@RyanSvN](https://github.com/RyanSvN) and myself, [@Reece-Carruthers](https://github.com/Reece-Carruthers).
 
-# [Gamejam link](https://sbox.game/c/gamejam2)
+# [Gamejam](https://sbox.game/c/gamejam2)
 
+# Credits
 
+To [SG] Paul who created the original smashcannonsz map found here: https://gamebanana.com/mods/128670
