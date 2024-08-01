@@ -1,0 +1,48 @@
+@using System
+@inherits PanelComponent
+
+@if ( !LocalPlayer.IsValid() ) return;
+
+<root>
+	<div class="vitals">
+		<p>@GetTimeString()</p>
+	</div>
+</root>
+
+@code
+{
+	GeneralPlayerController LocalPlayer { get; set; }
+	private DateTime roundStartTime;
+
+	protected override void OnFixedUpdate()
+	{
+		if ( !LocalPlayer.IsValid() )
+		{
+			LocalPlayer = Scene.GetAllComponents<GeneralPlayerController>().FirstOrDefault( p => p.Network.OwnerConnection == Connection.Local );
+		}
+	}
+
+	public void StartRound()
+    {
+        roundStartTime = DateTime.Now;
+    }
+
+
+	string GetTimeString()
+	{
+		@* var time = LocalPlayer.TimeAlive;
+		var minutes = (int)time / 60;
+		var seconds = (int)time % 60; *@
+
+		var timeElapsed = DateTime.Now - roundStartTime;
+        var minutes = (int)timeElapsed.TotalMinutes;
+        var seconds = timeElapsed.Seconds;
+		return $"{minutes:00}:{seconds:00}";
+	}
+
+	protected override int BuildHash()
+	{
+		return HashCode.Combine(@GetTimeString());
+	}
+
+}

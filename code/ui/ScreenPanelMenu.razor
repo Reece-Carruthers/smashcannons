@@ -8,8 +8,8 @@
         </div>
 
     	<div class="container">
-        	<div class="box box1"><p>Cannon</p><p>0/2</p></div>
-        	<div class="box box2"><p>Runner</p><p>0/0</p></div>
+        	<div class="box box1" @onclick="() => SelectTeam('Cannon')"><p>Cannon</p><p>0/2</p></div>
+        	<div class="box box2" @onclick="() => SelectTeam('Runner)"><p>Runner</p><p>0/0</p></div>
     	</div>
 </root>
 
@@ -20,7 +20,11 @@
 		Game.ActiveScene.LoadFromFile( "scenes/minimal.scene" );
 	}
 	
-
+	private void SelectTeam(string team)
+    {
+        Log.Info($"Team selected: {team}");
+        ConsoleSystem.Run("team_selected", team);
+    }
 	
 
 	[Property, TextArea] public string MyStringValue { get; set; } = "";

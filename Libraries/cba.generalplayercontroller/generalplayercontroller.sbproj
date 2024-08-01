@@ -1,0 +1,14 @@
+{
+  "Title": "GeneralPlayerController",
+  "Type": "library",
+  "Org": "cba",
+  "Ident": "generalplayercontroller",
+  "Tags": "script library",
+  "Schema": 1,
+  "Resources": null,
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "Metadata": {
+    "CsProjName": ""
+  }
+}
