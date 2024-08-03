@@ -1,4 +1,3 @@
-using System;
 using Sandbox;
 using Sandbox.Citizen;
 
@@ -7,37 +6,37 @@ public sealed class SmashRunnerMovement : Component
 {
 	[Category( "Movement Properties" )]
 	[Property]
-	public float GroundControl { get; set; } = 4.0f;
+	private float GroundControl { get; set; } = 4.0f;
 
 	[Category( "Movement Properties" )]
 	[Property]
-	public float AirControl { get; set; } = 0.1f;
+	private float AirControl { get; set; } = 0.1f;
 
 	[Category( "Movement Properties" )]
 	[Property]
-	public float MaxForce { get; set; } = 50f;
+	private float MaxForce { get; set; } = 50f;
 
 	[Category( "Movement Properties" )]
 	[Property]
-	public float Speed { get; set; } = 160f;
+	private float Speed { get; set; } = 160f;
 
 	[Category( "Movement Properties" )]
 	[Property]
-	public float RunSpeed { get; set; } = 290f;
+	private float RunSpeed { get; set; } = 290f;
 
 	[Category( "Movement Properties" )]
 	[Property]
-	public float CrouchSpeed { get; set; } = 80f;
+	private float CrouchSpeed { get; set; } = 80f;
 
 	[Category( "Movement Properties" )]
 	[Property]
-	public float JumpForce { get; set; } = 400f;
+	private float JumpForce { get; set; } = 400f;
 
 	[Category( "Objects" )] [Property] public GameObject Head { get; set; }
 	[Category( "Objects" )] [Property] public GameObject Body { get; set; }
 
 	public bool IsCrouching = false;
-	public bool IsSprinting = false;
+	private bool IsSprinting = false;
 
 	public CharacterController characterController;
 	private CitizenAnimationHelper animationHelper;
@@ -70,7 +69,7 @@ public sealed class SmashRunnerMovement : Component
 		Move();
 	}
 
-	void Move()
+	private void Move()
 	{
 		var gravity = Scene.PhysicsWorld.Gravity;
 
@@ -99,7 +98,7 @@ public sealed class SmashRunnerMovement : Component
 		}
 	}
 
-	void BuildWishVelocity()
+	private void BuildWishVelocity()
 	{
 		WishVelocity = 0;
 
@@ -118,20 +117,20 @@ public sealed class SmashRunnerMovement : Component
 		else WishVelocity *= Speed;
 	}
 
-	void RotateBody()
+	private void RotateBody()
 	{
 		if ( Body is null ) return;
 
 		var targetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
-		float rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
+		var rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
 
 		if ( rotateDifference > 50f || characterController.Velocity.Length > 10f )
 		{
-			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 2f );
+			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 4f );
 		}
 	}
 
-	void Jump()
+	private void Jump()
 	{
 		if ( !characterController.IsOnGround ) return;
 
@@ -139,7 +138,7 @@ public sealed class SmashRunnerMovement : Component
 		animationHelper.TriggerJump();
 	}
 
-	void UpdateAnimations()
+	private void UpdateAnimations()
 	{
 		if ( animationHelper is null ) return;
 
@@ -153,7 +152,7 @@ public sealed class SmashRunnerMovement : Component
 		animationHelper.DuckLevel = IsCrouching ? 1f : 0f;
 	}
 
-	void UpdateCrouch()
+	private void UpdateCrouch()
 	{
 		if ( characterController is null ) return;
 
@@ -170,7 +169,7 @@ public sealed class SmashRunnerMovement : Component
 		}
 	}
 
-	bool IsObjectAbove()
+	private bool IsObjectAbove()
 	{
 		var crouchedHeight = characterController.Height;
 		var standingHeight = crouchedHeight * 2;
