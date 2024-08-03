@@ -1,7 +1,7 @@
 {
   "Title": "smashcannons",
   "Type": "game",
-  "Org": "local",
+  "Org": "cba",
   "Ident": "smashcannons",
   "Schema": 1,
   "IncludeSourceFiles": false,
@@ -21,6 +21,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene"
+    "StartupScene": "scenes/smashtowermap.scene",
+    "LaunchMode": "Normal"
   }
 }

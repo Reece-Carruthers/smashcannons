@@ -1,0 +1,114 @@
+{
+  "RootObject": {
+    "__guid": "dbd82e4e-e505-40f5-8be9-1e85db538502",
+    "Flags": 0,
+    "Name": "smashrunner",
+    "Tags": "player",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "6e43c890-49af-44bf-bcb9-98412d45d69b",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "player,trigger",
+        "Radius": 16,
+        "StepHeight": 18,
+        "UseCollisionRules": false
+      },
+      {
+        "__type": "SmashRunnerMovement",
+        "__guid": "c6057bf6-5f6a-4b89-80d5-d3fa95ebba24",
+        "AirControl": 0.1,
+        "Body": {
+          "_type": "gameobject",
+          "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b"
+        },
+        "CrouchSpeed": 80,
+        "GroundControl": 4,
+        "Head": {
+          "_type": "gameobject",
+          "go": "ce694c78-f270-42a9-aa15-812d970cea12"
+        },
+        "JumpForce": 400,
+        "MaxForce": 50,
+        "RunSpeed": 290,
+        "Speed": 160
+      },
+      {
+        "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+        "__guid": "3275e8b0-c031-4e75-b02b-af0e052b615f",
+        "BodyWeight": 1,
+        "EyesWeight": 1,
+        "HeadWeight": 1,
+        "LookAtEnabled": false,
+        "Target": {
+          "_type": "component",
+          "component_id": "09f15783-44a3-4393-9064-4a3380587c6e",
+          "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
+          "component_type": "SkinnedModelRenderer"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
+        "Flags": 0,
+        "Name": "Body",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "09f15783-44a3-4393-9064-4a3380587c6e",
+            "BodyGroups": 341,
+            "CreateBoneObjects": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          }
+        ]
+      },
+      {
+        "__guid": "ce694c78-f270-42a9-aa15-812d970cea12",
+        "Flags": 0,
+        "Name": "Head",
+        "Position": "0,0,63.47264",
+        "Enabled": true
+      },
+      {
+        "__guid": "1adaadbc-3663-4910-a18c-9e98323d9734",
+        "Flags": 0,
+        "Name": "World",
+        "Position": "0,0,82.97407",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "68350186-a435-4bc1-acec-e3306c0a5d07",
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": true,
+            "PanelSize": "500,200",
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Nametag",
+            "__guid": "8ef48df4-131d-4a70-a5ae-25c9251d603e"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

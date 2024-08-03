@@ -1,0 +1,436 @@
+{
+  "__guid": "c5cac1e8-504e-46e3-b758-9ef50263c6bd",
+  "GameObjects": [
+    {
+      "__guid": "2ee53c68-29ee-4003-a599-1e8e60eced58",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "0,0,62.2626",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "f10778b2-9c25-4ac7-8c32-2f0737d0215a",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 90,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "SmashRunnerCameraMovement",
+          "__guid": "814f8e42-6e8c-4e6a-bd99-7c3d8af66cd4",
+          "CameraLerpSpeed": 5,
+          "CameraZoomSpeed": 10,
+          "Distance": 150,
+          "MaxCameraZoom": 200
+        }
+      ]
+    },
+    {
+      "__guid": "a3607439-0ff4-411f-97e0-8164794acfc5",
+      "Flags": 0,
+      "Name": "Network Helper",
+      "Position": "51.3078,-80.75748,-105.6744",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.NetworkHelper",
+          "__guid": "af9a5da9-020b-4a6d-925e-0274cc3c0337",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "smashrunner.prefab"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "f8fd6b59-cbc5-4864-b4e6-08f9d2d3b4b6"
+            },
+            {
+              "_type": "gameobject",
+              "go": "37869901-d9c4-4e4d-8ca7-00b620a16104"
+            },
+            {
+              "_type": "gameobject",
+              "go": "02c98c53-5c90-4ddd-93a6-92efe3fc8c3b"
+            }
+          ],
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "__guid": "18ab986d-3790-4090-83d8-4a54f966b1b8",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "23.31244,-221.7858,31.82603",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "04b1e0f3-61eb-40f3-b3e2-77b8e5169d35",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "-67.88353,241.5,-10.18011",
+          "Scale": "1,1,3.709583",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "db7d9313-2415-4137-b7b7-f4ecc837bd8f",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "1855d3b7-d570-4ee2-b146-f37a80ca9093",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "70f4d70c-11e6-45c5-bdc7-fe16976d2f3d",
+          "Flags": 0,
+          "Name": "Cube (3)",
+          "Position": "-174.4458,241.5,-10.18011",
+          "Scale": "1,1,3.709583",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "fcbbfd09-9096-4d47-862b-1676a1093a83",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "f97c8909-ee29-41b7-86e4-77658b0c28dd",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "79a93c7c-b2dc-4c3a-aa34-a667851115fc",
+          "Flags": 0,
+          "Name": "Cube (4)",
+          "Position": "-122.046,241.5,118.6655",
+          "Scale": "1,1,3.709583",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "8d1791e3-6f25-47b3-a67a-1440bb3af805",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "3fcc97ba-d6ea-432f-862a-58e06bec40d5",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "5b483a09-bbf2-4949-98c7-a73b789d0ee7",
+          "Flags": 0,
+          "Name": "Cube (2)",
+          "Position": "11.5008,276.4832,19.95789",
+          "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+          "Scale": "0.5632889,0.5632889,0.5632889",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ac284ab8-cdb7-4ba6-92de-d9be36088b1b",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,0,0.93333,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "ca4eb284-231e-4c84-9bc4-7ba89962f307",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "61ef15dd-3eb2-4f52-8b9a-315f477f79b7",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        },
+        {
+          "__guid": "523e3e8f-a4ec-4ec1-af9a-d86ffc9c17e1",
+          "Flags": 0,
+          "Name": "Cube (1)",
+          "Position": "17.50104,268.7615,-17.42444",
+          "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+          "Scale": "0.5632889,0.5632889,0.5632889",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "9e8a546d-a41d-44b5-9906-22cea00e1066",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,0,0.93333,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "adf22580-7a25-4d7f-b1c3-3fb8fabf1612",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "e53bfcb0-7f44-41d0-8d51-263bdc173a57",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        },
+        {
+          "__guid": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "-1.895617,295.9102,-17.42444",
+          "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+          "Scale": "0.5632889,0.5632889,0.5632889",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "b9121ffa-617c-4ccc-a2aa-8acc98727590",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,0,0.93333,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "8bb3ebcf-1ec9-4b20-bf31-4aece0950008",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "4aaa0334-6785-4716-9bae-869559ea6e10",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        },
+        {
+          "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+          "Flags": 0,
+          "Name": "Plane",
+          "Position": "-23.31244,221.7858,-45.78787",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "0b6a18bf-fdb8-4661-970e-ef635bfa9baa",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "0.39546,0.51163,0.27128,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "0715cb55-1733-4f5e-8560-c288b8695631",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+          "Flags": 0,
+          "Name": "2D Skybox",
+          "Tags": "skybox",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "de79e9e0-5c37-4c54-ac67-bfcdb1d5483b",
+              "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.EnvmapProbe",
+              "__guid": "f3e304db-baab-4c1a-a4ec-8442585c2d62",
+              "Texture": "textures/cubemaps/default2.vtex",
+              "Bounds": {
+                "Mins": "-512,-512,-512",
+                "Maxs": "512,512,512"
+              },
+              "DelayBetweenUpdates": 0.1,
+              "Feathering": 0.02,
+              "FrameInterval": 5,
+              "MaxDistance": 512,
+              "Projection": "Sphere",
+              "RenderDynamically": false,
+              "TintColor": "1,1,1,1",
+              "UpdateStrategy": "OnEnabled",
+              "ZFar": 4096,
+              "ZNear": 16
+            }
+          ]
+        },
+        {
+          "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+          "Flags": 0,
+          "Name": "Sun",
+          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "d3659344-a90d-48fa-927a-095f70fe041f",
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.94419,0.97767,1,1",
+              "Shadows": true,
+              "SkyColor": "0.2532,0.32006,0.35349,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "f8fd6b59-cbc5-4864-b4e6-08f9d2d3b4b6",
+      "Flags": 0,
+      "Name": "Cube",
+      "Position": "93.63033,-121.1382,34.81215",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "ed12c6f7-2708-47d3-aa42-9e8173f750b3",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "37869901-d9c4-4e4d-8ca7-00b620a16104",
+      "Flags": 0,
+      "Name": "Cube (1)",
+      "Position": "94.0417,-183.1562,34.81216",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "97bbdcc8-df23-4c82-92ee-46128a115115",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "02c98c53-5c90-4ddd-93a6-92efe3fc8c3b",
+      "Flags": 0,
+      "Name": "Cube (2)",
+      "Position": "93.32088,-42.94595,34.81215",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "4f6b62ad-b23b-42a4-89e5-1397337d7418",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
