@@ -2,6 +2,41 @@
   "__guid": "3c4cc56e-dae9-4385-93f4-7356d48b9503",
   "GameObjects": [
     {
+      "__guid": "f3b69155-9e92-4fcb-86ae-b7a04217be9d",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "0,0,62.2626",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "dd5038e5-5608-4d02-ac78-2c75fefdf5ad",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 90,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "SmashRunnerCameraMovement",
+          "__guid": "3fbec8b5-acf8-41a1-9b5a-73af1034c533",
+          "CameraLerpSpeed": 5,
+          "CameraZoomSpeed": 10,
+          "Distance": 150,
+          "MaxCameraZoom": 200
+        }
+      ]
+    },
+    {
       "__guid": "5372e293-a570-43ea-9d44-ef04a0b1c05c",
       "Flags": 0,
       "Name": "Directional Light",
@@ -872,43 +907,32 @@
     {
       "__guid": "d29844dd-0149-45b7-b8db-a0a78ae69760",
       "Flags": 0,
-      "Name": "NetworkObjects",
+      "Name": "Network Helper",
       "Position": "5447.157,3559.504,296.4999",
       "Enabled": true,
-      "Children": [
+      "Components": [
         {
-          "__guid": "dd1c0ccc-9472-4766-99f5-e6be577d09f9",
-          "Flags": 0,
-          "Name": "Network Session",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
+          "__type": "Sandbox.NetworkHelper",
+          "__guid": "ef9b92ed-e912-47c8-93bb-a264ee6ff932",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "smashrunner.prefab"
+          },
+          "SpawnPoints": [
             {
-              "__type": "NetworkSession",
-              "__guid": "30869b47-9617-4245-8320-9b39a639dba1"
-            }
-          ]
-        },
-        {
-          "__guid": "7bc1eeaf-d823-45bd-8029-3d4f07b88389",
-          "Flags": 0,
-          "Name": "Network Manager",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
+              "_type": "gameobject",
+              "go": "f3c00137-f2de-4467-88d0-05f11a8099bd"
+            },
             {
-              "__type": "Sandbox.GameNetworkManager",
-              "__guid": "18c67259-354c-4eac-8798-add2256edfac",
-              "PlayerPrefab": {
-                "_type": "gameobject",
-                "go": "67911bca-f9a9-400b-8b6e-7e80c86d3849"
-              },
-              "SpawnPoint": {
-                "_type": "gameobject",
-                "go": "1be74bfb-30d8-4491-aa17-d1b63af196a6"
-              }
+              "_type": "gameobject",
+              "go": "308b5578-2687-4375-96d5-003a8b156ee2"
+            },
+            {
+              "_type": "gameobject",
+              "go": "1be74bfb-30d8-4491-aa17-d1b63af196a6"
             }
-          ]
+          ],
+          "StartServer": true
         }
       ]
     },
@@ -920,105 +944,25 @@
       "Enabled": true,
       "Children": [
         {
-          "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
+          "__guid": "f3c00137-f2de-4467-88d0-05f11a8099bd",
           "Flags": 0,
-          "Name": "SpawnPoint",
+          "Name": "SpawnPoint1",
           "Position": "0,0,0",
           "Enabled": true
-        }
-      ]
-    },
-    {
-      "__guid": "888eb177-92bc-41e9-80d0-54760c009868",
-      "Flags": 0,
-      "Name": "SmashRunner",
-      "Position": "-1458.851,-1000.915,1585.188",
-      "Tags": "player",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.CharacterController",
-          "__guid": "dafa8c59-a1b8-4cda-bf9e-165c8cefe22d",
-          "Acceleration": 10,
-          "Bounciness": 0.3,
-          "GroundAngle": 45,
-          "Height": 64,
-          "IgnoreLayers": "player",
-          "Radius": 16,
-          "StepHeight": 18,
-          "UseCollisionRules": false
         },
         {
-          "__type": "SmashRunnerMovement",
-          "__guid": "abd27474-8579-4cc3-82be-73df0d0ce8de"
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "23110d6a-13ef-4ae5-bcc5-dbde98f12ab1",
+          "__guid": "308b5578-2687-4375-96d5-003a8b156ee2",
           "Flags": 0,
-          "Name": "Body",
-          "Position": "0,0,-7.27478",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SkinnedModelRenderer",
-              "__guid": "748f81b1-253b-4a37-b917-43d98a4695d8",
-              "BodyGroups": 341,
-              "CreateBoneObjects": false,
-              "Model": "models/citizen/citizen.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1",
-              "UseAnimGraph": true
-            },
-            {
-              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
-              "__guid": "ddad1cec-5090-4adb-8d11-87838066938b",
-              "BodyWeight": 1,
-              "EyesWeight": 1,
-              "HeadWeight": 1,
-              "LookAtEnabled": false
-            }
-          ]
-        },
-        {
-          "__guid": "d45c24b2-2a77-44c7-9f0d-c8093c6353da",
-          "Flags": 0,
-          "Name": "Head",
-          "Position": "0,0,-22.42932",
+          "Name": "SpawnPoint3",
+          "Position": "0,442.1943,0",
           "Enabled": true
         },
         {
-          "__guid": "f7faec2b-0d0d-4d31-9762-d6ab035d6eb7",
+          "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
           "Flags": 0,
-          "Name": "Camera",
-          "Position": "-144.6377,0,58.86182",
-          "Tags": "maincamera",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.CameraComponent",
-              "__guid": "2c484bb5-0b0b-4802-9f70-f1a532dcac71",
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "All",
-              "FieldOfView": 60,
-              "IsMainCamera": true,
-              "Orthographic": false,
-              "OrthographicHeight": 1204,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 10
-            },
-            {
-              "__type": "SmashRunnerCameraMovement",
-              "__guid": "0f52dddd-36da-4b26-adcd-5d5d1607f557",
-              "Distance": 0
-            }
-          ]
+          "Name": "SpawnPoint2",
+          "Position": "0,-416.8172,0",
+          "Enabled": true
         }
       ]
     }
