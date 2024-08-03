@@ -35,28 +35,51 @@ public sealed class SmashRunnerMovement : Component
 	[Category( "Objects" )] [Property] public GameObject Head { get; set; }
 	[Category( "Objects" )] [Property] public GameObject Body { get; set; }
 
-	public bool IsCrouching = false;
-	private bool IsSprinting = false;
+	[Sync] public bool IsCrouching  { get; set; } = false;
+	[Sync] private bool IsSprinting  { get; set; } = false;
+	[Sync] Angles TargetAngle { get; set; } = Angles.Zero;
 
 	public CharacterController characterController;
 	private CitizenAnimationHelper animationHelper;
+	private SkinnedModelRenderer BodyRenderer { get; set; }
 
 	Vector3 WishVelocity = Vector3.Zero;
+
+	public static SmashRunnerMovement Local
+	{
+		get
+		{
+			if ( !_local.IsValid() )
+			{
+				_local = Game.ActiveScene.GetAllComponents<SmashRunnerMovement>()
+					.FirstOrDefault( x => x.Network.IsOwner );
+			}
+
+			return _local;
+		}
+	}
+	private static SmashRunnerMovement _local = null;
 
 
 	protected override void OnAwake()
 	{
 		characterController = Components.Get<CharacterController>();
 		animationHelper = Components.Get<CitizenAnimationHelper>();
+		BodyRenderer = Body.Components.Get<SkinnedModelRenderer>();
 	}
 
 	protected override void OnUpdate()
 	{
-		UpdateCrouch();
-		IsSprinting = Input.Down( "Run" );
-		if ( Input.Pressed( "jump" ) )
+
+		if (!Network.IsProxy )
 		{
-			Jump();
+			UpdateCrouch();
+			IsSprinting = Input.Down( "Run" );
+			if ( Input.Pressed( "jump" ) )
+			{
+				Jump();
+			}
+			TargetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
 		}
 		
 		RotateBody();
@@ -65,6 +88,7 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnFixedUpdate()
 	{
+		if ( Network.IsProxy ) return;
 		BuildWishVelocity();
 		Move();
 	}
@@ -120,33 +144,37 @@ public sealed class SmashRunnerMovement : Component
 	private void RotateBody()
 	{
 		if ( Body is null ) return;
-
-		var targetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
-		var rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
+		
+		var rotateDifference = Body.Transform.Rotation.Distance( TargetAngle );
 
 		if ( rotateDifference > 50f || characterController.Velocity.Length > 10f )
 		{
-			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 4f );
+			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, TargetAngle, Time.Delta * 4f );
 		}
 	}
 
 	private void Jump()
 	{
 		if ( !characterController.IsOnGround ) return;
-
 		characterController.Punch( Vector3.Up * JumpForce );
-		animationHelper.TriggerJump();
+		BroadcastJumpAnimation();
 	}
 
 	private void UpdateAnimations()
 	{
+
+		if ( Network.IsProxy )
+		{
+			BodyRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
+		}
+		
 		if ( animationHelper is null ) return;
 
 		animationHelper.WithWishVelocity( WishVelocity );
 		animationHelper.WithVelocity( characterController.Velocity );
-		animationHelper.AimAngle = Head.Transform.Rotation;
+		animationHelper.AimAngle = TargetAngle;
 		animationHelper.IsGrounded = characterController.IsOnGround;
-		animationHelper.WithLook( Head.Transform.Rotation.Forward, 1f, 0.75f, 0f );
+		animationHelper.WithLook( TargetAngle.Forward, 1f, 0.75f, 0f );
 		animationHelper.MoveStyle =
 			IsSprinting ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Walk;
 		animationHelper.DuckLevel = IsCrouching ? 1f : 0f;
@@ -186,5 +214,11 @@ public sealed class SmashRunnerMovement : Component
 			.Run();
 
 		return playerTrace.Hit;
+	}
+
+	[Broadcast]
+	private void BroadcastJumpAnimation()
+	{
+		animationHelper?.TriggerJump();
 	}
 }

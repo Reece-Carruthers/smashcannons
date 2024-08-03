@@ -2,10 +2,6 @@ using System;
 
 public sealed class SmashRunnerCameraMovement : Component
 {
-	[Category( "Objects" )] [Property] public SmashRunnerMovement Player { get; set; }
-	[Category( "Objects" )] [Property] public GameObject Body { get; set; }
-	[Category( "Objects" )] [Property] public GameObject Head { get; set; }
-
 	[Category( "Camera Settings" )]
 	[Property]
 	private float Distance { get; set; } = 0f;
@@ -21,27 +17,36 @@ public sealed class SmashRunnerCameraMovement : Component
 	[Category( "Camera Settings" )]
 	[Property]
 	private float CameraLerpSpeed { get; set; } = 5f;
+	
+	private SmashRunnerMovement Player { get; set; }
+	private GameObject Body { get; set; }
+	private GameObject Head { get; set; }
 
 	private bool IsFirstPerson => Distance <= 15f; // Prevents clipping inside of the model when zooming in, this might have to change based on FOV?
 	private Vector3 CurrentOffset = Vector3.Zero;
 	private CameraComponent Camera;
-	private ModelRenderer BodyRenderer;
 	private float targetCameraDistance;
 
 	protected override void OnAwake()
 	{
 		Camera = Components.Get<CameraComponent>();
-		BodyRenderer = Body.Components.Get<ModelRenderer>();
 		targetCameraDistance = Distance;
 	}
 
 	protected override void OnUpdate()
 	{
+		if ( Player is null )
+		{
+			Player = SmashRunnerMovement.Local;
+			Body = Player.Body;
+			Head = Player.Head;
+		}
+		
 		var eyeAngles = Head.Transform.Rotation.Angles();
 		eyeAngles.pitch += Input.MouseDelta.y * 0.1f;
 		eyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		eyeAngles.roll = 0f;
-		eyeAngles.pitch = eyeAngles.pitch.Clamp( -89.9f, 89.9f );
+		eyeAngles.pitch = eyeAngles.pitch.Clamp( -80f, 80f );
 		Head.Transform.Rotation = eyeAngles.ToRotation();
 
 		var targetOffset = Vector3.Zero;
@@ -67,16 +72,8 @@ public sealed class SmashRunnerCameraMovement : Component
 				{
 					camPos = camTrace.EndPosition;
 				}
-
-				BodyRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
-			}
-			else
-			{
-				// Hide the body if we're in first person
-				BodyRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
 			}
 
-			// Set the position of the camera to our calculated position
 			Camera.Transform.Position = camPos;
 			Camera.Transform.Rotation = eyeAngles.ToRotation();
 		}

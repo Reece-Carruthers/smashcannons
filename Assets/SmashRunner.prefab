@@ -2,8 +2,7 @@
   "RootObject": {
     "__guid": "dbd82e4e-e505-40f5-8be9-1e85db538502",
     "Flags": 0,
-    "Name": "SmashRunner",
-    "Position": "74.24951,-181.6048,27.40738",
+    "Name": "smashrunner",
     "Tags": "player",
     "Enabled": true,
     "Components": [
@@ -58,7 +57,6 @@
         "__guid": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
         "Flags": 0,
         "Name": "Body",
-        "Position": "0,0,0",
         "Enabled": true,
         "Components": [
           {
@@ -81,55 +79,31 @@
         "Enabled": true
       },
       {
-        "__guid": "31238aa8-16e9-42f5-a1e2-7e99cf282caf",
+        "__guid": "1adaadbc-3663-4910-a18c-9e98323d9734",
         "Flags": 0,
-        "Name": "Camera",
-        "Position": "0,0,62.2626",
-        "Tags": "maincamera",
+        "Name": "World",
+        "Position": "0,0,82.97407",
         "Enabled": true,
+        "NetworkMode": 1,
         "Components": [
           {
-            "__type": "Sandbox.CameraComponent",
-            "__guid": "6d252eae-2a7e-4c9f-9718-f4c198cbad08",
-            "BackgroundColor": "0.33333,0.46275,0.52157,1",
-            "ClearFlags": "All",
-            "FieldOfView": 90,
-            "IsMainCamera": true,
-            "Orthographic": false,
-            "OrthographicHeight": 1204,
-            "Priority": 1,
-            "RenderExcludeTags": "",
-            "RenderTags": "",
-            "TargetEye": "None",
-            "Viewport": "0,0,1,1",
-            "ZFar": 10000,
-            "ZNear": 10
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "68350186-a435-4bc1-acec-e3306c0a5d07",
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": true,
+            "PanelSize": "500,200",
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
           },
           {
-            "__type": "SmashRunnerCameraMovement",
-            "__guid": "f90d4419-f0e8-487d-b3c1-96b2c1e5723a",
-            "Body": {
-              "_type": "gameobject",
-              "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b"
-            },
-            "CameraLerpSpeed": 5,
-            "CameraZoomSpeed": 10,
-            "Distance": 150,
-            "Head": {
-              "_type": "gameobject",
-              "go": "ce694c78-f270-42a9-aa15-812d970cea12"
-            },
-            "MaxCameraZoom": 200,
-            "Player": {
-              "_type": "component",
-              "component_id": "c6057bf6-5f6a-4b89-80d5-d3fa95ebba24",
-              "go": "dbd82e4e-e505-40f5-8be9-1e85db538502",
-              "component_type": "SmashRunnerMovement"
-            }
+            "__type": "Nametag",
+            "__guid": "8ef48df4-131d-4a70-a5ae-25c9251d603e"
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
