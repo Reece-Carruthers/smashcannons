@@ -296,19 +296,11 @@
         {
           "__type": "SmashRunnerMovement",
           "__guid": "c6057bf6-5f6a-4b89-80d5-d3fa95ebba24",
-          "CameraMovement": {
-            "_type": "component",
-            "component_id": "f90d4419-f0e8-487d-b3c1-96b2c1e5723a",
-            "go": "31238aa8-16e9-42f5-a1e2-7e99cf282caf",
-            "component_type": "SmashRunnerCameraMovement"
-          },
           "AirControl": 0.1,
           "Body": {
             "_type": "gameobject",
             "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b"
           },
-          "CameraLerpSpeed": 5,
-          "CameraZoomSpeed": 10,
           "CrouchSpeed": 80,
           "GroundControl": 4,
           "Head": {
@@ -316,7 +308,6 @@
             "go": "ce694c78-f270-42a9-aa15-812d970cea12"
           },
           "JumpForce": 400,
-          "MaxCameraZoom": 300,
           "MaxForce": 50,
           "RunSpeed": 290,
           "Speed": 160
