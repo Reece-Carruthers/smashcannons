@@ -11,14 +11,14 @@
 
 @code
 {
-	GeneralPlayerController LocalPlayer { get; set; }
+	SmashRunnerMovement LocalPlayer { get; set; }
 	private DateTime roundStartTime;
 
 	protected override void OnFixedUpdate()
 	{
 		if ( !LocalPlayer.IsValid() )
 		{
-			LocalPlayer = Scene.GetAllComponents<GeneralPlayerController>().FirstOrDefault( p => p.Network.OwnerConnection == Connection.Local );
+			LocalPlayer = Scene.GetAllComponents<SmashRunnerMovement>().FirstOrDefault( p => p.Network.OwnerConnection == Connection.Local );
 		}
 	}
 
