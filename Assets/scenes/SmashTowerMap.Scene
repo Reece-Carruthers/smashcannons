@@ -60,6 +60,7 @@
       "Flags": 0,
       "Name": "Map",
       "Enabled": true,
+      "NetworkOrphaned": 1,
       "Components": [
         {
           "__type": "Sandbox.MapInstance",
@@ -114,6 +115,7 @@
       "Name": "Cannon",
       "Position": "5152,624,2376.911",
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "CannonComponent",
@@ -184,6 +186,43 @@
           "Position": "-214.584,0,-13.78003",
           "Rotation": "0,0,1,-0.00000004371139",
           "Enabled": true
+        },
+        {
+          "__guid": "a4228063-4a55-4522-ad25-3c59374a38dc",
+          "Flags": 0,
+          "Name": "CannonBall",
+          "Position": "-6872.126,-1684.613,-2277.661",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ab156fda-9e68-4506-aec9-8cd1e08864ff",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderType": "On",
+              "Tint": "0.23721,0.23721,0.23721,1"
+            },
+            {
+              "__type": "Sandbox.SphereCollider",
+              "__guid": "7da17aef-4e13-40b8-8cc6-59d82a761cfb",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Radius": 10,
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "22c4d96f-1095-4571-b2b3-4cfb55a23f44",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 50000,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
         }
       ]
     },
@@ -193,6 +232,8 @@
       "Name": "Map Objects",
       "Position": "1002.036,-2696.452,3034.954",
       "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 1,
       "Children": [
         {
           "__guid": "f1c61ba2-a348-4033-82ca-b61ccf6aa528",
@@ -200,6 +241,8 @@
           "Name": "Platforms",
           "Position": "0,0,0",
           "Enabled": true,
+          "NetworkMode": 1,
+          "NetworkOrphaned": 1,
           "Children": [
             {
               "__guid": "76d167e2-6733-4ca3-a30d-6cb6e063bb81",
@@ -208,6 +251,8 @@
               "Position": "-1650.036,658.1692,-1546.518",
               "Rotation": "0,0,-0.7071067,0.7071068",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -226,6 +271,8 @@
               "Name": "square_platform",
               "Position": "-2446.409,688.5032,-1590.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -244,6 +291,8 @@
               "Name": "rect_platform",
               "Position": "-2426.417,1495.366,-1562.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -262,6 +311,8 @@
               "Name": "starting_platform",
               "Position": "-2426.036,2694.545,-1562.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -280,6 +331,8 @@
               "Name": "rect_platform",
               "Position": "-2426.036,3904.577,-1562.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -298,6 +351,8 @@
               "Name": "square_platform",
               "Position": "-2434.036,4718.336,-1590.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -317,6 +372,8 @@
               "Position": "-1650.036,4704.452,-1562.518",
               "Rotation": "0,0,0.7071067,0.7071068",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -335,6 +392,8 @@
               "Name": "square_platform",
               "Position": "-879.838,4707.569,-1590.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -354,6 +413,8 @@
               "Position": "-112.5049,4702.085,-1562.518",
               "Rotation": "0,0,-0.7071067,0.7071068",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -372,6 +433,8 @@
               "Name": "square_platform",
               "Position": "705.7335,4688.461,-1590.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -390,6 +453,8 @@
               "Name": "rect_platform",
               "Position": "709.9636,3865.568,-1562.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -408,6 +473,8 @@
               "Name": "square_platform",
               "Position": "756.2426,3040.452,-1590.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -426,6 +493,8 @@
               "Name": "square_platform",
               "Position": "759.6844,2328.452,-1594.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -444,6 +513,8 @@
               "Name": "rect_platform",
               "Position": "712.9205,1520.452,-1562.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -462,6 +533,8 @@
               "Name": "square_platform (1)",
               "Position": "-866.0364,688.5032,-1590.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -480,6 +553,8 @@
               "Name": "small_platform",
               "Position": "-676.4293,1392.452,-1598.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -499,6 +574,8 @@
               "Position": "-498.5765,1842.267,-1554.518",
               "Rotation": "0,0,0.9238795,0.3826834",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -518,6 +595,8 @@
               "Position": "-992.992,2329.421,-1562.518",
               "Rotation": "0,0,0.5,0.8660254",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -537,6 +616,8 @@
               "Position": "-53.59271,2237.699,-1562.518",
               "Rotation": "0,0,-0.5,0.8660254",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -556,6 +637,8 @@
               "Position": "-991.7596,3062.652,-1562.518",
               "Rotation": "0,0,-0.5,0.8660254",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -575,6 +658,8 @@
               "Position": "-43.04352,3129.393,-1562.518",
               "Rotation": "0,0,0.5,0.8660254",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -594,6 +679,8 @@
               "Position": "-555.145,3516.696,-1554.518",
               "Rotation": "0,0,-0.3826834,0.9238796",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -612,6 +699,8 @@
               "Name": "small_platform",
               "Position": "-677.1195,4002.119,-1598.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -630,6 +719,8 @@
               "Name": "square_platform",
               "Position": "-1810.036,2672.76,-1590.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -649,6 +740,8 @@
               "Position": "-82.03613,658.1702,-1546.518",
               "Rotation": "0,0,-0.7071067,0.7071068",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -667,6 +760,8 @@
               "Name": "square_platform (2)",
               "Position": "701.9636,688.5032,-1590.518",
               "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkOrphaned": 1,
               "Components": [
                 {
                   "__type": "Sandbox.Prop",
@@ -736,60 +831,6 @@
       "Position": "-605.8846,-2688.445,2620.481",
       "Enabled": true,
       "Children": [
-        {
-          "__guid": "361aa710-2041-47c2-9763-d28ba510a0f4",
-          "Flags": 0,
-          "Name": "CannonBall",
-          "Position": "-1178.115,1416.445,-2420.481",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "f3d32a62-585f-4b79-b8aa-6f3b045be877",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/sphere.vmdl",
-              "RenderType": "On",
-              "Tint": "0.04186,0.04186,0.04186,1"
-            }
-          ]
-        },
-        {
-          "__guid": "a4228063-4a55-4522-ad25-3c59374a38dc",
-          "Flags": 0,
-          "Name": "CannonBall2",
-          "Position": "-1114.242,1627.832,-2521.231",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "ab156fda-9e68-4506-aec9-8cd1e08864ff",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/sphere.vmdl",
-              "RenderType": "On",
-              "Tint": "0.23721,0.23721,0.23721,1"
-            },
-            {
-              "__type": "Sandbox.SphereCollider",
-              "__guid": "7da17aef-4e13-40b8-8cc6-59d82a761cfb",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Radius": 10,
-              "Static": false
-            },
-            {
-              "__type": "Sandbox.Rigidbody",
-              "__guid": "22c4d96f-1095-4571-b2b3-4cfb55a23f44",
-              "AngularDamping": 0,
-              "Gravity": true,
-              "LinearDamping": 0,
-              "Locking": {},
-              "MassOverride": 50000,
-              "MotionEnabled": true,
-              "RigidbodyFlags": 0,
-              "StartAsleep": false
-            }
-          ]
-        },
         {
           "__guid": "e9345629-53d9-4f5a-96d3-a25c419c10b7",
           "Flags": 0,
@@ -921,15 +962,7 @@
           "SpawnPoints": [
             {
               "_type": "gameobject",
-              "go": "f3c00137-f2de-4467-88d0-05f11a8099bd"
-            },
-            {
-              "_type": "gameobject",
-              "go": "308b5578-2687-4375-96d5-003a8b156ee2"
-            },
-            {
-              "_type": "gameobject",
-              "go": "1be74bfb-30d8-4491-aa17-d1b63af196a6"
+              "go": "76f02d74-4b63-46e9-967f-d1f5ed2f3ad9"
             }
           ],
           "StartServer": true
@@ -965,6 +998,14 @@
           "Enabled": true
         }
       ]
+    },
+    {
+      "__guid": "76f02d74-4b63-46e9-967f-d1f5ed2f3ad9",
+      "Flags": 0,
+      "Name": "TempSpawn",
+      "Position": "5262.737,622.0399,2431.577",
+      "Rotation": "0,0,1,-0.00000004371139",
+      "Enabled": true
     }
   ],
   "SceneProperties": {

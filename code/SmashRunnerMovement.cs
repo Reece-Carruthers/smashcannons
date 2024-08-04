@@ -35,9 +35,11 @@ public sealed class SmashRunnerMovement : Component
 	[Category( "Objects" )] [Property] public GameObject Head { get; set; }
 	[Category( "Objects" )] [Property] public GameObject Body { get; set; }
 
-	[Sync] public bool IsCrouching  { get; set; } = false;
-	[Sync] private bool IsSprinting  { get; set; } = false;
+	[Sync] public bool IsCrouching { get; set; } = false;
+	[Sync] private bool IsSprinting { get; set; } = false;
 	[Sync] Angles TargetAngle { get; set; } = Angles.Zero;
+
+	[Sync] private ClothingContainer clothingEntry { get; set; } = null;
 
 	public CharacterController characterController;
 	private CitizenAnimationHelper animationHelper;
@@ -58,6 +60,7 @@ public sealed class SmashRunnerMovement : Component
 			return _local;
 		}
 	}
+
 	private static SmashRunnerMovement _local = null;
 
 
@@ -70,8 +73,7 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnUpdate()
 	{
-
-		if (!Network.IsProxy )
+		if ( !Network.IsProxy )
 		{
 			UpdateCrouch();
 			IsSprinting = Input.Down( "Run" );
@@ -79,9 +81,10 @@ public sealed class SmashRunnerMovement : Component
 			{
 				Jump();
 			}
+
 			TargetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
 		}
-		
+
 		RotateBody();
 		UpdateAnimations();
 	}
@@ -144,7 +147,7 @@ public sealed class SmashRunnerMovement : Component
 	private void RotateBody()
 	{
 		if ( Body is null ) return;
-		
+
 		var rotateDifference = Body.Transform.Rotation.Distance( TargetAngle );
 
 		if ( rotateDifference > 50f || characterController.Velocity.Length > 10f )
@@ -162,12 +165,11 @@ public sealed class SmashRunnerMovement : Component
 
 	private void UpdateAnimations()
 	{
-
 		if ( Network.IsProxy )
 		{
 			BodyRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
 		}
-		
+
 		if ( animationHelper is null ) return;
 
 		animationHelper.WithWishVelocity( WishVelocity );
