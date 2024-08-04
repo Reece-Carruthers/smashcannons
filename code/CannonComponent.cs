@@ -6,7 +6,6 @@ public sealed class CannonComponent : Component
 	[Property] GameObject Gun { get; set; }
 	[Property] GameObject Bullet { get; set; }
 	[Property] GameObject Muzzle { get; set; }
-	[Property] GameObject GunModel { get; set; }
 
 	[Property]
 	[Category( "Turret" )]
