@@ -21,10 +21,11 @@ public sealed class CannonComponent : Component
 	float turretPitch;
 
 	TimeSince timeSinceLastPrimary = 10;
+	
 
 	 protected override void OnUpdate()
 	{
-		if ( Network.IsProxy ) return;
+		if ( Network.IsProxy && !Network.IsOwner ) return;
 		
 		if ( Input.Down( "Left" ) || Input.Down( "Right" ) )
 		{
@@ -76,8 +77,13 @@ public sealed class CannonComponent : Component
 		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2000.0f;
 
 		Stats.Increment( "balls_fired", 1 );
-		Sound.Play( "sounds/kenney/ui/ui.downvote.sound", Transform.Position );
+		PlaySound( "sounds/kenney/ui/ui.downvote.sound");
 		timeSinceLastPrimary = 0;
-		
+	}
+	
+	[Broadcast]
+	private void PlaySound( string soundName )
+	{
+		Sound.Play( soundName, Transform.Position );
 	}
 }

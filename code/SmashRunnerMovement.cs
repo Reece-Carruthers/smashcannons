@@ -82,6 +82,11 @@ public sealed class SmashRunnerMovement : Component
 				Jump();
 			}
 
+			// if ( Input.Pressed( "Use" ) )
+			// {
+			// 	// TryTakeCannon();
+			// }
+
 			TargetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
 		}
 
@@ -211,4 +216,23 @@ public sealed class SmashRunnerMovement : Component
 	{
 		animationHelper?.TriggerJump();
 	}
+	
+	private void TryTakeCannon() // TODO: Make this better, trace from eye position or looking direction, work in progress
+	{
+		// var tr = Scene.Trace.WithoutTags( "player" )
+		// 	.Sphere( 16, characterController.Transform.Position, Vector3.Forward * 1000)
+		// 	.WithTag( "cannon_zone" )
+		// 	.Run();
+		
+		var tr = characterController
+			.TraceDirection( Vector3.Forward * 750f);
+
+
+
+		if ( !tr.Hit ) return;
+
+
+		tr.GameObject?.Network.TakeOwnership();
+	}
+
 }

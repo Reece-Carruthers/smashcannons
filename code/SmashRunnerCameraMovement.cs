@@ -106,9 +106,10 @@ public sealed class SmashRunnerCameraMovement : Component
 		}
 	}
 
-	private void
-		UpdateRenderTypes() //TODO: Issues when host has entered first person and a second client joins, body is invisible except head, if host is in first person everyone starts there?
+	private void UpdateRenderTypes() //TODO: Issues when host has entered first person and a second client joins, body is invisible except head, if host is in first person everyone starts there?
 	{
+		if ( Network.IsProxy ) return;
+		
 		if ( modelRenderer is null ) return;
 
 		modelRenderer.RenderType =
