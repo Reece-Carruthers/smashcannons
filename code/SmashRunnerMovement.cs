@@ -201,21 +201,9 @@ public sealed class SmashRunnerMovement : Component
 
 	private bool IsObjectAbove()
 	{
-		var crouchedHeight = characterController.Height;
-		var standingHeight = crouchedHeight * 2;
-		var traceHeight = standingHeight - crouchedHeight;
-
-		var traceStart = characterController.Transform.Position + Vector3.Up * crouchedHeight;
-		var traceEnd = traceStart + Vector3.Up * traceHeight;
-
-
-		var playerTrace = Scene.Trace.Ray( traceStart, traceEnd )
-			.Size( characterController.BoundingBox )
-			.WithoutTags( "player", "trigger" )
-			.UseHitboxes()
-			.Run();
-
-		return playerTrace.Hit;
+		var crouchedHeight = characterController.Height / 2;
+		var tr = characterController.TraceDirection( Vector3.Up * crouchedHeight );
+		return tr.Hit;
 	}
 
 	[Broadcast]

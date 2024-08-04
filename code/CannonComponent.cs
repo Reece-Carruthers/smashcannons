@@ -22,10 +22,10 @@ public sealed class CannonComponent : Component
 
 	TimeSince timeSinceLastPrimary = 10;
 
-	protected override void OnUpdate()
+	 protected override void OnUpdate()
 	{
 		if ( Network.IsProxy ) return;
-
+		
 		if ( Input.Down( "Left" ) || Input.Down( "Right" ) )
 		{
 			MoveYaw();
