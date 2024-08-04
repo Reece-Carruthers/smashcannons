@@ -4,7 +4,7 @@ public sealed class SmashRunnerCameraMovement : Component
 {
 	[Category( "Camera Settings" )]
 	[Property]
-	private float Distance { get; set; } = 0f;
+	private float Distance { get; set; } = 300f;
 
 	[Category( "Camera Settings" )]
 	[Property]
@@ -17,20 +17,26 @@ public sealed class SmashRunnerCameraMovement : Component
 	[Category( "Camera Settings" )]
 	[Property]
 	private float CameraLerpSpeed { get; set; } = 5f;
-	
+
 	private SmashRunnerMovement Player { get; set; }
 	private GameObject Body { get; set; }
 	private GameObject Head { get; set; }
 
-	private bool IsFirstPerson => Distance <= 15f; // Prevents clipping inside of the model when zooming in, this might have to change based on FOV?
+	private bool IsFirstPerson =>
+		Distance <= 20f; // Prevents clipping inside the model when zooming in, this might have to change based on FOV?
+
 	private Vector3 CurrentOffset = Vector3.Zero;
 	private CameraComponent Camera;
 	private float targetCameraDistance;
-
+	private SkinnedModelRenderer modelRenderer;
+	private bool lastIsFirstPerson;
+	
 	protected override void OnAwake()
 	{
 		Camera = Components.Get<CameraComponent>();
+		Camera.FieldOfView = 90f;
 		targetCameraDistance = Distance;
+		lastIsFirstPerson = IsFirstPerson;
 	}
 
 	protected override void OnUpdate()
@@ -40,8 +46,9 @@ public sealed class SmashRunnerCameraMovement : Component
 			Player = SmashRunnerMovement.Local;
 			Body = Player.Body;
 			Head = Player.Head;
+			modelRenderer = Body.Components.Get<SkinnedModelRenderer>();
 		}
-		
+
 		var eyeAngles = Head.Transform.Rotation.Angles();
 		eyeAngles.pitch += Input.MouseDelta.y * 0.1f;
 		eyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
@@ -53,47 +60,66 @@ public sealed class SmashRunnerCameraMovement : Component
 		if ( Player.IsCrouching && Player.characterController.IsOnGround ) targetOffset += Vector3.Down * 32f;
 		CurrentOffset = Vector3.Lerp( CurrentOffset, targetOffset, Time.Delta * 10f );
 
+		if ( Camera is null ) return;
+
 		HandleCameraZoom();
 
-		if ( Camera is not null )
+		var camPos = Head.Transform.Position + CurrentOffset;
+		if ( !IsFirstPerson )
 		{
-			var camPos = Head.Transform.Position + CurrentOffset;
-			if ( !IsFirstPerson )
+			var camForward = eyeAngles.ToRotation().Forward;
+			var camTrace = Scene.Trace.Ray( camPos, camPos - (camForward * Distance) )
+				.WithoutTags( "player", "trigger" )
+				.Run();
+			if ( camTrace.Hit )
 			{
-				var camForward = eyeAngles.ToRotation().Forward;
-				var camTrace = Scene.Trace.Ray( camPos, camPos - (camForward * Distance) )
-					.WithoutTags( "player", "trigger" )
-					.Run();
-				if ( camTrace.Hit )
-				{
-					camPos = camTrace.HitPosition + camTrace.Normal;
-				}
-				else
-				{
-					camPos = camTrace.EndPosition;
-				}
+				camPos = camTrace.HitPosition + camTrace.Normal;
 			}
+			else
+			{
+				camPos = camTrace.EndPosition;
+			}
+		}
 
-			Camera.Transform.Position = camPos;
-			Camera.Transform.Rotation = eyeAngles.ToRotation();
+		if ( IsFirstPerson != lastIsFirstPerson )
+		{
+			UpdateRenderTypes();
+			lastIsFirstPerson = IsFirstPerson;
+		}
+
+		Camera.Transform.Position = camPos;
+		Camera.Transform.Rotation = eyeAngles.ToRotation();
+	}
+
+	private void HandleCameraZoom()
+	{
+		var cameraZoom = Input.MouseWheel.y * CameraZoomSpeed;
+		targetCameraDistance -= cameraZoom;
+
+		targetCameraDistance = Math.Clamp( targetCameraDistance, 0f, MaxCameraZoom );
+		Distance = MathX.Lerp( Distance, targetCameraDistance, Time.Delta * CameraLerpSpeed );
+
+		const float snapThreshold = 1f;
+		if ( Math.Abs( Distance - targetCameraDistance ) < snapThreshold )
+		{
+			Distance = targetCameraDistance;
 		}
 	}
 
-	void HandleCameraZoom()
+	private void
+		UpdateRenderTypes() //TODO: Issues when host has entered first person and a second client joins, body is invisible except head, if host is in first person everyone starts there?
 	{
-		if ( Camera is not null )
+		if ( modelRenderer is null ) return;
+
+		modelRenderer.RenderType =
+			IsFirstPerson ? ModelRenderer.ShadowRenderType.ShadowsOnly : ModelRenderer.ShadowRenderType.On;
+		var clothingList = Body.Components.GetAll<SkinnedModelRenderer>( FindMode.EverythingInDescendants )
+			.Where( x => x.Tags.Has( "clothing" ) );
+		foreach ( var clothing in clothingList )
 		{
-			var cameraZoom = Input.MouseWheel.y * CameraZoomSpeed;
-			targetCameraDistance -= cameraZoom;
-
-			targetCameraDistance = Math.Clamp( targetCameraDistance, 0f, MaxCameraZoom );
-			Distance = MathX.Lerp( Distance, targetCameraDistance, Time.Delta * CameraLerpSpeed );
-
-			const float snapThreshold = 1f;
-			if ( Math.Abs( Distance - targetCameraDistance ) < snapThreshold )
-			{
-				Distance = targetCameraDistance;
-			}
+			clothing.RenderType = IsFirstPerson
+				? ModelRenderer.ShadowRenderType.ShadowsOnly
+				: ModelRenderer.ShadowRenderType.On;
 		}
 	}
 }

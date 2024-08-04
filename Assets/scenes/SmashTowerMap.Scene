@@ -116,6 +116,8 @@
       "Position": "5152,624,2376.911",
       "Enabled": true,
       "NetworkMode": 1,
+      "NetworkOrphaned": 3,
+      "OwnerTransfer": 0,
       "Components": [
         {
           "__type": "CannonComponent",
@@ -127,10 +129,6 @@
           "Gun": {
             "_type": "gameobject",
             "go": "5d8fda91-e097-4ec0-9b62-adb6c9f68bd9"
-          },
-          "GunModel": {
-            "_type": "gameobject",
-            "go": "d3d7d1e5-2540-445d-81cf-0da3ab53116b"
           },
           "Muzzle": {
             "_type": "gameobject",
@@ -832,43 +830,6 @@
       "Enabled": true,
       "Children": [
         {
-          "__guid": "e9345629-53d9-4f5a-96d3-a25c419c10b7",
-          "Flags": 0,
-          "Name": "Test Cube",
-          "Position": "4460.239,1221.843,-2133.556",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "251b3488-301d-47fa-a7ee-82dffbef2bdf",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "db3f30db-1bec-4b8c-a209-7c0c17cc43d7",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "Sandbox.Rigidbody",
-              "__guid": "0a8b3f56-28d4-40bf-84a8-8ba91a7c5f65",
-              "AngularDamping": 500,
-              "Gravity": true,
-              "LinearDamping": 0,
-              "Locking": {},
-              "MassOverride": 5000000,
-              "MotionEnabled": true,
-              "RigidbodyFlags": 0,
-              "StartAsleep": true
-            }
-          ]
-        },
-        {
           "__guid": "6191a49d-9f30-49c4-a97c-8f3bb04bbb91",
           "Flags": 0,
           "Name": "Physics Test Cube",
@@ -903,43 +864,6 @@
               "MotionEnabled": true,
               "RigidbodyFlags": 0,
               "StartAsleep": true
-            }
-          ]
-        },
-        {
-          "__guid": "4e1f5b84-b37b-48fa-89cf-c1ef63147958",
-          "Flags": 0,
-          "Name": "TestBall",
-          "Position": "4348.187,712.4451,-1844.546",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "d0ac6b6b-f440-435f-93f6-8eae23e8f458",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/sphere.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.SphereCollider",
-              "__guid": "a4d37c9a-d8d8-4ee2-9acf-686e2f13b5dc",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Radius": 10,
-              "Static": false
-            },
-            {
-              "__type": "Sandbox.Rigidbody",
-              "__guid": "c0786a0c-177c-4759-9cab-465561f8514a",
-              "AngularDamping": 0,
-              "Gravity": true,
-              "LinearDamping": 0,
-              "Locking": {},
-              "MassOverride": 1000000,
-              "MotionEnabled": true,
-              "RigidbodyFlags": 0,
-              "StartAsleep": false
             }
           ]
         }
