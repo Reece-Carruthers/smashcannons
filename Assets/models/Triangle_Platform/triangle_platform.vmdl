@@ -11,9 +11,9 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models\\Triangle_Platform\\dmx\\mesh\\triangle_platform.dmx"
+						filename = "models/triangle_platform/dmx/mesh/triangle_platform_tex.dmx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, -135.0, 0.0 ]
 						import_scale = 1.0
 						align_origin_x_type = "None"
 						align_origin_y_type = "None"
