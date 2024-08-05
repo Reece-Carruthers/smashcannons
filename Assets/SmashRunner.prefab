@@ -69,6 +69,24 @@
         "Radius": 7,
         "Start": "0,0,16.87134",
         "Static": false
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "026d33ef-c09c-4f98-aac0-a3ed24b2bf35",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {
+          "Y": true,
+          "Z": true,
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
       }
     ],
     "Children": [
