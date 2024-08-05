@@ -27,7 +27,7 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 
 	private Vector3 CurrentOffset = Vector3.Zero;
 	private CameraComponent Camera;
-	private float targetCameraDistance;
+	private float targetCameraDistance = 300f;
 	private SkinnedModelRenderer modelRenderer;
 	private bool lastIsFirstPerson;
 
@@ -35,10 +35,6 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 	{
 		Camera = Components.Get<CameraComponent>();
 		Camera.FieldOfView = 90f;
-
-
-		if ( Network.IsProxy ) return;
-		targetCameraDistance = Distance;
 		lastIsFirstPerson = IsFirstPerson;
 	}
 
