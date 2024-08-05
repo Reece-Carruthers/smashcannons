@@ -53,7 +53,11 @@
         "kvien.icewall01_pixel#37130",
         "kvien.metalwall02_pixel#37210",
         "kvien.metal03_pixel#37091",
-        "facepunch.concrete_b_hs#28971"
+        "facepunch.concrete_b_hs#28971",
+        "kvien.brickwall04_pixel#37226",
+        "facepunch.cinderblocks_01_hs#28856",
+        "rustextended.tiles_c#43322",
+        "mrtrn.mrtrn_stonewall2#34619"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/smashtower.vmap"

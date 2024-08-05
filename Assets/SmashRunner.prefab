@@ -60,6 +60,15 @@
           "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
           "component_type": "SkinnedModelRenderer"
         }
+      },
+      {
+        "__type": "Sandbox.CapsuleCollider",
+        "__guid": "26c53938-50f2-40f5-912d-b517c97e3b32",
+        "End": "0,0,64.38866",
+        "IsTrigger": false,
+        "Radius": 7,
+        "Start": "0,0,16.87134",
+        "Static": false
       }
     ],
     "Children": [
