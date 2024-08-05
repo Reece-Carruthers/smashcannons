@@ -5,7 +5,8 @@ using Sandbox.Citizen;
 
 public sealed class SmashRunnerMovement : Component
 {
-	[Category( "Team" )] private Team TeamCategory { get; set; } = new SmashTeam();
+	[HostSync] public int PlayerSlot { get; set; }
+	[Category( "Team" )] public Team TeamCategory { get; set; } = new RunnerTeam();
 
 	[Category( "Movement Properties" )]
 	[Property]
@@ -50,7 +51,7 @@ public sealed class SmashRunnerMovement : Component
 
 	Vector3 WishVelocity = Vector3.Zero;
 
-	private bool isControllingCannon { get; set; } = false; //TODO: How do we relieve this if not controlling cannon?
+	private bool isControllingCannon { get; set; } = false;
 	private CannonComponent cannon { get; set; } = null;
 
 	public static SmashRunnerMovement Local

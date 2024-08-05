@@ -1908,8 +1908,9 @@
         {
           "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
           "Flags": 0,
-          "Name": "Spawn1",
+          "Name": "RunnerSpawn1",
           "Position": "0,-113.7726,-37.5719",
+          "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
             {
@@ -1922,14 +1923,47 @@
         {
           "__guid": "0fa55dc8-0140-4bc7-91db-f709d1c2e30d",
           "Flags": 0,
-          "Name": "Spawn2",
-          "Position": "0,-25.85325,-37.5719",
+          "Name": "RunnerSpawn2",
+          "Position": "0,140.9131,-37.5719",
+          "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
             {
               "__type": "PlayerSpawn",
               "__guid": "a99a240e-a68e-48a6-a0e4-6f91d59f11e3",
               "Index": 1
+            }
+          ]
+        },
+        {
+          "__guid": "119298c3-d02d-48cc-ba1b-e8f2859c288a",
+          "Flags": 0,
+          "Name": "CannonSpawn2",
+          "Position": "6528.533,-592.6637,871.4871",
+          "Rotation": "0,0,1,-0.00000004371139",
+          "Tags": "cannon_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "36b38068-32fc-4171-82b2-bab06028a7c5",
+              "Index": 1
+            }
+          ]
+        },
+        {
+          "__guid": "52964049-9b07-4a23-b9e9-58fbc1f77e79",
+          "Flags": 0,
+          "Name": "CannonSpawn1",
+          "Position": "6528.533,662.5768,871.4873",
+          "Rotation": "0,0,1,-0.00000004371139",
+          "Tags": "cannon_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "bd1805b1-1dcd-4487-ba80-2a9938114c29",
+              "Index": 0
             }
           ]
         }
@@ -2531,11 +2565,11 @@
       "Flags": 0,
       "Name": "Network Helper",
       "Position": "4456.902,1566.449,2889.958",
-      "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.NetworkHelper",
           "__guid": "210e13c0-6ab9-4a7a-ba73-491419acb5d6",
+          "__enabled": false,
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "smashrunner.prefab"
@@ -2624,11 +2658,19 @@
       "Flags": 0,
       "Name": "SmashCannon",
       "Position": "-249.6682,-66.61744,35.22605",
+      "Enabled": true,
       "Components": [
         {
           "__type": "SmashCannon",
           "__guid": "9b349d4f-f386-4a50-86e0-bb48719a328c",
-          "__enabled": false
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "smashrunner.prefab"
+          },
+          "Spawnpoints": {
+            "_type": "gameobject",
+            "go": "5992d8cb-7ca2-494a-94d6-856e17351b26"
+          }
         }
       ]
     }
