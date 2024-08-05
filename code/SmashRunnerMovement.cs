@@ -172,7 +172,7 @@ public sealed class SmashRunnerMovement : Component
 	{
 		if ( Network.IsProxy )
 		{
-			BodyRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
+			RenderModelAndClothes();
 		}
 
 		if ( animationHelper is null ) return;
@@ -233,6 +233,18 @@ public sealed class SmashRunnerMovement : Component
 
 
 		tr.GameObject?.Network.TakeOwnership();
+	}
+
+	private void RenderModelAndClothes()
+	{
+		BodyRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
+		
+		var clothingList = Body.Components.GetAll<SkinnedModelRenderer>( FindMode.EverythingInDescendants )
+			.Where( x => x.Tags.Has( "clothing" ) );
+		foreach ( var clothing in clothingList )
+		{
+			clothing.RenderType = ModelRenderer.ShadowRenderType.On;
+		}
 	}
 
 }
