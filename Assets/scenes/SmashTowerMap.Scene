@@ -79,7 +79,7 @@
       "Flags": 0,
       "Name": "Cannon",
       "Position": "4790.604,624,2376.911",
-      "Tags": "cannon,trigger",
+      "Tags": "cannon,trigger,cannon_zone",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 3,
@@ -2594,33 +2594,6 @@
       ]
     },
     {
-      "__guid": "caaa354f-f08c-4e7d-afe8-b657719266ce",
-      "Flags": 0,
-      "Name": "cannon_trigger",
-      "Position": "4841.343,623.503,2445.418",
-      "Scale": "0.2141273,6.367137,4.266073",
-      "Tags": "cannon_zone",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "c5017367-f249-4085-9135-a1d0be9a7ec7",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,0"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "9356d3f8-8e79-406d-8e80-34f6f27a361e",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "fa3c141e-6b44-45a3-bf26-b0b10f6fa10c",
       "Flags": 0,
       "Name": "Plane",
@@ -2651,11 +2624,11 @@
       "Flags": 0,
       "Name": "SmashCannon",
       "Position": "-249.6682,-66.61744,35.22605",
-      "Enabled": true,
       "Components": [
         {
           "__type": "SmashCannon",
-          "__guid": "9b349d4f-f386-4a50-86e0-bb48719a328c"
+          "__guid": "9b349d4f-f386-4a50-86e0-bb48719a328c",
+          "__enabled": false
         }
       ]
     }

@@ -50,7 +50,8 @@ public sealed class SmashRunnerMovement : Component
 
 	Vector3 WishVelocity = Vector3.Zero;
 
-	private bool isControllingCannon { get; set; } = false;
+	private bool isControllingCannon { get; set; } = false; //TODO: How do we relieve this if not controlling cannon?
+	private CannonComponent cannon { get; set; } = null;
 
 	public static SmashRunnerMovement Local
 	{
@@ -78,6 +79,11 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnUpdate()
 	{
+		if ( cannon is not null && cannon.Network.OwnerConnection != Network.OwnerConnection )
+		{
+			isControllingCannon = false;
+		}
+		
 		if ( isControllingCannon ) return;
 		if ( !Network.IsProxy )
 		{
@@ -104,9 +110,9 @@ public sealed class SmashRunnerMovement : Component
 	{
 		if ( Network.IsProxy ) return;
 		if ( isControllingCannon ) return;
-		
-			BuildWishVelocity();
-			Move();
+
+		BuildWishVelocity();
+		Move();
 	}
 
 	private void Move()
@@ -235,17 +241,19 @@ public sealed class SmashRunnerMovement : Component
 			.Run();
 
 		if ( !tr.Hit || !tr.GameObject.Tags.Has( "cannon_zone" ) ) return;
-		
+
 		var cannonComponent = tr.GameObject.Components.Get<CannonComponent>();
 
 		if ( cannonComponent is null ) return;
+
 		var takeOverResult = tr.GameObject.Network.TakeOwnership();
 
 		if ( takeOverResult )
 		{
 			cannonComponent.CurrentController = Network.OwnerConnection;
 			isControllingCannon = true;
-			WishVelocity = Vector3.Zero;
+			cannon = cannonComponent;
+			characterController.Velocity = Vector3.Zero;
 		}
 	}
 
