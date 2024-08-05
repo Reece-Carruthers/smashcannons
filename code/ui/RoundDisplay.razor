@@ -1,0 +1,37 @@
+@using System;
+@using Sandbox;
+@using Sandbox.UI;
+
+@attribute [StyleSheet( "RoundDisplay.razor.scss" )]
+@inherits Panel
+
+<root>
+	<div class="container">
+		@* <label class="status">@GetRoundName()</label> *@
+		<label class="time">@GetTimeLeftString()</label>
+	</div>
+</root>
+
+@code
+{
+	protected override int BuildHash()
+	{
+		return HashCode.Combine( GetTimeLeftString(), GetRoundName());
+	}
+
+	private string GetTimeLeftString()
+	{
+		var state = StateSystem.Active;
+		if ( !state.IsValid() ) return string.Empty;
+	    
+		var timeLeft = MathF.Max( state.TimeLeft, 0 );
+		var t = TimeSpan.FromSeconds( timeLeft );
+		return $"{t.Minutes}:{t.Seconds:D2}";
+	}
+	
+	private string GetRoundName()
+	{
+		var state = StateSystem.Active;
+		return !state.IsValid() ? string.Empty : state.Name;
+	}
+}

@@ -57,7 +57,9 @@
         "kvien.brickwall04_pixel#37226",
         "facepunch.cinderblocks_01_hs#28856",
         "rustextended.tiles_c#43322",
-        "mrtrn.mrtrn_stonewall2#34619"
+        "mrtrn.mrtrn_stonewall2#34619",
+        "facepunch.metal_trim_02#47037",
+        "rustextended.metal_panels_g#43310"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/smashtower.vmap"
