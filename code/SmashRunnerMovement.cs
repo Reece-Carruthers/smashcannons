@@ -1,12 +1,12 @@
+using System.ComponentModel.Design.Serialization;
 using Sandbox;
 using Sandbox.Citizen;
 
 
 public sealed class SmashRunnerMovement : Component
 {
-	[Category( "Team" )]
-	private Team TeamCategory { get; set; } = new RunnerTeam();
-	
+	[Category( "Team" )] private Team TeamCategory { get; set; } = new SmashTeam();
+
 	[Category( "Movement Properties" )]
 	[Property]
 	private float GroundControl { get; set; } = 4.0f;
@@ -50,6 +50,8 @@ public sealed class SmashRunnerMovement : Component
 
 	Vector3 WishVelocity = Vector3.Zero;
 
+	private bool isControllingCannon { get; set; } = false;
+
 	public static SmashRunnerMovement Local
 	{
 		get
@@ -76,6 +78,7 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnUpdate()
 	{
+		if ( isControllingCannon ) return;
 		if ( !Network.IsProxy )
 		{
 			UpdateCrouch();
@@ -100,8 +103,10 @@ public sealed class SmashRunnerMovement : Component
 	protected override void OnFixedUpdate()
 	{
 		if ( Network.IsProxy ) return;
-		BuildWishVelocity();
-		Move();
+		if ( isControllingCannon ) return;
+		
+			BuildWishVelocity();
+			Move();
 	}
 
 	private void Move()
@@ -225,20 +230,23 @@ public sealed class SmashRunnerMovement : Component
 		var forwardDirection = Head.Transform.Rotation.Up;
 
 		var tr = Scene.Trace.WithoutTags( "player" )
-			.Sphere( 128, characterController.Transform.Position, characterController.Transform.Position + forwardDirection * 50f)
+			.Sphere( 128, characterController.Transform.Position,
+				characterController.Transform.Position + forwardDirection * 50f )
 			.Run();
 
-		if ( !tr.Hit ) return;
-
-		if ( !tr.GameObject.Tags.Has( "cannon_zone" ) ) return;
-
-		var cannonComponent = tr.GameObject.Components.Get<CannonComponent>();
+		if ( !tr.Hit || !tr.GameObject.Tags.Has( "cannon_zone" ) ) return;
 		
-		if ( cannonComponent is null ) return;
-		Log.Info( "HERE" );
-		tr.GameObject.Network.TakeOwnership();
-		cannonComponent.CurrentController = Network.OwnerConnection;
+		var cannonComponent = tr.GameObject.Components.Get<CannonComponent>();
 
+		if ( cannonComponent is null ) return;
+		var takeOverResult = tr.GameObject.Network.TakeOwnership();
+
+		if ( takeOverResult )
+		{
+			cannonComponent.CurrentController = Network.OwnerConnection;
+			isControllingCannon = true;
+			WishVelocity = Vector3.Zero;
+		}
 	}
 
 	private void RenderModelAndClothes()

@@ -1,4 +1,4 @@
-public class SmashTeam : Team
+public class RunnerTeam : Team
 {
 	public override bool CanControlCannon()
 	{
