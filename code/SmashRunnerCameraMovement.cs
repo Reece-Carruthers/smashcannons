@@ -1,6 +1,6 @@
 using System;
 
-public sealed class SmashRunnerCameraMovement : Component
+public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionListener
 {
 	[Category( "Camera Settings" )]
 	[Property]
@@ -30,17 +30,22 @@ public sealed class SmashRunnerCameraMovement : Component
 	private float targetCameraDistance;
 	private SkinnedModelRenderer modelRenderer;
 	private bool lastIsFirstPerson;
-	
+
 	protected override void OnAwake()
 	{
 		Camera = Components.Get<CameraComponent>();
 		Camera.FieldOfView = 90f;
+
+
+		if ( Network.IsProxy ) return;
 		targetCameraDistance = Distance;
 		lastIsFirstPerson = IsFirstPerson;
 	}
 
 	protected override void OnUpdate()
 	{
+		if ( Network.IsProxy ) return;
+
 		if ( Player is null )
 		{
 			Player = SmashRunnerMovement.Local;
@@ -106,10 +111,9 @@ public sealed class SmashRunnerCameraMovement : Component
 		}
 	}
 
-	private void UpdateRenderTypes() //TODO: Issues when host has entered first person and a second client joins, body is invisible except head, if host is in first person everyone starts there?
+	private void
+		UpdateRenderTypes() //TODO: Issues when host has entered first person and a second client joins, body is invisible except head, if host is in first person everyone starts there?
 	{
-		if ( Network.IsProxy ) return;
-		
 		if ( modelRenderer is null ) return;
 
 		modelRenderer.RenderType =
