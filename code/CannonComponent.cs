@@ -21,12 +21,16 @@ public sealed class CannonComponent : Component
 	float turretPitch;
 
 	TimeSince timeSinceLastPrimary = 10;
+
+	public Connection CurrentController { get; set; } = null;
 	
 
 	 protected override void OnUpdate()
 	{
-		if ( Network.IsProxy && !Network.IsOwner ) return;
-		
+		if ( Network.IsProxy && !Network.IsOwner) return;
+
+		if ( CurrentController != Network.OwnerConnection || CurrentController is null) return;
+
 		if ( Input.Down( "Left" ) || Input.Down( "Right" ) )
 		{
 			MoveYaw();
@@ -44,6 +48,7 @@ public sealed class CannonComponent : Component
 		{
 			Shoot();
 		}
+
 	}
 
 	private void MoveYaw()

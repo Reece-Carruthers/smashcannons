@@ -108,7 +108,7 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 	}
 
 	private void
-		UpdateRenderTypes() //TODO: Issues when host has entered first person and a second client joins, body is invisible except head, if host is in first person everyone starts there?
+		UpdateRenderTypes()
 	{
 		if ( modelRenderer is null ) return;
 

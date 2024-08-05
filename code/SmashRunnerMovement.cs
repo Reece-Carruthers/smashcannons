@@ -4,6 +4,9 @@ using Sandbox.Citizen;
 
 public sealed class SmashRunnerMovement : Component
 {
+	[Category( "Team" )]
+	private Team TeamCategory { get; set; } = new RunnerTeam();
+	
 	[Category( "Movement Properties" )]
 	[Property]
 	private float GroundControl { get; set; } = 4.0f;
@@ -82,10 +85,10 @@ public sealed class SmashRunnerMovement : Component
 				Jump();
 			}
 
-			// if ( Input.Pressed( "Use" ) )
-			// {
-			// 	// TryTakeCannon();
-			// }
+			if ( Input.Pressed( "Use" ) && TeamCategory.CanControlCannon() )
+			{
+				TryTakeCannon();
+			}
 
 			TargetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
 		}
@@ -216,29 +219,32 @@ public sealed class SmashRunnerMovement : Component
 	{
 		animationHelper?.TriggerJump();
 	}
-	
-	private void TryTakeCannon() // TODO: Make this better, trace from eye position or looking direction, work in progress
+
+	private void TryTakeCannon()
 	{
-		// var tr = Scene.Trace.WithoutTags( "player" )
-		// 	.Sphere( 16, characterController.Transform.Position, Vector3.Forward * 1000)
-		// 	.WithTag( "cannon_zone" )
-		// 	.Run();
-		
-		var tr = characterController
-			.TraceDirection( Vector3.Forward * 750f);
+		var forwardDirection = Head.Transform.Rotation.Up;
 
-
+		var tr = Scene.Trace.WithoutTags( "player" )
+			.Sphere( 128, characterController.Transform.Position, characterController.Transform.Position + forwardDirection * 50f)
+			.Run();
 
 		if ( !tr.Hit ) return;
 
+		if ( !tr.GameObject.Tags.Has( "cannon_zone" ) ) return;
 
-		tr.GameObject?.Network.TakeOwnership();
+		var cannonComponent = tr.GameObject.Components.Get<CannonComponent>();
+		
+		if ( cannonComponent is null ) return;
+		Log.Info( "HERE" );
+		tr.GameObject.Network.TakeOwnership();
+		cannonComponent.CurrentController = Network.OwnerConnection;
+
 	}
 
 	private void RenderModelAndClothes()
 	{
 		BodyRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
-		
+
 		var clothingList = Body.Components.GetAll<SkinnedModelRenderer>( FindMode.EverythingInDescendants )
 			.Where( x => x.Tags.Has( "clothing" ) );
 		foreach ( var clothing in clothingList )
@@ -246,5 +252,4 @@ public sealed class SmashRunnerMovement : Component
 			clothing.RenderType = ModelRenderer.ShadowRenderType.On;
 		}
 	}
-
 }

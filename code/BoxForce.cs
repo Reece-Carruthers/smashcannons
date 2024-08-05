@@ -4,12 +4,8 @@ public sealed class BoxForce : Component, Component.ICollisionListener
 
     public void OnCollisionStart( Collision collision )
     {
-        Log.Info( "OUTSIDE" );
-
         if (!collision.Other.GameObject.Tags.Has( "player" ) ) return;
-
-        Log.Info( "HERE" );
-
+        
         var player = collision.Other.Body;
 
         // var normal = collision.Contact.Normal;

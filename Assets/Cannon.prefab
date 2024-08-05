@@ -3,6 +3,8 @@
     "__guid": "5d8fda91-e097-4ec0-9b62-adb6c9f68bd9",
     "Flags": 0,
     "Name": "cannon",
+    "Position": "0,0,15.26577",
+    "Tags": "trigger,cannon_zone",
     "Enabled": true,
     "NetworkMode": 1,
     "NetworkOrphaned": 3,
@@ -25,6 +27,14 @@
         },
         "TurretPitchSpeed": 0.2,
         "TurretYawSpeed": 0.08952
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "ec363b2e-41b7-4b46-a115-6125e6d29c59",
+        "Center": "145.6,0,0",
+        "IsTrigger": false,
+        "Scale": "300,300,300",
+        "Static": false
       }
     ],
     "Children": [
