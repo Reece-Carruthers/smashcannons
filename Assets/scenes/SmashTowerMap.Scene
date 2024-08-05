@@ -1,5 +1,5 @@
 {
-  "__guid": "7e4f823e-a42c-4316-b804-3416f842873c",
+  "__guid": "168af8e5-023c-42a2-8ee6-b2d524d96e1e",
   "GameObjects": [
     {
       "__guid": "5372e293-a570-43ea-9d44-ef04a0b1c05c",
@@ -43,7 +43,7 @@
       "__guid": "6edfc06f-798c-4088-aaab-d70c05403ba7",
       "Flags": 0,
       "Name": "KillCollider",
-      "Position": "1408,40,144",
+      "Position": "1408,40,234.2456",
       "Enabled": true,
       "Components": [
         {
@@ -79,7 +79,7 @@
       "Flags": 0,
       "Name": "Cannon",
       "Position": "4835.417,624,2376.911",
-      "Tags": "player,cannon",
+      "Tags": "cannon,player",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 3,
@@ -1908,9 +1908,30 @@
         {
           "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
           "Flags": 0,
-          "Name": "SpawnPoint",
-          "Position": "0,0,0",
-          "Enabled": true
+          "Name": "Spawn1",
+          "Position": "0,-113.7726,-37.5719",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "0393819a-b900-459e-9117-a9f82ca436da",
+              "Index": 0
+            }
+          ]
+        },
+        {
+          "__guid": "0fa55dc8-0140-4bc7-91db-f709d1c2e30d",
+          "Flags": 0,
+          "Name": "Spawn2",
+          "Position": "0,-25.85325,-37.5719",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "a99a240e-a68e-48a6-a0e4-6f91d59f11e3",
+              "Index": 1
+            }
+          ]
         }
       ]
     },
@@ -2103,22 +2124,22 @@
                   "0.25,0.2500004",
                   "0.25,0.25",
                   "0.25,0.2500004",
-                  "0.25,0.2500004",
+                  "0.125,0.1250002",
                   "0.25,0.25",
-                  "0.25,0.2500016",
+                  "0.125,0.1250008",
                   "1.065652,1.000001",
-                  "0.25,0.2500016",
-                  "0.2664129,0.25",
-                  "0.2500001,0.2500014",
-                  "0.25,0.2500016",
+                  "0.125,0.1250008",
+                  "0.1332065,0.125",
+                  "0.1250001,0.1250007",
+                  "0.125,0.1250008",
                   "0.9999982,0.9999994",
-                  "0.25,0.2500016",
-                  "0.2500003,0.2499999",
+                  "0.125,0.1250008",
+                  "0.1250001,0.125",
                   "1.000004,1",
-                  "0.2812762,0.2500014",
-                  "0.2500003,0.2499999",
-                  "0.2816854,0.2500014",
-                  "0.2500003,0.2500002",
+                  "0.1406381,0.1250007",
+                  "0.1250002,0.125",
+                  "0.1408427,0.1250007",
+                  "0.1250001,0.1250001",
                   "1.000004,1"
                 ],
                 "TextureOffset": [
@@ -2127,22 +2148,22 @@
                   "320.7773,31.27954",
                   "403.0308,90.98779",
                   "263.832,31.28052",
-                  "248.168,31.28021",
+                  "496.3359,62.56042",
                   "403.0308,90.98779",
-                  "36.87891,452.2793",
+                  "73.75781,904.5586",
                   "500.938,211.811",
-                  "475.1211,452.2793",
-                  "132.6168,211.8108",
-                  "191.2106,31.22559",
-                  "36.87695,452.2256",
+                  "950.2422,904.5586",
+                  "265.2336,423.6216",
+                  "382.4211,62.45117",
+                  "73.75391,904.4512",
                   "475.1348,211.8042",
-                  "475.123,452.2256",
-                  "475.1504,211.8068",
+                  "950.2461,904.4512",
+                  "950.3008,423.6135",
                   "475.1709,211.8223",
-                  "168.2627,31.22559",
-                  "475.1543,211.8059",
-                  "294.5367,31.22412",
-                  "475.1504,211.8263",
+                  "336.5254,62.45117",
+                  "950.3086,423.6118",
+                  "589.0735,62.44824",
+                  "950.3008,423.6526",
                   "475.1709,211.8076"
                 ],
                 "MaterialIndex": [
@@ -2329,13 +2350,32 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.Prop",
-              "__guid": "08ad4a65-8b3c-48e3-8a14-377806640f96",
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "75b3bf26-790b-4f47-a5ae-e616f5c7e4a5",
               "BodyGroups": 18446744073709551615,
-              "Health": 0,
-              "IsStatic": false,
+              "MaterialOverride": "materials/terrain/grass/terrain_grass.vmat",
               "Model": "models/cone.vmdl",
+              "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "627096d8-672b-42da-9282-cb3e45361de6",
+              "IsTrigger": false,
+              "Model": "models/cone.vmdl",
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "63893b4b-1381-4e54-9fdf-d5167fcee28b",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
             }
           ]
         },
@@ -2343,7 +2383,7 @@
           "__guid": "0c4a4b6e-0c32-4f69-9cd6-56af14a606c2",
           "Flags": 0,
           "Name": "cone (3)",
-          "Position": "-762.8628,-1444.324,-1036.614",
+          "Position": "-762.8623,-1430.754,-1036.614",
           "Rotation": "-0.1755095,0,0.9844778,0",
           "Scale": "4.528905,4.528905,4.528905",
           "Enabled": true,
@@ -2382,7 +2422,7 @@
           "__guid": "8291af19-d460-4651-9cd4-d1905543751a",
           "Flags": 0,
           "Name": "cylinder",
-          "Position": "1235.375,-679.667,-535.8542",
+          "Position": "1236.282,-610.6458,-545.8091",
           "Rotation": "-0.04550784,0,0.998964,0",
           "Scale": "5.352138,9.868693,2.070368",
           "Enabled": true,
@@ -2408,13 +2448,32 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.Prop",
-              "__guid": "c4a474ca-ee35-4098-b1c6-45e4bd7e4327",
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ce4aeaa5-3e32-4285-b512-c99bbadb2f3b",
               "BodyGroups": 18446744073709551615,
-              "Health": 0,
-              "IsStatic": false,
+              "MaterialOverride": "materials/terrain/grass/terrain_grass.vmat",
               "Model": "models/cone.vmdl",
+              "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "56618512-bcb3-4478-8ca4-a5f8a60e0203",
+              "IsTrigger": false,
+              "Model": "models/cone.vmdl",
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "d70a37e2-5906-4cc7-9c43-993dd3b33a47",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
             }
           ]
         },
@@ -2422,7 +2481,7 @@
           "__guid": "496df072-8d97-4bcf-8174-f30997cb5894",
           "Flags": 0,
           "Name": "cylinder (1)",
-          "Position": "37.6792,-1508.181,-973.1211",
+          "Position": "38.54053,-1593.948,-982.5737",
           "Rotation": "-0.04550784,0,0.998964,0",
           "Scale": "5.352138,9.868693,2.070368",
           "Enabled": true,
@@ -2442,7 +2501,7 @@
           "__guid": "fd98746b-5587-43a0-9cf2-b0052fa86359",
           "Flags": 0,
           "Name": "cylinder (2)",
-          "Position": "-1278.185,-724.5806,-1454.494",
+          "Position": "-1276.52,-669.2246,-1472.748",
           "Rotation": "-0.04550784,0,0.998964,0",
           "Scale": "5.352138,9.868693,2.070368",
           "Enabled": true,
@@ -2584,6 +2643,19 @@
           "IsTrigger": false,
           "Scale": "97.69989,98.19991",
           "Static": true
+        }
+      ]
+    },
+    {
+      "__guid": "b4316997-39c7-4816-8099-3d357668ad38",
+      "Flags": 0,
+      "Name": "SmashCannon",
+      "Position": "-249.6682,-66.61744,35.22605",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SmashCannon",
+          "__guid": "9b349d4f-f386-4a50-86e0-bb48719a328c"
         }
       ]
     }

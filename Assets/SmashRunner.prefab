@@ -87,6 +87,18 @@
         "MotionEnabled": true,
         "RigidbodyFlags": 0,
         "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.ScreenPanel",
+        "__guid": "d308c2ed-9b6e-4a6d-844a-e51c08521371",
+        "AutoScreenScale": true,
+        "Opacity": 1,
+        "Scale": 1,
+        "ZIndex": 100
+      },
+      {
+        "__type": "Hud",
+        "__guid": "64b39a67-0f9b-408a-9296-710991b1936a"
       }
     ],
     "Children": [
