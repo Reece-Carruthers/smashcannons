@@ -79,7 +79,7 @@
       "Flags": 0,
       "Name": "Cannon",
       "Position": "4790.604,624,2376.911",
-      "Tags": "cannon,trigger,cannon_zone",
+      "Tags": "cannon_zone,trigger,cannon",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 3,
@@ -1850,55 +1850,6 @@
       ]
     },
     {
-      "__guid": "3b3f51f2-bea6-4258-8f96-5f86ec4cd167",
-      "Flags": 0,
-      "Name": "GameObjects",
-      "Position": "-605.8846,-2688.445,2620.481",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "Children": [
-        {
-          "__guid": "6191a49d-9f30-49c4-a97c-8f3bb04bbb91",
-          "Flags": 0,
-          "Name": "Physics Test Cube",
-          "Position": "-837.7957,1794.018,168.3159",
-          "Rotation": "0,0,-0.1305262,0.9914449",
-          "Enabled": true,
-          "NetworkMode": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "7dcf06be-2fc2-42ec-b914-921c477beacc",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "2bee14a7-68a6-40b3-bfcb-2bc340a173cc",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "Sandbox.Rigidbody",
-              "__guid": "bc0cd0c1-d649-4d65-92e9-b431ebc9146f",
-              "AngularDamping": 0,
-              "Gravity": true,
-              "LinearDamping": 0,
-              "Locking": {},
-              "MassOverride": 500000,
-              "MotionEnabled": true,
-              "RigidbodyFlags": 0,
-              "StartAsleep": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "__guid": "5992d8cb-7ca2-494a-94d6-856e17351b26",
       "Flags": 0,
       "Name": "Spawn Points",
@@ -2561,30 +2512,6 @@
       ]
     },
     {
-      "__guid": "4774cfb9-92f9-48c6-bcd5-a39d8c5c9d69",
-      "Flags": 0,
-      "Name": "Network Helper",
-      "Position": "4456.902,1566.449,2889.958",
-      "Components": [
-        {
-          "__type": "Sandbox.NetworkHelper",
-          "__guid": "210e13c0-6ab9-4a7a-ba73-491419acb5d6",
-          "__enabled": false,
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "prefab": "smashrunner.prefab"
-          },
-          "SpawnPoints": [
-            {
-              "_type": "gameobject",
-              "go": "0205e763-33ad-481d-ad67-2c897462442f"
-            }
-          ],
-          "StartServer": true
-        }
-      ]
-    },
-    {
       "__guid": "0205e763-33ad-481d-ad67-2c897462442f",
       "Flags": 0,
       "Name": "TempCannonSpawn",
@@ -2666,10 +2593,6 @@
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "smashrunner.prefab"
-          },
-          "Spawnpoints": {
-            "_type": "gameobject",
-            "go": "5992d8cb-7ca2-494a-94d6-856e17351b26"
           }
         }
       ]
