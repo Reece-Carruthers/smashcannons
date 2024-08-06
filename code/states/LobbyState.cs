@@ -54,7 +54,7 @@ public class LobbyState : BaseState
 
         players = players.OrderBy(x => random.Next()).ToList();
 
-        var cannonPlayerCount = players.Count >= 3 ? 2 : 1;
+        var cannonPlayerCount = players.Count > 3 ? 2 : 1;
 
         for (var i = 0; i < cannonPlayerCount; i++)
         {
