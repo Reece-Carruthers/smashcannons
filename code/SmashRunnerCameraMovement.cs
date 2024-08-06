@@ -45,9 +45,12 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 		if ( Player is null )
 		{
 			Player = SmashRunnerMovement.Local;
-			Body = Player.Body;
-			Head = Player.Head;
-			modelRenderer = Body.Components.Get<SkinnedModelRenderer>();
+			if ( Player is not null )
+			{
+				Body = Player.Body;
+				Head = Player.Head;
+				modelRenderer = Body.Components.Get<SkinnedModelRenderer>();
+			}
 		}
 
 		var eyeAngles = Head.Transform.Rotation.Angles();

@@ -3,11 +3,11 @@
 
 @inherits PanelComponent
 
-<root>
+<root class="@(!Network.IsProxy ? "" : "hidden")">
 	<RoundDisplay></RoundDisplay>
 </root>
 
 @code
 {
-    
+	protected override int BuildHash() => System.HashCode.Combine( Network.IsProxy );
 }

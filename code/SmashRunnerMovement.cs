@@ -80,33 +80,33 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnUpdate()
 	{
-		if ( Network.IsProxy ) return; //TODO: Is this needed?
-		
-		if ( cannon is not null && cannon.Network.OwnerConnection != Network.OwnerConnection )
+		if ( cannon is not null && cannon.Network.OwnerConnection != Network.OwnerConnection) //TODO: Do we need a is proxy check before setting this?
 		{
 			isControllingCannon = false;
 		}
-		
-		if ( isControllingCannon ) return;
-		if ( !Network.IsProxy )
+
+		if ( !isControllingCannon )
 		{
-			UpdateCrouch();
-			IsSprinting = Input.Down( "Run" );
-			if ( Input.Pressed( "jump" ) )
+			if ( !Network.IsProxy )
 			{
-				Jump();
+				UpdateCrouch();
+				IsSprinting = Input.Down( "Run" );
+				if ( Input.Pressed( "jump" ) )
+				{
+					Jump();
+				}
+
+				if ( Input.Pressed( "Use" ) && TeamCategory.CanControlCannon() )
+				{
+					TryTakeCannon();
+				}
+
+				TargetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
 			}
 
-			if ( Input.Pressed( "Use" ) && TeamCategory.CanControlCannon() )
-			{
-				TryTakeCannon();
-			}
-
-			TargetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
+			RotateBody();
+			UpdateAnimations();
 		}
-
-		RotateBody();
-		UpdateAnimations();
 	}
 
 	protected override void OnFixedUpdate()
