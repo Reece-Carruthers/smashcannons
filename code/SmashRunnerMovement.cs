@@ -273,8 +273,6 @@ public sealed class SmashRunnerMovement : Component
 			clothing.RenderType = ModelRenderer.ShadowRenderType.On;
 		}
 	}
-<<<<<<< Updated upstream
-=======
 
 	public void Kill()
 	{
@@ -291,5 +289,4 @@ public sealed class SmashRunnerMovement : Component
 		ragdollController.Ragdoll( playerPosition, direction );
 	}
 
->>>>>>> Stashed changes
 }
