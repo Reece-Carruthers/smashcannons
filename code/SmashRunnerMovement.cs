@@ -80,6 +80,8 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnUpdate()
 	{
+		if ( Network.IsProxy ) return; //TODO: Is this needed?
+		
 		if ( cannon is not null && cannon.Network.OwnerConnection != Network.OwnerConnection )
 		{
 			isControllingCannon = false;
