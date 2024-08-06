@@ -38,7 +38,9 @@ public sealed class SmashRunnerMovement : Component
 
 	[Category( "Objects" )] [Property] public GameObject Head { get; set; }
 	[Category( "Objects" )] [Property] public GameObject Body { get; set; }
-
+	
+	[HostSync] public LifeState LifeState { get; set; } = LifeState.Alive;
+	
 	[Sync] public bool IsCrouching { get; set; } = false;
 	[Sync] private bool IsSprinting { get; set; } = false;
 	[Sync] Angles TargetAngle { get; set; } = Angles.Zero;
@@ -271,4 +273,23 @@ public sealed class SmashRunnerMovement : Component
 			clothing.RenderType = ModelRenderer.ShadowRenderType.On;
 		}
 	}
+<<<<<<< Updated upstream
+=======
+
+	public void Kill()
+	{
+		Log.Info("Player entered kill trigger");
+		LifeState = LifeState.Dead;
+		Log.Info(LifeState);
+
+		var ragdollController = Components.Get<RagdollController>();
+		if ( ragdollController is null ) return;
+		                        
+		var playerPosition = Transform.Position;
+		
+		var direction = Vector3.Up + new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
+		ragdollController.Ragdoll( playerPosition, direction );
+	}
+
+>>>>>>> Stashed changes
 }

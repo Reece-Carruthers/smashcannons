@@ -99,6 +99,16 @@
       {
         "__type": "Hud",
         "__guid": "64b39a67-0f9b-408a-9296-710991b1936a"
+      },
+      {
+        "__type": "RagdollController",
+        "__guid": "e39679bd-bad1-4016-8a23-4f7db8898718",
+        "Physics": {
+          "_type": "component",
+          "component_id": "f72733be-a440-4848-9cd0-124c997e4218",
+          "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
+          "component_type": "ModelPhysics"
+        }
       }
     ],
     "Children": [
@@ -108,6 +118,21 @@
         "Name": "Body",
         "Enabled": true,
         "Components": [
+          {
+            "__type": "Sandbox.ModelPhysics",
+            "__guid": "f72733be-a440-4848-9cd0-124c997e4218",
+            "__enabled": false,
+            "Locking": {},
+            "Model": "models/citizen/citizen.vmdl",
+            "MotionEnabled": true,
+            "Renderer": {
+              "_type": "component",
+              "component_id": "09f15783-44a3-4393-9064-4a3380587c6e",
+              "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "RigidbodyFlags": "DisableCollisionSounds"
+          },
           {
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "09f15783-44a3-4393-9064-4a3380587c6e",
