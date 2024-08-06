@@ -1,6 +1,6 @@
 public sealed class BoxForce : Component, Component.ICollisionListener
 {
-    public float BounceForce = 50000f;
+    public float BounceForce = 5f;
 
     public void OnCollisionStart( Collision collision )
     {

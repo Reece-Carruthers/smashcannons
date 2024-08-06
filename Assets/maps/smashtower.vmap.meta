@@ -59,7 +59,9 @@
         "rustextended.tiles_c#43322",
         "mrtrn.mrtrn_stonewall2#34619",
         "facepunch.metal_trim_02#47037",
-        "rustextended.metal_panels_g#43310"
+        "rustextended.metal_panels_g#43310",
+        "facepunch.wall_stone_brick_a1#28802",
+        "mrtrn.mrtrn_stonewall1#34617"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/smashtower.vmap"

@@ -26,6 +26,20 @@ RoundDisplay {
 			font-size: 48px;
 			color: rgb(141, 215, 255);
 		}
+	}
+	> .container-status {
+		display: flex;
+		background-color: rgba(19, 19, 19, 0.50);
+		position: absolute;
+		border-radius: 8px;
+		margin-top: 48px;
+		margin-left: 300px;
+		font-weight: bold;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		padding: 1% 2%;
 
 		> .status {
 			font-family: Lilita One;

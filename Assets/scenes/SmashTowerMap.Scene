@@ -43,7 +43,7 @@
       "__guid": "6edfc06f-798c-4088-aaab-d70c05403ba7",
       "Flags": 0,
       "Name": "KillCollider",
-      "Position": "1408,40,234.2456",
+      "Position": "1408,40,247.8453",
       "Enabled": true,
       "Components": [
         {
@@ -53,6 +53,10 @@
           "IsTrigger": true,
           "Scale": "9000,6000",
           "Static": true
+        },
+        {
+          "__type": "KillCollider",
+          "__guid": "e050e6de-5f87-46d1-a577-642a6f4cf1a2"
         }
       ]
     },
@@ -2528,7 +2532,7 @@
       "__guid": "0205e763-33ad-481d-ad67-2c897462442f",
       "Flags": 0,
       "Name": "TempCannonSpawn",
-      "Position": "4925.554,627.7125,2419.916",
+      "Position": "4949.251,627.7125,2419.916",
       "Rotation": "0,0,1,-0.00000004371139",
       "Enabled": true
     },
