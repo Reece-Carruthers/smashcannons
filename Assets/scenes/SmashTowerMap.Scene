@@ -1,5 +1,5 @@
 {
-  "__guid": "168af8e5-023c-42a2-8ee6-b2d524d96e1e",
+  "__guid": "c6a7251c-3794-4f05-a711-b671e2867fb2",
   "GameObjects": [
     {
       "__guid": "5372e293-a570-43ea-9d44-ef04a0b1c05c",
@@ -79,9 +79,22 @@
       ]
     },
     {
+      "__guid": "e55da102-1546-4496-953e-8c3cbd73dde5",
+      "Flags": 0,
+      "Name": "Cannon2",
+      "Position": "4790.604,-612.2267,2376.911",
+      "Tags": "cannon_zone,trigger,cannon",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 3,
+      "OwnerTransfer": 0,
+      "__Prefab": "cannon.prefab",
+      "__PrefabVariables": {}
+    },
+    {
       "__guid": "5d8fda91-e097-4ec0-9b62-adb6c9f68bd9",
       "Flags": 0,
-      "Name": "Cannon",
+      "Name": "Cannon1",
       "Position": "4790.604,624,2376.911",
       "Tags": "cannon_zone,trigger,cannon",
       "Enabled": true,
@@ -1854,77 +1867,6 @@
       ]
     },
     {
-      "__guid": "5992d8cb-7ca2-494a-94d6-856e17351b26",
-      "Flags": 0,
-      "Name": "Spawn Points",
-      "Position": "-1568.504,-36.76511,1517.907",
-      "Enabled": true,
-      "Children": [
-        {
-          "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
-          "Flags": 0,
-          "Name": "RunnerSpawn1",
-          "Position": "0,-113.7726,-37.5719",
-          "Tags": "runner_spawn",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "PlayerSpawn",
-              "__guid": "0393819a-b900-459e-9117-a9f82ca436da",
-              "Index": 0
-            }
-          ]
-        },
-        {
-          "__guid": "0fa55dc8-0140-4bc7-91db-f709d1c2e30d",
-          "Flags": 0,
-          "Name": "RunnerSpawn2",
-          "Position": "0,140.9131,-37.5719",
-          "Tags": "runner_spawn",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "PlayerSpawn",
-              "__guid": "a99a240e-a68e-48a6-a0e4-6f91d59f11e3",
-              "Index": 1
-            }
-          ]
-        },
-        {
-          "__guid": "119298c3-d02d-48cc-ba1b-e8f2859c288a",
-          "Flags": 0,
-          "Name": "CannonSpawn2",
-          "Position": "6528.533,-592.6637,871.4871",
-          "Rotation": "0,0,1,-0.00000004371139",
-          "Tags": "cannon_spawn",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "PlayerSpawn",
-              "__guid": "36b38068-32fc-4171-82b2-bab06028a7c5",
-              "Index": 1
-            }
-          ]
-        },
-        {
-          "__guid": "52964049-9b07-4a23-b9e9-58fbc1f77e79",
-          "Flags": 0,
-          "Name": "CannonSpawn1",
-          "Position": "6528.533,662.5768,871.4873",
-          "Rotation": "0,0,1,-0.00000004371139",
-          "Tags": "cannon_spawn",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "PlayerSpawn",
-              "__guid": "bd1805b1-1dcd-4487-ba80-2a9938114c29",
-              "Index": 0
-            }
-          ]
-        }
-      ]
-    },
-    {
       "__guid": "139d4abd-d9dc-4b86-9004-069fccef4a0a",
       "Flags": 0,
       "Name": "RampObjects",
@@ -2510,6 +2452,77 @@
               "IsTrigger": false,
               "Model": "models/cylinder.vmdl",
               "Static": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "5992d8cb-7ca2-494a-94d6-856e17351b26",
+      "Flags": 0,
+      "Name": "Spawn Points",
+      "Position": "-1568.504,-36.76511,1517.907",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
+          "Flags": 0,
+          "Name": "RunnerSpawn1",
+          "Position": "0,-113.7726,-37.5719",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "0393819a-b900-459e-9117-a9f82ca436da",
+              "Index": 0
+            }
+          ]
+        },
+        {
+          "__guid": "0fa55dc8-0140-4bc7-91db-f709d1c2e30d",
+          "Flags": 0,
+          "Name": "RunnerSpawn2",
+          "Position": "0,140.9131,-37.5719",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "a99a240e-a68e-48a6-a0e4-6f91d59f11e3",
+              "Index": 1
+            }
+          ]
+        },
+        {
+          "__guid": "119298c3-d02d-48cc-ba1b-e8f2859c288a",
+          "Flags": 0,
+          "Name": "CannonSpawn2",
+          "Position": "6528.533,668.1362,871.4871",
+          "Rotation": "0,0,1,-0.00000004371139",
+          "Tags": "cannon_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "36b38068-32fc-4171-82b2-bab06028a7c5",
+              "Index": 2
+            }
+          ]
+        },
+        {
+          "__guid": "52964049-9b07-4a23-b9e9-58fbc1f77e79",
+          "Flags": 0,
+          "Name": "CannonSpawn1",
+          "Position": "6528.533,662.5768,871.4873",
+          "Rotation": "0,0,1,-0.00000004371139",
+          "Tags": "cannon_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "bd1805b1-1dcd-4487-ba80-2a9938114c29",
+              "Index": 3
             }
           ]
         }

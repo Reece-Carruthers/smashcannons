@@ -1,13 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Sandbox;
 using Sandbox.Network;
 
 public sealed class SmashCannon : Component, Component.INetworkListener
 {
 	public static IEnumerable<SmashRunnerMovement> Players => InternalPlayers.Where(p => p.IsValid());
-	private static List<SmashRunnerMovement> InternalPlayers { get; set; } = new(4) { null, null, null, null };
+
+	private static int MaxPlayers = 64;
+	private static List<SmashRunnerMovement> InternalPlayers { get; set; } = Enumerable.Repeat<SmashRunnerMovement>(null, MaxPlayers).ToList();
+	
+	private static  IEnumerable<PlayerSpawn> SpawnPoints { get; set; }
+	public static IEnumerable<PlayerSpawn> RunnerSpawnPoint =>
+		SpawnPoints.Where(x => x.Tags.Has("runner_spawn"));
+	public static IEnumerable<PlayerSpawn> CannonSpawnPoint =>
+		SpawnPoints.Where(x => x.Tags.Has("cannon_spawn"));
 
 	[Property] public GameObject PlayerPrefab { get; set; }
 	public static SmashCannon Instance { get; private set; }
@@ -26,7 +31,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 
 	private int FindFreeSlot()
 	{
-		for (var i = 0; i < 4; i++)
+		for (var i = 0; i < MaxPlayers; i++)
 		{
 			var player = InternalPlayers[i];
 			if (player.IsValid()) continue;
@@ -48,13 +53,14 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 		if (Networking.IsHost)
 		{
 			var state = StateSystem.Set<LobbyState>();
-			state.RoundEndTime = 30f;
+			state.RoundEndTime = 20f;
 		}
 		base.OnStart();
 	}
 
 	void INetworkListener.OnActive(Connection connection)
 	{
+		SpawnPoints = Scene.Components.GetAll<PlayerSpawn>();
 
 		var player = PlayerPrefab.Clone();
 		var playerSlot = FindFreeSlot();
@@ -67,7 +73,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 		var playerComponent = player.Components.Get<SmashRunnerMovement>();
 		AddPlayer(playerSlot, playerComponent);
 
-		player.Transform.LocalPosition = Scene.Components.GetAll<PlayerSpawn>().First().Transform.World.Position;
+		player.Transform.LocalPosition = RunnerSpawnPoint.First().Transform.Position;
 		player.NetworkSpawn(connection);
 	}
 }

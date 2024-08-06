@@ -3,7 +3,7 @@
 
 @inherits PanelComponent
 
-<root>
+<root class="@(!Network.IsProxy ? "" : "hidden")">
 	<RoundDisplay></RoundDisplay>
 </root>
 
@@ -18,4 +18,5 @@
 			LocalPlayer = Scene.GetAllComponents<SmashRunnerMovement>().FirstOrDefault( p => p.Network.OwnerConnection == Connection.Local );
 		}
 	}
+	protected override int BuildHash() => System.HashCode.Combine( Network.IsProxy );
 }

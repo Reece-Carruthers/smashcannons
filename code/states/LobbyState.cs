@@ -7,12 +7,6 @@ public class LobbyState : BaseState
     
     private bool PlayedCountdown { get; set; }
 
-    public IEnumerable<PlayerSpawn> RunnerSpawnPoint =>
-        Scene.Components.GetAll<PlayerSpawn>().Where(x => x.Tags.Has("runner_spawn"));
-
-    public IEnumerable<PlayerSpawn> CannonSpawnPoint =>
-        Scene.Components.GetAll<PlayerSpawn>().Where(x => x.Tags.Has("cannon_spawn"));
-
     private HashSet<PlayerSpawn> usedCannonSpawnpoints = new HashSet<PlayerSpawn>();
 
     protected override void OnEnter()
@@ -28,7 +22,7 @@ public class LobbyState : BaseState
         {
             if (RoundEndTime)
             {
-	            AssignPlayersToTeamsAndSpawnpoints();
+	            AssignPlayersToTeamsAndSpawnPoints();
                 StateSystem.Set<GameState>();
                 return;
             }
@@ -42,39 +36,52 @@ public class LobbyState : BaseState
         base.OnUpdate();
     }
 
-    private void AssignPlayersToTeamsAndSpawnpoints()
+    private void AssignPlayersToTeamsAndSpawnPoints()
     {
-        var players = SmashCannon.Players.ToList();
-        var random = new Random();
+	    Log.Info( SmashCannon.CannonSpawnPoint );
+	    Log.Info( SmashCannon.RunnerSpawnPoint );
+	    var players = SmashCannon.Players.ToList();
+	    var random = new Random();
 
-        if (players.Count < 1)
-        {
-            throw new Exception("Not enough players to assign to spawn points");
-        }
+	    if (players.Count < 1)
+	    {
+		    throw new Exception("Not enough players to assign to spawn points");
+	    }
 
-        players = players.OrderBy(x => random.Next()).ToList();
+	    players = players.OrderBy(x => random.Next()).ToList();
 
-        var cannonPlayerCount = players.Count > 3 ? 2 : 1;
+	    var cannonPlayerCount = players.Count switch
+	    {
+		    1 => 1,
+		    2 => 1,
+		    > 3 => 2,
+		    _ => 1
+	    };
 
-        for (var i = 0; i < cannonPlayerCount; i++)
-        {
-            var player = players[i];
-            player.TeamCategory = new SmashTeam();
-            player.Transform.LocalPosition = AssignCannonSpawnpoint(random);
-        }
+	    // Assign cannon players
+	    for (var i = 0; i < cannonPlayerCount; i++)
+	    {
+		    Log.Info( "CANNON PLAYER" );
+		    var player = players[i];
+		    player.TeamCategory = new SmashTeam();
+		    player.Transform.LocalPosition = AssignCannonSpawnPoint(random);
+	    }
 
-        // Assign runner players
-        for (var i = cannonPlayerCount; i < players.Count; i++)
-        {
-            var player = players[i];
-            player.TeamCategory = new RunnerTeam();
-            player.Transform.LocalPosition = AssignRunnerSpawnpoint(random);
-        }
+	    // Assign runner players
+	    for (var i = cannonPlayerCount; i < players.Count; i++)
+	    {
+		    Log.Info( "RUNNER PLAYER" );
+
+		    var player = players[i];
+		    player.TeamCategory = new RunnerTeam();
+		    player.Transform.LocalPosition = AssignRunnerSpawnPoint(random);
+	    }
     }
 
-    private Vector3 AssignCannonSpawnpoint(Random random)
+
+    private Vector3 AssignCannonSpawnPoint(Random random)
     {
-        var cannonSpawns = CannonSpawnPoint.ToList();
+        var cannonSpawns = SmashCannon.CannonSpawnPoint.ToList();
 
         if (usedCannonSpawnpoints.Count >= cannonSpawns.Count)
         {
@@ -95,21 +102,21 @@ public class LobbyState : BaseState
             }
         }
 
-        return selectedSpawn.Transform.World.Position;
+        return selectedSpawn.Transform.Position;
     }
 
-    private Vector3 AssignRunnerSpawnpoint(Random random)
+    private Vector3 AssignRunnerSpawnPoint(Random random)
     {
-        var runnerSpawns = RunnerSpawnPoint.ToList();
+        var runnerSpawns =SmashCannon. RunnerSpawnPoint.ToList();
 
         if (runnerSpawns.Count == 0)
         {
             throw new Exception("No runner spawnpoints available");
         }
 
-        int randomIndex = random.Next(runnerSpawns.Count);
+        var randomIndex = random.Next(runnerSpawns.Count);
         var selectedSpawn = runnerSpawns[randomIndex];
 
-        return selectedSpawn.Transform.World.Position;
+        return selectedSpawn.Transform.Position;
     }
 }
