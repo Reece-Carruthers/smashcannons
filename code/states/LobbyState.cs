@@ -5,6 +5,7 @@ public class LobbyState : BaseState
     public override int TimeLeft => RoundEndTime.Relative.CeilToInt();
     [Sync] public TimeUntil RoundEndTime { get; set; }
     
+    public override string Name => "Waiting For Players . . .";
     private bool PlayedCountdown { get; set; }
 
     private HashSet<PlayerSpawn> usedCannonSpawnpoints = new HashSet<PlayerSpawn>();
@@ -13,7 +14,7 @@ public class LobbyState : BaseState
     {
         if (!Networking.IsHost) return;
         
-        RoundEndTime = 10f;
+        RoundEndTime = 5f;
     }
 
     protected override void OnUpdate()

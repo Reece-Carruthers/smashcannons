@@ -13,7 +13,10 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 		SpawnPoints.Where(x => x.Tags.Has("runner_spawn"));
 	public static IEnumerable<PlayerSpawn> CannonSpawnPoint =>
 		SpawnPoints.Where(x => x.Tags.Has("cannon_spawn"));
-
+	
+	[Property] public GameObject Platforms { get; set; }
+	[Property] public GameObject Pillars { get; set; }
+	[Property] public GameObject Ramp { get; set; }
 	[Property] public GameObject PlayerPrefab { get; set; }
 	public static SmashCannon Instance { get; private set; }
 	
@@ -53,7 +56,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 		if (Networking.IsHost)
 		{
 			var state = StateSystem.Set<LobbyState>();
-			state.RoundEndTime = 60f;
+			state.RoundEndTime = 5f;
 		}
 		base.OnStart();
 	}

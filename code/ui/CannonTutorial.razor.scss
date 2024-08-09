@@ -1,0 +1,36 @@
+CannonTutorial
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	
+	.card {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(68, 68, 68, 0.75);
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+		border-radius: 20px;
+
+		.title {
+			font-size: 64px;
+			font-family: Poppins;
+			font-weight: bold;
+			color: #fff;
+			text-align: center;
+		}
+
+		&.hidden {
+			display: none;
+		}
+	}
+}

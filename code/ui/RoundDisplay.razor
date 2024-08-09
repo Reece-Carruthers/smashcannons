@@ -10,14 +10,14 @@
 		<label class="time">@GetTimeLeftString()</label>
 	</div>
 	
-	@* <div class="container-status"> *@
-	@* 	<label class="status">@GetRoundName()</label> *@
-	@* </div> *@
+	<div class="container-status">
+	<label class="status">@GetRoundName()</label>
+	</div>
 </root>
 
 @code
 {
-	
+	[Property] public string GameLobby = "Waiting for Players . . .";
 	public SmashRunnerMovement LocalPlayer { get; set; }
 	
 	protected override int BuildHash()
@@ -35,12 +35,11 @@
 		return $"{t.Minutes}:{t.Seconds:D2}";
 	}
 	
-	// private string GetRoundName()
-	// {
-	// 	// var state = StateSystem.Active;
-	// 	// return !state.IsValid() ? string.Empty : state.Name;
-	// 	return LocalPlayer.LifeState == LifeState.Alive ? "Survive!" : "You Are Dead!";
-	//
-	//
-	// }
+	private string GetRoundName()
+	{
+		var state = StateSystem.Active;
+		return !state.IsValid() ? string.Empty : state.Name;
+		// return LocalPlayer.LifeState == LifeState.Alive ? "Survive!" : "You Are Dead!";
+		
+	}
 }

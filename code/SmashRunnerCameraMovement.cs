@@ -40,6 +40,13 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 
 	protected override void OnUpdate()
 	{
+		
+		if (Player?.LifeState == LifeState.Dead)
+		{
+			// If the player is dead, skip camera movement
+			return;
+		}
+		
 		if ( Network.IsProxy ) return;
 
 		if ( Player is null )

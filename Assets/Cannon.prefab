@@ -31,7 +31,7 @@
         "__type": "Sandbox.BoxCollider",
         "__guid": "01e9e059-e4cd-4ec3-b4d6-4520c5a11639",
         "Center": "145,0,0",
-        "IsTrigger": false,
+        "IsTrigger": true,
         "Scale": "300,300,300",
         "Static": false
       }
@@ -78,8 +78,9 @@
             "__guid": "9e1a06da-73a8-45cd-b9e3-f6935e40f38a",
             "Flags": 0,
             "Name": "Burst",
-            "Position": "0.0005645402,-0.0000542757,-31248.32",
+            "Position": "0.0008277705,-0.00005427567,-20.87871",
             "Tags": "particles",
+            "Enabled": true,
             "Components": [
               {
                 "__type": "Sandbox.ParticleEffect",
@@ -228,7 +229,7 @@
                 "Delay": 0,
                 "DestroyOnEnd": false,
                 "Duration": 1,
-                "Loop": false,
+                "Loop": true,
                 "OnEdge": false,
                 "Radius": 6.86,
                 "Rate": 0,
