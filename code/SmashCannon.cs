@@ -18,6 +18,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 	[Property] public GameObject Pillars { get; set; }
 	[Property] public GameObject Ramp { get; set; }
 	[Property] public GameObject PlayerPrefab { get; set; }
+	
 	public static SmashCannon Instance { get; private set; }
 	
 	protected override void OnAwake()

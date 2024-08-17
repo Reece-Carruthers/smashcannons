@@ -1,4 +1,3 @@
-using System.ComponentModel.Design.Serialization;
 using Sandbox;
 using Sandbox.Citizen;
 
@@ -38,9 +37,9 @@ public sealed class SmashRunnerMovement : Component
 
 	[Category( "Objects" )] [Property] public GameObject Head { get; set; }
 	[Category( "Objects" )] [Property] public GameObject Body { get; set; }
-	
+
 	[HostSync] public LifeState LifeState { get; set; } = LifeState.Alive;
-	
+
 	[Sync] public bool IsCrouching { get; set; } = false;
 	[Sync] private bool IsSprinting { get; set; } = false;
 	[Sync] Angles TargetAngle { get; set; } = Angles.Zero;
@@ -55,7 +54,9 @@ public sealed class SmashRunnerMovement : Component
 
 	private bool isControllingCannon { get; set; } = false;
 	private CannonComponent cannon { get; set; } = null;
-
+	
+	[Property] Collider playerCollider {get; set;}
+	
 	public static SmashRunnerMovement Local
 	{
 		get
@@ -82,14 +83,15 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnUpdate()
 	{
-		
-		if (LifeState == LifeState.Dead)
+		if ( LifeState == LifeState.Dead )
 		{
 			// If the player is dead, skip all update logic
 			return;
 		}
-		
-		if ( cannon is not null && cannon.Network.OwnerConnection != Network.OwnerConnection) //TODO: Do we need a is proxy check before setting this?
+
+		if ( cannon is not null &&
+		     cannon.Network.OwnerConnection !=
+		     Network.OwnerConnection ) //TODO: Do we need a is proxy check before setting this?
 		{
 			isControllingCannon = false;
 		}
@@ -120,12 +122,12 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnFixedUpdate()
 	{
-		if (LifeState == LifeState.Dead)
+		if ( LifeState == LifeState.Dead )
 		{
 			// If the player is dead, skip all update logic
 			return;
 		}
-		
+
 		if ( Network.IsProxy ) return;
 		if ( isControllingCannon ) return;
 
@@ -251,13 +253,13 @@ public sealed class SmashRunnerMovement : Component
 
 	private void TryTakeCannon()
 	{
-		var forwardDirection = Head.Transform.Rotation.Up;
+		var position = Head.Transform.Position.WithZ( Head.Transform.Position.z + 50f );
 
 		var tr = Scene.Trace.WithoutTags( "player" )
-			.Sphere( 128, characterController.Transform.Position,
-				characterController.Transform.Position + forwardDirection * 50f )
+			.Sphere( 32, position,
+				position )
 			.Run();
-
+		
 		if ( !tr.Hit || !tr.GameObject.Tags.Has( "cannon_zone" ) ) return;
 
 		var cannonComponent = tr.GameObject.Components.Get<CannonComponent>();
@@ -266,13 +268,15 @@ public sealed class SmashRunnerMovement : Component
 
 		var takeOverResult = tr.GameObject.Network.TakeOwnership();
 
-		if ( takeOverResult )
+		if ( !takeOverResult )
 		{
-			cannonComponent.CurrentController = Network.OwnerConnection;
-			isControllingCannon = true;
-			cannon = cannonComponent;
-			characterController.Velocity = Vector3.Zero;
+			return;
 		}
+
+		cannonComponent.CurrentController = Network.OwnerConnection;
+		isControllingCannon = true;
+		cannon = cannonComponent;
+		characterController.Velocity = Vector3.Zero;
 	}
 
 	private void RenderModelAndClothes()
@@ -289,17 +293,17 @@ public sealed class SmashRunnerMovement : Component
 
 	public void Kill()
 	{
-		Log.Info("Player entered kill trigger");
+		Log.Info( "Player entered kill trigger" );
 		LifeState = LifeState.Dead;
-		Log.Info(LifeState);
+		Log.Info( LifeState );
 
 		var ragdollController = Components.Get<RagdollController>();
 		if ( ragdollController is null ) return;
-		                        
+
 		var playerPosition = Transform.Position;
-		
-		var direction = Vector3.Up + new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
+
+		var direction = Vector3.Up +
+		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
 		ragdollController.Ragdoll( playerPosition, direction );
 	}
-
 }

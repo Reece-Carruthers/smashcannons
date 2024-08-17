@@ -3,7 +3,7 @@
     "__guid": "5d8fda91-e097-4ec0-9b62-adb6c9f68bd9",
     "Flags": 0,
     "Name": "cannon",
-    "Tags": "trigger,cannon_zone",
+    "Tags": "cannon_zone,cannon,trigger",
     "Enabled": true,
     "NetworkMode": 1,
     "NetworkOrphaned": 3,
@@ -29,9 +29,9 @@
       },
       {
         "__type": "Sandbox.BoxCollider",
-        "__guid": "01e9e059-e4cd-4ec3-b4d6-4520c5a11639",
-        "Center": "145,0,0",
-        "IsTrigger": true,
+        "__guid": "2691a6c6-a3ec-468a-b11a-a61ba5642ca0",
+        "Center": "100,0,0",
+        "IsTrigger": false,
         "Scale": "300,300,300",
         "Static": false
       }
@@ -214,6 +214,7 @@
                 "FaceVelocity": false,
                 "FogStrength": 1,
                 "LeadingTrail": true,
+                "Lighting": false,
                 "MotionBlur": false,
                 "Opaque": false,
                 "RotationOffset": 0,
@@ -1349,8 +1350,10 @@
             "Gravity": true,
             "LinearDamping": 0,
             "Locking": {},
+            "MassCenterOverride": "0,0,0",
             "MassOverride": 50000,
             "MotionEnabled": true,
+            "OverrideMassCenter": false,
             "RigidbodyFlags": 0,
             "StartAsleep": false
           },

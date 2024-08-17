@@ -62,7 +62,6 @@ public class LobbyState : BaseState
 	    // Assign cannon players
 	    for (var i = 0; i < cannonPlayerCount; i++)
 	    {
-		    Log.Info( "CANNON PLAYER" );
 		    var player = players[i];
 		    player.TeamCategory = new SmashTeam();
 		    player.Transform.LocalPosition = AssignCannonSpawnPoint(random);

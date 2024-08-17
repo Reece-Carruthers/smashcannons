@@ -34,6 +34,12 @@
         },
         "JumpForce": 400,
         "MaxForce": 50,
+        "playerCollider": {
+          "_type": "component",
+          "component_id": "26c53938-50f2-40f5-912d-b517c97e3b32",
+          "go": "dbd82e4e-e505-40f5-8be9-1e85db538502",
+          "component_type": "CapsuleCollider"
+        },
         "RunSpeed": 290,
         "Speed": 160
       },
@@ -83,8 +89,10 @@
           "Yaw": true,
           "Roll": true
         },
+        "MassCenterOverride": "0,0,0",
         "MassOverride": 0,
         "MotionEnabled": true,
+        "OverrideMassCenter": false,
         "RigidbodyFlags": 0,
         "StartAsleep": false
       },

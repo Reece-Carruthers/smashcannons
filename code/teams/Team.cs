@@ -1,4 +1,4 @@
-public abstract  class Team
+public interface Team
 {
-	public abstract bool CanControlCannon();
+	public bool CanControlCannon();
 }
