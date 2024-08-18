@@ -1,18 +1,20 @@
 using Sandbox;
 
-public class GameState : BaseState
+public class EndState : BaseState
 {
 	public override int TimeLeft => RoundEndTime.Relative.CeilToInt();
 
-	public override string Name => "Survive";
+	public override string Name => "End Game";
 	[Sync] private TimeUntil RoundEndTime { get; set; }
 
 	[Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
 	[Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
+	
+	public string Winner { get; set; }
 
 	protected override void OnEnter()
 	{
-		RoundEndTime = 60f;
+		RoundEndTime = 10f;
 	}
 
 	private void FetchAlivePlayerCount()
@@ -28,14 +30,22 @@ public class GameState : BaseState
 		if ( Networking.IsHost )
 		{
 			FetchAlivePlayerCount();
+
+			if ( ActiveRunnerPlayers.Count >= 1 && ActiveCannonPlayers.Count <= 0 )
+			{
+				Winner = "Runners win!";
+			} else if ( ActiveCannonPlayers.Count >= 1 && ActiveRunnerPlayers.Count <= 0 )
+			{
+				Winner = "Cannoniers win!";
+			}
+			else
+			{
+				Winner = "No one wins!";
+			}
+
 			if ( RoundEndTime )
 			{
-				StateSystem.Set<FinalState>();
-			}
-			
-			if (  Connection.All.Count > 1 && (ActiveRunnerPlayers.Count <= 0 || ActiveCannonPlayers.Count <= 0) )
-			{
-				StateSystem.Set<EndState>();
+				Game.ActiveScene.LoadFromFile( "scenes/smashtowermap.scene" );
 			}
 		}
 	}

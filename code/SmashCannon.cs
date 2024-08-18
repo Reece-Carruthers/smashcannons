@@ -18,7 +18,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 	public static IEnumerable<PlayerSpawn> CannonSpawnPoint =>
 		SpawnPoints.Where( x => x.Tags.Has( "cannon_spawn" ) );
 	
-	public static IEnumerable<PlayerSpawn> DeadSpawnPoint =>
+	private static IEnumerable<PlayerSpawn> DeadSpawnPoint =>
 		SpawnPoints.Where( x => x.Tags.Has( "dead_spawn" ) );
 
 	[Property] public GameObject Platforms { get; set; }
@@ -57,7 +57,6 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 		if ( !GameNetworkSystem.IsActive )
 		{
 			GameNetworkSystem.CreateLobby();
-			Log.Info( "Lobby Created" );
 		}
 
 		if ( Networking.IsHost )
@@ -78,7 +77,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 
 		if ( playerSlot < 0 )
 		{
-			throw new("Player joined but there's no free slots!");
+			Log.Warning( "No available player slots" );
 		}
 
 		var playerComponent = player.Components.Get<SmashRunnerMovement>();

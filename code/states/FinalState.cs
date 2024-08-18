@@ -12,7 +12,6 @@ public class FinalState : BaseState
 
 	protected override void OnEnter()
 	{
-		Log.Info( "in final phase state!" );
 		RoundEndTime = 60f;
 
 		var mainScript = SmashCannon.Instance;
@@ -45,6 +44,11 @@ public class FinalState : BaseState
 		if ( Networking.IsHost )
 		{
 			FetchAlivePlayerCount();
+			
+			if (  Connection.All.Count > 1 && (ActiveRunnerPlayers.Count <= 0 || ActiveCannonPlayers.Count <= 0) )
+			{
+				StateSystem.Set<EndState>();
+			}
 		}
 	}
 }
