@@ -11,8 +11,25 @@
 	</div>
 	
 	<div class="container-status">
-	<label class="status">@GetRoundName()</label>
+		<label class="status">@GetRoundName()</label>
 	</div>
+
+	<div class="container-alive-runners">
+        <label class="alive-runners">Runners Alive: @GetAliveRunnersCount()</label>
+    </div>
+
+	@if (IsCannonWin())
+    {
+        <div class="container-win">
+            <label class="win-message">Cannoniers win!</label>
+        </div>
+    }
+	else if (IsRunnersWin())
+    {
+        <div class="container-win">
+            <label class="win-message">Runners win!</label>
+        </div>
+    }
 </root>
 
 @code
@@ -22,7 +39,7 @@
 	
 	protected override int BuildHash()
 	{
-		return HashCode.Combine( GetTimeLeftString());
+		return HashCode.Combine( GetTimeLeftString(), GetAliveRunnersCount());
 	}
 
 	private string GetTimeLeftString()
@@ -42,4 +59,47 @@
 		// return LocalPlayer.LifeState == LifeState.Alive ? "Survive!" : "You Are Dead!";
 		
 	}
+
+	private int GetAliveRunnersCount()
+    {
+        var aliveRunners = 0;
+
+        foreach (var player in SmashCannon.Players)
+        {
+            if (player.TeamCategory is RunnerTeam && player.LifeState == LifeState.Alive)
+            {
+                aliveRunners++;
+            }
+        }
+
+        return aliveRunners;
+    }
+
+	private bool IsCannonWin()
+    {
+        var state = StateSystem.Active;
+        if (state is GameState or FinalState)
+        {
+            var aliveRunners = Game.ActiveScene.GetAllComponents<SmashRunnerMovement>()
+                                               .Count(x => x.TeamCategory is RunnerTeam && x.LifeState == LifeState.Alive);
+
+            return aliveRunners == 0;
+        }
+
+        return false;
+    }
+	
+	private bool IsRunnersWin()
+    {
+        var state = StateSystem.Active;
+        if (state is GameState or FinalState)
+        {
+            var aliveCannoniers = Game.ActiveScene.GetAllComponents<SmashRunnerMovement>()
+                                                  .Count(x => x.TeamCategory is not RunnerTeam && x.LifeState == LifeState.Alive);
+
+            return aliveCannoniers == 0;
+        }
+
+        return false;
+    }
 }
