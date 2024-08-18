@@ -1,6 +1,6 @@
 public class RunnerTeam : Team
 {
-	public override bool CanControlCannon()
+	public bool CanControlCannon()
 	{
 		return false;
 	}

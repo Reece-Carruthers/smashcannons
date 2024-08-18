@@ -23,20 +23,13 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 	private GameObject Head { get; set; }
 
 	private bool IsFirstPerson =>
-		Distance <= 20f; // Prevents clipping inside the model when zooming in, this might have to change based on FOV?
+		Distance <= 20f;
 
 	private Vector3 CurrentOffset = Vector3.Zero;
 	private CameraComponent Camera;
 	private float targetCameraDistance = 300f;
 	private SkinnedModelRenderer modelRenderer;
 	private bool lastIsFirstPerson;
-
-	protected override void OnAwake()
-	{
-		Camera = Components.Get<CameraComponent>();
-		Camera.FieldOfView = 90f;
-		lastIsFirstPerson = IsFirstPerson;
-	}
 
 	protected override void OnUpdate()
 	{
@@ -57,6 +50,9 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 				Body = Player.Body;
 				Head = Player.Head;
 				modelRenderer = Body.Components.Get<SkinnedModelRenderer>();
+				Camera = Components.Get<CameraComponent>();
+				Camera.FieldOfView = 90f;
+				lastIsFirstPerson = IsFirstPerson;
 			}
 		}
 

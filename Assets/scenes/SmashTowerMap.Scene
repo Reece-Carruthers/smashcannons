@@ -96,7 +96,7 @@
       "Flags": 0,
       "Name": "Cannon1",
       "Position": "4790.604,624,2376.911",
-      "Tags": "cannon_zone,trigger,cannon",
+      "Tags": "trigger,cannon_zone,cannon",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 3,
@@ -2579,8 +2579,7 @@
           "__guid": "119298c3-d02d-48cc-ba1b-e8f2859c288a",
           "Flags": 0,
           "Name": "CannonSpawn2",
-          "Position": "6528.533,668.1362,887.5083",
-          "Rotation": "0,0,1,-0.00000004371139",
+          "Position": "6513.167,-580.1135,851.585",
           "Tags": "cannon_spawn",
           "Enabled": true,
           "Components": [
@@ -2592,18 +2591,17 @@
           ]
         },
         {
-          "__guid": "52964049-9b07-4a23-b9e9-58fbc1f77e79",
+          "__guid": "ff39433f-bb7b-4288-8253-98421958b3ba",
           "Flags": 0,
-          "Name": "CannonSpawn1",
-          "Position": "6528.533,662.5768,887.5083",
-          "Rotation": "0,0,1,-0.00000004371139",
+          "Name": "CannonSpawn3",
+          "Position": "6513.167,664.165,851.585",
           "Tags": "cannon_spawn",
           "Enabled": true,
           "Components": [
             {
               "__type": "PlayerSpawn",
-              "__guid": "bd1805b1-1dcd-4487-ba80-2a9938114c29",
-              "Index": 3
+              "__guid": "ffe35db0-903b-4436-bb10-dbe7eba5a0ad",
+              "Index": 2
             }
           ]
         },
@@ -2773,6 +2771,14 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "402afdf1-4689-4e49-a381-c86a65b0d03e",
+      "Flags": 0,
+      "Name": "Cannon1Trigger",
+      "Position": "4911.933,646.1367,2430.576",
+      "Tags": "cannon_zone",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
