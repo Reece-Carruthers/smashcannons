@@ -1,3 +1,5 @@
+using System;
+using Microsoft.VisualBasic;
 using Sandbox;
 using Sandbox.Citizen;
 
@@ -5,7 +7,7 @@ using Sandbox.Citizen;
 public sealed class SmashRunnerMovement : Component
 {
 	[HostSync] public int PlayerSlot { get; set; }
-	[Category( "Team" )] public Team TeamCategory { get; set; } = new RunnerTeam();
+	[HostSync] public Team TeamCategory { get; set; } = new RunnerTeam();
 
 	[Category( "Movement Properties" )]
 	[Property]
@@ -54,9 +56,10 @@ public sealed class SmashRunnerMovement : Component
 
 	private bool isControllingCannon { get; set; } = false;
 	private CannonComponent cannon { get; set; } = null;
-	
-	[Property] Collider playerCollider {get; set;}
-	
+
+	[Property] Collider playerCollider { get; set; }
+	[HostSync] public Vector3 CannonSpawnpoint { get; set; }
+
 	public static SmashRunnerMovement Local
 	{
 		get
@@ -259,7 +262,7 @@ public sealed class SmashRunnerMovement : Component
 			.Sphere( 32, position,
 				position )
 			.Run();
-		
+
 		if ( !tr.Hit || !tr.GameObject.Tags.Has( "cannon_zone" ) ) return;
 
 		var cannonComponent = tr.GameObject.Components.Get<CannonComponent>();
@@ -291,11 +294,9 @@ public sealed class SmashRunnerMovement : Component
 		}
 	}
 
-	public void Kill()
+	public void Kill() //TODO: If lobby state disable kill
 	{
-		Log.Info( "Player entered kill trigger" );
 		LifeState = LifeState.Dead;
-		Log.Info( LifeState );
 
 		var ragdollController = Components.Get<RagdollController>();
 		if ( ragdollController is null ) return;
@@ -305,5 +306,66 @@ public sealed class SmashRunnerMovement : Component
 		var direction = Vector3.Up +
 		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
 		ragdollController.Ragdoll( playerPosition, direction );
+	}
+
+	[Broadcast( NetPermission.HostOnly )]
+	public void Respawn()
+	{
+		MoveToSpawnpoint();
+
+		if ( Networking.IsHost )
+		{
+			var ragdollController = Components.Get<RagdollController>();
+			if ( ragdollController is null ) return;
+
+			ragdollController.Unragdoll();
+			LifeState = LifeState.Alive;
+		}
+	}
+
+	public void UpdateTeam( Team team )
+	{
+		if ( Networking.IsHost )
+		{
+			TeamCategory = team;
+		}
+	}
+
+	public void MoveToSpawnpoint()
+	{
+		Teleport();
+	}
+
+	public void Teleport()
+	{
+		if ( IsProxy ) return;
+
+
+		if ( TeamCategory is RunnerTeam )
+		{
+			Transform.Position = AssignRunnerSpawnPoint();
+		}
+
+		if ( TeamCategory is SmashTeam )
+		{
+			if ( CannonSpawnpoint == new Vector3( 0 ) )
+			{
+				return;
+			}
+
+			Transform.Position = CannonSpawnpoint;
+		}
+	}
+	
+	private Vector3 AssignRunnerSpawnPoint()
+	{
+		var random = new Random();
+		var runnerSpawns = Game.ActiveScene.Components.GetAll<PlayerSpawn>().Where( x => x.Tags.Has( "runner_spawn" ) )
+			.ToList();
+
+		var randomIndex = random.Next( runnerSpawns.Count );
+		var selectedSpawn = runnerSpawns[randomIndex];
+
+		return selectedSpawn.Transform.Position;
 	}
 }

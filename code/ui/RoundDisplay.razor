@@ -5,7 +5,8 @@
 @attribute [StyleSheet( "RoundDisplay.razor.scss" )]
 @inherits Panel
 
-@{ // TODO: Refactor this horrible code
+@{
+	// TODO: Refactor this horrible code
 	var lobbyState = StateSystem.Active as LobbyState;
 	var gameState = StateSystem.Active as GameState;
 	var finalState = StateSystem.Active as FinalState;
@@ -108,8 +109,8 @@
 
 		return finalState.IsValid() ? finalState.ActiveRunnerPlayers : new List<SmashRunnerMovement>();
 	}
-	
-	
+
+
 	private List<SmashRunnerMovement> FetchAliveCannonPlayers()
 	{
 		var lobbyState = StateSystem.Active as LobbyState;

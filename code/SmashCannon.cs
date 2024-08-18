@@ -3,31 +3,35 @@ using Sandbox.Network;
 
 public sealed class SmashCannon : Component, Component.INetworkListener
 {
-	public static IEnumerable<SmashRunnerMovement> Players => InternalPlayers.Where(p => p.IsValid());
+	public static IEnumerable<SmashRunnerMovement> Players => InternalPlayers.Where( p => p.IsValid() );
 
 	private static int MaxPlayers = 64;
-	private static List<SmashRunnerMovement> InternalPlayers { get; set; } = Enumerable.Repeat<SmashRunnerMovement>(null, MaxPlayers).ToList();
-	
-	private static  IEnumerable<PlayerSpawn> SpawnPoints { get; set; }
+
+	private static List<SmashRunnerMovement> InternalPlayers { get; set; } =
+		Enumerable.Repeat<SmashRunnerMovement>( null, MaxPlayers ).ToList();
+
+	private static IEnumerable<PlayerSpawn> SpawnPoints { get; set; }
+
 	public static IEnumerable<PlayerSpawn> RunnerSpawnPoint =>
-		SpawnPoints.Where(x => x.Tags.Has("runner_spawn"));
+		SpawnPoints.Where( x => x.Tags.Has( "runner_spawn" ) );
+
 	public static IEnumerable<PlayerSpawn> CannonSpawnPoint =>
-		SpawnPoints.Where(x => x.Tags.Has("cannon_spawn"));
-	
+		SpawnPoints.Where( x => x.Tags.Has( "cannon_spawn" ) );
+
 	[Property] public GameObject Platforms { get; set; }
 	[Property] public GameObject Pillars { get; set; }
 	[Property] public GameObject Ramp { get; set; }
 	[Property] public GameObject PlayerPrefab { get; set; }
-	
+
 	public static SmashCannon Instance { get; private set; }
-	
+
 	protected override void OnAwake()
 	{
 		Instance = this;
 		base.OnAwake();
 	}
 
-	public static void AddPlayer(int slot, SmashRunnerMovement player)
+	public static void AddPlayer( int slot, SmashRunnerMovement player )
 	{
 		player.PlayerSlot = slot;
 		InternalPlayers[slot] = player;
@@ -35,10 +39,10 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 
 	private int FindFreeSlot()
 	{
-		for (var i = 0; i < MaxPlayers; i++)
+		for ( var i = 0; i < MaxPlayers; i++ )
 		{
 			var player = InternalPlayers[i];
-			if (player.IsValid()) continue;
+			if ( player.IsValid() ) continue;
 			return i;
 		}
 
@@ -47,37 +51,37 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 
 	protected override void OnStart()
 	{
-		if (!GameNetworkSystem.IsActive)
+		if ( !GameNetworkSystem.IsActive )
 		{
 			GameNetworkSystem.CreateLobby();
-			Log.Info("Lobby Created");
-
+			Log.Info( "Lobby Created" );
 		}
 
-		if (Networking.IsHost)
+		if ( Networking.IsHost )
 		{
 			var state = StateSystem.Set<LobbyState>();
 			state.RoundEndTime = 5f;
 		}
+
 		base.OnStart();
 	}
 
-	void INetworkListener.OnActive(Connection connection)
+	void INetworkListener.OnActive( Connection connection )
 	{
 		SpawnPoints = Scene.Components.GetAll<PlayerSpawn>();
 
 		var player = PlayerPrefab.Clone();
 		var playerSlot = FindFreeSlot();
 
-		if (playerSlot < 0)
+		if ( playerSlot < 0 )
 		{
 			throw new("Player joined but there's no free slots!");
 		}
 
 		var playerComponent = player.Components.Get<SmashRunnerMovement>();
-		AddPlayer(playerSlot, playerComponent);
+		AddPlayer( playerSlot, playerComponent );
 
 		player.Transform.LocalPosition = RunnerSpawnPoint.First().Transform.Position;
-		player.NetworkSpawn(connection);
+		player.NetworkSpawn( connection );
 	}
 }

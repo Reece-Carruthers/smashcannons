@@ -6,12 +6,13 @@ public class FinalState : BaseState
 
 	public override string Name => "Last Phase";
 	[Sync] private TimeUntil RoundEndTime { get; set; }
-	
+
 	[Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
 	[Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
+
 	protected override void OnEnter()
 	{
-		Log.Info("in final phase state!"  );
+		Log.Info( "in final phase state!" );
 		RoundEndTime = 60f;
 
 		var mainScript = SmashCannon.Instance;
@@ -19,10 +20,12 @@ public class FinalState : BaseState
 		{
 			mainScript.Platforms.Enabled = false;
 		}
+
 		if ( mainScript != null && mainScript.Pillars != null )
 		{
 			mainScript.Pillars.Enabled = false;
 		}
+
 		if ( mainScript != null && mainScript.Ramp != null )
 		{
 			mainScript.Ramp.Enabled = true;
@@ -31,8 +34,10 @@ public class FinalState : BaseState
 
 	private void FetchAlivePlayerCount()
 	{
-		ActiveRunnerPlayers = SmashCannon.Players.Where(player => player.LifeState == LifeState.Alive && player.TeamCategory is RunnerTeam).ToList();
-		ActiveCannonPlayers = SmashCannon.Players.Where(player => player.LifeState == LifeState.Alive && player.TeamCategory is SmashTeam).ToList();
+		ActiveRunnerPlayers = SmashCannon.Players
+			.Where( player => player.LifeState == LifeState.Alive && player.TeamCategory is RunnerTeam ).ToList();
+		ActiveCannonPlayers = SmashCannon.Players
+			.Where( player => player.LifeState == LifeState.Alive && player.TeamCategory is SmashTeam ).ToList();
 	}
 
 	protected override void OnUpdate()

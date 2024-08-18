@@ -4,8 +4,7 @@ public abstract class BaseState : Component
 {
 	public virtual int TimeLeft => 0;
 	public virtual string Name => string.Empty;
-	public virtual bool IsPaused => false;
-	
+
 	protected virtual void OnEnter() { }
 
 	protected virtual void OnLeave() { }
@@ -14,7 +13,7 @@ public abstract class BaseState : Component
 	{
 		StateSystem.Active = this;
 		OnEnter();
-		
+
 		base.OnAwake();
 	}
 
@@ -22,9 +21,9 @@ public abstract class BaseState : Component
 	{
 		if ( StateSystem.Active == this )
 			StateSystem.Active = null;
-		
+
 		OnLeave();
-		
+
 		base.OnDestroy();
 	}
 }

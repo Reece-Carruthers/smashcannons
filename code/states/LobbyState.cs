@@ -2,129 +2,111 @@ using System;
 
 public class LobbyState : BaseState
 {
-    public override int TimeLeft => RoundEndTime.Relative.CeilToInt();
-    [Sync] public TimeUntil RoundEndTime { get; set; }
-    
-    public override string Name => "Waiting For Players . . .";
-    private bool PlayedCountdown { get; set; }
+	public override int TimeLeft => RoundEndTime.Relative.CeilToInt();
+	[Sync] public TimeUntil RoundEndTime { get; set; }
 
-    private HashSet<PlayerSpawn> usedCannonSpawnpoints = new HashSet<PlayerSpawn>();
+	public override string Name => "Waiting For Players . . .";
+	private bool PlayedCountdown { get; set; }
 
-    [Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
-    [Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
+	private HashSet<PlayerSpawn> usedCannonSpawnpoints = new HashSet<PlayerSpawn>();
 
-    protected override void OnEnter()
-    {
-        if (!Networking.IsHost) return;
-        
-        RoundEndTime = 5f;
-    }
+	[Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
+	[Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
 
-    protected override void OnUpdate()
-    {
-        if (Networking.IsHost)
-        {
-	        FetchAlivePlayerCount();
-	        var players = SmashCannon.Players.ToList();
-            if (RoundEndTime && players.Count > 1)
-            {
-	            AssignPlayersToTeamsAndSpawnPoints(players);
-                StateSystem.Set<GameState>();
-                return;
-            }
+	protected override void OnEnter()
+	{
+		if ( !Networking.IsHost ) return;
 
-            if(RoundEndTime && players.Count <= 1) // Restart timer when there is not enough players
-            {
-	            RoundEndTime = 15f;
-            }
-        }
+		RoundEndTime = 5f;
+	}
 
-        if (RoundEndTime <= 5f && !PlayedCountdown)
-        {
-            PlayedCountdown = true;
-        }
-        
-        base.OnUpdate();
-    }
-    
-    private void FetchAlivePlayerCount()
-    {
-	    ActiveRunnerPlayers = SmashCannon.Players.Where(player => player.LifeState == LifeState.Alive && player.TeamCategory is RunnerTeam).ToList();
-	    ActiveCannonPlayers = SmashCannon.Players.Where(player => player.LifeState == LifeState.Alive && player.TeamCategory is SmashTeam).ToList();
-    }
+	protected override void OnUpdate()
+	{
+		if ( Networking.IsHost )
+		{
+			FetchAlivePlayerCount();
+			var players = SmashCannon.Players.ToList();
 
-    private void AssignPlayersToTeamsAndSpawnPoints(List<SmashRunnerMovement> players)
-    {
-	    var random = new Random();
+			if ( RoundEndTime && players.Count <= 1 ) // Restart timer when there is not enough players
+			{
+				RoundEndTime = 15f;
+			}
 
-	    players = players.OrderBy(x => random.Next()).ToList();
+			if ( RoundEndTime && players.Count > 1 )
+			{
+				AssignPlayersToTeamsAndSpawnPoints( players );
+				StateSystem.Set<GameState>();
+				return;
+			}
+		}
 
-	    var cannonPlayerCount = players.Count switch
-	    {
-		    1 => 1,
-		    2 => 1,
-		    > 3 => 2,
-		    _ => 1
-	    };
+		if ( RoundEndTime <= 5f && !PlayedCountdown )
+		{
+			PlayedCountdown = true;
+		}
 
-	    // Assign cannon players
-	    for (var i = 0; i < cannonPlayerCount; i++)
-	    {
-		    var player = players[i];
-		    player.TeamCategory = new SmashTeam();
-		    player.Transform.LocalPosition = AssignCannonSpawnPoint(random);
-	    }
+		base.OnUpdate();
+	}
 
-	    // Assign runner players
-	    for (var i = cannonPlayerCount; i < players.Count; i++)
-	    {
-		    Log.Info( "RUNNER PLAYER" );
+	private void FetchAlivePlayerCount()
+	{
+		ActiveRunnerPlayers = SmashCannon.Players
+			.Where( player => player.LifeState == LifeState.Alive && player.TeamCategory is RunnerTeam ).ToList();
+		ActiveCannonPlayers = SmashCannon.Players
+			.Where( player => player.LifeState == LifeState.Alive && player.TeamCategory is SmashTeam ).ToList();
+	}
 
-		    var player = players[i];
-		    player.TeamCategory = new RunnerTeam();
-		    player.Transform.LocalPosition = AssignRunnerSpawnPoint(random);
-	    }
-    }
+	private void AssignPlayersToTeamsAndSpawnPoints( List<SmashRunnerMovement> players )
+	{
+		var random = new Random();
 
+		players = players.OrderBy( x => random.Next() ).ToList();
 
-    private Vector3 AssignCannonSpawnPoint(Random random)
-    {
-        var cannonSpawns = SmashCannon.CannonSpawnPoint.ToList();
+		var cannonPlayerCount = players.Count switch
+		{
+			1 => 1,
+			2 => 1,
+			> 3 => 2,
+			_ => 1
+		};
 
-        if (usedCannonSpawnpoints.Count >= cannonSpawns.Count)
-        {
-            throw new Exception("All cannon spawnpoints are taken");
-        }
+		// Assign cannon players
+		for ( var i = 0; i < cannonPlayerCount; i++ )
+		{
+			var player = players[i];
+			player.UpdateTeam( new SmashTeam() );
+			player.CannonSpawnpoint = AssignCannonSpawnPoint( random );
+			player.Respawn();
+		}
 
-        PlayerSpawn selectedSpawn = null;
+		// Assign runner players
+		for ( var i = cannonPlayerCount; i < players.Count; i++ )
+		{
+			var player = players[i];
+			player.UpdateTeam( new RunnerTeam() );
+			player.CannonSpawnpoint = new Vector3( 0 );
+			player.Respawn();
+		}
+	}
 
-        while (selectedSpawn == null)
-        {
-            var randomIndex = random.Next(cannonSpawns.Count);
-            var potentialSpawn = cannonSpawns[randomIndex];
+	private Vector3 AssignCannonSpawnPoint( Random random )
+	{
+		var cannonSpawns = SmashCannon.CannonSpawnPoint.ToList();
 
-            if (!usedCannonSpawnpoints.Contains(potentialSpawn))
-            {
-                selectedSpawn = potentialSpawn;
-                usedCannonSpawnpoints.Add(potentialSpawn);
-            }
-        }
+		PlayerSpawn selectedSpawn = null;
 
-        return selectedSpawn.Transform.Position;
-    }
+		while ( selectedSpawn == null )
+		{
+			var randomIndex = random.Next( cannonSpawns.Count );
+			var potentialSpawn = cannonSpawns[randomIndex];
 
-    private Vector3 AssignRunnerSpawnPoint(Random random)
-    {
-        var runnerSpawns =SmashCannon. RunnerSpawnPoint.ToList();
+			if ( !usedCannonSpawnpoints.Contains( potentialSpawn ) )
+			{
+				selectedSpawn = potentialSpawn;
+				usedCannonSpawnpoints.Add( potentialSpawn );
+			}
+		}
 
-        if (runnerSpawns.Count == 0)
-        {
-            throw new Exception("No runner spawnpoints available");
-        }
-
-        var randomIndex = random.Next(runnerSpawns.Count);
-        var selectedSpawn = runnerSpawns[randomIndex];
-
-        return selectedSpawn.Transform.Position;
-    }
+		return selectedSpawn.Transform.Position;
+	}
 }
