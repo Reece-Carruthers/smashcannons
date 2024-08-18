@@ -3,5 +3,6 @@ using Sandbox;
 public enum LifeState
 {
 	Dead,
-	Alive
+	Alive,
+	Spectate
 }

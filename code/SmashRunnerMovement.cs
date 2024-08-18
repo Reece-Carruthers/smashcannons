@@ -59,6 +59,8 @@ public sealed class SmashRunnerMovement : Component
 
 	[Property] Collider playerCollider { get; set; }
 	[HostSync] public Vector3 CannonSpawnpoint { get; set; }
+	
+	[Sync] private TimeUntil DeathTimer { get; set; }
 
 	public static SmashRunnerMovement Local
 	{
@@ -88,7 +90,27 @@ public sealed class SmashRunnerMovement : Component
 	{
 		if ( LifeState == LifeState.Dead )
 		{
-			// If the player is dead, skip all update logic
+			if ( DeathTimer ) //TODO: On death sliding and body not going into correct position?
+			{
+				var deadSpawn = Scene.Components.GetAll<PlayerSpawn>().FirstOrDefault( x => x.Tags.Has( "dead_spawn" ) );
+				
+				if(deadSpawn is null) return;
+				
+				LifeState = LifeState.Spectate;
+				
+				var ragdollController = Components.Get<RagdollController>();
+				if ( ragdollController is null ) return;
+				
+				ragdollController.Unragdoll();
+
+				Body.Transform.LocalPosition = deadSpawn.Transform.Position;
+				Head.Transform.LocalPosition = deadSpawn.Transform.Position;
+				
+				characterController.Velocity = Vector3.Zero;
+
+				Teleport( deadSpawn.Transform.Position );
+			}
+			
 			return;
 		}
 
@@ -294,9 +316,11 @@ public sealed class SmashRunnerMovement : Component
 		}
 	}
 
-	public void Kill() //TODO: If lobby state disable kill
+	public void Kill()
 	{
 		LifeState = LifeState.Dead;
+
+		DeathTimer = 5f;
 
 		var ragdollController = Components.Get<RagdollController>();
 		if ( ragdollController is null ) return;
@@ -306,6 +330,7 @@ public sealed class SmashRunnerMovement : Component
 		var direction = Vector3.Up +
 		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
 		ragdollController.Ragdoll( playerPosition, direction );
+		
 	}
 
 	[Broadcast( NetPermission.HostOnly )]
@@ -333,11 +358,6 @@ public sealed class SmashRunnerMovement : Component
 
 	public void MoveToSpawnpoint()
 	{
-		Teleport();
-	}
-
-	public void Teleport()
-	{
 		if ( IsProxy ) return;
 
 
@@ -355,6 +375,14 @@ public sealed class SmashRunnerMovement : Component
 
 			Transform.Position = CannonSpawnpoint;
 		}
+	}
+
+	[Broadcast( NetPermission.HostOnly )]
+	public void Teleport(Vector3 location)
+	{
+		if ( IsProxy ) return;
+
+		Transform.Position = location;
 	}
 	
 	private Vector3 AssignRunnerSpawnPoint()

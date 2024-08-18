@@ -76,7 +76,7 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 		{
 			var camForward = eyeAngles.ToRotation().Forward;
 			var camTrace = Scene.Trace.Ray( camPos, camPos - (camForward * Distance) )
-				.WithoutTags( "player", "trigger" )
+				.WithoutTags( "player", "trigger", "cameraIgnore" )
 				.Run();
 			if ( camTrace.Hit )
 			{

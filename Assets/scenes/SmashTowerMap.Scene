@@ -2580,6 +2580,7 @@
           "Flags": 0,
           "Name": "CannonSpawn2",
           "Position": "6513.167,-580.1135,851.585",
+          "Rotation": "0,0,1,-0.00000004371139",
           "Tags": "cannon_spawn",
           "Enabled": true,
           "Components": [
@@ -2595,6 +2596,7 @@
           "Flags": 0,
           "Name": "CannonSpawn3",
           "Position": "6513.167,664.165,851.585",
+          "Rotation": "0,0,1,-0.00000004371139",
           "Tags": "cannon_spawn",
           "Enabled": true,
           "Components": [
@@ -2609,7 +2611,7 @@
           "__guid": "d44d7014-a7c5-4198-97da-762b4f97134b",
           "Flags": 0,
           "Name": "DeadSpawn1",
-          "Position": "5532.985,662.5767,2197.46",
+          "Position": "2107.317,76.66534,2299.048",
           "Rotation": "0,0,1,-0.00000004371139",
           "Tags": "dead_spawn",
           "Enabled": true,
@@ -2721,6 +2723,31 @@
       ]
     },
     {
+      "__guid": "ec448877-b3cf-41b6-a482-7cf3133c66a4",
+      "Flags": 0,
+      "Name": "CannonUI (1)",
+      "Position": "5085.984,-631.6885,2432.472",
+      "Rotation": "0,0,-1,0.0000001937151",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.WorldPanel",
+          "__guid": "44026c65-391d-468b-8c51-8152cafa5cc5",
+          "HorizontalAlign": "Center",
+          "InteractionRange": 1000,
+          "LookAtCamera": false,
+          "PanelSize": "1174.3,391.3004",
+          "RenderScale": 1,
+          "VerticalAlign": "Center"
+        },
+        {
+          "__type": "CannonTutorial",
+          "__guid": "c7364ff8-0791-4544-908c-f9c029614764",
+          "MyStringValue": "Press E to use Cannon !"
+        }
+      ]
+    },
+    {
       "__guid": "5674defd-5524-42bf-b4ab-e34f815b5cb0",
       "Flags": 0,
       "Name": "CannonUI",
@@ -2751,6 +2778,7 @@
       "Name": "Top Floor",
       "Position": "1278.696,-42.24664,3611.125",
       "Scale": "88.45219,62.4146,54.6897",
+      "Tags": "cameraignore",
       "Enabled": true,
       "Components": [
         {

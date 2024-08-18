@@ -17,6 +17,9 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 
 	public static IEnumerable<PlayerSpawn> CannonSpawnPoint =>
 		SpawnPoints.Where( x => x.Tags.Has( "cannon_spawn" ) );
+	
+	public static IEnumerable<PlayerSpawn> DeadSpawnPoint =>
+		SpawnPoints.Where( x => x.Tags.Has( "dead_spawn" ) );
 
 	[Property] public GameObject Platforms { get; set; }
 	[Property] public GameObject Pillars { get; set; }
@@ -81,7 +84,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 		var playerComponent = player.Components.Get<SmashRunnerMovement>();
 		AddPlayer( playerSlot, playerComponent );
 
-		player.Transform.LocalPosition = RunnerSpawnPoint.First().Transform.Position;
+		player.Transform.LocalPosition = DeadSpawnPoint.First().Transform.Position;
 		player.NetworkSpawn( connection );
 	}
 }
