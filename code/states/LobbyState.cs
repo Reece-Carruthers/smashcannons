@@ -14,7 +14,8 @@ public class LobbyState : BaseState
     {
         if (!Networking.IsHost) return;
         
-        RoundEndTime = 5f;
+        RoundEndTime = 10f;
+        Log.Info($"RoundEndTime set to {RoundEndTime} in OnEnter");
     }
 
     protected override void OnUpdate()
@@ -29,9 +30,11 @@ public class LobbyState : BaseState
             }
         }
 
-        if (RoundEndTime <= 5f && !PlayedCountdown)
+        if (RoundEndTime <= 3f && !PlayedCountdown)
         {
             PlayedCountdown = true;
+            Sound.Play("countdown");
+            Log.Info("Countdown Should Start");
         }
         
         base.OnUpdate();
@@ -120,4 +123,11 @@ public class LobbyState : BaseState
 
         return selectedSpawn.Transform.Position;
     }
+
+    // [Broadcast]
+    // private void PlayCountdownSound()
+    // {
+    //     Sound.Play("countdown");
+            //Log.Info("Countdown Should Start");
+    // }
 }

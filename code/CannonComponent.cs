@@ -82,7 +82,7 @@ public sealed class CannonComponent : Component
 		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2000.0f;
 
 		Stats.Increment( "balls_fired", 1 );
-		PlaySound( "sounds/kenney/ui/ui.downvote.sound");
+		PlaySound("cannonshot");
 		timeSinceLastPrimary = 0;
 	}
 	
