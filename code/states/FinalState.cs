@@ -6,6 +6,9 @@ public class FinalState : BaseState
 
 	public override string Name => "Last Phase";
 	[Sync] private TimeUntil RoundEndTime { get; set; }
+	
+	[Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
+	[Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
 	protected override void OnEnter()
 	{
 		Log.Info("in final phase state!"  );
@@ -26,30 +29,17 @@ public class FinalState : BaseState
 		}
 	}
 
-	private void LogAliveRunners()
+	private void FetchAlivePlayerCount()
 	{
-		var aliveRunners = 0;
-		
-		// Iterate through all players in the scene
-		foreach (var player in SmashCannon.Players)
-		{
-			// Check if the player is in the RunnerTeam and is alive
-			if (player.TeamCategory is RunnerTeam && player.LifeState == LifeState.Alive)
-			{
-				aliveRunners++;
-			}
-		}
-
-		// Log the number of alive runners
-		Log.Info($"Alive Runners: {aliveRunners}");
+		ActiveRunnerPlayers = SmashCannon.Players.Where(player => player.LifeState == LifeState.Alive && player.TeamCategory is RunnerTeam).ToList();
+		ActiveCannonPlayers = SmashCannon.Players.Where(player => player.LifeState == LifeState.Alive && player.TeamCategory is SmashTeam).ToList();
 	}
 
 	protected override void OnUpdate()
 	{
 		if ( Networking.IsHost )
 		{
-
-			LogAliveRunners();
+			FetchAlivePlayerCount();
 		}
 	}
 }

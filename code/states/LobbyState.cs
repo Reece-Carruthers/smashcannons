@@ -10,6 +10,9 @@ public class LobbyState : BaseState
 
     private HashSet<PlayerSpawn> usedCannonSpawnpoints = new HashSet<PlayerSpawn>();
 
+    [Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
+    [Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
+
     protected override void OnEnter()
     {
         if (!Networking.IsHost) return;
@@ -21,11 +24,18 @@ public class LobbyState : BaseState
     {
         if (Networking.IsHost)
         {
-            if (RoundEndTime)
+	        FetchAlivePlayerCount();
+	        var players = SmashCannon.Players.ToList();
+            if (RoundEndTime && players.Count > 1)
             {
-	            AssignPlayersToTeamsAndSpawnPoints();
+	            AssignPlayersToTeamsAndSpawnPoints(players);
                 StateSystem.Set<GameState>();
                 return;
+            }
+
+            if(RoundEndTime && players.Count <= 1) // Restart timer when there is not enough players
+            {
+	            RoundEndTime = 15f;
             }
         }
 
@@ -36,18 +46,16 @@ public class LobbyState : BaseState
         
         base.OnUpdate();
     }
-
-    private void AssignPlayersToTeamsAndSpawnPoints()
+    
+    private void FetchAlivePlayerCount()
     {
-	    Log.Info( SmashCannon.CannonSpawnPoint );
-	    Log.Info( SmashCannon.RunnerSpawnPoint );
-	    var players = SmashCannon.Players.ToList();
-	    var random = new Random();
+	    ActiveRunnerPlayers = SmashCannon.Players.Where(player => player.LifeState == LifeState.Alive && player.TeamCategory is RunnerTeam).ToList();
+	    ActiveCannonPlayers = SmashCannon.Players.Where(player => player.LifeState == LifeState.Alive && player.TeamCategory is SmashTeam).ToList();
+    }
 
-	    if (players.Count < 1)
-	    {
-		    throw new Exception("Not enough players to assign to spawn points");
-	    }
+    private void AssignPlayersToTeamsAndSpawnPoints(List<SmashRunnerMovement> players)
+    {
+	    var random = new Random();
 
 	    players = players.OrderBy(x => random.Next()).ToList();
 

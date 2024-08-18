@@ -2771,14 +2771,6 @@
           "Static": true
         }
       ]
-    },
-    {
-      "__guid": "402afdf1-4689-4e49-a381-c86a65b0d03e",
-      "Flags": 0,
-      "Name": "Cannon1Trigger",
-      "Position": "4911.933,646.1367,2430.576",
-      "Tags": "cannon_zone",
-      "Enabled": true
     }
   ],
   "SceneProperties": {
