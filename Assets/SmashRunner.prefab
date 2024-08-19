@@ -111,10 +111,6 @@
         "ZIndex": 100
       },
       {
-        "__type": "Hud",
-        "__guid": "64b39a67-0f9b-408a-9296-710991b1936a"
-      },
-      {
         "__type": "RagdollController",
         "__guid": "e39679bd-bad1-4016-8a23-4f7db8898718",
         "Physics": {
@@ -140,6 +136,14 @@
         },
         "Volume": 1,
         "WorldspacePlayback": false
+      },
+      {
+        "__type": "Hud",
+        "__guid": "3b8211c1-f187-4903-b9b9-065c3d7a9ca7"
+      },
+      {
+        "__type": "cba.smashCannons.Chat",
+        "__guid": "87981932-e8da-4caf-b79e-1aa6b7a4cbc3"
       }
     ],
     "Children": [
