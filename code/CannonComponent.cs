@@ -42,6 +42,7 @@ public sealed class CannonComponent : Component
 		}
 
 		turretPitch = turretPitch.Clamp( -30, 30 );
+		turretYaw = turretYaw.Clamp( -70, 70 );
 		Gun.Transform.Rotation = Rotation.From( turretPitch, turretYaw, 0 );
 
 		if ( Input.Pressed( "Attack1" ) && timeSinceLastPrimary > 3.0f )

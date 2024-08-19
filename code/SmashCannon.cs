@@ -61,8 +61,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 
 		if ( Networking.IsHost )
 		{
-			var state = StateSystem.Set<LobbyState>();
-			state.RoundEndTime = 5f;
+			StateSystem.Set<LobbyState>();
 		}
 
 		base.OnStart();

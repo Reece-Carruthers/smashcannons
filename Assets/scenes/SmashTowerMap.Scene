@@ -1931,7 +1931,6 @@
       "Flags": 0,
       "Name": "RampObjects",
       "Position": "1489.819,1028.219,1908.345",
-      "Enabled": true,
       "Children": [
         {
           "__guid": "e9b6d9ec-3926-4284-8248-b6fff429ac3d",
@@ -2563,6 +2562,66 @@
           ]
         },
         {
+          "__guid": "1f228b57-5140-407f-87ed-282fb7998a0e",
+          "Flags": 0,
+          "Name": "RunnerSpawn1",
+          "Position": "0,-546.7881,-55.07007",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "4d90a73f-3a4f-499c-b940-ead75684901b",
+              "Index": 0
+            }
+          ]
+        },
+        {
+          "__guid": "c9eaca28-ab85-4220-bd1a-213950b16d0f",
+          "Flags": 0,
+          "Name": "RunnerSpawn1",
+          "Position": "129.3848,-1134.99,-20.94275",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "85b44bc1-0a2c-4296-a53a-cee87f323387",
+              "Index": 0
+            }
+          ]
+        },
+        {
+          "__guid": "d7f31bdb-470f-4110-bf25-6fb5e1a0a7f8",
+          "Flags": 0,
+          "Name": "RunnerSpawn1",
+          "Position": "129.3848,-1815.424,-47.00964",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "57851257-fbbf-4bd8-b2dd-53974f2469a7",
+              "Index": 0
+            }
+          ]
+        },
+        {
+          "__guid": "7e335056-b9c3-419b-a7ac-6ca936e23256",
+          "Flags": 0,
+          "Name": "RunnerSpawn1",
+          "Position": "129.3849,-2165.233,-24.63525",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "d021115d-fb93-4221-808d-2dce6a3728d9",
+              "Index": 0
+            }
+          ]
+        },
+        {
           "__guid": "0fa55dc8-0140-4bc7-91db-f709d1c2e30d",
           "Flags": 0,
           "Name": "RunnerSpawn2",
@@ -2573,6 +2632,66 @@
             {
               "__type": "PlayerSpawn",
               "__guid": "a99a240e-a68e-48a6-a0e4-6f91d59f11e3",
+              "Index": 1
+            }
+          ]
+        },
+        {
+          "__guid": "1482bca0-7310-4f50-8cb6-419e1552fb3b",
+          "Flags": 0,
+          "Name": "RunnerSpawn2",
+          "Position": "-0.0008544922,481.7376,-34.05225",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "451db5a6-edae-4c82-9102-0f6371c91489",
+              "Index": 1
+            }
+          ]
+        },
+        {
+          "__guid": "efc6457f-579b-4556-9373-633c35031a73",
+          "Flags": 0,
+          "Name": "RunnerSpawn2",
+          "Position": "118.6099,1168.032,-1.278687",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "36485964-4da7-4ce0-bed2-cff8773ce80a",
+              "Index": 1
+            }
+          ]
+        },
+        {
+          "__guid": "1b8090e3-db15-4652-92c5-cbab094f5b37",
+          "Flags": 0,
+          "Name": "RunnerSpawn2",
+          "Position": "118.6095,2221.226,-35.03113",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "7ea2b657-26b8-4ad6-93da-12fc5d8a8d3b",
+              "Index": 1
+            }
+          ]
+        },
+        {
+          "__guid": "ebd7d423-9eba-4b7d-b366-643a33928c2a",
+          "Flags": 0,
+          "Name": "RunnerSpawn2",
+          "Position": "118.6095,1929.651,-27.47107",
+          "Tags": "runner_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "ddbb672b-1406-4cb3-9e97-7eb0d7d1550d",
               "Index": 1
             }
           ]
@@ -2613,13 +2732,133 @@
           "__guid": "c11e04c3-6aa5-495a-b113-ac848f01e370",
           "Flags": 0,
           "Name": "RampSpawn1",
-          "Position": "1141.648,-65.03183,-1087.263",
+          "Position": "1141.648,-65.03183,-1112",
           "Tags": "ramp_spawn",
           "Enabled": true,
           "Components": [
             {
               "__type": "PlayerSpawn",
               "__guid": "290cffc2-021e-47a2-9cf7-8f9b34868812",
+              "Index": 3
+            }
+          ]
+        },
+        {
+          "__guid": "8d6e7d8a-c318-4b9c-ba30-6de7530813e1",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,-238.9577,-1112",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "97175be0-80e8-4856-a2da-7d46f096da31",
+              "Index": 3
+            }
+          ]
+        },
+        {
+          "__guid": "73bada01-fc60-489f-9f85-555e61bef960",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,-396.5146,-1112",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "d7e06e0b-fdf7-4a86-a51f-32407ca4cf65",
+              "Index": 3
+            }
+          ]
+        },
+        {
+          "__guid": "5474efc3-a7a8-4a51-b658-0a4628c574a1",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,-629.3076,-1112",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "c4fd9b01-524a-482e-83f8-dfe0dabbd945",
+              "Index": 3
+            }
+          ]
+        },
+        {
+          "__guid": "0b594508-ac89-44ce-a6d6-3933a33c1c1b",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,-814.6796,-1112",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "4b9344ba-3f28-4ac3-bbe4-418cfdc30b46",
+              "Index": 3
+            }
+          ]
+        },
+        {
+          "__guid": "7c736622-5a09-43f0-bc63-f9d12a2a1be3",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,84.5065,-1112",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "546068fd-7fff-4498-ab7c-aa976cd72054",
+              "Index": 3
+            }
+          ]
+        },
+        {
+          "__guid": "8142182f-a725-4a3e-825d-e8b41fdbe3e6",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,228.3644,-1112",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "986438b8-ecd1-4cf2-bbb1-d187d6cab2f6",
+              "Index": 3
+            }
+          ]
+        },
+        {
+          "__guid": "0c618aa0-d98f-4820-b1ac-7b3a7a1339b8",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,371.0924,-1112",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "32f22880-b23a-401b-a795-0b036518ae46",
+              "Index": 3
+            }
+          ]
+        },
+        {
+          "__guid": "28ccdf5b-8cd3-4493-8dfa-8bfbd4b4a6c8",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,640.6824,-1127.236",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "4a893a82-736a-4eda-b176-d694fd9257b0",
               "Index": 3
             }
           ]

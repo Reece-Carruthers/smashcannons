@@ -123,6 +123,23 @@
           "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
           "component_type": "ModelPhysics"
         }
+      },
+      {
+        "__type": "Sandbox.Voice",
+        "__guid": "dbb46cc5-b347-4ee4-99a9-9b605f7fbe2b",
+        "Loopback": false,
+        "Mode": "PushToTalk",
+        "MorphScale": 2,
+        "MorphSmoothTime": 0.1,
+        "PushToTalkInput": "voice",
+        "Renderer": {
+          "_type": "component",
+          "component_id": "09f15783-44a3-4393-9064-4a3380587c6e",
+          "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "Volume": 1,
+        "WorldspacePlayback": false
       }
     ],
     "Children": [

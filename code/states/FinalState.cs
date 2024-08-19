@@ -1,3 +1,4 @@
+using System;
 using Sandbox;
 
 public class FinalState : BaseState
@@ -37,15 +38,23 @@ public class FinalState : BaseState
 	{
 		FetchAlivePlayerCount();
 		
-		var ramp = Scene.Components.GetAll<PlayerSpawn>()
-			.FirstOrDefault( x => x.Tags.Has( "ramp_spawn" ) );
-
-		if ( ramp is null ) return;
+		var rampSpawns = Scene.Components.GetAll<PlayerSpawn>()
+			.Where( x => x.Tags.Has( "ramp_spawn" ) ).ToList();
 		
 		foreach ( var player in ActiveRunnerPlayers)
 		{
-			player.Teleport( ramp.Transform.Position );
+			player.Teleport( RandomRampSpawn(rampSpawns) );
 		}
+	}
+	
+	private Vector3 RandomRampSpawn(List<PlayerSpawn> rampSpawns)
+	{
+		var random = new Random();
+
+		var randomIndex = random.Next( rampSpawns.Count );
+		var selectedSpawn = rampSpawns[randomIndex];
+
+		return selectedSpawn.Transform.Position;
 	}
 
 	private void FetchAlivePlayerCount()
