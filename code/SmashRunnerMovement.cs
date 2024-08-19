@@ -60,7 +60,9 @@ public sealed class SmashRunnerMovement : Component
 	[Property] Collider playerCollider { get; set; }
 	[HostSync] public Vector3 CannonSpawnpoint { get; set; }
 	
-	[Sync] private TimeUntil DeathTimer { get; set; }
+	[Sync] public TimeUntil DeathTimer { get; set; }
+	
+	[Property] public RagdollController RagdollController { get; set; }
 
 	public static SmashRunnerMovement Local
 	{
@@ -88,31 +90,7 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnUpdate()
 	{
-		if ( LifeState == LifeState.Dead )
-		{
-			if ( DeathTimer ) //TODO: On death sliding and body not going into correct position?
-			{
-				var deadSpawn = Scene.Components.GetAll<PlayerSpawn>().FirstOrDefault( x => x.Tags.Has( "dead_spawn" ) );
-				
-				if(deadSpawn is null) return;
-				
-				LifeState = LifeState.Spectate;
-				
-				var ragdollController = Components.Get<RagdollController>();
-				if ( ragdollController is null ) return;
-				
-				ragdollController.Unragdoll();
-
-				Body.Transform.LocalPosition = deadSpawn.Transform.Position;
-				Head.Transform.LocalPosition = deadSpawn.Transform.Position;
-				
-				characterController.Velocity = Vector3.Zero;
-
-				Teleport( deadSpawn.Transform.Position );
-			}
-			
-			return;
-		}
+		HandleSpectate();
 
 		if ( cannon is not null &&
 		     cannon.Network.OwnerConnection !=
@@ -316,25 +294,6 @@ public sealed class SmashRunnerMovement : Component
 		}
 	}
 
-	public void Kill()
-	{
-		LifeState = LifeState.Dead;
-
-		DeathTimer = 5f;
-
-		var ragdollController = Components.Get<RagdollController>();
-		if ( ragdollController is null ) return;
-
-		var playerPosition = Transform.Position;
-
-		var direction = Vector3.Up +
-		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
-		ragdollController.Ragdoll( playerPosition, direction );
-
-		Sound.Play( "dead", Transform.World.Position );
-		
-	}
-
 	[Broadcast( NetPermission.HostOnly )]
 	public void Respawn()
 	{
@@ -342,10 +301,7 @@ public sealed class SmashRunnerMovement : Component
 
 		if ( Networking.IsHost )
 		{
-			var ragdollController = Components.Get<RagdollController>();
-			if ( ragdollController is null ) return;
-
-			ragdollController.Unragdoll();
+			RagdollController.Unragdoll();
 			LifeState = LifeState.Alive;
 		}
 	}
@@ -370,10 +326,7 @@ public sealed class SmashRunnerMovement : Component
 
 		if ( TeamCategory is SmashTeam )
 		{
-			if ( CannonSpawnpoint == new Vector3( 0 ) )
-			{
-				return;
-			}
+			if ( CannonSpawnpoint == new Vector3( 0 ) ) return;
 
 			Transform.Position = CannonSpawnpoint;
 		}
@@ -398,4 +351,53 @@ public sealed class SmashRunnerMovement : Component
 
 		return selectedSpawn.Transform.Position;
 	}
+
+	[Broadcast(NetPermission.HostOnly)]
+	private void HandleSpectate() //TODO: How to get timer working with death, when timer is activated model goes weird
+	{
+		if ( LifeState != LifeState.Dead || !Networking.IsHost ) return;
+
+		if ( DeathTimer )
+		{
+			var deadSpawn = Scene.Components.GetAll<PlayerSpawn>().FirstOrDefault( x => x.Tags.Has( "dead_spawn" ) );
+				
+			if(deadSpawn is null) return;
+				
+			LifeState = LifeState.Spectate;
+
+			UnragdollPlayer();
+			
+			characterController.Velocity = Vector3.Zero;
+
+			Teleport( deadSpawn.Transform.Position );
+		}
+	}
+
+	public void Kill()
+	{
+		LifeState = LifeState.Dead;
+		
+		var playerPosition = Transform.Position;
+
+		var direction = Vector3.Up +
+		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
+
+		RagdollPlayer(playerPosition, direction);
+
+		Sound.Play( "dead", Transform.World.Position );
+	}
+
+	[Broadcast(NetPermission.HostOnly)]
+	private void RagdollPlayer(Vector3 playerPosition, Vector3 direction)
+	{
+		RagdollController.Ragdoll( playerPosition, direction );
+	}
+	
+	[Broadcast(NetPermission.HostOnly)]
+	private void UnragdollPlayer()
+	{
+		RagdollController.Unragdoll();
+	}
+
+
 }

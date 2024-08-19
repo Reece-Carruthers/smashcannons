@@ -1937,6 +1937,7 @@
           "Flags": 0,
           "Name": "Ramp",
           "Position": "-1916.905,-1100.788,-1586.015",
+          "Tags": "ramp",
           "Enabled": true,
           "Components": [
             {

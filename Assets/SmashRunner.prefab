@@ -40,6 +40,12 @@
           "go": "dbd82e4e-e505-40f5-8be9-1e85db538502",
           "component_type": "CapsuleCollider"
         },
+        "RagdollController": {
+          "_type": "component",
+          "component_id": "e39679bd-bad1-4016-8a23-4f7db8898718",
+          "go": "dbd82e4e-e505-40f5-8be9-1e85db538502",
+          "component_type": "RagdollController"
+        },
         "RunSpeed": 290,
         "Speed": 160
       },

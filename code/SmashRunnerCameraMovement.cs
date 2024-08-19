@@ -33,13 +33,12 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 
 	protected override void OnUpdate()
 	{
-		
-		if (Player?.LifeState == LifeState.Dead)
+		if ( Player?.LifeState == LifeState.Dead )
 		{
 			// If the player is dead, skip camera movement
 			return;
 		}
-		
+
 		if ( Network.IsProxy ) return;
 
 		if ( Player is null )
@@ -55,6 +54,8 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 				lastIsFirstPerson = IsFirstPerson;
 			}
 		}
+
+		if ( Player is null ) return;
 
 		var eyeAngles = Head.Transform.Rotation.Angles();
 		eyeAngles.pitch += Input.MouseDelta.y * 0.1f;

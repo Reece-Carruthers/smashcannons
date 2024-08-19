@@ -15,10 +15,7 @@ public class LobbyState : BaseState
 
 	protected override void OnEnter()
 	{
-		if ( !Networking.IsHost ) return;
-
-		RoundEndTime = 10f;
-        Log.Info($"RoundEndTime set to {RoundEndTime} in OnEnter");
+		RoundEndTime = 30f;
 	}
 
 	protected override void OnUpdate()
@@ -30,7 +27,7 @@ public class LobbyState : BaseState
 
 			if ( RoundEndTime && players.Count <= 1 ) // Restart timer when there is not enough players
 			{
-				RoundEndTime = 15f;
+				RoundEndTime = 30f;
 			}
 
 			if ( RoundEndTime && players.Count > 1 )
@@ -40,14 +37,11 @@ public class LobbyState : BaseState
 				return;
 			}
 			
-			
-		}
-
-		if ( RoundEndTime <= 3f && !PlayedCountdown )
-		{
-			PlayedCountdown = true;
-            Sound.Play("countdown");
-            Log.Info("Countdown Should Start");
+			if ( RoundEndTime <= 3f && !PlayedCountdown && players.Count > 1)
+			{
+				PlayedCountdown = true;
+				PlayCountdownSound();
+			}
 		}
 
 		base.OnUpdate();
@@ -115,10 +109,9 @@ public class LobbyState : BaseState
 		return selectedSpawn.Transform.Position;
 	}
 	
-	// [Broadcast]
-	// private void PlayCountdownSound()
-	// {
-	//     Sound.Play("countdown");
-	//Log.Info("Countdown Should Start");
-	// }
+	 [Broadcast]
+	 private void PlayCountdownSound()
+	 {
+	     Sound.Play("countdown");
+	 }
 }

@@ -80,10 +80,19 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 			Log.Warning( "No available player slots" );
 		}
 
+		
+		var activeState = StateSystem.Active as LobbyState;
 		var playerComponent = player.Components.Get<SmashRunnerMovement>();
+		
 		AddPlayer( playerSlot, playerComponent );
-
 		player.Transform.LocalPosition = DeadSpawnPoint.First().Transform.Position;
+
+		if ( !activeState.IsValid() )
+		{
+			playerComponent.LifeState = LifeState.Spectate;
+		}
+		
 		player.NetworkSpawn( connection );
+
 	}
 }

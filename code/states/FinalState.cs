@@ -10,9 +10,13 @@ public class FinalState : BaseState
 	[Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
 	[Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
 
+	[Sync] public bool teleportPlayers { get; set; } = false;
+
 	protected override void OnEnter()
 	{
 		RoundEndTime = 60f;
+
+		var teleportPlayers = true;
 
 		var mainScript = SmashCannon.Instance;
 		if ( mainScript != null && mainScript.Platforms != null )
@@ -44,8 +48,21 @@ public class FinalState : BaseState
 		if ( Networking.IsHost )
 		{
 			FetchAlivePlayerCount();
-			
-			if (  Connection.All.Count > 1 && (ActiveRunnerPlayers.Count <= 0 || ActiveCannonPlayers.Count <= 0) )
+
+			var ramp = Scene.Components.GetAll().FirstOrDefault( x => x.Tags.Has( "ramp" ) );
+			if ( ramp is null ) return;
+
+			var rampLoc = ramp.Transform.Position;
+
+			if ( Networking.IsHost )
+			{
+				foreach ( var player in ActiveRunnerPlayers )
+				{
+					player.Teleport( rampLoc );
+				}
+			}
+
+			if ( Connection.All.Count > 1 && (ActiveRunnerPlayers.Count <= 0 || ActiveCannonPlayers.Count <= 0) )
 			{
 				StateSystem.Set<EndState>();
 			}
