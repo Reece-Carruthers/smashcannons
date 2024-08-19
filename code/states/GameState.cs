@@ -12,7 +12,7 @@ public class GameState : BaseState
 
 	protected override void OnEnter()
 	{
-		RoundEndTime = 5f;
+		RoundEndTime = 60f;
 	}
 
 	private void FetchAlivePlayerCount()

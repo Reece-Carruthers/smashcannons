@@ -1,5 +1,4 @@
 using System;
-using cba.smashCannons;
 using Sandbox;
 using Sandbox.Citizen;
 
@@ -112,6 +111,11 @@ public sealed class SmashRunnerMovement : Component
 				if ( Input.Pressed( "Use" ) && TeamCategory.CanControlCannon() )
 				{
 					TryTakeCannon();
+				}
+				
+				if ( Input.Pressed( "Use" ))
+				{
+					TryKillCannons();
 				}
 
 				TargetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
@@ -280,6 +284,33 @@ public sealed class SmashRunnerMovement : Component
 		cannon = cannonComponent;
 		characterController.Velocity = Vector3.Zero;
 	}
+	
+	private void TryKillCannons()
+	{
+		Log.Info( "I AM HERE" );
+		var position = Head.Transform.Position.WithZ( Head.Transform.Position.z + 50f );
+
+		var tr = Scene.Trace.WithoutTags( "player" )
+			.Sphere( 32, Head.Transform.Position,
+				position )
+			.Run();
+
+		if ( !tr.Hit || !tr.GameObject.Tags.Has( "button" ) ) return;
+		
+		Log.Info( "PRESSED" );
+
+
+		var killButton = tr.GameObject.Components.Get<KillButton>();
+
+		
+		if ( killButton is null ) return;
+		
+		Log.Info( "button fetched" );
+
+
+		killButton.Kill(this);
+	}
+
 
 	private void RenderModelAndClothes()
 	{
@@ -384,7 +415,6 @@ public sealed class SmashRunnerMovement : Component
 		RagdollPlayer(playerPosition, direction);
 
 		Sound.Play( "dead", Transform.World.Position );
-		Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, "#53bdb6", $"has died!" );
 	}
 
 	[Broadcast(NetPermission.HostOnly)]
@@ -398,6 +428,5 @@ public sealed class SmashRunnerMovement : Component
 	{
 		RagdollController.Unragdoll();
 	}
-
 
 }

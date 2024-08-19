@@ -1931,6 +1931,7 @@
       "Flags": 0,
       "Name": "RampObjects",
       "Position": "1489.819,1028.219,1908.345",
+      "NetworkOrphaned": 1,
       "Children": [
         {
           "__guid": "e9b6d9ec-3926-4284-8248-b6fff429ac3d",
@@ -2341,6 +2342,7 @@
           "Rotation": "-0.1755095,0,0.9844778,0",
           "Scale": "4.528905,4.528905,4.528905",
           "Enabled": true,
+          "NetworkOrphaned": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
@@ -2382,6 +2384,7 @@
           "Rotation": "-0.1755095,0,0.9844778,0",
           "Scale": "4.528905,4.528905,4.528905",
           "Enabled": true,
+          "NetworkOrphaned": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
@@ -2450,6 +2453,7 @@
           "Rotation": "-0.1755095,0,0.9844778,0",
           "Scale": "4.528905,4.528905,4.528905",
           "Enabled": true,
+          "NetworkOrphaned": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
@@ -2534,6 +2538,64 @@
               "IsTrigger": false,
               "Model": "models/cylinder.vmdl",
               "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "53ff66a4-2103-49b1-80f6-b2e130ca4021",
+          "Flags": 0,
+          "Name": "Button",
+          "Position": "3424.002,-1092.194,74.09412",
+          "Scale": "2,2,1",
+          "Tags": "button,trigger",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "baf9346e-59fc-4280-9cc8-626ba12dfac4",
+              "BodyGroups": 18446744073709551615,
+              "CreateBoneObjects": false,
+              "Model": "models/tycoon_content/buttons/pole_with_button_50.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "f552387f-d3e8-46ea-a86a-ffd966ed3501",
+              "Center": "-37.60006,0,0",
+              "IsTrigger": false,
+              "Scale": "100,200,400",
+              "Static": false
+            },
+            {
+              "__type": "KillButton",
+              "__guid": "ffd7c534-b3c2-49df-8d9f-622170255279"
+            }
+          ]
+        },
+        {
+          "__guid": "42dc23a3-596a-4fd1-9408-3a61031a85ba",
+          "Flags": 0,
+          "Name": "ButtonUI",
+          "Position": "3423.762,-1092.775,151.8428",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "fe514410-1710-4d66-ba53-3b850c1a719c",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "1174.3,391.3004",
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "8829a6a0-21ea-4c27-809a-d011fdb75843",
+              "MyStringValue": "Press E to kill the cannioniers!"
             }
           ]
         }
@@ -3056,6 +3118,7 @@
     "facepunch.glass_a",
     "facepunch.wall_limestone_brick_large",
     "kvien.concretewall04_pixel",
+    "pitocueva.pole_with_button_50",
     "rust.brick_wall_b_plasterblend",
     "rustextended.terrain_grass"
   ],

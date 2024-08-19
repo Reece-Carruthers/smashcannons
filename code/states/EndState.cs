@@ -14,7 +14,7 @@ public class EndState : BaseState
 
 	protected override void OnEnter()
 	{
-		RoundEndTime = 10f;
+		RoundEndTime = 5f;
 	}
 
 	private void FetchAlivePlayerCount()
