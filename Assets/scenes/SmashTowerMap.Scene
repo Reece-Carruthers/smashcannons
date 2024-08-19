@@ -83,7 +83,7 @@
       "Flags": 0,
       "Name": "Cannon2",
       "Position": "4790.604,-612.2267,2376.911",
-      "Tags": "cannon_zone,trigger,cannon",
+      "Tags": "cannon,trigger,cannon_zone",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 3,
@@ -96,7 +96,7 @@
       "Flags": 0,
       "Name": "Cannon1",
       "Position": "4790.604,624,2376.911",
-      "Tags": "trigger,cannon_zone,cannon",
+      "Tags": "cannon,cannon_zone,trigger",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 3,
@@ -1931,12 +1931,13 @@
       "Flags": 0,
       "Name": "RampObjects",
       "Position": "1489.819,1028.219,1908.345",
+      "Enabled": true,
       "Children": [
         {
           "__guid": "e9b6d9ec-3926-4284-8248-b6fff429ac3d",
           "Flags": 0,
           "Name": "Ramp",
-          "Position": "-1916.905,-1100.788,-1586.015",
+          "Position": "-1916.905,-1100.788,-1588.636",
           "Tags": "ramp",
           "Enabled": true,
           "Components": [
@@ -2136,24 +2137,24 @@
                 "TextureOffset": [
                   "453.2124,200.0136",
                   "172.3442,221.7241",
-                  "221.7241,265.3195",
+                  "221.7241,254.8356",
                   "403.0308,90.98779",
-                  "339.6558,265.3195",
-                  "344.6884,530.639",
+                  "339.6558,254.8356",
+                  "344.6884,509.6713",
                   "403.0308,90.98779",
-                  "225.4062,348.6416",
-                  "327.3372,59.04419",
-                  "798.5938,348.6455",
-                  "924.4305,225.5093",
-                  "580.5514,530.5586",
-                  "225.4023,348.5664",
+                  "225.4062,327.6738",
+                  "328.1871,59.04419",
+                  "798.5938,327.6777",
+                  "931.2299,225.5093",
+                  "580.5514,509.5908",
+                  "225.4023,327.5986",
                   "200.1821,59.0434",
-                  "798.5977,348.5664",
+                  "798.5977,327.5986",
                   "798.6367,225.5107",
                   "200.2075,59.05846",
-                  "485.9526,530.5596",
+                  "485.9526,509.5918",
                   "798.6406,225.5104",
-                  "505.9065,530.5576",
+                  "505.9065,509.5898",
                   "798.6367,225.5105",
                   "200.2075,59.04377"
                 ],
@@ -2609,6 +2610,21 @@
           ]
         },
         {
+          "__guid": "c11e04c3-6aa5-495a-b113-ac848f01e370",
+          "Flags": 0,
+          "Name": "RampSpawn1",
+          "Position": "1141.648,-65.03183,-1087.263",
+          "Tags": "ramp_spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PlayerSpawn",
+              "__guid": "290cffc2-021e-47a2-9cf7-8f9b34868812",
+              "Index": 3
+            }
+          ]
+        },
+        {
           "__guid": "d44d7014-a7c5-4198-97da-762b4f97134b",
           "Flags": 0,
           "Name": "DeadSpawn1",
@@ -2625,14 +2641,6 @@
           ]
         }
       ]
-    },
-    {
-      "__guid": "0205e763-33ad-481d-ad67-2c897462442f",
-      "Flags": 0,
-      "Name": "TempCannonSpawn",
-      "Position": "4949.251,627.7125,2419.916",
-      "Rotation": "0,0,1,-0.00000004371139",
-      "Enabled": true
     },
     {
       "__guid": "45fd3577-1078-43cd-aa89-7f85d04c68bf",
@@ -2666,31 +2674,6 @@
           "CameraZoomSpeed": 10,
           "Distance": 300,
           "MaxCameraZoom": 400
-        }
-      ]
-    },
-    {
-      "__guid": "fa3c141e-6b44-45a3-bf26-b0b10f6fa10c",
-      "Flags": 0,
-      "Name": "Plane",
-      "Position": "4580.625,660.0026,2272.913",
-      "Scale": "4.94861,4.94861,4.94861",
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "c1aa902c-9128-456e-87c2-6e382b0ea65a",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.PlaneCollider",
-          "__guid": "1be68899-8467-4d2c-928c-6ad40ee0fbe2",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "97.69989,98.19991",
-          "Static": true
         }
       ]
     },

@@ -3,7 +3,7 @@
     "__guid": "5d8fda91-e097-4ec0-9b62-adb6c9f68bd9",
     "Flags": 0,
     "Name": "cannon",
-    "Tags": "cannon_zone,cannon,trigger",
+    "Tags": "trigger,cannon,cannon_zone",
     "Enabled": true,
     "NetworkMode": 1,
     "NetworkOrphaned": 3,
@@ -71,173 +71,6 @@
             "Model": "models/cylinder.vmdl",
             "RenderType": "On",
             "Tint": "0.06977,0.06977,0.06977,1"
-          }
-        ],
-        "Children": [
-          {
-            "__guid": "9e1a06da-73a8-45cd-b9e3-f6935e40f38a",
-            "Flags": 0,
-            "Name": "Burst",
-            "Position": "0.0008277705,-0.00005427567,-20.87871",
-            "Tags": "particles",
-            "Enabled": true,
-            "Components": [
-              {
-                "__type": "Sandbox.ParticleEffect",
-                "__guid": "3c83910d-eaa5-41ff-a211-a675b041b340",
-                "Alpha": {
-                  "Type": "Curve",
-                  "CurveA": [
-                    {
-                      "y": 1
-                    },
-                    {
-                      "x": 1
-                    }
-                  ],
-                  "Constants": "1,0,0,0"
-                },
-                "ApplyColor": false,
-                "ApplyRotation": false,
-                "ApplyShape": true,
-                "Bounce": {
-                  "Constants": "1,0,0,0"
-                },
-                "Brightness": {
-                  "Constants": "1,0,0,0"
-                },
-                "Bumpiness": {},
-                "Collision": false,
-                "CollisionRadius": 1,
-                "Damping": {},
-                "DieOnCollisionChance": {},
-                "Force": false,
-                "ForceDirection": "0,0,-800",
-                "ForceScale": {
-                  "Constants": "1,0,0,0"
-                },
-                "Friction": {
-                  "Constants": "1,0,0,0"
-                },
-                "Gradient": {
-                  "Evaluation": "Particle",
-                  "GradientA": {
-                    "color": [
-                      {
-                        "t": 0.5,
-                        "c": "1,1,1,1"
-                      }
-                    ],
-                    "alpha": []
-                  },
-                  "GradientB": {
-                    "color": [
-                      {
-                        "t": 0.5,
-                        "c": "1,1,1,1"
-                      }
-                    ],
-                    "alpha": []
-                  },
-                  "ConstantA": "0.32558,0.32558,0.32558,1",
-                  "ConstantB": "1,1,1,1"
-                },
-                "Lifetime": {
-                  "Type": "Range",
-                  "Evaluation": "Particle",
-                  "Constants": "1,2,0,0"
-                },
-                "MaxParticles": 1000,
-                "OrbitalForce": {},
-                "OrbitalPull": {},
-                "PerParticleTimeScale": {
-                  "Constants": "1,0.4,0,0"
-                },
-                "Pitch": {},
-                "PreWarm": 0,
-                "PushStrength": {},
-                "Roll": {
-                  "Type": "Range",
-                  "Evaluation": "Particle",
-                  "Constants": "0,360,0,0"
-                },
-                "Scale": {
-                  "Type": "Curve",
-                  "CurveA": [
-                    {
-                      "in": -9.333329,
-                      "out": 9.333329
-                    },
-                    {
-                      "x": 0.03325123,
-                      "y": 1,
-                      "in": -0.056075174,
-                      "out": 0.056075174
-                    },
-                    {
-                      "x": 1,
-                      "in": 2.9152544,
-                      "out": -2.9152544
-                    }
-                  ],
-                  "Constants": "1,0,0,0"
-                },
-                "SequenceId": {},
-                "SequenceSpeed": {
-                  "Constants": "1,0,0,0"
-                },
-                "SequenceTime": {
-                  "Constants": "1,0,0,0"
-                },
-                "SheetSequence": false,
-                "Space": "World",
-                "StartDelay": {},
-                "StartVelocity": {
-                  "Type": "Range",
-                  "Evaluation": "Particle",
-                  "Constants": "10,70,0,0"
-                },
-                "Stretch": {},
-                "TimeScale": 1,
-                "Tint": "0.29302,0.29302,0.29302,1",
-                "Yaw": {}
-              },
-              {
-                "__type": "Sandbox.ParticleSpriteRenderer",
-                "__guid": "88670d80-f3f7-46cf-9eb9-fe39768bcde7",
-                "Additive": false,
-                "Alignment": "LookAtCamera",
-                "BlurAmount": 0.5,
-                "BlurOpacity": 0.91,
-                "BlurSpacing": 0.73,
-                "DepthFeather": 0,
-                "FaceVelocity": false,
-                "FogStrength": 1,
-                "LeadingTrail": true,
-                "Lighting": false,
-                "MotionBlur": false,
-                "Opaque": false,
-                "RotationOffset": 0,
-                "Scale": 1.35,
-                "Shadows": false,
-                "SortMode": "Unsorted",
-                "Texture": "materials/particles/shapes/circle1.vtex"
-              },
-              {
-                "__type": "Sandbox.ParticleSphereEmitter",
-                "__guid": "29158707-0c2f-498e-8d43-74198b56bf23",
-                "Burst": 1000,
-                "Delay": 0,
-                "DestroyOnEnd": false,
-                "Duration": 1,
-                "Loop": true,
-                "OnEdge": false,
-                "Radius": 6.86,
-                "Rate": 0,
-                "RateOverDistance": 0,
-                "Velocity": 52.29
-              }
-            ]
           }
         ]
       },
@@ -1360,6 +1193,11 @@
           {
             "__type": "BoxForce",
             "__guid": "ca09a01a-7a6b-4666-b559-5e6a7b5508c1"
+          },
+          {
+            "__type": "SelfDestructComponent",
+            "__guid": "615b14d1-38aa-4376-a0b8-3e316839c69e",
+            "Seconds": 30
           }
         ]
       }

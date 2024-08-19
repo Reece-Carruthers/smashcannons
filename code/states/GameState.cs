@@ -12,7 +12,7 @@ public class GameState : BaseState
 
 	protected override void OnEnter()
 	{
-		RoundEndTime = 60f;
+		RoundEndTime = 5f;
 	}
 
 	private void FetchAlivePlayerCount()
@@ -36,6 +36,11 @@ public class GameState : BaseState
 			if (  Connection.All.Count > 1 && (ActiveRunnerPlayers.Count <= 0 || ActiveCannonPlayers.Count <= 0) )
 			{
 				StateSystem.Set<EndState>();
+			}
+
+			if ( Connection.All.Count <= 1 ) // Restart game on only having one connection
+			{
+				Game.ActiveScene.LoadFromFile( "scenes/smashtowermap.scene" );
 			}
 		}
 	}

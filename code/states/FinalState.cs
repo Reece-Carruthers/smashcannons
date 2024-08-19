@@ -9,15 +9,11 @@ public class FinalState : BaseState
 
 	[Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
 	[Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
-
-	[Sync] public bool teleportPlayers { get; set; } = false;
-
+	
 	protected override void OnEnter()
 	{
 		RoundEndTime = 60f;
-
-		var teleportPlayers = true;
-
+		
 		var mainScript = SmashCannon.Instance;
 		if ( mainScript != null && mainScript.Platforms != null )
 		{
@@ -33,6 +29,23 @@ public class FinalState : BaseState
 		{
 			mainScript.Ramp.Enabled = true;
 		}
+
+		TeleportToRamp();
+	}
+	
+	private void TeleportToRamp()
+	{
+		FetchAlivePlayerCount();
+		
+		var ramp = Scene.Components.GetAll<PlayerSpawn>()
+			.FirstOrDefault( x => x.Tags.Has( "ramp_spawn" ) );
+
+		if ( ramp is null ) return;
+		
+		foreach ( var player in ActiveRunnerPlayers)
+		{
+			player.Teleport( ramp.Transform.Position );
+		}
 	}
 
 	private void FetchAlivePlayerCount()
@@ -47,24 +60,22 @@ public class FinalState : BaseState
 	{
 		if ( Networking.IsHost )
 		{
+			
 			FetchAlivePlayerCount();
-
-			var ramp = Scene.Components.GetAll().FirstOrDefault( x => x.Tags.Has( "ramp" ) );
-			if ( ramp is null ) return;
-
-			var rampLoc = ramp.Transform.Position;
-
-			if ( Networking.IsHost )
-			{
-				foreach ( var player in ActiveRunnerPlayers )
-				{
-					player.Teleport( rampLoc );
-				}
-			}
-
+			
 			if ( Connection.All.Count > 1 && (ActiveRunnerPlayers.Count <= 0 || ActiveCannonPlayers.Count <= 0) )
 			{
 				StateSystem.Set<EndState>();
+			}
+
+			if ( RoundEndTime )
+			{
+				StateSystem.Set<EndState>();
+			}
+			
+			if ( Connection.All.Count <= 1 ) // Restart game on only having one connection
+			{
+				Game.ActiveScene.LoadFromFile( "scenes/smashtowermap.scene" );
 			}
 		}
 	}
