@@ -330,6 +330,8 @@ public sealed class SmashRunnerMovement : Component
 		var direction = Vector3.Up +
 		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
 		ragdollController.Ragdoll( playerPosition, direction );
+
+		Sound.Play( "dead", Transform.World.Position );
 		
 	}
 

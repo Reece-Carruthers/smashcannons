@@ -1,0 +1,25 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "countdown",
+      "Type": "asset",
+      "Org": "local",
+      "Ident": "countdown",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "sounds/countdown.mp3"
+      }
+    }
+  },
+  "loop": false,
+  "start": 0,
+  "end": 0,
+  "rate": 44100,
+  "compress": false,
+  "bitrate": 256
+}
