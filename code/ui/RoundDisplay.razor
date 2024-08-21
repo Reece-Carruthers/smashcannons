@@ -6,24 +6,12 @@
 @inherits Panel
 
 @{
-	// TODO: Refactor this horrible code
-	var lobbyState = StateSystem.Active as LobbyState;
-	var gameState = StateSystem.Active as GameState;
-	var finalState = StateSystem.Active as FinalState;
+	var state = StateSystem.Active as ExtendedState;
 	var activePlayers = 0;
 
-	if ( lobbyState.IsValid() )
+	if ( state.IsValid() )
 	{
-		activePlayers = lobbyState.ActiveRunnerPlayers.Count + lobbyState.ActiveCannonPlayers.Count;
-	}
-	else if ( gameState.IsValid() )
-	{
-		activePlayers = gameState.ActiveRunnerPlayers.Count + gameState.ActiveCannonPlayers.Count;
-	}
-	else if ( finalState.IsValid() )
-
-	{
-		activePlayers = finalState.ActiveRunnerPlayers.Count + finalState.ActiveCannonPlayers.Count;
+		activePlayers = state.ActiveRunnerPlayers.Count + state.ActiveCannonPlayers.Count;
 	}
 	else
 	{
@@ -45,33 +33,17 @@
 	<div class="container-alive-runners">
 		<label class="alive-runners">Runners Alive: @GetAliveRunnersCount()</label>
 	</div>
-
-	@if ( IsCannonWin() )
-	{
-		<div class="container-win">
-			<label class="win-message">Cannoniers win!</label>
-		</div>
-	}
-	else if ( IsRunnersWin() )
-	{
-		<div class="container-win">
-			<label class="win-message">Runners win!</label>
-		</div>
-	}
 </root>
 
 @code
 {
 	[Property] public string GameLobby = "Waiting for Players . . .";
-	public SmashRunnerMovement LocalPlayer { get; set; }
 
 	protected override int BuildHash()
 	{
-		var lobbyState = StateSystem.Active as LobbyState;
-		var gameState = StateSystem.Active as GameState;
-		var finalState = StateSystem.Active as FinalState;
+		var state = StateSystem.Active as ExtendedState;
 
-		return !gameState.IsValid() && !finalState.IsValid() && !lobbyState.IsValid() ? 0 : HashCode.Combine( GetTimeLeftString(), GetAliveRunnersCount() );
+		return !state.IsValid() ? 0 : HashCode.Combine( GetTimeLeftString(), GetAliveRunnersCount() );
 	}
 
 	private string GetTimeLeftString()
@@ -88,76 +60,23 @@
 	{
 		var state = StateSystem.Active;
 		return !state.IsValid() ? string.Empty : state.Name;
-		// return LocalPlayer.LifeState == LifeState.Alive ? "Survive!" : "You Are Dead!";
 	}
 
 	private List<SmashRunnerMovement> FetchAliveRunnerPlayers()
 	{
-		var lobbyState = StateSystem.Active as LobbyState;
-		var gameState = StateSystem.Active as GameState;
-		var finalState = StateSystem.Active as FinalState;
+		var state = StateSystem.Active as ExtendedState;
 
-		if ( lobbyState.IsValid() )
+		if ( state.IsValid() )
 		{
-			return lobbyState.ActiveRunnerPlayers;
+			return state.ActiveRunnerPlayers;
 		}
 
-		if ( gameState.IsValid() )
-		{
-			return gameState.ActiveRunnerPlayers;
-		}
-
-		return finalState.IsValid() ? finalState.ActiveRunnerPlayers : new List<SmashRunnerMovement>();
+		return state.IsValid() ? state.ActiveRunnerPlayers : new List<SmashRunnerMovement>();
 	}
-
-
-	private List<SmashRunnerMovement> FetchAliveCannonPlayers()
-	{
-		var lobbyState = StateSystem.Active as LobbyState;
-		var gameState = StateSystem.Active as GameState;
-		var finalState = StateSystem.Active as FinalState;
-
-		if ( lobbyState.IsValid() )
-		{
-			return lobbyState.ActiveCannonPlayers;
-		}
-
-		if ( gameState.IsValid() )
-		{
-			return gameState.ActiveCannonPlayers;
-		}
-
-		return finalState.IsValid() ? finalState.ActiveCannonPlayers : new List<SmashRunnerMovement>();
-	}
+	
 
 	private int GetAliveRunnersCount()
 	{
 		return FetchAliveRunnerPlayers().Count;
-	}
-
-	private bool IsCannonWin()
-	{
-		var state = StateSystem.Active;
-		if ( state is GameState or FinalState )
-		{
-			var aliveRunners = FetchAliveRunnerPlayers().Count;
-
-			return aliveRunners == 0;
-		}
-
-		return false;
-	}
-
-	private bool IsRunnersWin()
-	{
-		var state = StateSystem.Active;
-		if ( state is GameState or FinalState )
-		{
-			var aliveCannoniers = FetchAliveCannonPlayers().Count;
-
-			return aliveCannoniers == 0;
-		}
-
-		return false;
 	}
 }

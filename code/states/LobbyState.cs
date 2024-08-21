@@ -1,6 +1,6 @@
 using System;
 
-public class LobbyState : BaseState
+public class LobbyState : ExtendedState
 {
 	public override int TimeLeft => RoundEndTime.Relative.CeilToInt();
 	[Sync] public TimeUntil RoundEndTime { get; set; }
@@ -10,24 +10,21 @@ public class LobbyState : BaseState
 
 	private HashSet<PlayerSpawn> usedCannonSpawnpoints = new HashSet<PlayerSpawn>();
 
-	[Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
-	[Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
-
 	protected override void OnEnter()
 	{
-		RoundEndTime = 30f;
+		RoundEndTime = 5f;
 	}
 
 	protected override void OnUpdate()
 	{
 		if ( Networking.IsHost )
 		{
-			FetchAlivePlayerCount();
+			FetchAlivePlayers();
 			var players = SmashCannon.Players.ToList();
 
 			if ( RoundEndTime && players.Count <= 1 ) // Restart timer when there is not enough players
 			{
-				RoundEndTime = 30f;
+				RoundEndTime = 5f;
 			}
 
 			if ( RoundEndTime && players.Count > 1 )
@@ -46,14 +43,7 @@ public class LobbyState : BaseState
 
 		base.OnUpdate();
 	}
-
-	private void FetchAlivePlayerCount()
-	{
-		ActiveRunnerPlayers = SmashCannon.Players
-			.Where( player => player.LifeState == LifeState.Alive && player.TeamCategory is RunnerTeam ).ToList();
-		ActiveCannonPlayers = SmashCannon.Players
-			.Where( player => player.LifeState == LifeState.Alive && player.TeamCategory is SmashTeam ).ToList();
-	}
+	
 
 	private void AssignPlayersToTeamsAndSpawnPoints( List<SmashRunnerMovement> players )
 	{

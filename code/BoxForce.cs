@@ -1,21 +1,14 @@
 public sealed class BoxForce : Component, Component.ICollisionListener
 {
-    public float BounceForce = 5f;
-
     public void OnCollisionStart( Collision collision )
     {
         if (!collision.Other.GameObject.Tags.Has( "player" ) ) return;
         
-        var player = collision.Other.Body;
+        var player = collision.Other.GameObject.Components.Get<SmashRunnerMovement>();
 
-        // var normal = collision.Contact.Normal;
+        if ( player is null ) return;
+        
+        player.Kill();
 
-        Vector3 bounceDirection = (Transform.Position - player.Position).Normal;
-
-        // player.Position = new Vector3( 0, 0, 0 );
-
-        player.ApplyForce(bounceDirection * BounceForce);
-
-        // player.ApplyForce( new Vector3( 0, 0, 0f ).WithZ( BounceForce ) );
     }
 }

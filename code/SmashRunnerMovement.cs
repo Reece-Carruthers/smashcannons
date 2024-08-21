@@ -287,7 +287,6 @@ public sealed class SmashRunnerMovement : Component
 	
 	private void TryKillCannons()
 	{
-		Log.Info( "I AM HERE" );
 		var position = Head.Transform.Position.WithZ( Head.Transform.Position.z + 50f );
 
 		var tr = Scene.Trace.WithoutTags( "player" )
@@ -297,7 +296,6 @@ public sealed class SmashRunnerMovement : Component
 
 		if ( !tr.Hit || !tr.GameObject.Tags.Has( "button" ) ) return;
 		
-		Log.Info( "PRESSED" );
 
 
 		var killButton = tr.GameObject.Components.Get<KillButton>();
@@ -305,8 +303,6 @@ public sealed class SmashRunnerMovement : Component
 		
 		if ( killButton is null ) return;
 		
-		Log.Info( "button fetched" );
-
 
 		killButton.Kill(this);
 	}
@@ -405,6 +401,7 @@ public sealed class SmashRunnerMovement : Component
 
 	public void Kill()
 	{
+		DeathTimer = 5f;
 		LifeState = LifeState.Dead;
 		
 		var playerPosition = Transform.Position;
@@ -417,13 +414,13 @@ public sealed class SmashRunnerMovement : Component
 		Sound.Play( "dead", Transform.World.Position );
 	}
 
-	[Broadcast(NetPermission.HostOnly)]
+	[Broadcast]
 	private void RagdollPlayer(Vector3 playerPosition, Vector3 direction)
 	{
 		RagdollController.Ragdoll( playerPosition, direction );
 	}
 	
-	[Broadcast(NetPermission.HostOnly)]
+	[Broadcast]
 	private void UnragdollPlayer()
 	{
 		RagdollController.Unragdoll();

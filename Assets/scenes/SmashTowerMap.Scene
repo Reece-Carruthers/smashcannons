@@ -47,16 +47,16 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.PlaneCollider",
-          "__guid": "1c0c07ee-dbe3-4c91-897c-bd175cbe55fd",
-          "Center": "0,-32.99998,0",
-          "IsTrigger": true,
-          "Scale": "9000,6000",
-          "Static": true
-        },
-        {
           "__type": "KillCollider",
           "__guid": "e050e6de-5f87-46d1-a577-642a6f4cf1a2"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "371d1028-5cdb-4bce-a997-0aaca8a8c424",
+          "Center": "0,0,-130",
+          "IsTrigger": true,
+          "Scale": "10000,7500,270",
+          "Static": true
         }
       ]
     },
@@ -2545,8 +2545,7 @@
           "__guid": "53ff66a4-2103-49b1-80f6-b2e130ca4021",
           "Flags": 0,
           "Name": "Button",
-          "Position": "3424.002,-1092.194,74.09412",
-          "Scale": "2,2,1",
+          "Position": "3424.002,-1092.194,96.03113",
           "Tags": "button,trigger",
           "Enabled": true,
           "Components": [
@@ -2555,7 +2554,7 @@
               "__guid": "baf9346e-59fc-4280-9cc8-626ba12dfac4",
               "BodyGroups": 18446744073709551615,
               "CreateBoneObjects": false,
-              "Model": "models/tycoon_content/buttons/pole_with_button_50.vmdl",
+              "Model": "models/button/button.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1",
               "UseAnimGraph": true
@@ -3118,7 +3117,6 @@
     "facepunch.glass_a",
     "facepunch.wall_limestone_brick_large",
     "kvien.concretewall04_pixel",
-    "pitocueva.pole_with_button_50",
     "rust.brick_wall_b_plasterblend",
     "rustextended.terrain_grass"
   ],
