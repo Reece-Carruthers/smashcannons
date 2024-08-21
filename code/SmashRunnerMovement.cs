@@ -91,7 +91,7 @@ public sealed class SmashRunnerMovement : Component
 	{
 		if ( cannon is not null &&
 		     cannon.Network.OwnerConnection !=
-		     Network.OwnerConnection ) //TODO: Do we need a is proxy check before setting this?
+		     Network.OwnerConnection )
 		{
 			isControllingCannon = false;
 		}
@@ -127,12 +127,7 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnFixedUpdate()
 	{
-		if ( LifeState == LifeState.Dead )
-		{
-			// If the player is dead, skip all update logic
-			return;
-		}
-
+		if ( LifeState == LifeState.Dead ) return;
 		if ( Network.IsProxy ) return;
 		if ( isControllingCannon ) return;
 
@@ -279,6 +274,8 @@ public sealed class SmashRunnerMovement : Component
 		}
 
 		cannonComponent.CurrentController = Network.OwnerConnection;
+		cannonComponent.CurrentPlayer = this;
+
 		isControllingCannon = true;
 		cannon = cannonComponent;
 		characterController.Velocity = Vector3.Zero;
@@ -388,7 +385,7 @@ public sealed class SmashRunnerMovement : Component
 		characterController.Velocity = 0;
 
 		Body.Transform.LocalPosition = Vector3.Zero;
-		
+
 		Teleport( deadSpawn.Transform.Position );
 
 		LifeState = LifeState.Spectate;

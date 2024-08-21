@@ -2649,7 +2649,6 @@
           "Name": "Button",
           "Position": "3424.002,-1092.194,96.03113",
           "Tags": "button,trigger",
-          "NetworkMode": 1,
           "NetworkOrphaned": 1,
           "Components": [
             {
@@ -3190,6 +3189,19 @@
         {
           "__type": "ObjectDespawner",
           "__guid": "f4a51aa3-d52e-48bb-8d9c-834c34cebe3c"
+        }
+      ]
+    },
+    {
+      "__guid": "084206b5-8904-43de-bd30-71812ac1ffc7",
+      "Flags": 0,
+      "Name": "SpectateHandler",
+      "Position": "4782.19,207.2165,2282.202",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpectateHandler",
+          "__guid": "5639b5dd-6d41-4b36-98ae-40b4e054a84b"
         }
       ]
     }

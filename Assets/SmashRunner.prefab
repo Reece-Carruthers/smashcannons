@@ -3,6 +3,7 @@
     "__guid": "dbd82e4e-e505-40f5-8be9-1e85db538502",
     "Flags": 0,
     "Name": "smashrunner",
+    "Position": "0,0,-0.2372572",
     "Tags": "player",
     "Enabled": true,
     "Components": [
@@ -81,26 +82,6 @@
         "Radius": 7,
         "Start": "0,0,16.87134",
         "Static": false
-      },
-      {
-        "__type": "Sandbox.Rigidbody",
-        "__guid": "026d33ef-c09c-4f98-aac0-a3ed24b2bf35",
-        "AngularDamping": 0,
-        "Gravity": false,
-        "LinearDamping": 0,
-        "Locking": {
-          "Y": true,
-          "Z": true,
-          "Pitch": true,
-          "Yaw": true,
-          "Roll": true
-        },
-        "MassCenterOverride": "0,0,0",
-        "MassOverride": 0,
-        "MotionEnabled": true,
-        "OverrideMassCenter": false,
-        "RigidbodyFlags": 0,
-        "StartAsleep": false
       },
       {
         "__type": "Sandbox.ScreenPanel",

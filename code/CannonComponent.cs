@@ -16,6 +16,7 @@ public sealed class CannonComponent : Component
 	TimeSince timeSinceLastPrimary = 10;
 
 	public Connection CurrentController { get; set; } = null;
+	public SmashRunnerMovement CurrentPlayer { get; set; } = null;
 	
 
 	 protected override void OnFixedUpdate()
@@ -23,6 +24,8 @@ public sealed class CannonComponent : Component
 		if ( Network.IsProxy && !Network.IsOwner) return;
 
 		if ( CurrentController != Network.OwnerConnection || CurrentController is null) return;
+
+		if (CurrentPlayer.LifeState == LifeState.Dead || CurrentPlayer.LifeState == LifeState.Spectate) return;
 
 		if ( Input.Down( "Left" ) || Input.Down( "Right" ) )
 		{
@@ -73,7 +76,7 @@ public sealed class CannonComponent : Component
 		}
 
 		obj.NetworkSpawn();
-		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2000.0f;
+		physics.Velocity = Muzzle.Transform.Rotation.Forward * 4000.0f;
 
 		Stats.Increment( "balls_fired", 1 );
 		PlaySound("cannonshot");
