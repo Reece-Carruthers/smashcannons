@@ -27,6 +27,11 @@ public class FinalState : ExtendedState
 		{
 			mainScript.Ramp.Enabled = true;
 		}
+		
+		if ( mainScript != null && mainScript.KillButton != null )
+		{
+			mainScript.KillButton.Enabled = true;
+		}
 
 		TeleportToRamp();
 	}

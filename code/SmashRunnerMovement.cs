@@ -59,6 +59,7 @@ public sealed class SmashRunnerMovement : Component
 	[HostSync] public Vector3 CannonSpawnpoint { get; set; }
 
 	[HostSync] public TimeUntil DeathTimer { get; set; }
+	[HostSync] public bool DeathTimerAssigned { get; set; } = false;
 
 	[Property] public RagdollController RagdollController { get; set; }
 

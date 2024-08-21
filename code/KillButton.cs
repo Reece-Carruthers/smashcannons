@@ -12,18 +12,15 @@ public sealed class KillButton : Component
 	public void Kill( SmashRunnerMovement presser )
 	{
 		Presser = presser;
-
+		
 		var finalState = StateSystem.Active as FinalState;
 
 		if ( finalState is null ) return;
-
-		Log.Info( "Here" );
-
+		
 		var cannonPlayers = finalState.ActiveCannonPlayers;
 
 		foreach ( var cannonPlayer in cannonPlayers )
 		{
-			Log.Info( "Here" );
 			cannonPlayer.Kill();
 		}
 	}

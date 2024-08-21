@@ -1,6 +1,6 @@
 public sealed class SelfDestructComponent : Component
 {
-	[Property] float Seconds { get; set; }
+	[Property] public float Seconds { get; set; }
 
 	TimeUntil timeUntilDie;
 

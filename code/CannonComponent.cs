@@ -6,16 +6,9 @@ public sealed class CannonComponent : Component
 	[Property] GameObject Gun { get; set; }
 	[Property] GameObject Bullet { get; set; }
 	[Property] GameObject Muzzle { get; set; }
-
-	[Property]
-	[Category( "Turret" )]
-	[Range( 0f, 1, 0.000001f )]
-	public float TurretYawSpeed { get; set; } = 250f;
-
-	[Property]
-	[Category( "Turret" )]
-	[Range( 0f, 1, 0.000001f )]
-	public float TurretPitchSpeed { get; set; } = 1000f;
+	
+	public float TurretYawSpeed { get; set; } = 0.25f;
+	public float TurretPitchSpeed { get; set; } = 0.5f;
 
 	float turretYaw;
 	float turretPitch;
