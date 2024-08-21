@@ -17,7 +17,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 
 	public static IEnumerable<PlayerSpawn> CannonSpawnPoint =>
 		SpawnPoints.Where( x => x.Tags.Has( "cannon_spawn" ) );
-	
+
 	private static IEnumerable<PlayerSpawn> DeadSpawnPoint =>
 		SpawnPoints.Where( x => x.Tags.Has( "dead_spawn" ) );
 
@@ -25,7 +25,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 	[Property] public GameObject Pillars { get; set; }
 	[Property] public GameObject Ramp { get; set; }
 	[Property] public GameObject PlayerPrefab { get; set; }
-	
+
 	[Property] public GameObject KillButton { get; set; }
 
 	public static SmashCannon Instance { get; private set; }
@@ -81,10 +81,10 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 			Log.Warning( "No available player slots" );
 		}
 
-		
+
 		var activeState = StateSystem.Active as LobbyState;
 		var playerComponent = player.Components.Get<SmashRunnerMovement>();
-		
+
 		AddPlayer( playerSlot, playerComponent );
 		player.Transform.LocalPosition = DeadSpawnPoint.First().Transform.Position;
 
@@ -92,8 +92,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 		{
 			playerComponent.LifeState = LifeState.Spectate;
 		}
-		
-		player.NetworkSpawn( connection );
 
+		player.NetworkSpawn( connection );
 	}
 }

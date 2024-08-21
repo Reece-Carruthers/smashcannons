@@ -2,13 +2,12 @@ using Sandbox;
 
 public sealed class KillCollider : Component, Component.ITriggerListener
 {
-
 	public void OnTriggerEnter( Collider other )
 	{
 		var obj = other.GameObject;
 
 		if ( !obj.IsValid() ) return;
-		
+
 		HandlePlayerCollision( obj );
 	}
 

@@ -6,7 +6,7 @@ public sealed class CannonComponent : Component
 	[Property] GameObject Gun { get; set; }
 	[Property] GameObject Bullet { get; set; }
 	[Property] GameObject Muzzle { get; set; }
-	
+
 	public float TurretYawSpeed { get; set; } = 0.25f;
 	public float TurretPitchSpeed { get; set; } = 0.5f;
 
@@ -17,15 +17,15 @@ public sealed class CannonComponent : Component
 
 	public Connection CurrentController { get; set; } = null;
 	public SmashRunnerMovement CurrentPlayer { get; set; } = null;
-	
 
-	 protected override void OnFixedUpdate()
+
+	protected override void OnFixedUpdate()
 	{
-		if ( Network.IsProxy && !Network.IsOwner) return;
+		if ( Network.IsProxy && !Network.IsOwner ) return;
 
-		if ( CurrentController != Network.OwnerConnection || CurrentController is null) return;
+		if ( CurrentController != Network.OwnerConnection || CurrentController is null ) return;
 
-		if (CurrentPlayer.LifeState == LifeState.Dead || CurrentPlayer.LifeState == LifeState.Spectate) return;
+		if ( CurrentPlayer.LifeState == LifeState.Dead || CurrentPlayer.LifeState == LifeState.Spectate ) return;
 
 		if ( Input.Down( "Left" ) || Input.Down( "Right" ) )
 		{
@@ -45,7 +45,6 @@ public sealed class CannonComponent : Component
 		{
 			Shoot();
 		}
-
 	}
 
 	private void MoveYaw()
@@ -53,7 +52,7 @@ public sealed class CannonComponent : Component
 		var yawValue = Input.Down( "Left" ) ? TurretYawSpeed : (Input.Down( "Right" ) ? -TurretYawSpeed : 0f);
 		turretYaw += yawValue;
 	}
-	
+
 	private void MovePitch()
 	{
 		var pitchValue = Input.Down( "Forward" )
@@ -67,7 +66,7 @@ public sealed class CannonComponent : Component
 		Assert.NotNull( Bullet );
 
 		var obj = Bullet.Clone( Muzzle.Transform.Position, Muzzle.Transform.Rotation );
-		
+
 		var physics = obj.Components.Get<Rigidbody>( FindMode.EnabledInSelfAndDescendants );
 
 		if ( physics is null )
@@ -79,10 +78,10 @@ public sealed class CannonComponent : Component
 		physics.Velocity = Muzzle.Transform.Rotation.Forward * 4000.0f;
 
 		Stats.Increment( "balls_fired", 1 );
-		PlaySound("cannonshot");
+		PlaySound( "cannonshot" );
 		timeSinceLastPrimary = 0;
 	}
-	
+
 	[Broadcast]
 	private void PlaySound( string soundName )
 	{

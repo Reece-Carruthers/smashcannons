@@ -3,7 +3,7 @@ using Sandbox;
 public sealed class SpectateHandler : Component
 {
 	private List<SmashRunnerMovement> DeadPlayers = new List<SmashRunnerMovement>();
-	
+
 	protected override void OnUpdate()
 	{
 		FetchTheDead();
@@ -28,7 +28,7 @@ public sealed class SpectateHandler : Component
 			deadPlayer.DeathTimerAssigned = true;
 		}
 	}
-	
+
 	private void RespawnAsSpectator()
 	{
 		if ( !Networking.IsHost ) return;
