@@ -75,7 +75,7 @@ public sealed class CannonComponent : Component
 		}
 
 		obj.NetworkSpawn();
-		physics.Velocity = Muzzle.Transform.Rotation.Forward * 4000.0f;
+		physics.Velocity = Muzzle.Transform.Rotation.Forward * 3000.0f;
 
 		Stats.Increment( "balls_fired", 1 );
 		PlaySound( "cannonshot" );

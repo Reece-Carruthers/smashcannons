@@ -34,7 +34,7 @@
 			<div class="lobby-list">
 			@foreach ( var lobby in List )
 					{
-						if ( lobby.Members >= 64 ) continue;
+						if ( lobby.Members >= 32 ) continue;
 						
 						<div class="lobby-button" onclick=@( () => OpenLobby( lobby ) )>
 							<div class="lobby-title">
@@ -44,7 +44,6 @@
 									@lobby.Members / @lobby.MaxMembers
 								</div>
 							</div>
-						</div>
 					}
 			</div>
 			}
@@ -98,7 +97,7 @@
 	private void OpenLobby( LobbyInformation lobby )
 	{
 		if ( TimeSinceLastConnect < 3f ) return;
-		if ( lobby.Members >= 64 ) return;
+		if ( lobby.Members >= 32 ) return;
 		GameNetworkSystem.Connect( lobby.LobbyId );
 		TimeSinceLastConnect = 0f;
 	}

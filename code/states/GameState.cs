@@ -17,6 +17,7 @@ public class GameState : ExtendedState
 		if ( Networking.IsHost )
 		{
 			FetchAlivePlayers();
+			
 			if ( RoundEndTime )
 			{
 				StateSystem.Set<FinalState>();

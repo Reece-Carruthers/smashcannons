@@ -24,8 +24,9 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 	[Property] public GameObject Platforms { get; set; }
 	[Property] public GameObject Pillars { get; set; }
 	[Property] public GameObject Ramp { get; set; }
+	
+	[Property] public GameObject NetworkedRampObjects { get; set; }
 	[Property] public GameObject PlayerPrefab { get; set; }
-
 	[Property] public GameObject KillButton { get; set; }
 
 	public static SmashCannon Instance { get; private set; }
