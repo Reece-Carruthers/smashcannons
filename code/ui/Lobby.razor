@@ -1,0 +1,116 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Network
+@using System.Threading.Tasks
+@inherits PanelComponent
+
+<root>
+        <div class="title">
+            Smash Cannon
+        </div>
+
+	<div class="canvas">
+		<div class="container menu">
+			<div class="button" onclick=@( () => LoadLobby() )>
+				Create Lobby
+			</div>
+
+			<div class="button" onclick=@( () => Quit() )>
+				Quit
+			</div>
+		</div>
+		<div class="container lobbies">
+			<h2>Lobbies</h2>
+			<p>TO DO: SET UP LOBBY LIST</p>
+			@if ( IsRefreshing )
+			{
+				<label>Refreshing the lobby list, please wait...</label>
+			}
+			else if ( List.Count == 0 )
+			{
+				<label>No lobbies were found, create one to play.</label>
+			}
+			else
+			{
+			<div class="lobby-list">
+			@foreach ( var lobby in List )
+					{
+						if ( lobby.Members >= 64 ) continue;
+						
+						<div class="lobby-button" onclick=@( () => OpenLobby( lobby ) )>
+							<div class="lobby-title">
+								@lobby.Name
+							</div>
+								<div class="count">
+									@lobby.Members / @lobby.MaxMembers
+								</div>
+							</div>
+						</div>
+					}
+			</div>
+			}
+
+		</div>
+	</div>
+</root>
+
+@code
+{
+
+	private List<LobbyInformation> List { get; set; } = new();
+	private bool IsRefreshing { get; set; }
+	private TimeSince TimeSinceLastConnect { get; set; }
+
+
+	private void PlayScene()
+	{
+		Game.ActiveScene.LoadFromFile( "scenes/minimal.scene" );
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( RealTime.Now );
+
+	protected override void OnEnabled()
+	{
+		base.OnEnabled();
+		
+		_ = RefreshLobbyList();
+	}
+
+
+	private async Task RefreshLobbyList()
+	{
+		while ( true )
+		{
+			IsRefreshing = true;
+			StateHasChanged();
+
+			List = await Networking.QueryLobbies();
+
+			IsRefreshing = false;
+			StateHasChanged();
+
+			await Task.DelayRealtimeSeconds( 5f );
+		}
+	}
+
+	private void OpenLobby( LobbyInformation lobby )
+	{
+		if ( TimeSinceLastConnect < 3f ) return;
+		if ( lobby.Members >= 64 ) return;
+		GameNetworkSystem.Connect( lobby.LobbyId );
+		TimeSinceLastConnect = 0f;
+	}
+	
+	private void LoadLobby()
+	{
+		Game.ActiveScene.LoadFromFile( "scenes/smashtowermap.scene" );
+	}
+	
+	private void Quit()
+	{
+		Game.Close();
+	}
+}

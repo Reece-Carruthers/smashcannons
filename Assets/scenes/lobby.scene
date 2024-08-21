@@ -175,8 +175,8 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "ScreenPanelMenu",
-              "__guid": "7eb94d28-459c-43eb-b7b0-678a8da978ac",
+              "__type": "Lobby",
+              "__guid": "087f6ce4-601e-4c66-b272-5546a8eeb588",
               "MyStringValue": ""
             }
           ]
