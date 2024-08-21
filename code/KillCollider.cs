@@ -31,7 +31,6 @@ public sealed class KillCollider : Component, Component.ITriggerListener
 			{
 				if ( deadPlayer.DeathTimer && deadPlayer.LifeState == LifeState.Dead )
 				{
-					Log.Info( "INSIDE LOOP" );
 					deadPlayer.HandleSpectate();
 					DeadPlayers.Remove( deadPlayer );
 				}

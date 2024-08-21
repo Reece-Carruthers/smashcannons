@@ -22,7 +22,8 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/smashtowermap.scene",
-    "LaunchMode": "Normal"
+    "StartupScene": "scenes/lobby.scene",
+    "LaunchMode": "Normal",
+    "MapStartupScene": "scenes/lobby.scene"
   }
 }

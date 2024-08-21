@@ -10,12 +10,12 @@ public sealed class CannonComponent : Component
 	[Property]
 	[Category( "Turret" )]
 	[Range( 0f, 1, 0.000001f )]
-	public float TurretYawSpeed { get; set; } = 0.2f;
+	public float TurretYawSpeed { get; set; } = 250f;
 
 	[Property]
 	[Category( "Turret" )]
 	[Range( 0f, 1, 0.000001f )]
-	public float TurretPitchSpeed { get; set; } = 1f;
+	public float TurretPitchSpeed { get; set; } = 1000f;
 
 	float turretYaw;
 	float turretPitch;
@@ -25,7 +25,7 @@ public sealed class CannonComponent : Component
 	public Connection CurrentController { get; set; } = null;
 	
 
-	 protected override void OnUpdate()
+	 protected override void OnFixedUpdate()
 	{
 		if ( Network.IsProxy && !Network.IsOwner) return;
 

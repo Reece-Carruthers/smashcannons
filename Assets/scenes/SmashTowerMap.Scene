@@ -45,6 +45,8 @@
       "Name": "KillCollider",
       "Position": "1408,40,247.8453",
       "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 1,
       "Components": [
         {
           "__type": "KillCollider",
