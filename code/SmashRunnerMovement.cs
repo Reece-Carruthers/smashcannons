@@ -57,9 +57,9 @@ public sealed class SmashRunnerMovement : Component
 
 	[Property] Collider playerCollider { get; set; }
 	[HostSync] public Vector3 CannonSpawnpoint { get; set; }
-	
-	[Sync] public TimeUntil DeathTimer { get; set; }
-	
+
+	[HostSync] public TimeUntil DeathTimer { get; set; }
+
 	[Property] public RagdollController RagdollController { get; set; }
 
 	public static SmashRunnerMovement Local
@@ -88,8 +88,6 @@ public sealed class SmashRunnerMovement : Component
 
 	protected override void OnUpdate()
 	{
-		HandleSpectate();
-
 		if ( cannon is not null &&
 		     cannon.Network.OwnerConnection !=
 		     Network.OwnerConnection ) //TODO: Do we need a is proxy check before setting this?
@@ -112,8 +110,8 @@ public sealed class SmashRunnerMovement : Component
 				{
 					TryTakeCannon();
 				}
-				
-				if ( Input.Pressed( "Use" ))
+
+				if ( Input.Pressed( "Use" ) )
 				{
 					TryKillCannons();
 				}
@@ -284,10 +282,9 @@ public sealed class SmashRunnerMovement : Component
 		cannon = cannonComponent;
 		characterController.Velocity = Vector3.Zero;
 	}
-	
+
 	private void TryKillCannons()
 	{
-		Log.Info( "I AM HERE" );
 		var position = Head.Transform.Position.WithZ( Head.Transform.Position.z + 50f );
 
 		var tr = Scene.Trace.WithoutTags( "player" )
@@ -296,19 +293,15 @@ public sealed class SmashRunnerMovement : Component
 			.Run();
 
 		if ( !tr.Hit || !tr.GameObject.Tags.Has( "button" ) ) return;
-		
-		Log.Info( "PRESSED" );
 
 
 		var killButton = tr.GameObject.Components.Get<KillButton>();
 
-		
+
 		if ( killButton is null ) return;
-		
-		Log.Info( "button fetched" );
 
 
-		killButton.Kill(this);
+		killButton.Kill( this );
 	}
 
 
@@ -363,13 +356,13 @@ public sealed class SmashRunnerMovement : Component
 	}
 
 	[Broadcast( NetPermission.HostOnly )]
-	public void Teleport(Vector3 location)
+	public void Teleport( Vector3 location )
 	{
 		if ( IsProxy ) return;
 
 		Transform.Position = location;
 	}
-	
+
 	private Vector3 AssignRunnerSpawnPoint()
 	{
 		var random = new Random();
@@ -382,51 +375,47 @@ public sealed class SmashRunnerMovement : Component
 		return selectedSpawn.Transform.Position;
 	}
 
-	[Broadcast(NetPermission.HostOnly)]
-	private void HandleSpectate() //TODO: How to get timer working with death, when timer is activated model goes weird
+	[Broadcast( NetPermission.HostOnly )]
+	public void HandleSpectate()
 	{
-		if ( LifeState != LifeState.Dead || !Networking.IsHost ) return;
+		var deadSpawn = Scene.Components.GetAll<PlayerSpawn>().FirstOrDefault( x => x.Tags.Has( "dead_spawn" ) );
 
-		if ( DeathTimer )
-		{
-			var deadSpawn = Scene.Components.GetAll<PlayerSpawn>().FirstOrDefault( x => x.Tags.Has( "dead_spawn" ) );
-				
-			if(deadSpawn is null) return;
-				
-			LifeState = LifeState.Spectate;
+		if ( deadSpawn is null ) return;
 
-			UnragdollPlayer();
-			
-			characterController.Velocity = Vector3.Zero;
+		UnragdollPlayer();
 
-			Teleport( deadSpawn.Transform.Position );
-		}
+		characterController.Velocity = 0;
+
+		Body.Transform.LocalPosition = Vector3.Zero;
+		
+		Teleport( deadSpawn.Transform.Position );
+
+		LifeState = LifeState.Spectate;
 	}
 
 	public void Kill()
 	{
 		LifeState = LifeState.Dead;
-		
+
 		var playerPosition = Transform.Position;
 
 		var direction = Vector3.Up +
 		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
 
-		RagdollPlayer(playerPosition, direction);
+		RagdollPlayer( playerPosition, direction );
 
 		Sound.Play( "dead", Transform.World.Position );
 	}
 
-	[Broadcast(NetPermission.HostOnly)]
-	private void RagdollPlayer(Vector3 playerPosition, Vector3 direction)
+	[Broadcast( NetPermission.HostOnly )]
+	private void RagdollPlayer( Vector3 playerPosition, Vector3 direction )
 	{
 		RagdollController.Ragdoll( playerPosition, direction );
 	}
-	
-	[Broadcast(NetPermission.HostOnly)]
+
+	[Broadcast( NetPermission.HostOnly )]
 	private void UnragdollPlayer()
 	{
 		RagdollController.Unragdoll();
 	}
-
 }

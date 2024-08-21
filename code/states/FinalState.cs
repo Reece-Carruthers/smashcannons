@@ -1,15 +1,12 @@
 using System;
 using Sandbox;
 
-public class FinalState : BaseState
+public class FinalState : ExtendedState
 {
 	public override int TimeLeft => RoundEndTime.Relative.CeilToInt();
 
 	public override string Name => "Last Phase";
 	[Sync] private TimeUntil RoundEndTime { get; set; }
-
-	[Sync] public List<SmashRunnerMovement> ActiveRunnerPlayers { get; set; } = new List<SmashRunnerMovement>();
-	[Sync] public List<SmashRunnerMovement> ActiveCannonPlayers { get; set; } = new List<SmashRunnerMovement>();
 	
 	protected override void OnEnter()
 	{
@@ -36,7 +33,7 @@ public class FinalState : BaseState
 	
 	private void TeleportToRamp()
 	{
-		FetchAlivePlayerCount();
+		FetchAlivePlayers();
 		
 		var rampSpawns = Scene.Components.GetAll<PlayerSpawn>()
 			.Where( x => x.Tags.Has( "ramp_spawn" ) ).ToList();
@@ -57,20 +54,12 @@ public class FinalState : BaseState
 		return selectedSpawn.Transform.Position;
 	}
 
-	private void FetchAlivePlayerCount()
-	{
-		ActiveRunnerPlayers = SmashCannon.Players
-			.Where( player => player.LifeState == LifeState.Alive && player.TeamCategory is RunnerTeam ).ToList();
-		ActiveCannonPlayers = SmashCannon.Players
-			.Where( player => player.LifeState == LifeState.Alive && player.TeamCategory is SmashTeam ).ToList();
-	}
-
 	protected override void OnUpdate()
 	{
 		if ( Networking.IsHost )
 		{
 			
-			FetchAlivePlayerCount();
+			FetchAlivePlayers();
 			
 			if ( Connection.All.Count > 1 && (ActiveRunnerPlayers.Count <= 0 || ActiveCannonPlayers.Count <= 0) )
 			{

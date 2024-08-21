@@ -1,0 +1,66 @@
+@using System;
+@using Sandbox;
+@using Sandbox.UI;
+
+@attribute [StyleSheet( "RoundEndDisplay.razor.scss" )]
+@inherits Panel
+
+@{
+	var state = StateSystem.Active as EndState;
+
+	if ( !state.IsValid() ) return;
+}
+
+
+<root>
+	@if ( IsCannonWin() )
+	{
+		<div class="container-win">
+			<label class="win-message">Cannoniers win!</label>
+		</div>
+	}
+	else if ( IsRunnersWin() )
+	{
+		<div class="container-win">
+			<label class="win-message">Runners win!</label>
+		</div>
+	}
+</root>
+
+@code
+{
+
+	protected override int BuildHash()
+	{
+		var state = StateSystem.Active as EndState;
+		return !state.IsValid() ? 0 : HashCode.Combine( FetchAliveRunnerPlayers().Count, FetchAliveCannonPlayers().Count );
+	}
+
+	private List<SmashRunnerMovement> FetchAliveRunnerPlayers()
+	{
+		return (StateSystem.Active as EndState)?.ActiveRunnerPlayers ?? new List<SmashRunnerMovement>();
+	}
+
+	private List<SmashRunnerMovement> FetchAliveCannonPlayers()
+	{
+		return (StateSystem.Active as EndState)?.ActiveCannonPlayers ?? new List<SmashRunnerMovement>();
+	}
+
+	private bool IsCannonWin()
+	{
+		var state = StateSystem.Active as EndState;
+		if ( !state.IsValid() ) return false;
+		var aliveRunners = FetchAliveRunnerPlayers().Count;
+
+		return aliveRunners == 0;
+	}
+
+	private bool IsRunnersWin()
+	{
+		var state = StateSystem.Active as EndState;
+		if ( !state.IsValid() ) return false;
+		var aliveCannoniers = FetchAliveCannonPlayers().Count;
+
+		return aliveCannoniers == 0;
+	}
+}
