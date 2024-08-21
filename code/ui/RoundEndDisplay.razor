@@ -13,27 +13,18 @@
 
 
 <root>
-	@if ( IsCannonWin() )
-	{
-		<div class="container-win">
-			<label class="win-message">Cannoniers win!</label>
-		</div>
-	}
-	else if ( IsRunnersWin() )
-	{
-		<div class="container-win">
-			<label class="win-message">Runners win!</label>
-		</div>
-	}
+	<div class="container-win">
+		<label class="win-message">@WhoWon()</label>
+	</div>
 </root>
 
 @code
 {
-
+	
 	protected override int BuildHash()
 	{
 		var state = StateSystem.Active as EndState;
-		return !state.IsValid() ? 0 : HashCode.Combine( FetchAliveRunnerPlayers().Count, FetchAliveCannonPlayers().Count );
+		return !state.IsValid() ? 0 : HashCode.Combine( WhoWon() );
 	}
 
 	private List<SmashRunnerMovement> FetchAliveRunnerPlayers()
@@ -62,5 +53,20 @@
 		var aliveCannoniers = FetchAliveCannonPlayers().Count;
 
 		return aliveCannoniers == 0;
+	}
+
+	private string WhoWon()
+	{
+		if ( IsCannonWin() )
+		{
+			return "Cannoniers win!";
+		}
+
+		if ( IsRunnersWin() )
+		{
+			return "Runners win!";
+		}
+
+		return "It's a draw!";
 	}
 }

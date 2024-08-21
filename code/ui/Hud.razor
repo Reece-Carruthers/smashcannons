@@ -5,12 +5,8 @@
 
 <root class="@( !Network.IsProxy ? "" : "hidden" )">
 	<RoundDisplay></RoundDisplay>
+	<RoundEndDisplay></RoundEndDisplay>
 </root>
-
-    @if (IsEndState())
-    {
-        <RoundEndDisplay></RoundEndDisplay>
-    }
 
 @code
 {
@@ -24,10 +20,6 @@
 		}
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine(Network.IsProxy, StateSystem.Active?.GetType());
-
-    private bool IsEndState()
-    {
-        return StateSystem.Active is EndState;
-    }
+	protected override int BuildHash() => System.HashCode.Combine(Network.IsProxy);
+	
 }
