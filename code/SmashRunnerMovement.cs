@@ -405,9 +405,10 @@ public sealed class SmashRunnerMovement : Component
 
 		Sound.Play( "dead", Transform.World.Position );
 
-		if ( Networking.IsHost )
+		if ( Network.IsProxy )
 		{
-			Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, TeamCategory.Colour(), $"has been killed" );
+			Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, TeamCategory.Colour(),
+				$"has been killed" );
 		}
 	}
 
@@ -421,5 +422,12 @@ public sealed class SmashRunnerMovement : Component
 	private void UnragdollPlayer()
 	{
 		RagdollController.Unragdoll();
+	}
+
+	public void AddStat( string statId )
+	{
+		if ( Network.IsProxy ) return;
+		
+		Sandbox.Services.Stats.Increment( statId, 1 );
 	}
 }

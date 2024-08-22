@@ -9,7 +9,7 @@ public class GameState : ExtendedState
 
 	protected override void OnEnter()
 	{
-		RoundEndTime = 3f;
+		RoundEndTime = 60f;
 	}
 
 	protected override void OnUpdate()

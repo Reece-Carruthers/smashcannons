@@ -12,7 +12,7 @@ public class LobbyState : ExtendedState
 
 	protected override void OnEnter()
 	{
-		RoundEndTime = 5f;
+		RoundEndTime = 30f;
 	}
 
 	protected override void OnUpdate()
@@ -24,7 +24,7 @@ public class LobbyState : ExtendedState
 
 			if ( RoundEndTime && players.Count <= 1 ) // Restart timer when there is not enough players
 			{
-				RoundEndTime = 5f;
+				RoundEndTime = 30f;
 			}
 
 			if ( RoundEndTime && players.Count > 1 )
