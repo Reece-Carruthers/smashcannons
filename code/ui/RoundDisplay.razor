@@ -22,7 +22,7 @@
 	</div>
 
 	<div class="container-alive-runners">
-		<label class="alive-runners">Runners Alive: @GetAliveRunnersCount()</label>
+		<label class="alive-runners">@AliveName() @GetAliveRunnersCount()</label>
 	</div>
 </root>
 
@@ -32,8 +32,15 @@
 	{
 		var state = StateSystem.Active as ExtendedState;
 
-		return !state.IsValid() ? 0 : HashCode.Combine( GetTimeLeftString(), GetAliveRunnersCount() );
+		return !state.IsValid() ? 0 : HashCode.Combine( GetTimeLeftString(), GetAliveRunnersCount(), AliveName() );
 	}
+
+	private string AliveName()
+	{
+		var state =  StateSystem.Active as LobbyState;
+
+		return state.IsValid() ? "Players:" : "Runners Alive:";
+	} 
 
 	private string GetTimeLeftString()
 	{
