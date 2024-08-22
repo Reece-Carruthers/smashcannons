@@ -6,19 +6,10 @@
 @inherits Panel
 
 @{
-	var state = StateSystem.Active as ExtendedState;
-	var activePlayers = 0;
-
-	if ( state.IsValid() )
-	{
-		activePlayers = state.ActiveRunnerPlayers.Count + state.ActiveCannonPlayers.Count;
-	}
-	else
+	if((StateSystem.Active as EndState).IsValid())
 	{
 		return;
 	}
-
-	if ( activePlayers == 0 ) return;
 }
 
 <root>

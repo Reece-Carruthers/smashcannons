@@ -7,8 +7,8 @@ public sealed class CannonComponent : Component
 	[Property] GameObject Bullet { get; set; }
 	[Property] GameObject Muzzle { get; set; }
 
-	public float TurretYawSpeed { get; set; } = 0.25f;
-	public float TurretPitchSpeed { get; set; } = 0.5f;
+	private float TurretYawSpeed { get; set; } = 0.25f;
+	private float TurretPitchSpeed { get; set; } = 0.5f;
 
 	float turretYaw;
 	float turretPitch;
@@ -25,7 +25,7 @@ public sealed class CannonComponent : Component
 
 		if ( CurrentController != Network.OwnerConnection || CurrentController is null ) return;
 
-		if ( CurrentPlayer.LifeState == LifeState.Dead || CurrentPlayer.LifeState == LifeState.Spectate ) return;
+		if ( CurrentPlayer.LifeState is LifeState.Dead or LifeState.Spectate ) return;
 
 		if ( Input.Down( "Left" ) || Input.Down( "Right" ) )
 		{
@@ -69,10 +69,7 @@ public sealed class CannonComponent : Component
 
 		var physics = obj.Components.Get<Rigidbody>( FindMode.EnabledInSelfAndDescendants );
 
-		if ( physics is null )
-		{
-			return;
-		}
+		if ( physics is null ) return;
 
 		obj.NetworkSpawn();
 		physics.Velocity = Muzzle.Transform.Rotation.Forward * 3000.0f;

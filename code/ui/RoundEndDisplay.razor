@@ -11,10 +11,12 @@
 	if ( !state.IsValid() ) return;
 }
 
-
 <root>
 	<div class="container-win">
 		<label class="win-message">@WhoWon()</label>
+		<div class="container">
+			<label class="time">New game starting in: @GetTimeLeftString()</label>
+		</div>
 	</div>
 </root>
 
@@ -24,7 +26,7 @@
 	protected override int BuildHash()
 	{
 		var state = StateSystem.Active as EndState;
-		return !state.IsValid() ? 0 : HashCode.Combine( WhoWon() );
+		return !state.IsValid() ? 0 : HashCode.Combine( GetTimeLeftString(), WhoWon() );
 	}
 
 	private List<SmashRunnerMovement> FetchAliveRunnerPlayers()
@@ -53,6 +55,16 @@
 		var aliveCannoniers = FetchAliveCannonPlayers().Count;
 
 		return aliveCannoniers == 0;
+	}
+	
+	private string GetTimeLeftString()
+	{
+		var state = StateSystem.Active;
+		if ( !state.IsValid() ) return string.Empty;
+
+		var timeLeft = MathF.Max( state.TimeLeft, 0 );
+		var t = TimeSpan.FromSeconds( timeLeft );
+		return $"{t.Minutes}:{t.Seconds:D2}";
 	}
 
 	private string WhoWon()
