@@ -3009,6 +3009,18 @@
           "CameraZoomSpeed": 10,
           "Distance": 300,
           "MaxCameraZoom": 400
+        },
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "93ac6ac1-ad87-44cd-9ec0-1ad8c00ad8ed",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Hud",
+          "__guid": "a76745cc-77f4-48c7-a94b-87748bbef524"
         }
       ]
     },
@@ -3025,10 +3037,6 @@
           "KillButton": {
             "_type": "gameobject",
             "go": "53ff66a4-2103-49b1-80f6-b2e130ca4021"
-          },
-          "NetworkedRampObjects": {
-            "_type": "gameobject",
-            "go": "b5ccc925-577a-488e-96e4-3b41348d9f15"
           },
           "Pillars": {
             "_type": "gameobject",
@@ -3196,8 +3204,8 @@
     "agentep.stonewall02",
     "chase.cone",
     "chase.cylinder",
+    "eurorp.door01_right_01",
     "facepunch.floor_rough_asphalt",
-    "facepunch.glass_a",
     "facepunch.wall_limestone_brick_large",
     "kvien.concretewall04_pixel",
     "rust.brick_wall_b_plasterblend",

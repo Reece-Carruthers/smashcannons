@@ -3,7 +3,6 @@
     "__guid": "dbd82e4e-e505-40f5-8be9-1e85db538502",
     "Flags": 0,
     "Name": "smashrunner",
-    "Position": "0,0,-0.2372572",
     "Tags": "player",
     "Enabled": true,
     "Components": [
@@ -117,10 +116,6 @@
         },
         "Volume": 1,
         "WorldspacePlayback": false
-      },
-      {
-        "__type": "Hud",
-        "__guid": "3b8211c1-f187-4903-b9b9-065c3d7a9ca7"
       }
     ],
     "Children": [
