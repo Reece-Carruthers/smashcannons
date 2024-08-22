@@ -43,7 +43,7 @@
       "__guid": "6edfc06f-798c-4088-aaab-d70c05403ba7",
       "Flags": 0,
       "Name": "KillCollider",
-      "Position": "1408,-1665.155,135.153",
+      "Position": "1408,3.501221,135.153",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 1,
@@ -2646,7 +2646,7 @@
           "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "0,-113.7726,-37.5719",
+          "Position": "0,-113.7726,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2661,7 +2661,7 @@
           "__guid": "1f228b57-5140-407f-87ed-282fb7998a0e",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "0,-546.7881,-55.07007",
+          "Position": "0,-546.7881,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2676,7 +2676,7 @@
           "__guid": "c9eaca28-ab85-4220-bd1a-213950b16d0f",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3848,-1134.99,-20.94275",
+          "Position": "129.3848,-1134.99,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2691,7 +2691,7 @@
           "__guid": "d7f31bdb-470f-4110-bf25-6fb5e1a0a7f8",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3848,-1815.424,-47.00964",
+          "Position": "129.3848,-1815.424,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2706,7 +2706,7 @@
           "__guid": "7e335056-b9c3-419b-a7ac-6ca936e23256",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3849,-2165.233,-24.63525",
+          "Position": "129.3849,-2165.233,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2721,7 +2721,7 @@
           "__guid": "0fa55dc8-0140-4bc7-91db-f709d1c2e30d",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "0,140.9131,-37.5719",
+          "Position": "0,140.9131,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2736,7 +2736,7 @@
           "__guid": "1482bca0-7310-4f50-8cb6-419e1552fb3b",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "-0.0008544922,481.7376,-34.05225",
+          "Position": "-0.0008544922,481.7376,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2751,7 +2751,7 @@
           "__guid": "efc6457f-579b-4556-9373-633c35031a73",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6099,1168.032,-1.278687",
+          "Position": "118.6099,1168.032,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2766,7 +2766,7 @@
           "__guid": "1b8090e3-db15-4652-92c5-cbab094f5b37",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6095,2221.226,-35.03113",
+          "Position": "118.6095,2221.226,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2781,7 +2781,7 @@
           "__guid": "ebd7d423-9eba-4b7d-b366-643a33928c2a",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6095,1929.651,-27.47107",
+          "Position": "118.6095,1929.651,-35",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -2981,7 +2981,8 @@
       "__guid": "45fd3577-1078-43cd-aa89-7f85d04c68bf",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "5386.716,-672.2831,2720.542",
+      "Position": "5386.716,-3.210266,3375.98",
+      "Rotation": "-0.258819,-0.00000001131334,0.9659258,-0.00000004222196",
       "Tags": "maincamera",
       "Enabled": true,
       "Components": [
@@ -3143,7 +3144,7 @@
       "__guid": "bcb729c5-ace5-457a-8cf3-6f66d34ad443",
       "Flags": 0,
       "Name": "ObjectDespawner",
-      "Position": "1408,-1665.155,90.13144",
+      "Position": "1408,65.19238,90.13144",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 1,
