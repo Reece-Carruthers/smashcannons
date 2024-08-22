@@ -4,4 +4,9 @@ public class SmashTeam : Team
 	{
 		return true;
 	}
+
+	public string Colour()
+	{
+		return "#900c9c";
+	}
 }

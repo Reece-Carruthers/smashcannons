@@ -1,4 +1,5 @@
 using System;
+using cba.smashcannons;
 using Sandbox;
 using Sandbox.Citizen;
 
@@ -403,6 +404,11 @@ public sealed class SmashRunnerMovement : Component
 		RagdollPlayer( playerPosition, direction );
 
 		Sound.Play( "dead", Transform.World.Position );
+
+		if ( Networking.IsHost )
+		{
+			Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, TeamCategory.Colour(), $"has been killed" );
+		}
 	}
 
 	[Broadcast( NetPermission.HostOnly )]

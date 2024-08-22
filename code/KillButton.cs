@@ -1,3 +1,4 @@
+using cba.smashcannons;
 using Sandbox;
 
 public sealed class KillButton : Component
@@ -22,6 +23,13 @@ public sealed class KillButton : Component
 		foreach ( var cannonPlayer in cannonPlayers )
 		{
 			cannonPlayer.Kill();
+		}
+
+
+		if ( Networking.IsHost )
+		{
+			Chat.AddPlayerEvent( "cannon_kill", presser.Network.OwnerConnection.DisplayName,
+				presser.TeamCategory.Colour(), $"has killed the Cannoniers!" );
 		}
 	}
 }

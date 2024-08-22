@@ -3021,6 +3021,10 @@
         {
           "__type": "Hud",
           "__guid": "a76745cc-77f4-48c7-a94b-87748bbef524"
+        },
+        {
+          "__type": "cba.smashcannons.Chat",
+          "__guid": "6c1b848b-865e-434c-acf5-323482158cac"
         }
       ]
     },

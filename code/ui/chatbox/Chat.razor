@@ -1,0 +1,127 @@
+﻿@using System
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@implements Component.INetworkListener
+@namespace cba.smashcannons
+
+<root class=@(IsOpen ? "open" : "closed")>
+	<div @ref="EntryCanvas" class="entries"></div>
+
+	<div class="input">
+		<textentry @onblur=@OnEntryBlur @onsubmit=@OnEntrySubmit @ref="Entry"></textentry>
+	</div>
+</root>
+
+@code
+{
+	private static Chat Instance { get; set; }
+	private TextEntry Entry { get; set; }
+	private Panel EntryCanvas { get; set; }
+	private bool IsOpen { get; set; }
+
+	[Broadcast]
+	public static void AddPlayerEvent( string eventName, string name, Color color, string message )
+	{
+		if ( !Instance.IsValid() ) return;
+		Instance.AddNamedMessage( name, color, message, eventName );
+	}
+	
+	public void AddNamedMessage( string name, Color color, string message, string className = null )
+	{
+		var entry = new ChatboxEntry()
+		{
+			Name = name,
+			Color = color,
+			Message = message
+		};
+
+		if ( !string.IsNullOrEmpty( className ) )
+		{
+			entry.AddClass( className );
+		}
+
+		if ( string.IsNullOrEmpty( name ) )
+		{
+			entry.AddClass( "no-name" );
+		}
+
+		EntryCanvas.AddChild( entry );
+	}
+
+	public void AddMessage( string message, string className = null )
+	{
+		var entry = new ChatboxEntry()
+		{
+			Message = message
+		};
+
+		if ( !string.IsNullOrEmpty( className ) )
+		{
+			entry.AddClass( className );
+		}
+
+		entry.AddClass( "no-name" );
+
+		EntryCanvas.AddChild( entry );
+	}
+
+	protected override void OnAwake()
+	{
+		Instance = this;
+		base.OnAwake();
+	}
+
+	protected override void OnUpdate()
+	{
+		if ( !Entry.IsValid() ) return;
+
+		EntryCanvas.PreferScrollToBottom = true;
+		Panel.AcceptsFocus = false;
+
+		if ( !IsOpen && Input.Pressed( "chat" ) )
+		{
+			Entry.Focus();
+			IsOpen = true;
+		}
+	}
+	
+	private void OnEntrySubmit()
+	{
+		if ( !string.IsNullOrWhiteSpace( Entry.Text ) )
+		{
+			SendText( Sandbox.Utility.Steam.PersonaName, Entry.Text.Trim() );
+		}
+	}
+	
+	private void OnEntryBlur()
+	{
+		Entry.Text = string.Empty;
+		IsOpen = false;
+	}
+
+	[Broadcast]
+	private static void SendText( string author, string message )
+	{
+		Instance?.AddNamedMessage( author, Color.Orange, message );
+	}
+
+	void INetworkListener.OnConnected( Connection channel )
+	{
+		if ( IsProxy ) return;
+
+		SendText( "🛎️", $"{channel.DisplayName} has joined the game" );
+	}
+
+	void INetworkListener.OnDisconnected( Connection channel )
+	{
+		if ( IsProxy ) return;
+
+		SendText(  "💨", $"{channel.DisplayName} has left the game" );
+	}
+	
+	protected override int BuildHash()
+	{
+		return HashCode.Combine( IsOpen );
+	}
+}

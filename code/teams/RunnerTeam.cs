@@ -4,4 +4,9 @@ public class RunnerTeam : Team
 	{
 		return false;
 	}
+	
+	public string Colour()
+	{
+		return "#bd6f19";
+	}
 }
