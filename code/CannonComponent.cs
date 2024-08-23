@@ -41,7 +41,7 @@ public sealed class CannonComponent : Component
 		turretYaw = turretYaw.Clamp( -70, 70 );
 		Gun.Transform.Rotation = Rotation.From( turretPitch, turretYaw, 0 );
 
-		if ( Input.Pressed( "Attack1" ) && timeSinceLastPrimary > 3.0f )
+		if ( Input.Pressed( "Attack1" ) && timeSinceLastPrimary > 5.0f )
 		{
 			Shoot();
 		}
@@ -69,13 +69,10 @@ public sealed class CannonComponent : Component
 
 		var physics = obj.Components.Get<Rigidbody>();
 
-		if ( physics is null )
-		{
-			Log.Error( "PHYSICS NULL WTF" );
-		}
+		if ( physics is null ) return;
 
 		obj.NetworkSpawn();
-		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2500.0f;
+		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2200.0f;
 
 		Stats.Increment("cannon_ball_fired", 1 );
 		

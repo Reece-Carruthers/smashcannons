@@ -3561,6 +3561,10 @@
         {
           "__type": "cba.smashcannons.Chat",
           "__guid": "6c1b848b-865e-434c-acf5-323482158cac"
+        },
+        {
+          "__type": "Scoreboard",
+          "__guid": "a37400c2-ab0f-4707-94ab-4520577f6c7a"
         }
       ]
     },

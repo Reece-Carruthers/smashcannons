@@ -30,14 +30,17 @@ public class EndState : ExtendedState
 			{
 				statId = "runners_wins";
 				playersToUpdate = ActiveRunnerPlayers;
+				PlayWinningTeam( "runners_win" );
 			} else if ( ActiveCannonPlayers.Count >= 1 && ActiveRunnerPlayers.Count <= 0 )
 			{
 				statId = "cannon_wins";
 				playersToUpdate = ActiveCannonPlayers;
+				PlayWinningTeam( "cannon_win" );
+
 			}
 			else
 			{
-				statId = "draws";
+				statId = "draws1";
 				playersToUpdate = ActiveRunnerPlayers.Concat( ActiveCannonPlayers ).ToList();
 			}
 
@@ -59,5 +62,11 @@ public class EndState : ExtendedState
 		{
 			player.AddStat( statId );
 		}
+	}
+
+	[Broadcast]
+	private void PlayWinningTeam(string sound)
+	{
+		Sound.Play( sound );
 	}
 }
