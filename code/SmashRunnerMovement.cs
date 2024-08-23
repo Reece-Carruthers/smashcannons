@@ -410,13 +410,17 @@ public sealed class SmashRunnerMovement : Component
 			RagdollPlayer( playerPosition, direction );
 		}
 
+		DeathMessage();
 		PlayDeathNoise();
 
-		if ( !Network.IsProxy )
-		{
-			Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, TeamCategory.Colour(),
-				$"has been killed" );
-		}
+	}
+
+	[Broadcast(NetPermission.HostOnly)]
+	private void DeathMessage()
+	{
+		if ( !Networking.IsHost ) return;
+		Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, TeamCategory.Colour(),
+			$"has been killed" );
 	}
 
 	[Broadcast]

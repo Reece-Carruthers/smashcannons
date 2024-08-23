@@ -55,7 +55,7 @@ public class LobbyState : ExtendedState
 		{
 			1 => 1,
 			2 => 1,
-			> 3 => 2,
+			> 4 => 2,
 			_ => 1
 		};
 

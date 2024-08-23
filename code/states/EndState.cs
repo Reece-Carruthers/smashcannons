@@ -64,7 +64,7 @@ public class EndState : ExtendedState
 		}
 	}
 
-	[Broadcast]
+	[Broadcast(NetPermission.HostOnly)]
 	private void PlayWinningTeam(string sound)
 	{
 		Sound.Play( sound );

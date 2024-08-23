@@ -3083,90 +3083,6 @@
               "__guid": "ffd7c534-b3c2-49df-8d9f-622170255279"
             }
           ]
-        },
-        {
-          "__guid": "a32a2059-4792-4999-8931-867a69a70dbf",
-          "Flags": 0,
-          "Name": "cone (2)",
-          "Position": "121.8877,-795.9814,-710.7979",
-          "Rotation": "-0.1755095,0,0.9844778,0",
-          "Scale": "4.528905,4.528905,4.528905",
-          "Enabled": true,
-          "NetworkOrphaned": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "75b3bf26-790b-4f47-a5ae-e616f5c7e4a5",
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/terrain/grass/terrain_grass.vmat",
-              "Model": "models/cone.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.ModelCollider",
-              "__guid": "627096d8-672b-42da-9282-cb3e45361de6",
-              "IsTrigger": false,
-              "Model": "models/cone.vmdl",
-              "Static": true
-            }
-          ]
-        },
-        {
-          "__guid": "0c4a4b6e-0c32-4f69-9cd6-56af14a606c2",
-          "Flags": 0,
-          "Name": "cone (3)",
-          "Position": "-762.8623,-1430.754,-1036.614",
-          "Rotation": "-0.1755095,0,0.9844778,0",
-          "Scale": "4.528905,4.528905,4.528905",
-          "Enabled": true,
-          "NetworkOrphaned": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "35c2e1de-0b23-47dc-9325-c416143a7fa1",
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/terrain/grass/terrain_grass.vmat",
-              "Model": "models/cone.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.ModelCollider",
-              "__guid": "311fae62-e074-4b16-bf99-5ce14c7163dc",
-              "IsTrigger": false,
-              "Model": "models/cone.vmdl",
-              "Static": true
-            }
-          ]
-        },
-        {
-          "__guid": "390ba4b9-7d16-49f2-a655-ca9bf4fe4844",
-          "Flags": 0,
-          "Name": "cone (1)",
-          "Position": "1621.679,-1457.766,-158.4883",
-          "Rotation": "-0.1755095,0,0.9844778,0",
-          "Scale": "4.528905,4.528905,4.528905",
-          "Enabled": true,
-          "NetworkOrphaned": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "ce4aeaa5-3e32-4285-b512-c99bbadb2f3b",
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/terrain/grass/terrain_grass.vmat",
-              "Model": "models/cone.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.ModelCollider",
-              "__guid": "56618512-bcb3-4478-8ca4-a5f8a60e0203",
-              "IsTrigger": false,
-              "Model": "models/cone.vmdl",
-              "Static": true
-            }
-          ]
         }
       ]
     },
@@ -3979,14 +3895,12 @@
   "ResourceVersion": 1,
   "__references": [
     "agentep.stonewall02",
-    "chase.cone",
     "chase.cylinder",
     "eurorp.door01_right_01",
     "facepunch.floor_rough_asphalt",
     "facepunch.wall_limestone_brick_large",
     "kvien.concretewall04_pixel",
-    "rust.brick_wall_b_plasterblend",
-    "rustextended.terrain_grass"
+    "rust.brick_wall_b_plasterblend"
   ],
   "__version": 1
 }

@@ -1,11 +1,11 @@
 {
   "UI": false,
-  "Volume": "50",
+  "Volume": "500",
   "Pitch": "1",
-  "Decibels": 70,
+  "Decibels": 200,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/runners-win.vsnd"
+    "sounds/runnerwin.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

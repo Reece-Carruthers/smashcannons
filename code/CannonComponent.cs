@@ -18,6 +18,8 @@ public sealed class CannonComponent : Component
 	public Connection CurrentController { get; set; } = null;
 	public SmashRunnerMovement CurrentPlayer { get; set; } = null;
 
+	public float TimeBetweenShots = 5.0f;
+
 
 	protected override void OnFixedUpdate()
 	{
@@ -43,7 +45,21 @@ public sealed class CannonComponent : Component
 
 		if ( Input.Pressed( "Attack1" ) && timeSinceLastPrimary > 5.0f )
 		{
-			Shoot();
+			var activeState = StateSystem.Active as FinalState;
+
+			if ( activeState.IsValid() )
+			{
+				TimeBetweenShots = 3.0f;
+			}
+			else
+			{
+				TimeBetweenShots = 5.0f;
+			}
+
+			if ( timeSinceLastPrimary > TimeBetweenShots )
+			{
+				Shoot();
+			}
 		}
 	}
 
@@ -72,7 +88,7 @@ public sealed class CannonComponent : Component
 		if ( physics is null ) return;
 
 		obj.NetworkSpawn();
-		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2200.0f;
+		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2000.0f;
 
 		Stats.Increment("cannon_ball_fired", 1 );
 		
