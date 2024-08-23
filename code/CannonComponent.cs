@@ -20,6 +20,8 @@ public sealed class CannonComponent : Component
 
 	public float TimeBetweenShots = 5.0f;
 
+	public float CannonForce = 2200.0f;
+
 
 	protected override void OnFixedUpdate()
 	{
@@ -88,7 +90,7 @@ public sealed class CannonComponent : Component
 		if ( physics is null ) return;
 
 		obj.NetworkSpawn();
-		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2100.0f;
+		physics.Velocity = Muzzle.Transform.Rotation.Forward * CannonForce;
 
 		Stats.Increment("cannon_ball_fired", 1 );
 		

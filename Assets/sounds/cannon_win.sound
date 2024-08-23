@@ -2,7 +2,7 @@
   "UI": false,
   "Volume": "100",
   "Pitch": "1",
-  "Decibels": 200,
+  "Decibels": 10000,
   "SelectionMode": "Random",
   "Sounds": [
     "sounds/cannonwin.vsnd"
