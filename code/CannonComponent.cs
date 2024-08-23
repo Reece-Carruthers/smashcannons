@@ -43,7 +43,7 @@ public sealed class CannonComponent : Component
 		turretYaw = turretYaw.Clamp( -70, 70 );
 		Gun.Transform.Rotation = Rotation.From( turretPitch, turretYaw, 0 );
 
-		if ( Input.Pressed( "Attack1" ) && timeSinceLastPrimary > 5.0f )
+		if ( Input.Pressed( "Attack1" ))
 		{
 			var activeState = StateSystem.Active as FinalState;
 
@@ -88,7 +88,7 @@ public sealed class CannonComponent : Component
 		if ( physics is null ) return;
 
 		obj.NetworkSpawn();
-		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2000.0f;
+		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2100.0f;
 
 		Stats.Increment("cannon_ball_fired", 1 );
 		
