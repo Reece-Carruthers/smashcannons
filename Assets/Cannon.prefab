@@ -3,7 +3,7 @@
     "__guid": "5d8fda91-e097-4ec0-9b62-adb6c9f68bd9",
     "Flags": 0,
     "Name": "cannon",
-    "Tags": "trigger,cannon,cannon_zone",
+    "Tags": "cannon_zone,cannon,trigger",
     "Enabled": true,
     "NetworkMode": 1,
     "NetworkOrphaned": 3,
@@ -23,9 +23,7 @@
         "Muzzle": {
           "_type": "gameobject",
           "go": "f58cb336-e802-47af-9670-343e7c5749ab"
-        },
-        "TurretPitchSpeed": 0.2,
-        "TurretYawSpeed": 0.08952
+        }
       },
       {
         "__type": "Sandbox.BoxCollider",
@@ -1174,7 +1172,8 @@
               ]
             },
             "SmoothingAngle": 40,
-            "Static": false
+            "Static": false,
+            "Surface": "surfaces/concrete.surface"
           },
           {
             "__type": "Sandbox.Rigidbody",

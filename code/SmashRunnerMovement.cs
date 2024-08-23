@@ -392,7 +392,7 @@ public sealed class SmashRunnerMovement : Component
 		LifeState = LifeState.Spectate;
 	}
 
-	public void Kill()
+	public void Kill( bool withImpulse = false )
 	{
 		LifeState = LifeState.Dead;
 
@@ -401,21 +401,40 @@ public sealed class SmashRunnerMovement : Component
 		var direction = Vector3.Up +
 		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
 
-		RagdollPlayer( playerPosition, direction );
+		if ( withImpulse )
+		{
+			RagdollPlayerWithImpulse( playerPosition, direction );
+		}
+		else
+		{
+			RagdollPlayer( playerPosition, direction );
+		}
 
-		Sound.Play( "dead", Transform.World.Position );
+		PlayDeathNoise();
 
-		if ( Network.IsProxy )
+		if ( !Network.IsProxy )
 		{
 			Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, TeamCategory.Colour(),
 				$"has been killed" );
 		}
 	}
 
+	[Broadcast]
+	private void PlayDeathNoise()
+	{
+		Sound.Play( "dead", Transform.World.Position );
+	}
+
 	[Broadcast( NetPermission.HostOnly )]
 	private void RagdollPlayer( Vector3 playerPosition, Vector3 direction )
 	{
 		RagdollController.Ragdoll( playerPosition, direction );
+	}
+
+	[Broadcast( NetPermission.HostOnly )]
+	private void RagdollPlayerWithImpulse( Vector3 playerPosition, Vector3 direction )
+	{
+		RagdollController.RagdollWithImpulse( playerPosition, direction );
 	}
 
 	[Broadcast( NetPermission.HostOnly )]
@@ -427,7 +446,7 @@ public sealed class SmashRunnerMovement : Component
 	public void AddStat( string statId )
 	{
 		if ( Network.IsProxy ) return;
-		
+
 		Sandbox.Services.Stats.Increment( statId, 1 );
 	}
 }

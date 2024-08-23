@@ -116,6 +116,16 @@
         },
         "Volume": 1,
         "WorldspacePlayback": false
+      },
+      {
+        "__type": "PlayerFootsteps",
+        "__guid": "20351edd-047e-477a-a7f6-f5e7f3e4374d",
+        "Source": {
+          "_type": "component",
+          "component_id": "09f15783-44a3-4393-9064-4a3380587c6e",
+          "go": "44202a51-6d58-46cb-ba2b-597c2d9abf7b",
+          "component_type": "SkinnedModelRenderer"
+        }
       }
     ],
     "Children": [

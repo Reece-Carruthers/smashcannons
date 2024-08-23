@@ -1,12 +1,12 @@
 {
   "UI": false,
-  "Volume": "5",
+  "Volume": "4",
   "Pitch": "1",
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/dead1.vsnd",
-    "sounds/dead2.vsnd"
+    "sounds/debris1.vsnd",
+    "sounds/debris2.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

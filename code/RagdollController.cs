@@ -12,6 +12,19 @@ public sealed class RagdollController : Component
 		IsRagdolled = true;
 		Tags.Add( "corpse" );
 	}
+	
+	[Broadcast( NetPermission.HostOnly )]
+	public void RagdollWithImpulse( Vector3 position, Vector3 force )
+	{
+		Physics.Enabled = true;
+		IsRagdolled = true;
+		Tags.Add( "corpse" );
+		
+		foreach ( var body in Physics.PhysicsGroup.Bodies )
+		{
+			body.ApplyImpulseAt( position, force * 8000f );
+		}
+	}
 
 	[Broadcast( NetPermission.HostOnly )]
 	public void Unragdoll()

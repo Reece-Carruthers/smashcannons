@@ -16,7 +16,14 @@ public sealed class SelfDestructComponent : Component
 
 		if ( timeUntilDie <= 0.0f )
 		{
+			PlaySound();
 			GameObject.Destroy();
 		}
+	}
+
+	[Broadcast]
+	private void PlaySound()
+	{
+		Sound.Play( "debris", Transform.Position );
 	}
 }

@@ -2,10 +2,10 @@
   "publish": {
     "Enabled": true,
     "ProjectConfig": {
-      "Title": "countdown",
+      "Title": "debris",
       "Type": "sound",
       "Org": "cba",
-      "Ident": "countdown",
+      "Ident": "debris",
       "Schema": 0,
       "IncludeSourceFiles": true,
       "Resources": null,
@@ -13,7 +13,7 @@
       "EditorReferences": null,
       "IsWhitelistDisabled": false,
       "Metadata": {
-        "SingleAssetSource": "sounds/countdown.sound"
+        "SingleAssetSource": "sounds/debris.sound"
       }
     }
   }

@@ -67,9 +67,12 @@ public sealed class CannonComponent : Component
 
 		var obj = Bullet.Clone( Muzzle.Transform.Position, Muzzle.Transform.Rotation );
 
-		var physics = obj.Components.Get<Rigidbody>( FindMode.EnabledInSelfAndDescendants );
+		var physics = obj.Components.Get<Rigidbody>();
 
-		if ( physics is null ) return;
+		if ( physics is null )
+		{
+			Log.Error( "PHYSICS NULL WTF" );
+		}
 
 		obj.NetworkSpawn();
 		physics.Velocity = Muzzle.Transform.Rotation.Forward * 2500.0f;
@@ -83,6 +86,6 @@ public sealed class CannonComponent : Component
 	[Broadcast]
 	private void PlaySound( string soundName )
 	{
-		Sound.Play( soundName, Transform.Position );
+		Sound.Play( soundName, Transform.World.Position );
 	}
 }

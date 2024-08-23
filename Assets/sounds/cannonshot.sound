@@ -1,8 +1,8 @@
 {
   "UI": false,
-  "Volume": "1.00,1.00,0",
-  "Pitch": "1.00,1.00,0",
-  "Decibels": 70,
+  "Volume": "50",
+  "Pitch": "1",
+  "Decibels": 120,
   "SelectionMode": "Random",
   "Sounds": [
     "sounds/cannonshot.vsnd"

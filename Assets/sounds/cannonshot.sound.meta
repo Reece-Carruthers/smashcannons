@@ -2,10 +2,10 @@
   "publish": {
     "Enabled": true,
     "ProjectConfig": {
-      "Title": "countdown",
+      "Title": "cannonshot",
       "Type": "sound",
       "Org": "cba",
-      "Ident": "countdown",
+      "Ident": "cannonshot",
       "Schema": 0,
       "IncludeSourceFiles": true,
       "Resources": null,
@@ -13,7 +13,7 @@
       "EditorReferences": null,
       "IsWhitelistDisabled": false,
       "Metadata": {
-        "SingleAssetSource": "sounds/countdown.sound"
+        "SingleAssetSource": "sounds/cannonshot.sound"
       }
     }
   }

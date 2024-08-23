@@ -5,10 +5,6 @@ public sealed class KillButton : Component
 {
 	[Sync] public SmashRunnerMovement Presser { get; set; } = null;
 
-	protected override void OnUpdate()
-	{
-	}
-
 	[Broadcast]
 	public void Kill( SmashRunnerMovement presser )
 	{
@@ -22,7 +18,7 @@ public sealed class KillButton : Component
 
 		foreach ( var cannonPlayer in cannonPlayers )
 		{
-			cannonPlayer.Kill();
+			cannonPlayer.Kill(true);
 		}
 
 
