@@ -43,7 +43,7 @@
       "__guid": "6edfc06f-798c-4088-aaab-d70c05403ba7",
       "Flags": 0,
       "Name": "KillCollider",
-      "Position": "1408,3.501221,135.153",
+      "Position": "1408,3.501221,271.0551",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 1,
@@ -2563,30 +2563,30 @@
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACl2UiVITURBFM0SSSciELKhRQZBVQUVR3FBBFnHf//9X9J6qM1VTTtWteTPdfft2v35v1mq1/gTXAp654ErQCcqgHwyCYTALjoLl4GtwN3gZ3A8ug4/B5\u002BB18DZ4H3wIPgVfgkKQo/mMg3n/t83favhuqqWtX\u002Bc/rdcbMd0Gb1vfib7E9qypMAbeaaPmBest9Md3wzfclb0o9Mf3qr5wLMpZ6I/vqFHz2P98d7VVjfipHHUvJg1bx1zb1kGOpYbWOXuxJve8\u002B9oznvWN4Lc8pXt6xzU13gqeqZu4m8GWa7StBBfq6jsLO67hWA0e2Rd6eTtYV09prtVGD9ass1Tvhjq7xq87a301bDmDdY837UG9rzvW0LNf2/L0rfle8N1aBs7wY23UvOc8j92X3eBQGzU/CM60D/V9rg2\u002BfTnrfXwYHGgbmGvfdWmvZuZH5xN7NjD\u002BwLO1qJ5Dz1xljU/dI7QM1bLnuu9eLquvMnZX/czei\u002BCkwXckZ6XPK890aZ/fBN/UOvGsn2tj9o6Dn35PvQdW1ALfOzkr8594b4zkO5NzwX\u002BnahzLdyHnkv7n7snEHl3a86k\u002B3EE/tI3MdSo/Ped\u002B\u002BqWNHNSKRr6ZQ\u002B4uzgz1E8MsskfwUS/3GjXX88VswYkv\u002BekVGtCDP70hhnjsaKOnrMnH2SQn\u002BeFDGzPLmnmu5/BvHvj4z5pzwtnifHAGyMvs0F9mhjxw0V96iE60kO8fZmQRXQQGAAA=",
                 "Positions": [
-                  "-211.834,-923.8396,55.38373",
-                  "211.834,-923.8396,55.38373",
-                  "211.834,923.8396,55.38373",
-                  "-211.834,923.8396,55.38373",
-                  "-211.834,923.8396,-55.38373",
-                  "211.834,923.8396,-55.38373",
-                  "211.834,-923.8396,-55.38373",
-                  "-211.834,-923.8396,-55.38373",
-                  "4583.52,923.8396,1665.291",
-                  "4583.52,-923.8396,1665.291",
-                  "4583.52,-923.8396,1554.523",
-                  "4583.52,923.8396,1554.523",
-                  "4970.272,923.8396,1665.291",
-                  "4970.272,-923.8396,1665.291",
-                  "4970.272,-923.8396,1554.523",
-                  "4970.272,923.8396,1554.523",
-                  "5382.786,-123.8007,1665.291",
-                  "4583.52,-123.8007,1665.291",
-                  "5382.786,-123.8007,1554.523",
-                  "4583.52,-123.8007,1554.523",
-                  "5382.786,129.2895,1554.523",
-                  "5382.786,129.2895,1665.291",
-                  "4583.52,129.2895,1665.291",
-                  "4583.52,129.2895,1554.523"
+                  "-211.834,-622.9443,55.38373",
+                  "211.834,-622.9443,55.38373",
+                  "211.834,622.9443,55.38373",
+                  "-211.834,622.9443,55.38373",
+                  "-211.834,622.9443,-55.38373",
+                  "211.834,622.9443,-55.38373",
+                  "211.834,-622.9443,-55.38373",
+                  "-211.834,-622.9443,-55.38373",
+                  "4583.52,622.9443,1665.291",
+                  "4583.52,-622.9443,1665.291",
+                  "4583.52,-622.9443,1554.523",
+                  "4583.52,622.9443,1554.523",
+                  "4970.272,622.9443,1665.291",
+                  "4970.272,-622.9443,1665.291",
+                  "4970.272,-622.9443,1554.523",
+                  "4970.272,622.9443,1554.523",
+                  "5382.786,-83.4787,1665.291",
+                  "4583.52,-83.4787,1665.291",
+                  "5382.786,-83.4787,1554.523",
+                  "4583.52,-83.4787,1554.523",
+                  "5382.786,87.17978,1554.523",
+                  "5382.786,87.17978,1665.291",
+                  "4583.52,87.17978,1665.291",
+                  "4583.52,87.17978,1554.523"
                 ],
                 "TextureCoord": [
                   "3.464766,11.33676",
@@ -2950,9 +2950,9 @@
           "__guid": "8291af19-d460-4651-9cd4-d1905543751a",
           "Flags": 0,
           "Name": "cylinder",
-          "Position": "1252.524,-610.6461,-723.7173",
+          "Position": "1246.3,-1449.29,-655.582",
           "Rotation": "-0.04550784,0,0.998964,0",
-          "Scale": "5.352138,9.868693,5.170366",
+          "Scale": "5.352,4.997,3.571",
           "Enabled": true,
           "Components": [
             {
@@ -2977,9 +2977,9 @@
           "__guid": "496df072-8d97-4bcf-8174-f30997cb5894",
           "Flags": 0,
           "Name": "cylinder (1)",
-          "Position": "44.10986,-1593.948,-1043.582",
+          "Position": "4.279175,-775.1982,-1124.807",
           "Rotation": "-0.04550784,0,0.998964,0",
-          "Scale": "5.352138,9.868693,3.040203",
+          "Scale": "5.352,4.997,3.571",
           "Enabled": true,
           "Components": [
             {
@@ -2994,33 +2994,6 @@
             {
               "__type": "Sandbox.ModelCollider",
               "__guid": "8421d34e-a794-4d5d-9de5-c65b04458fb8",
-              "IsTrigger": false,
-              "Model": "models/cylinder.vmdl",
-              "Static": false
-            }
-          ]
-        },
-        {
-          "__guid": "fd98746b-5587-43a0-9cf2-b0052fa86359",
-          "Flags": 0,
-          "Name": "cylinder (2)",
-          "Position": "-1268.458,-669.2252,-1561.057",
-          "Rotation": "-0.04550784,0,0.998964,0",
-          "Scale": "5.352138,9.868693,3.571161",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "3e46f8f6-4605-489f-acd6-761d1dcbe903",
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/generic/floor_rough_asphalt.vmat",
-              "Model": "models/cylinder.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.ModelCollider",
-              "__guid": "777cca35-9146-478e-a344-7a8feb395cd9",
               "IsTrigger": false,
               "Model": "models/cylinder.vmdl",
               "Static": false
@@ -3324,28 +3297,13 @@
           "__guid": "5474efc3-a7a8-4a51-b658-0a4628c574a1",
           "Flags": 0,
           "Name": "RampSpawn1",
-          "Position": "1141.648,-629.3076,-1112",
+          "Position": "1141.648,-533.5534,-1112",
           "Tags": "ramp_spawn",
           "Enabled": true,
           "Components": [
             {
               "__type": "PlayerSpawn",
               "__guid": "c4fd9b01-524a-482e-83f8-dfe0dabbd945",
-              "Index": 3
-            }
-          ]
-        },
-        {
-          "__guid": "0b594508-ac89-44ce-a6d6-3933a33c1c1b",
-          "Flags": 0,
-          "Name": "RampSpawn1",
-          "Position": "1141.648,-814.6796,-1112",
-          "Tags": "ramp_spawn",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "PlayerSpawn",
-              "__guid": "4b9344ba-3f28-4ac3-bbe4-418cfdc30b46",
               "Index": 3
             }
           ]
@@ -3369,7 +3327,7 @@
           "__guid": "8142182f-a725-4a3e-825d-e8b41fdbe3e6",
           "Flags": 0,
           "Name": "RampSpawn1",
-          "Position": "1141.648,228.3644,-1112",
+          "Position": "1141.648,245.587,-1112",
           "Tags": "ramp_spawn",
           "Enabled": true,
           "Components": [
@@ -3384,28 +3342,13 @@
           "__guid": "0c618aa0-d98f-4820-b1ac-7b3a7a1339b8",
           "Flags": 0,
           "Name": "RampSpawn1",
-          "Position": "1141.648,371.0924,-1112",
+          "Position": "1141.648,423.1237,-1112",
           "Tags": "ramp_spawn",
           "Enabled": true,
           "Components": [
             {
               "__type": "PlayerSpawn",
               "__guid": "32f22880-b23a-401b-a795-0b036518ae46",
-              "Index": 3
-            }
-          ]
-        },
-        {
-          "__guid": "28ccdf5b-8cd3-4493-8dfa-8bfbd4b4a6c8",
-          "Flags": 0,
-          "Name": "RampSpawn1",
-          "Position": "1141.648,640.6824,-1127.236",
-          "Tags": "ramp_spawn",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "PlayerSpawn",
-              "__guid": "4a893a82-736a-4eda-b176-d694fd9257b0",
               "Index": 3
             }
           ]

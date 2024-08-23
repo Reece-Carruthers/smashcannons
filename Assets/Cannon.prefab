@@ -4,6 +4,7 @@
     "Flags": 0,
     "Name": "cannon",
     "Tags": "cannon_zone,cannon,trigger",
+    "Enabled": true,
     "NetworkMode": 1,
     "NetworkOrphaned": 3,
     "OwnerTransfer": 0,
@@ -84,7 +85,6 @@
         "Flags": 0,
         "Name": "Box",
         "Position": "-7152,-1417.097,-2328.911",
-        "Enabled": true,
         "Components": [
           {
             "__type": "Sandbox.MeshComponent",

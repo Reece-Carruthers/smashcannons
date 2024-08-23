@@ -232,19 +232,19 @@ public sealed class SmashRunnerMovement : Component
 			characterController.Height /= 2f;
 		}
 
-		if ( !Input.Down( "Duck" ) && IsCrouching && !IsObjectAbove() )
+		if ( !Input.Down( "Duck" ) && IsCrouching )
 		{
 			IsCrouching = false;
 			characterController.Height *= 2f;
 		}
 	}
 
-	private bool IsObjectAbove()
-	{
-		var crouchedHeight = characterController.Height / 2;
-		var tr = characterController.TraceDirection( Vector3.Up * crouchedHeight );
-		return tr.Hit;
-	}
+	// private bool IsObjectAbove()
+	// {
+	// 	var crouchedHeight = characterController.Height / 2;
+	// 	var tr = characterController.TraceDirection( Vector3.Up * crouchedHeight );
+	// 	return tr.Hit;
+	// }
 
 	[Broadcast]
 	private void BroadcastJumpAnimation()
@@ -394,6 +394,7 @@ public sealed class SmashRunnerMovement : Component
 
 	public void Kill( bool withImpulse = false )
 	{
+		if ( LifeState == LifeState.Dead ) return;
 		LifeState = LifeState.Dead;
 
 		var playerPosition = Transform.Position;

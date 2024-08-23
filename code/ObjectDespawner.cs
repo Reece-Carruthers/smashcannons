@@ -19,7 +19,7 @@ public sealed class ObjectDespawner : Component, Component.ITriggerListener
 
 		var selfDestruct = other.Components.Create<SelfDestructComponent>( false );
 
-		selfDestruct.Seconds = 3f;
+		selfDestruct.Seconds = 2f;
 		selfDestruct.Enabled = true;
 	}
 }

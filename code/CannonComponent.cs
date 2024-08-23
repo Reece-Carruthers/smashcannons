@@ -51,11 +51,11 @@ public sealed class CannonComponent : Component
 
 			if ( activeState.IsValid() )
 			{
-				TimeBetweenShots = 3.0f;
+				TimeBetweenShots = 2.0f;
 			}
 			else
 			{
-				TimeBetweenShots = 5.0f;
+				TimeBetweenShots = 6.0f;
 			}
 
 			if ( timeSinceLastPrimary > TimeBetweenShots )
