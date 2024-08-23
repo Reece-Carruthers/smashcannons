@@ -1,11 +1,11 @@
 {
   "UI": false,
-  "Volume": "50",
+  "Volume": "100",
   "Pitch": "1",
-  "Decibels": 70,
+  "Decibels": 200,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/cannon-win.vsnd"
+    "sounds/cannonwin.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,
