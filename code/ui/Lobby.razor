@@ -6,13 +6,17 @@
 
 <root>
         <div class="title">
-            Smash Cannon
+            Smash Cannons
         </div>
 
 	<div class="canvas">
 		<div class="container menu">
 			<div class="button" onclick=@( () => LoadLobby() )>
 				Create Lobby
+			</div>
+			
+			<div class="button" onclick=@( () => QuickJoin() )>
+				Quick Join A Lobby
 			</div>
 
 			<div class="button" onclick=@( () => Quit() )>
@@ -93,7 +97,7 @@
 			await Task.DelayRealtimeSeconds( 5f );
 		}
 	}
-
+	
 	private void OpenLobby( LobbyInformation lobby )
 	{
 		if ( TimeSinceLastConnect < 3f ) return;
@@ -101,6 +105,11 @@
 		GameNetworkSystem.Connect( lobby.LobbyId );
 		TimeSinceLastConnect = 0f;
 	}
+    
+    private void QuickJoin( )
+    {
+	    Networking.JoinBestLobby("cba.smashcannons");
+    }
 	
 	private void LoadLobby()
 	{
