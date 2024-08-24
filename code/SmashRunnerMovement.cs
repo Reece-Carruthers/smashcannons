@@ -30,10 +30,6 @@ public sealed class SmashRunnerMovement : Component
 
 	[Category( "Movement Properties" )]
 	[Property]
-	private float CrouchSpeed { get; set; } = 80f;
-
-	[Category( "Movement Properties" )]
-	[Property]
 	private float JumpForce { get; set; } = 400f;
 
 	[Category( "Objects" )] [Property] public GameObject Head { get; set; }
@@ -41,7 +37,6 @@ public sealed class SmashRunnerMovement : Component
 
 	[HostSync] public LifeState LifeState { get; set; } = LifeState.Alive;
 
-	[Sync] public bool IsCrouching { get; set; } = false;
 	[Sync] private bool IsSprinting { get; set; } = false;
 	[Sync] Angles TargetAngle { get; set; } = Angles.Zero;
 
@@ -101,7 +96,6 @@ public sealed class SmashRunnerMovement : Component
 		{
 			if ( !Network.IsProxy )
 			{
-				UpdateCrouch();
 				IsSprinting = Input.Down( "Run" );
 				if ( Input.Pressed( "jump" ) )
 				{
@@ -179,8 +173,7 @@ public sealed class SmashRunnerMovement : Component
 
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
-		if ( IsCrouching ) WishVelocity *= CrouchSpeed;
-		else if ( IsSprinting ) WishVelocity *= RunSpeed;
+		if ( IsSprinting ) WishVelocity *= RunSpeed;
 		else WishVelocity *= Speed;
 	}
 
@@ -219,32 +212,7 @@ public sealed class SmashRunnerMovement : Component
 		animationHelper.WithLook( TargetAngle.Forward, 1f, 0.75f, 0f );
 		animationHelper.MoveStyle =
 			IsSprinting ? CitizenAnimationHelper.MoveStyles.Run : CitizenAnimationHelper.MoveStyles.Walk;
-		animationHelper.DuckLevel = IsCrouching ? 1f : 0f;
 	}
-
-	private void UpdateCrouch()
-	{
-		if ( characterController is null ) return;
-
-		if ( Input.Pressed( "Duck" ) && !IsCrouching )
-		{
-			IsCrouching = true;
-			characterController.Height /= 2f;
-		}
-
-		if ( !Input.Down( "Duck" ) && IsCrouching )
-		{
-			IsCrouching = false;
-			characterController.Height *= 2f;
-		}
-	}
-
-	// private bool IsObjectAbove()
-	// {
-	// 	var crouchedHeight = characterController.Height / 2;
-	// 	var tr = characterController.TraceDirection( Vector3.Up * crouchedHeight );
-	// 	return tr.Hit;
-	// }
 
 	[Broadcast]
 	private void BroadcastJumpAnimation()
@@ -420,6 +388,7 @@ public sealed class SmashRunnerMovement : Component
 	private void DeathMessage()
 	{
 		if ( !Networking.IsHost ) return;
+		
 		Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, TeamCategory.Colour(),
 			$"has been killed" );
 	}

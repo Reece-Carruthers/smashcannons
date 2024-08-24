@@ -2692,9 +2692,9 @@
                   "1,0,0",
                   "1,-0,0",
                   "1,0,0",
-                  "0.4582839,0.8888059,0",
+                  "0.6074331,0.7943709,0",
                   "1,0,-0",
-                  "-0.4607795,0.8875147,0",
+                  "-0.6100708,0.7923469,0",
                   "1,-0,-0",
                   "1,0,0"
                 ],
@@ -2723,52 +2723,52 @@
                   "0,-1,0"
                 ],
                 "TextureScale": [
-                  "0.9999994,1.000001",
-                  "0.25,0.25",
-                  "0.25,0.2500001",
+                  "0.9999994,0.6743001",
+                  "0.25,0.1685748",
+                  "0.1685748,0.2500001",
                   "0.25,0.25",
                   "0.25,0.2500001",
                   "0.125,0.125",
                   "0.25,0.25",
                   "0.125,0.1250008",
-                  "1.065652,1.000001",
+                  "1.065652,0.6742996",
                   "0.125,0.1250008",
-                  "0.1332065,0.125",
-                  "0.125,0.1250007",
+                  "0.1332065,0.08428741",
+                  "0.08428738,0.1250007",
                   "0.125,0.1250008",
-                  "0.9999982,0.9999999",
+                  "0.9999982,0.6742991",
                   "0.125,0.1250008",
-                  "0.1250001,0.125",
-                  "1.000004,0.9999994",
-                  "0.1406382,0.1250007",
-                  "0.1250002,0.125",
-                  "0.1408427,0.1250007",
-                  "0.1250001,0.125",
-                  "1.000004,1"
+                  "0.1250001,0.08428741",
+                  "1.000004,0.6742986",
+                  "0.1061059,0.1250007",
+                  "0.1250002,0.08428741",
+                  "0.1063769,0.1250007",
+                  "0.1250002,0.08428742",
+                  "1.000004,0.6742993"
                 ],
                 "TextureOffset": [
-                  "453.2124,200.0136",
-                  "172.3442,221.7241",
-                  "221.7241,254.8356",
+                  "453.2124,164.9614",
+                  "172.344,81.5144",
+                  "81.5144,254.8356",
                   "403.0308,90.98779",
                   "339.6558,254.8356",
                   "344.6884,509.6713",
                   "403.0308,90.98779",
                   "225.4062,327.6738",
-                  "328.1871,59.04419",
+                  "328.1872,23.99194",
                   "798.5938,327.6777",
-                  "931.2299,225.5093",
-                  "580.5514,509.5908",
+                  "931.2299,969.0913",
+                  "860.9705,509.5918",
                   "225.4023,327.5986",
-                  "200.1821,59.0434",
+                  "200.1821,23.99104",
                   "798.5977,327.5986",
-                  "798.6367,225.5107",
-                  "200.2075,59.05846",
-                  "485.9526,509.5918",
-                  "798.6406,225.5104",
-                  "505.9065,509.5898",
-                  "798.6367,225.5105",
-                  "200.2075,59.04377"
+                  "798.6367,969.0914",
+                  "200.207,24.00605",
+                  "479.5474,509.5918",
+                  "798.6406,969.0916",
+                  "674.3997,509.5898",
+                  "798.6406,969.0914",
+                  "200.2075,23.99138"
                 ],
                 "MaterialIndex": [
                   1,
@@ -2896,7 +2896,7 @@
           "__guid": "b6765862-519a-4976-891e-bd5971d97308",
           "Flags": 0,
           "Name": "Cube",
-          "Position": "-1045.668,-1154.339,-1158.029",
+          "Position": "-1045.668,-1100.788,-1158.029",
           "Scale": "1,1,5.953558",
           "Enabled": true,
           "Components": [
@@ -2923,7 +2923,7 @@
           "__guid": "4787904e-a973-462c-ad40-f13031e57a97",
           "Flags": 0,
           "Name": "Cube",
-          "Position": "2152.691,-1154.339,0.994873",
+          "Position": "2152.691,-1100.788,0.994873",
           "Scale": "1,1,5.953558",
           "Enabled": true,
           "Components": [
@@ -2950,7 +2950,7 @@
           "__guid": "8291af19-d460-4651-9cd4-d1905543751a",
           "Flags": 0,
           "Name": "cylinder",
-          "Position": "1246.3,-1449.29,-655.582",
+          "Position": "1244.423,-1449.29,-635.0312",
           "Rotation": "-0.04550784,0,0.998964,0",
           "Scale": "5.352,4.997,3.571",
           "Enabled": true,
@@ -2977,7 +2977,7 @@
           "__guid": "496df072-8d97-4bcf-8174-f30997cb5894",
           "Flags": 0,
           "Name": "cylinder (1)",
-          "Position": "4.279175,-775.1982,-1124.807",
+          "Position": "1.478516,-775.1982,-1094.134",
           "Rotation": "-0.04550784,0,0.998964,0",
           "Scale": "5.352,4.997,3.571",
           "Enabled": true,
@@ -3070,7 +3070,7 @@
           "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "0,-113.7726,-35",
+          "Position": "0,-113.7726,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3085,7 +3085,7 @@
           "__guid": "1f228b57-5140-407f-87ed-282fb7998a0e",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "0,-546.7881,-35",
+          "Position": "0,-546.7881,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3100,7 +3100,7 @@
           "__guid": "c9eaca28-ab85-4220-bd1a-213950b16d0f",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3848,-1134.99,-35",
+          "Position": "129.3848,-1134.99,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3115,7 +3115,7 @@
           "__guid": "d7f31bdb-470f-4110-bf25-6fb5e1a0a7f8",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3848,-1815.424,-35",
+          "Position": "129.3848,-1815.424,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3130,7 +3130,7 @@
           "__guid": "7e335056-b9c3-419b-a7ac-6ca936e23256",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3849,-2165.233,-35",
+          "Position": "129.3849,-2165.233,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3145,7 +3145,7 @@
           "__guid": "0fa55dc8-0140-4bc7-91db-f709d1c2e30d",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "0,140.9131,-35",
+          "Position": "0,140.9131,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3160,7 +3160,7 @@
           "__guid": "1482bca0-7310-4f50-8cb6-419e1552fb3b",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "-0.0008544922,481.7376,-35",
+          "Position": "-0.0008544922,481.7376,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3175,7 +3175,7 @@
           "__guid": "efc6457f-579b-4556-9373-633c35031a73",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6099,1168.032,-35",
+          "Position": "118.6099,1168.032,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3190,7 +3190,7 @@
           "__guid": "1b8090e3-db15-4652-92c5-cbab094f5b37",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6095,2221.226,-35",
+          "Position": "118.6095,2221.226,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3205,7 +3205,7 @@
           "__guid": "ebd7d423-9eba-4b7d-b366-643a33928c2a",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6095,1929.651,-35",
+          "Position": "118.6095,1929.651,-30",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3457,56 +3457,6 @@
             "_type": "gameobject",
             "go": "139d4abd-d9dc-4b86-9004-069fccef4a0a"
           }
-        }
-      ]
-    },
-    {
-      "__guid": "ec448877-b3cf-41b6-a482-7cf3133c66a4",
-      "Flags": 0,
-      "Name": "CannonUI (1)",
-      "Position": "5100,-631.6885,2432.472",
-      "Rotation": "0,0,-1,0.0000001937151",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.WorldPanel",
-          "__guid": "44026c65-391d-468b-8c51-8152cafa5cc5",
-          "HorizontalAlign": "Center",
-          "InteractionRange": 1000,
-          "LookAtCamera": false,
-          "PanelSize": "1174.3,391.3004",
-          "RenderScale": 1,
-          "VerticalAlign": "Center"
-        },
-        {
-          "__type": "CannonTutorial",
-          "__guid": "c7364ff8-0791-4544-908c-f9c029614764",
-          "MyStringValue": "Press E to use Cannon !"
-        }
-      ]
-    },
-    {
-      "__guid": "5674defd-5524-42bf-b4ab-e34f815b5cb0",
-      "Flags": 0,
-      "Name": "CannonUI",
-      "Position": "5100,623.7222,2432.472",
-      "Rotation": "0,0,-1,0.0000001937151",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.WorldPanel",
-          "__guid": "61c1b7e0-517d-4a65-9750-0cdcc9d777b3",
-          "HorizontalAlign": "Center",
-          "InteractionRange": 1000,
-          "LookAtCamera": false,
-          "PanelSize": "1174.3,391.3004",
-          "RenderScale": 1,
-          "VerticalAlign": "Center"
-        },
-        {
-          "__type": "CannonTutorial",
-          "__guid": "41cabd2d-87f9-46e0-9453-fb71fbd3719e",
-          "MyStringValue": "Press E to use Cannon !"
         }
       ]
     },
@@ -3806,6 +3756,249 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "ee40ac4d-a5a7-46cb-950d-78a667f71ef9",
+      "Flags": 0,
+      "Name": "CannonHint",
+      "Position": "-213.275,-1109.07,4045.798",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "ec448877-b3cf-41b6-a482-7cf3133c66a4",
+          "Flags": 0,
+          "Name": "CannonUI(1)",
+          "Position": "5313.275,477.3816,-1613.326",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "44026c65-391d-468b-8c51-8152cafa5cc5",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "1174.3,391.3004",
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "c7364ff8-0791-4544-908c-f9c029614764",
+              "MyStringValue": "Press E to use Cannon !"
+            }
+          ]
+        },
+        {
+          "__guid": "5674defd-5524-42bf-b4ab-e34f815b5cb0",
+          "Flags": 0,
+          "Name": "CannonUI(2)",
+          "Position": "5313.275,1732.792,-1613.326",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "61c1b7e0-517d-4a65-9750-0cdcc9d777b3",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "1174.3,391.3004",
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "41cabd2d-87f9-46e0-9453-fb71fbd3719e",
+              "MyStringValue": "Press E to use Cannon !"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "0d67d0cd-6b58-4952-a238-db98384da4d1",
+      "Flags": 0,
+      "Name": "ControlsHint",
+      "Position": "-213.275,-1109.07,4045.798",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "0bbb6b08-c8fe-4aac-bea6-e35ef2d6bc5c",
+          "Flags": 0,
+          "Name": "ControlUI(1)",
+          "Position": "1190.875,1139.176,-111.3025",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "3bae4bab-881a-4c66-b90e-a9658951944e",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "2000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "0a0ed41a-6a67-4c9b-8661-af812bbd6ed2",
+              "MyStringValue": "Controls"
+            }
+          ]
+        },
+        {
+          "__guid": "9b6e9973-d9e5-4efa-8ae2-1104b7341e3d",
+          "Flags": 0,
+          "Name": "ControlUI(2)",
+          "Position": "1190.875,1139.176,-149.9436",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "ea1ded79-7d28-4d98-86bc-3ed61dd470a2",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "4000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "fd544c04-81fe-4793-a504-7d26d5a3fa4e",
+              "MyStringValue": "WASD - Movement"
+            }
+          ]
+        },
+        {
+          "__guid": "6dec2121-277a-4242-bc3c-c9a1aafb7f17",
+          "Flags": 0,
+          "Name": "ControlUI(3)",
+          "Position": "1190.875,1139.176,-175.6975",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "109c4e04-b31e-4d8c-9ab8-0c0dedef688f",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "4000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "0a93b127-5b95-4a3c-8f99-77dd1b6e94ba",
+              "MyStringValue": "Space - Jump"
+            }
+          ]
+        },
+        {
+          "__guid": "ae2ce4bd-6fb6-4395-93ef-42e3ed171f3a",
+          "Flags": 0,
+          "Name": "ControlUI(4)",
+          "Position": "1190.875,1139.176,-254.4766",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "d6b80005-fbf7-43d6-b722-58fad8358f35",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "4000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "a84b31fa-bfcd-4403-aad4-a7b1682814dc",
+              "MyStringValue": "Enter - Open chat"
+            }
+          ]
+        },
+        {
+          "__guid": "f21323fd-6cfc-41e5-8137-12f79327dea3",
+          "Flags": 0,
+          "Name": "ControlUI(5)",
+          "Position": "1190.875,1139.176,-280.2637",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "fc3ed474-8a2b-4bac-a3ec-204d0bc27bbe",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "4000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "63afee53-a5e3-480a-92c2-bd8e7cfce115",
+              "MyStringValue": "V - Voice Chat"
+            }
+          ]
+        },
+        {
+          "__guid": "5ea56c42-a3aa-4484-a1cc-33db9305e82a",
+          "Flags": 0,
+          "Name": "ControlUI(6)",
+          "Position": "1190.875,1139.176,-202.4065",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "f6422a4c-c908-4984-bafd-f449c261e77d",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "28e73a16-d7b1-490f-9c52-7f51fed0fe9c",
+              "MyStringValue": "Scrollwheel - Zoom camera in and out"
+            }
+          ]
+        },
+        {
+          "__guid": "c30db1b8-a81a-460e-99d2-bbdfc7b566cc",
+          "Flags": 0,
+          "Name": "ControlUI(7)",
+          "Position": "1190.875,1139.176,-228.9006",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "194f609e-8bd7-4b8d-8583-b878fd4a77e3",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "8000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "4249710d-daf4-4eef-8f08-f81e5cf55137",
+              "MyStringValue": "E - Take control of the cannon, or to press the kill button"
             }
           ]
         }

@@ -61,7 +61,6 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 		Head.Transform.Rotation = eyeAngles.ToRotation();
 
 		var targetOffset = Vector3.Zero;
-		if ( Player.IsCrouching && Player.characterController.IsOnGround ) targetOffset += Vector3.Down * 32f;
 		CurrentOffset = Vector3.Lerp( CurrentOffset, targetOffset, Time.Delta * 10f );
 
 		if ( Camera is null ) return;

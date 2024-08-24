@@ -5,11 +5,12 @@
 @implements Component.INetworkListener
 @namespace cba.smashcannons
 
-<root class=@(IsOpen ? "open" : "closed")>
-	<div @ref="EntryCanvas" class="entries"></div>
+
+<root class=@( IsOpen ? "open" : "closed" )>
+	<div @ref=" EntryCanvas" class="entries"></div>
 
 	<div class="input">
-		<textentry @onblur=@OnEntryBlur @onsubmit=@OnEntrySubmit @ref="Entry"></textentry>
+		<textentry @onblur=@OnEntryBlur @onsubmit=@OnEntrySubmit @ref=" Entry"></textentry>
 	</div>
 </root>
 
@@ -26,15 +27,12 @@
 		if ( !Instance.IsValid() ) return;
 		Instance.AddNamedMessage( name, color, message, eventName );
 	}
-	
+
 	public void AddNamedMessage( string name, Color color, string message, string className = null )
 	{
-		var entry = new ChatboxEntry()
-		{
-			Name = name,
-			Color = color,
-			Message = message
-		};
+		if ( !Instance.IsValid() ) return;
+
+		var entry = new ChatboxEntry() { Name = name, Color = color, Message = message };
 
 		if ( !string.IsNullOrEmpty( className ) )
 		{
@@ -51,10 +49,7 @@
 
 	public void AddMessage( string message, string className = null )
 	{
-		var entry = new ChatboxEntry()
-		{
-			Message = message
-		};
+		var entry = new ChatboxEntry() { Message = message };
 
 		if ( !string.IsNullOrEmpty( className ) )
 		{
@@ -85,7 +80,7 @@
 			IsOpen = true;
 		}
 	}
-	
+
 	private void OnEntrySubmit()
 	{
 		if ( !string.IsNullOrWhiteSpace( Entry.Text ) )
@@ -93,7 +88,7 @@
 			SendText( Sandbox.Utility.Steam.PersonaName, Entry.Text.Trim() );
 		}
 	}
-	
+
 	private void OnEntryBlur()
 	{
 		Entry.Text = string.Empty;
@@ -103,6 +98,8 @@
 	[Broadcast]
 	private static void SendText( string author, string message )
 	{
+		if ( !Instance.IsValid() ) return;
+
 		Instance?.AddNamedMessage( author, Color.Orange, message );
 	}
 
@@ -112,7 +109,7 @@
 
 		SendText( "🛎️", $"{channel.DisplayName} has joined the game" );
 	}
-	
+
 	protected override int BuildHash()
 	{
 		return HashCode.Combine( IsOpen );
