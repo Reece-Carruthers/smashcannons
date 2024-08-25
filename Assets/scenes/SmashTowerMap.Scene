@@ -3821,6 +3821,401 @@
       ]
     },
     {
+      "__guid": "87b0d027-713e-477f-9ba2-b280b55abddc",
+      "Flags": 0,
+      "Name": "Rules",
+      "Position": "-414.7823,783.886,4142.152",
+      "Rotation": "0,-0,-0.7071068,0.7071068",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "75a59bbb-2b1a-4347-be46-367dcdffe62c",
+          "Flags": 0,
+          "Name": "Rules(1)",
+          "Position": "1190.875,1139.176,-89.84448",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "3856229b-6f09-4d29-af13-da6a7fcdf853",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "2000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "6b8ac8a8-8497-4f93-8bcb-0da35834b2e0",
+              "MyStringValue": "Rules"
+            }
+          ]
+        },
+        {
+          "__guid": "0ddfb908-6926-41e3-b8d7-8ce4ca8f8d5d",
+          "Flags": 0,
+          "Name": "Rules(2)",
+          "Position": "1190.873,1139.178,-139.9187",
+          "Rotation": "0,0,-1,0.0000001192093",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "e3bef094-18bc-46b6-84e1-dd7a6b015378",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "c70c8631-ca2d-4822-a11d-057c84bb4971",
+              "MyStringValue": "Two stages, platform stage and ramp stage"
+            }
+          ]
+        },
+        {
+          "__guid": "b3512c88-c63f-462c-ba8b-8d5da8dd3a3e",
+          "Flags": 0,
+          "Name": "Rules(3)",
+          "Position": "1190.874,1139.176,-190.1641",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "0822dfaa-cc4d-4c6f-88bf-4f3405d053d1",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "55023bc1-a041-4cef-879b-5797f72b1a80",
+              "MyStringValue": "Survive the platform stage to get a chance to win the game"
+            }
+          ]
+        },
+        {
+          "__guid": "7f4466c3-146a-4d60-835a-d052a87bb27a",
+          "Flags": 0,
+          "Name": "Rules(4)",
+          "Position": "1190.874,1139.177,-240.9761",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "20bfd91e-0895-49a8-8761-bee853f8fe79",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "ae5fe546-3417-4c79-bc8a-ac4ff6933bbd",
+              "MyStringValue": "Press the button at the top of the ramp for a runner win"
+            }
+          ]
+        },
+        {
+          "__guid": "5c746715-b629-45d3-bb66-72d9d93a5bc2",
+          "Flags": 0,
+          "Name": "Rules(5)",
+          "Position": "1190.874,1139.177,-292.0269",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "65c2c1f8-359a-475d-a86a-e3f376d966d2",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "9ab9b36c-f163-4604-9e5b-b5a6dffefa79",
+              "MyStringValue": "Cannoniers win by killing all runners"
+            }
+          ]
+        },
+        {
+          "__guid": "e775b37d-e1ad-4f15-a4b6-c99b48883f70",
+          "Flags": 0,
+          "Name": "Rules(6)",
+          "Position": "1190.872,1139.177,-342.9163",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "0ea8594e-db00-4859-9b30-bbb5efc3994e",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "970124b7-1a39-425f-a144-8b3342511c2e",
+              "MyStringValue": "6 second per cannon shot on platform stage"
+            }
+          ]
+        },
+        {
+          "__guid": "fee60197-ba65-464c-abd3-c5dca9f17f89",
+          "Flags": 0,
+          "Name": "Rules(7)",
+          "Position": "1190.873,1139.177,-394.4045",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "f57bddad-76d1-4d6e-84a6-04c264b7d195",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "1639497e-2cf0-41d0-a499-39073f3dcfde",
+              "MyStringValue": "2 seconds per shot on the ramp stage, blast away!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "607f80e9-b099-49c8-98db-b3d05e50d7aa",
+      "Flags": 0,
+      "Name": "GameInfo",
+      "Position": "1873.106,-783.8864,4045.798",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "80332c5d-b9fb-4543-b9a5-cbd6fa7f5be2",
+          "Flags": 0,
+          "Name": "GameInfo",
+          "Position": "1190.875,1139.176,-111.3025",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "7230fd7a-f785-49c9-a17c-faeafd2b4b6e",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "2000,1000",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "c16d3ab3-2257-4994-94f6-f4368026eee9",
+              "MyStringValue": "Game Info"
+            }
+          ]
+        },
+        {
+          "__guid": "3e2a43b1-7d1c-47e3-be45-cfa16b7f739a",
+          "Flags": 0,
+          "Name": "GameInfo (1)",
+          "Position": "1190.874,1139.177,-175.9124",
+          "Rotation": "0,0,-1,0.0000001192093",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "83ce2846-fc14-497f-8e4f-b938ac4264f4",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "7b4fa836-4ae0-4467-81a0-8a4244019b0a",
+              "MyStringValue": "Required 2\u002B players to play"
+            }
+          ]
+        },
+        {
+          "__guid": "08390f23-0638-4103-ad3f-8110a36a4c44",
+          "Flags": 0,
+          "Name": "GameInfo(2)",
+          "Position": "1190.875,1139.176,-149.9436",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "84983df0-df4b-427c-8416-24a01f5913ec",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "329d8ffa-1ee3-4e7b-bf5c-30ab3c6ce57d",
+              "MyStringValue": "Max 32 players"
+            }
+          ]
+        },
+        {
+          "__guid": "c94987e5-76dc-4648-bf1e-3717014c1e8d",
+          "Flags": 0,
+          "Name": "GameInfo(3)",
+          "Position": "1190.874,1139.177,-201.5696",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "df1bb753-8961-4a1c-bb1f-09e60cae37c8",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "05a0fcd7-ba9c-4687-9fe2-e8a012621fa9",
+              "MyStringValue": "Amount of cannoniers depends on players"
+            }
+          ]
+        },
+        {
+          "__guid": "9045b176-eb8e-4482-aade-39987f3ea08e",
+          "Flags": 0,
+          "Name": "GameInfo(4)",
+          "Position": "1190.874,1139.177,-227.0898",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "37d04eb4-a80e-4459-8998-1a88bf3151ce",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "84fc0ef0-aa12-4729-a1d8-9414e78ce377",
+              "MyStringValue": "2 players = 1 cannonier / 1 runner"
+            }
+          ]
+        },
+        {
+          "__guid": "dfd8d431-ce1d-4589-9a6c-ad4c1d460488",
+          "Flags": 0,
+          "Name": "GameInfo(5)",
+          "Position": "1190.873,1139.177,-252.9141",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "fc392fee-a39a-4e35-b91b-f5f305d79585",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "c7cb3096-2645-48fe-ba4e-d8cf6bd6b7ee",
+              "MyStringValue": "3 players = 1 cannonier / 2 runners"
+            }
+          ]
+        },
+        {
+          "__guid": "48b49d44-ea6b-4f81-91c0-0ac66d472096",
+          "Flags": 0,
+          "Name": "GameInfo(6)",
+          "Position": "1190.873,1139.177,-278.6841",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "6c2b11ee-b723-443e-9b94-8eeea07e5af4",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "73b10345-6290-423e-a3b8-1136be7c5074",
+              "MyStringValue": "4 players = 1 cannonier / 3 runners"
+            }
+          ]
+        },
+        {
+          "__guid": "337d54ef-3eca-4b1f-bb88-fd1d47a188ed",
+          "Flags": 0,
+          "Name": "GameInfo(7)",
+          "Position": "1190.874,1139.177,-304.8967",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "f7f9633c-227e-4bc4-8620-3f8c6d3c529f",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "1711d373-a44a-4ec2-aca9-8599898e9eaa",
+              "MyStringValue": "5\u002B players = 2 cannoniers / 3\u002B runners"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "__guid": "0d67d0cd-6b58-4952-a238-db98384da4d1",
       "Flags": 0,
       "Name": "ControlsHint",
@@ -3873,7 +4268,7 @@
             {
               "__type": "CannonTutorial",
               "__guid": "fd544c04-81fe-4793-a504-7d26d5a3fa4e",
-              "MyStringValue": "WASD - Movement"
+              "MyStringValue": "WASD - Move"
             }
           ]
         },
@@ -3924,6 +4319,31 @@
               "__type": "CannonTutorial",
               "__guid": "a84b31fa-bfcd-4403-aad4-a7b1682814dc",
               "MyStringValue": "Enter - Open chat"
+            }
+          ]
+        },
+        {
+          "__guid": "3169724d-d42d-4886-9245-a66d396636c8",
+          "Flags": 0,
+          "Name": "ControlUI (1)",
+          "Position": "1190.875,1139.176,-306.8428",
+          "Rotation": "0,0,-1,0.0000001937151",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "36ff6028-8050-4c95-b456-d04113c61e2c",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "6000,500",
+              "RenderScale": 2,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "CannonTutorial",
+              "__guid": "89b59106-fc7f-4334-a989-0b316212d981",
+              "MyStringValue": "Game requires at least 2 players to play"
             }
           ]
         },

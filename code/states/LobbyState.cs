@@ -5,7 +5,7 @@ public class LobbyState : ExtendedState
 	public override int TimeLeft => RoundEndTime.Relative.CeilToInt();
 	[Sync] public TimeUntil RoundEndTime { get; set; }
 
-	public override string Name => "Waiting For Players . . .";
+	public override string Name => "Waiting for players...";
 	private bool PlayedCountdown { get; set; }
 
 	private HashSet<PlayerSpawn> usedCannonSpawnpoints = new HashSet<PlayerSpawn>();
