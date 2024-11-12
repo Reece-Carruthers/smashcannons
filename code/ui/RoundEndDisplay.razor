@@ -9,14 +9,17 @@
 	var state = StateSystem.Active as EndState;
 
 	if ( !state.IsValid() ) return;
+
+	//determine win class based on who won
+    var winClass = GetWinClass();
 }
 
 <root>
-	<div class="container-win">
-		<label class="win-message">@WhoWon()</label>
+	<div class="container-win @winClass">
+		<label class="win-message @winClass">@WhoWon()</label>
 	</div>
-	<div class="container">
-		<label class="time">New game starting in: @GetTimeLeftString()</label>
+	<div class="container @winClass">
+		<label class="time @winClass">New game starting in: @GetTimeLeftString()</label>
 	</div>
 </root>
 
@@ -84,4 +87,19 @@
 		Sandbox.Services.Stats.Increment( "draws", 1 );
 		return "It's a draw!";
 	}
+
+	private string GetWinClass()
+    {
+        if (IsCannonWin())
+        {
+            return "cannon-win";
+        }
+
+        if (IsRunnersWin())
+        {
+            return "runners-win";
+        }
+
+        return "draw-win";
+    }
 }

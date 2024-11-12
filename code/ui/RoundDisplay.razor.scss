@@ -21,10 +21,22 @@ RoundDisplay {
 		padding: 1% 2%;
 		
 		> .time {
-			font-family: Lilita One;
+			font-family: Poppins;
 			text-align: center;
 			font-size: 48px;
 			color: #8dd7ff;
+	
+            &.runners {
+                color: rgb(141, 215, 255);  // Red for Runners
+            }
+
+            &.smashers {
+                color: #ff7070;  // Green for Smashers
+            }
+
+            &.default {
+                color: rgb(141, 215, 255);  // Default color
+            }
 		}
 	}
 	> .container-status {
@@ -42,10 +54,22 @@ RoundDisplay {
 		padding: 1% 2%;
 
 		> .status {
-			font-family: Lilita One;
+			font-family: Poppins;
 			text-align: center;
 			font-size: 48px;
 			color: rgb(141, 215, 255);
+
+            &.runners {
+                color: rgb(141, 215, 255);
+            }
+
+            &.smashers {
+                color: #ff7070; 
+            }
+
+            &.default {
+                color: rgb(141, 215, 255);
+            }
 		}
 	}
 
@@ -64,10 +88,23 @@ RoundDisplay {
         padding: 1% 2%;
 
         > .alive-runners {
-            font-family: Lilita One;
+            font-family: Poppins;
             text-align: center;
             font-size: 48px;
-            color: rgb(141, 215, 255);
+            color: rgb(110, 183, 126);
+
+
+            &.runners {
+                color: rgb(141, 215, 255);  // Red for Runners
+            }
+
+            &.smashers {
+                color: #ff7070;  // Green for Smashers
+            }
+
+            &.default {
+                color: rgb(141, 215, 255);  // Default color
+            }
         }
     }
 

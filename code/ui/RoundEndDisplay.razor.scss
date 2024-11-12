@@ -24,7 +24,19 @@ RoundEndDisplay {
     > .win-message {
       text-align: center;
       font-size: 64px;
-      color: rgb(255, 255, 141);
+      color: rgb(182, 60, 213);
+    }
+    
+    &.cannon-win > .win-message {
+      color: #ff7070
+    }
+
+    &.runners-win > .win-message {
+      color: rgb(141, 215, 255);
+    }
+
+    &.draw-win > .win-message {
+      color: rgb(100, 215, 144);
     }
   }
 
@@ -42,7 +54,7 @@ RoundEndDisplay {
     padding: 1% 2%;
 
     > .time {
-      font-family: Lilita One;
+      font-family: Poppins;
       text-align: center;
       font-size: 48px;
       color: rgb(141, 215, 255);

@@ -1,0 +1,41 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+<div class="world-panel">
+	<div class="title">Game Info</div>
+    <div class="info-line">
+        <div class="content">Max 32 players</div>
+    </div>
+    <div class="info-line">
+        <div class="content">Required 2+ players to play</div>
+    </div>
+    <div class="info-line">
+        <div class="content">Amount of cannoniers depends on players</div>
+    </div>
+    <div class="info-line">
+        <div class="content">2 players = 1 cannonier / 1 runner</div>
+    </div>
+    <div class="info-line">
+        <div class="content">3 players = 1 cannonier / 2 runners</div>
+    </div>
+	<div class="info-line">
+        <div class="content">4 players = 1 cannonier / 3 runners</div>
+    </div>
+	<div class="info-line">
+        <div class="content">5+ players = 2 cannoniers / 3+ runners</div>
+    </div>
+</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

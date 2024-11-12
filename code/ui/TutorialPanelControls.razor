@@ -1,0 +1,26 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+<div class="world-panel">
+	<div class="title">Controls</div>
+    <div class="content">WASD - Move</div>
+    <div class="content">Space - Jump</div>
+    <div class="content">Scrollwheel - Zoom camera in and out</div>
+    <div class="content">E - Take control of the cannon, or to press the kill button</div>
+    <div class="content">Enter - Open chat</div>
+    <div class="content">V - Voice Chat</div>
+</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

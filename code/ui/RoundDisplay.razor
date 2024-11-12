@@ -10,19 +10,23 @@
 	{
 		return;
 	}
+
+	//different team colour
+	var localPlayer = SmashRunnerMovement.Local;
+    var teamClass = localPlayer != null ? GetTeamClass() : "default";
 }
 
 <root>
 	<div class="container">
-		<label class="time">@GetTimeLeftString()</label>
+		<label class="time @teamClass">@GetTimeLeftString()</label>
 	</div>
 
 	<div class="container-status">
-		<label class="status">@GetRoundName()</label>
+		<label class="status @teamClass">@GetRoundName()</label>
 	</div>
 
 	<div class="container-alive-runners">
-		<label class="alive-runners">@AliveName() @GetAliveRunnersCount()</label>
+		<label class="alive-runners @teamClass">@AliveName() @GetAliveRunnersCount()</label>
 	</div>
 </root>
 
@@ -32,7 +36,7 @@
 	{
 		var state = StateSystem.Active as ExtendedState;
 
-		return !state.IsValid() ? 0 : HashCode.Combine( GetTimeLeftString(), GetAliveRunnersCount(), AliveName() );
+		return !state.IsValid() ? 0 : HashCode.Combine( GetTimeLeftString(), GetAliveRunnersCount(), AliveName(), GetTeamClass);
 	}
 
 	private string AliveName()
@@ -70,9 +74,26 @@
 		return state.IsValid() ? state.ActiveRunnerPlayers : new List<SmashRunnerMovement>();
 	}
 	
-
 	private int GetAliveRunnersCount()
 	{
 		return FetchAliveRunnerPlayers().Count;
 	}
+
+	private string GetTeamClass()
+    {
+        var localPlayer = SmashRunnerMovement.Local;
+        if (localPlayer != null)
+        {
+            // Adjust these checks based on how TeamCategory is implemented
+            if (localPlayer.TeamCategory is RunnerTeam)
+            {
+                return "runners";
+            }
+            else if (localPlayer.TeamCategory is SmashTeam)
+            {
+                return "smashers";
+            }
+        }
+        return "default";
+    }
 }

@@ -1,0 +1,26 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+<div class="world-panel">
+	<div class="title">Rules</div>
+    <div class="content">Two stages, platform stage and ramp stage</div>
+    <div class="content">Survive the platform stage to get a chance to win the game</div>
+    <div class="content">Press the button at the top of the ramp for a runner win</div>
+    <div class="content">Cannoniers win by killing all runners</div>
+    <div class="content">6 second per cannon shot on platform stage</div>
+    <div class="content">2 seconds per shot on the ramp stage, blast away!</div>
+</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

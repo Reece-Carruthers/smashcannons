@@ -64,8 +64,12 @@
         "mrtrn.mrtrn_stonewall1#34617",
         "rustextended.glass_dirty#43276",
         "eurorp.black_shiny#15587",
-        "facepunch.wall_limestone_brick_large#18706"
+        "facepunch.wall_limestone_brick_large#18706",
+        "tiowevolve.dev_dark_09#52958",
+        "tiowevolve.dev_light_08#52983",
+        "caro.sky_001#27739"
       ],
+      "IsWhitelistDisabled": false,
       "Metadata": {
         "SingleAssetSource": "maps/smashtower.vmap"
       }
