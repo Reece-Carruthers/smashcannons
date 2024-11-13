@@ -43,7 +43,7 @@ public class LobbyState : ExtendedState
 	}
 	
 
-	private void AssignPlayersToTeamsAndSpawnPoints( List<SmashRunnerMovement> players ) // todo - below method is not being ran on the client causing them not to be tped? but ui is showing them as cannonier so it is getting run?
+	private void AssignPlayersToTeamsAndSpawnPoints( List<SmashRunnerMovement> players )
 	{
 		var random = new Random();
 
@@ -61,20 +61,16 @@ public class LobbyState : ExtendedState
 		for ( var i = 0; i < cannonPlayerCount; i++ )
 		{
 			var player = players[i];
-			Log.Info("team category: " + player.TeamCategory);
-			player.UpdateTeam( new SmashTeam() );
-			player.CannonSpawnpoint = AssignCannonSpawnPoint( random );
-			player.Respawn();
+			player.UpdateTeam(new SmashTeam());
+			player.Respawn(AssignCannonSpawnPoint( random ));
 		}
 
 		// Assign runner players
 		for ( var i = cannonPlayerCount; i < players.Count; i++ )
 		{
 			var player = players[i];
-			Log.Info("team category: " + player.TeamCategory);
-			player.UpdateTeam( new RunnerTeam() );
-			player.CannonSpawnpoint = new Vector3( 0 );
-			player.Respawn();
+			player.UpdateTeam(new RunnerTeam());
+			player.Respawn(AssignRunnerSpawnPoint( random ));
 		}
 	}
 
@@ -95,6 +91,17 @@ public class LobbyState : ExtendedState
 				usedCannonSpawnpoints.Add( potentialSpawn );
 			}
 		}
+
+		return selectedSpawn.WorldPosition;
+	}
+	
+	private Vector3 AssignRunnerSpawnPoint(Random random)
+	{
+		var runnerSpawns = Game.ActiveScene.Components.GetAll<PlayerSpawn>().Where( x => x.Tags.Has( "runner_spawn" ) )
+			.ToList();
+
+		var randomIndex = random.Next( runnerSpawns.Count );
+		var selectedSpawn = runnerSpawns[randomIndex];
 
 		return selectedSpawn.WorldPosition;
 	}

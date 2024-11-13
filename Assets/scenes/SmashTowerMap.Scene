@@ -1348,6 +1348,106 @@
                   "StartAsleep": false
                 }
               ]
+            },
+            {
+              "__guid": "f45afb16-96f3-4788-b36e-ee3ea5feca08",
+              "Flags": 0,
+              "Name": "jaggedplatform",
+              "Position": "-8.855896,2152.105,-1335.167",
+              "Rotation": "0,0,-0.7933534,-0.6087613",
+              "Tags": "map_item",
+              "Enabled": true,
+              "NetworkMode": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "84ccb2e7-ed2c-4d40-863a-afde395343f8",
+                  "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
+                  "Model": "models/jagged_platform/jaggedplatform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "Sandbox.ModelCollider",
+                  "__guid": "f52c623f-0cf8-467e-a997-222d92fef74f",
+                  "IsTrigger": false,
+                  "Model": "models/jagged_platform/jaggedplatform.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
+                },
+                {
+                  "__type": "Sandbox.Rigidbody",
+                  "__guid": "cd2649b8-40f0-434a-a7a6-8a059c8b2cdf",
+                  "AngularDamping": 0,
+                  "Gravity": true,
+                  "LinearDamping": 0,
+                  "Locking": {},
+                  "MassCenterOverride": "0,0,0",
+                  "MassOverride": 0,
+                  "MotionEnabled": true,
+                  "OverrideMassCenter": false,
+                  "RigidbodyFlags": 0,
+                  "StartAsleep": false
+                }
+              ]
+            },
+            {
+              "__guid": "7aad1bc2-cb33-40d1-9260-acde8bebbdf4",
+              "Flags": 0,
+              "Name": "jaggedplatform",
+              "Position": "-12.38928,3242.734,-1335.167",
+              "Rotation": "0,0,0.7933533,-0.6087615",
+              "Tags": "map_item",
+              "Enabled": true,
+              "NetworkMode": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "dbfa1fa9-1d06-4e01-a3d6-f2eca5fb00fa",
+                  "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
+                  "Model": "models/jagged_platform/jaggedplatform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "Sandbox.ModelCollider",
+                  "__guid": "eb82c75a-c74e-4489-9eb8-fecc8a49a0d3",
+                  "IsTrigger": false,
+                  "Model": "models/jagged_platform/jaggedplatform.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
+                },
+                {
+                  "__type": "Sandbox.Rigidbody",
+                  "__guid": "98caf088-6af4-4330-bd2b-3e9b4cebc0c0",
+                  "AngularDamping": 0,
+                  "Gravity": true,
+                  "LinearDamping": 0,
+                  "Locking": {},
+                  "MassCenterOverride": "0,0,0",
+                  "MassOverride": 0,
+                  "MotionEnabled": true,
+                  "OverrideMassCenter": false,
+                  "RigidbodyFlags": 0,
+                  "StartAsleep": false
+                }
+              ]
             }
           ]
         },
@@ -3904,104 +4004,6 @@
           "LightColor": "4,2.56093,1.78605,0",
           "Shadows": true,
           "SkyColor": "0.88372,0.70287,0.70287,0"
-        }
-      ]
-    },
-    {
-      "__guid": "f45afb16-96f3-4788-b36e-ee3ea5feca08",
-      "Flags": 0,
-      "Name": "jaggedplatform",
-      "Position": "993.1801,-544.3464,1699.787",
-      "Rotation": "0,0,-0.7933534,-0.6087613",
-      "Tags": "map_item",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "84ccb2e7-ed2c-4d40-863a-afde395343f8",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "Model": "models/jagged_platform/jaggedplatform.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "f52c623f-0cf8-467e-a997-222d92fef74f",
-          "IsTrigger": false,
-          "Model": "models/jagged_platform/jaggedplatform.vmdl",
-          "Static": false,
-          "Surface": "surfaces/concrete.surface",
-          "SurfaceVelocity": "0,0,0"
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "cd2649b8-40f0-434a-a7a6-8a059c8b2cdf",
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {},
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        }
-      ]
-    },
-    {
-      "__guid": "7aad1bc2-cb33-40d1-9260-acde8bebbdf4",
-      "Flags": 0,
-      "Name": "jaggedplatform",
-      "Position": "989.6467,546.2821,1699.787",
-      "Rotation": "0,0,0.7933533,-0.6087615",
-      "Tags": "map_item",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "dbfa1fa9-1d06-4e01-a3d6-f2eca5fb00fa",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "Model": "models/jagged_platform/jaggedplatform.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "eb82c75a-c74e-4489-9eb8-fecc8a49a0d3",
-          "IsTrigger": false,
-          "Model": "models/jagged_platform/jaggedplatform.vmdl",
-          "Static": false,
-          "Surface": "surfaces/concrete.surface",
-          "SurfaceVelocity": "0,0,0"
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "98caf088-6af4-4330-bd2b-3e9b4cebc0c0",
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {},
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
         }
       ]
     }

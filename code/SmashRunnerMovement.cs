@@ -52,8 +52,6 @@ public sealed class SmashRunnerMovement : Component
 	private CannonComponent cannon { get; set; } = null;
 
 	[Property] Collider playerCollider { get; set; }
-	[HostSync] public Vector3 CannonSpawnpoint { get; set; }
-
 	[HostSync] public TimeUntil DeathTimer { get; set; }
 	[HostSync] public bool DeathTimerAssigned { get; set; } = false;
 
@@ -191,6 +189,7 @@ public sealed class SmashRunnerMovement : Component
 
 	private void Jump()
 	{
+		if ( !Networking.IsHost ) Log.Info( TeamCategory );
 		if ( !characterController.IsOnGround ) return;
 		characterController.Punch( Vector3.Up * JumpForce );
 		BroadcastJumpAnimation();
@@ -284,11 +283,11 @@ public sealed class SmashRunnerMovement : Component
 		}
 	}
 
-	
+
 	[Broadcast( NetPermission.HostOnly )]
-	public void Respawn()
+	public void Respawn(Vector3 location)
 	{
-		MoveToSpawnpoint();
+		MoveToSpawnpoint(location);
 
 		if ( Networking.IsHost )
 		{
@@ -299,37 +298,14 @@ public sealed class SmashRunnerMovement : Component
 
 	public void UpdateTeam( Team team )
 	{
-		Log.Info( "Trying to update team as: " + team );
-
-			TeamCategory = team;
-			
-		Log.Info("potential updatred team category: " + TeamCategory);
+		TeamCategory = team;
 	}
 
-	public void MoveToSpawnpoint()
+
+	[Broadcast( NetPermission.HostOnly )]
+	public void MoveToSpawnpoint(Vector3 location)
 	{
-		if ( IsProxy ) return;
-
-
-		Log.Info( "Waiting to spawn" );
-
-
-		if ( TeamCategory is RunnerTeam )
-		{
-			Log.Info( "Waiting to as runner" );
-
-			WorldPosition = AssignRunnerSpawnPoint();
-		}
-
-		if ( TeamCategory is SmashTeam )
-		{
-			
-			Log.Info( "Waiting to as cannon" );
-			
-			if ( CannonSpawnpoint == new Vector3( 0 ) ) return;
-
-			WorldPosition = CannonSpawnpoint;
-		}
+		WorldPosition = location;
 	}
 
 	[Broadcast( NetPermission.HostOnly )]
@@ -338,18 +314,6 @@ public sealed class SmashRunnerMovement : Component
 		if ( IsProxy ) return;
 
 		WorldPosition = location;
-	}
-
-	private Vector3 AssignRunnerSpawnPoint()
-	{
-		var random = new Random();
-		var runnerSpawns = Game.ActiveScene.Components.GetAll<PlayerSpawn>().Where( x => x.Tags.Has( "runner_spawn" ) )
-			.ToList();
-
-		var randomIndex = random.Next( runnerSpawns.Count );
-		var selectedSpawn = runnerSpawns[randomIndex];
-
-		return selectedSpawn.WorldPosition;
 	}
 
 	[Broadcast( NetPermission.HostOnly )]
@@ -391,14 +355,13 @@ public sealed class SmashRunnerMovement : Component
 
 		DeathMessage();
 		PlayDeathNoise();
-
 	}
 
-	[Broadcast(NetPermission.HostOnly)]
+	[Broadcast( NetPermission.HostOnly )]
 	private void DeathMessage()
 	{
 		if ( !Networking.IsHost ) return;
-		
+
 		Chat.AddPlayerEvent( "dead", Network.Owner.DisplayName, TeamCategory.Colour(),
 			$"has been killed" );
 	}
@@ -426,5 +389,4 @@ public sealed class SmashRunnerMovement : Component
 	{
 		RagdollController.Unragdoll();
 	}
-	
 }
