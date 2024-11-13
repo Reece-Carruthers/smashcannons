@@ -40,8 +40,6 @@ public class LobbyState : ExtendedState
 				PlayCountdownSound();
 			}
 		}
-
-		base.OnUpdate();
 	}
 	
 
@@ -63,6 +61,7 @@ public class LobbyState : ExtendedState
 		for ( var i = 0; i < cannonPlayerCount; i++ )
 		{
 			var player = players[i];
+			Log.Info("team category: " + player.TeamCategory);
 			player.UpdateTeam( new SmashTeam() );
 			player.CannonSpawnpoint = AssignCannonSpawnPoint( random );
 			player.Respawn();
@@ -72,6 +71,7 @@ public class LobbyState : ExtendedState
 		for ( var i = cannonPlayerCount; i < players.Count; i++ )
 		{
 			var player = players[i];
+			Log.Info("team category: " + player.TeamCategory);
 			player.UpdateTeam( new RunnerTeam() );
 			player.CannonSpawnpoint = new Vector3( 0 );
 			player.Respawn();
@@ -96,7 +96,7 @@ public class LobbyState : ExtendedState
 			}
 		}
 
-		return selectedSpawn.Transform.Position;
+		return selectedSpawn.WorldPosition;
 	}
 	
 	 [Broadcast]

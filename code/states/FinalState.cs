@@ -63,7 +63,7 @@ public class FinalState : ExtendedState
 		var randomIndex = random.Next( rampSpawns.Count );
 		var selectedSpawn = rampSpawns[randomIndex];
 
-		return selectedSpawn.Transform.Position;
+		return selectedSpawn.WorldPosition;
 	}
 
 	protected override void OnUpdate()

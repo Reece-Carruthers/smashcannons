@@ -74,17 +74,14 @@
 	{
 		if ( IsCannonWin() )
 		{
-			Sandbox.Services.Stats.Increment( "runner_wins", 1 );
 			return "Cannoniers win!";
 		}
 
 		if ( IsRunnersWin() )
 		{
-			Sandbox.Services.Stats.Increment( "runner_wins", 1 );
 			return "Runners win!";
 		}
 
-		Sandbox.Services.Stats.Increment( "draws", 1 );
 		return "It's a draw!";
 	}
 
