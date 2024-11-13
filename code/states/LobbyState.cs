@@ -43,7 +43,7 @@ public class LobbyState : ExtendedState
 	}
 	
 
-	private void AssignPlayersToTeamsAndSpawnPoints( List<SmashRunnerMovement> players )
+	private void AssignPlayersToTeamsAndSpawnPoints( List<SmashRunnerMovement> players ) // todo - below method is not being ran on the client causing them not to be tped? but ui is showing them as cannonier so it is getting run?
 	{
 		var random = new Random();
 

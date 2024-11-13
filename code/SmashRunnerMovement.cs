@@ -284,7 +284,8 @@ public sealed class SmashRunnerMovement : Component
 		}
 	}
 
-	[Broadcast]
+	
+	[Broadcast( NetPermission.HostOnly )]
 	public void Respawn()
 	{
 		MoveToSpawnpoint();
