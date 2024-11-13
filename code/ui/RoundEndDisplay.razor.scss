@@ -24,11 +24,10 @@ RoundEndDisplay {
     > .win-message {
       text-align: center;
       font-size: 64px;
-      color: rgb(182, 60, 213);
     }
     
     &.cannon-win > .win-message {
-      color: #ff7070
+      color: rgb(255, 112, 112);
     }
 
     &.runners-win > .win-message {

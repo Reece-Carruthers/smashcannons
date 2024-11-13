@@ -2,6 +2,21 @@
   "__guid": "3bb6a32d-84a6-4bb5-a05a-87ab7b4c33aa",
   "GameObjects": [
     {
+      "__guid": "30f2df1d-09fd-478b-96ec-be114f159396",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "e9a476fe-9bf4-4168-b551-74db75722e78",
+          "Description": "",
+          "SceneTags": "",
+          "Title": "smashtower"
+        }
+      ]
+    },
+    {
       "__guid": "5372e293-a570-43ea-9d44-ef04a0b1c05c",
       "Flags": 0,
       "Name": "Directional Light",
@@ -33,6 +48,8 @@
           "EnableCollision": true,
           "MapName": "maps/smashtower.vmap",
           "NoOrigin": true,
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
@@ -57,7 +74,8 @@
           "Center": "0,0,-130.5",
           "IsTrigger": true,
           "Scale": "10000,7500,300",
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -75,7 +93,8 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -118,7 +137,6 @@
           "__guid": "f1c61ba2-a348-4033-82ca-b61ccf6aa528",
           "Flags": 0,
           "Name": "Platforms",
-          "Position": "0,0,0",
           "Enabled": true,
           "NetworkMode": 1,
           "NetworkOrphaned": 1,
@@ -138,7 +156,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "9576b51b-ca53-477d-a30a-47becc57da17",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -148,7 +173,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -180,7 +206,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "7f2094eb-acd1-4f56-884c-c8ee33f2ff36",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -190,7 +223,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -222,7 +256,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "f04e7dcf-b60d-46f7-b3dd-0c68034de0cb",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -232,7 +273,8 @@
                   "IsTrigger": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -264,7 +306,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "0ade1cec-ecc3-4e0a-a9b1-45780d425ada",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/starting_platform/starting_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -274,7 +323,8 @@
                   "IsTrigger": false,
                   "Model": "models/starting_platform/starting_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -306,7 +356,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "7711a73b-00cb-4221-8051-318e417c2fc4",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -316,7 +373,8 @@
                   "IsTrigger": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -348,7 +406,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "35350b95-4397-4884-8418-f17f372c2113",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -358,7 +423,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -391,7 +457,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "6a9d18ef-4c34-47e5-b472-d302bef82096",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -401,7 +474,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -433,7 +507,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "c5c55f46-4e6a-4ead-9a0f-10e836dba9d7",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -443,7 +524,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -476,7 +558,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "ec509c8d-1c95-41fc-ad9d-f98560802773",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -486,7 +575,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -518,7 +608,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "05559b74-04d7-4801-9cc6-cc80f3ac7d9b",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -528,7 +625,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -560,7 +658,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "83bed4e1-22c3-44e2-895a-21053a7cea28",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -570,7 +675,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -602,7 +708,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "d18992f4-c131-476a-af85-1fc4c5ce7cda",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -612,7 +725,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -644,7 +758,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "56dee88c-040d-4f33-861c-5aa10f0c2f92",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -654,7 +775,8 @@
                   "IsTrigger": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -686,7 +808,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "a417f5e6-ed95-4643-aebd-9bbad7aa4415",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -696,7 +825,8 @@
                   "IsTrigger": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -728,7 +858,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "06fd4c57-d5eb-4460-8e31-ee65d4be7d96",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -738,7 +875,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -770,7 +908,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "dadac99b-ac4d-4fff-a505-0815c0bb3359",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/small_platform/small_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -780,7 +925,8 @@
                   "IsTrigger": false,
                   "Model": "models/small_platform/small_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -813,7 +959,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "cffb64ea-7749-4d8a-867e-cc5320e519c8",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/triangle_platform/triangle_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -823,7 +976,8 @@
                   "IsTrigger": false,
                   "Model": "models/triangle_platform/triangle_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -856,7 +1010,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "608602ac-c998-4aac-82ca-8e2ec605d779",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -866,7 +1027,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -899,7 +1061,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "46fceb14-3071-4231-b07e-9280d3b814c6",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -909,7 +1078,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -942,7 +1112,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "8fb0140c-9614-4692-b204-d9215a7f205e",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/triangle_platform/triangle_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -952,7 +1129,8 @@
                   "IsTrigger": false,
                   "Model": "models/triangle_platform/triangle_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -984,7 +1162,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "60b41c94-21a2-4674-928e-370ac1e45462",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/small_platform/small_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -994,7 +1179,8 @@
                   "IsTrigger": false,
                   "Model": "models/small_platform/small_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1026,7 +1212,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "4c5bf0f4-17bd-4374-b7f0-bd998948b06c",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -1036,7 +1229,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1069,7 +1263,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "68fb70c5-89e2-4ca7-8a23-674d7f8cd341",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -1079,7 +1280,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1111,7 +1313,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "fe6a75d4-3e7f-4c8c-a629-7d2ef5b89cc4",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -1121,7 +1330,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1145,7 +1355,6 @@
           "__guid": "d204f3f2-1b4a-4995-b97d-a177c9ae9c9c",
           "Flags": 0,
           "Name": "Pillars",
-          "Position": "0,0,0",
           "Enabled": true,
           "NetworkMode": 1,
           "NetworkOrphaned": 1,
@@ -1167,6 +1376,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1176,7 +1386,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1197,6 +1408,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1206,7 +1418,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1227,6 +1440,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1236,7 +1450,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1257,6 +1472,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1266,7 +1482,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1287,6 +1504,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1296,7 +1514,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1317,6 +1536,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1326,7 +1546,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1347,6 +1568,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1356,7 +1578,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1377,6 +1600,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1386,7 +1610,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1408,6 +1633,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1417,7 +1643,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1439,6 +1666,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1448,7 +1676,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1469,6 +1698,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1478,7 +1708,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1499,6 +1730,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1508,7 +1740,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1529,6 +1762,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1538,7 +1772,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1559,6 +1794,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1568,7 +1804,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1589,6 +1826,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1598,7 +1836,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1619,6 +1858,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1628,7 +1868,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1649,6 +1890,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1658,7 +1900,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1679,6 +1922,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1688,7 +1932,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1709,6 +1954,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1718,7 +1964,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1739,6 +1986,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1748,7 +1996,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1769,6 +2018,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1778,7 +2028,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1799,6 +2050,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1808,7 +2060,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1829,6 +2082,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1838,7 +2092,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1859,6 +2114,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1868,7 +2124,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1889,6 +2146,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1898,7 +2156,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1919,6 +2178,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1928,7 +2188,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1949,6 +2210,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1958,7 +2220,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1979,6 +2242,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -1988,7 +2252,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2009,6 +2274,7 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
@@ -2018,7 +2284,8 @@
                   "IsTrigger": false,
                   "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             }
@@ -2038,6 +2305,7 @@
             {
               "__type": "Sandbox.SkyBox2D",
               "__guid": "2bf9f660-8c0f-4a54-9aa2-12bd8b7e75ff",
+              "SkyIndirectLighting": true,
               "SkyMaterial": "pano_20230818_171551_171.vmat",
               "Tint": "1,1,1,0"
             }
@@ -2068,7 +2336,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2UiVITURBFM0SSSciELKhRQZBVQUVR3FBBFnHf//9X9J6qM1VTTtWteTPdfft2v35v1mq1/gTXAp654ErQCcqgHwyCYTALjoLl4GtwN3gZ3A8ug4/B5\u002BB18DZ4H3wIPgVfgkKQo/mMg3n/t83favhuqqWtX\u002Bc/rdcbMd0Gb1vfib7E9qypMAbeaaPmBest9Md3wzfclb0o9Mf3qr5wLMpZ6I/vqFHz2P98d7VVjfipHHUvJg1bx1zb1kGOpYbWOXuxJve8\u002B9oznvWN4Lc8pXt6xzU13gqeqZu4m8GWa7StBBfq6jsLO67hWA0e2Rd6eTtYV09prtVGD9ass1Tvhjq7xq87a301bDmDdY837UG9rzvW0LNf2/L0rfle8N1aBs7wY23UvOc8j92X3eBQGzU/CM60D/V9rg2\u002BfTnrfXwYHGgbmGvfdWmvZuZH5xN7NjD\u002BwLO1qJ5Dz1xljU/dI7QM1bLnuu9eLquvMnZX/czei\u002BCkwXckZ6XPK890aZ/fBN/UOvGsn2tj9o6Dn35PvQdW1ALfOzkr8594b4zkO5NzwX\u002BnahzLdyHnkv7n7snEHl3a86k\u002B3EE/tI3MdSo/Ped\u002B\u002BqWNHNSKRr6ZQ\u002B4uzgz1E8MsskfwUS/3GjXX88VswYkv\u002BekVGtCDP70hhnjsaKOnrMnH2SQn\u002BeFDGzPLmnmu5/BvHvj4z5pzwtnifHAGyMvs0F9mhjxw0V96iE60kO8fZmQRXQQGAAA=",
+                "Topology": "H4sIAAAAAAAACl2UiVITURBFTxIJk5CELKBxQZDVHUUBERdkEff9/38l1i3PVL1yqlLzMt19\u002B/bt7jcF/gBX\u002Bfc0gStAG6iALtADBsAUOAZuAV\u002BBu8AR8BC4BD4Cn4FXwBvgPfAB\u002BAR8ARr\u002BkqN8RsCc31vmp/DdlEtLv/Z/XK8VMfMFbkvfsb6J7VhTw5jgToqaF6y3oX98N3wHu68WDf3ju6xvMBbFbOgf32FR88jvTd9DMev4iRi1FuPC1jbXtnUkx1LBtakWa2LP2deO8TlfB36LU9nTO0WvbwIH8k7cDWDLc7itABfy6joLO56DsQo8UZdoeRtYl09lrtVCgzXrrOS7Ic9549edta4ctpzBWuNNNaj7umMNHfXaFqdrzfeA79bSc4afakvND5znkX25D\u002BxrS82PgDPtA30PtQVvV8y6j4\u002BBPW09c\u002B16rtRqav7wfKZmPeP33K1F\u002Bey7c31rfG6PBv4OrWFgzQf2aGzMkTWNnL0XwEmBdyxmX5\u002BX7nSlzq\u002BBb3Idu\u002Bvn2jJ7b4Gf/p94D6zIJXjvxOyb/8R7YyjemZgLfjuV40i8CzGX9D\u002B3J2M1ulTziT65g35oG5rrVPxl76df2pIjtYZj/mcOc3dlZ1J/YjKL6VHwUm/utdRcz1dmK5jxTf5oFQ7hE/9ok5jExx5u0TTn5MtuJmfyBy/cMrM5Z57rOZzNZrPg5XvO2ZPsVvYjO5C8mZ3om5lJnmBF32gYnuGSfH8BZmQRXQQGAAA=",
                 "Positions": [
                   "-211.834,-622.9443,55.38373",
                   "211.834,-622.9443,55.38373",
@@ -2107,7 +2375,7 @@
                   "0.1264023,-0.6378803",
                   "1.287336,0.2395957",
                   "0.1264023,1.166494",
-                  "0.8587053,0.5478342",
+                  "3.586918,3.386969",
                   "-0.2873359,1.166494",
                   "0.1264026,0.2395958",
                   "-0.2873359,-0.6378803",
@@ -2116,32 +2384,32 @@
                   "-0.2873356,0.2395958",
                   "-0.6378803,0.2395957",
                   "1.287336,0.1314244",
-                  "0.7273249,0.2554646",
+                  "0.179731,-0.09812853",
                   "0.1264026,0.1314245",
                   "0.4303304,0.1368445",
                   "0.8735973,0.2395957",
                   "4.107879,-0.01530302",
                   "4.283029,-0.7912303",
                   "4.838898,-1.510372",
-                  "1.794631,-0.1646217",
-                  "2.809429,1.059377",
-                  "2.993318,1.450021",
+                  "4.448956,-1.778474",
+                  "2.419467,0.586188",
+                  "5.721531,4.289155",
                   "-1.974479,-0.8892518",
                   "-3.838895,-0.5951574",
                   "-3.838895,-0.6492429",
                   "0.01380397,-0.7912303",
                   "0.4303304,0.1909297",
-                  "2.993318,0.5478342",
+                  "5.721531,3.386969",
                   "4.283029,1.013143",
-                  "0.7273249,0.228422",
-                  "1.794631,-0.137579",
-                  "0.8587053,1.450021",
+                  "0.179731,-0.2062989",
+                  "4.448956,-1.670303",
+                  "3.586918,4.289155",
                   "-1.069439,-0.4715865",
                   "4.485565,-0.7912307",
                   "1.737945,-0.4174991",
                   "5.216586,-1.618543",
                   "2.128589,-0.4174991",
-                  "2.998272,1.450021",
+                  "2.608311,0.976832",
                   "-0.681475,-0.4715865",
                   "-2.163323,-0.8351662",
                   "-2.163323,-0.8892518",
@@ -2151,21 +2419,21 @@
                   "4.485586,1.013143",
                   "4.838898,-1.618543",
                   "5.216586,-1.510372",
-                  "2.809429,1.450021",
+                  "2.419467,0.976832",
                   "1.737945,-0.4715847",
                   "4.888432,0.2318553",
                   "4.107897,1.013143",
                   "4.283029,0.2318553",
                   "0.8513716,-0.4174991",
-                  "3.199695,1.059377",
-                  "2.809429,0.9357982",
-                  "2.993318,1.059377",
+                  "2.809734,0.5861878",
+                  "2.419468,0.4626091",
+                  "5.721531,3.898512",
                   "4.107897,0.2318553",
                   "4.888409,0.2318591",
                   "0.7277925,-0.4174991",
                   "2.128589,-0.4715847",
-                  "2.809429,1.059377",
-                  "3.199695,1.059377",
+                  "2.419468,0.5861878",
+                  "2.809734,0.586188",
                   "-0.681475,-0.4175009",
                   "3.199691,0.9357982",
                   "0.7277925,-0.4715847",
@@ -2173,11 +2441,11 @@
                   "4.107879,0.2318591",
                   "4.283029,-0.01530287",
                   "2.809425,0.5478343",
-                  "2.993318,0.9357981",
+                  "5.721531,3.774933",
                   "0.8513716,-0.4715847",
                   "-1.069439,-0.4175009",
                   "2.809425,0.9357982",
-                  "3.199695,0.9357982",
+                  "2.809734,0.4626091",
                   "4.107879,-0.01529946",
                   "4.888409,-0.01530302"
                 ],
@@ -2192,7 +2460,7 @@
                   "-1,0,0",
                   "0.9383928,0,0.3455704",
                   "1,-0,0",
-                  "0.9383928,-0,0.3455704",
+                  "0.9383929,-0,0.3455703",
                   "0,1,0",
                   "-1,0,0",
                   "1,0,0",
@@ -2215,7 +2483,7 @@
                   "-0,0,-1",
                   "-0.000003194446,0,-1",
                   "0,-1,0",
-                  "-0.000003839795,0,-1",
+                  "-0.000003226713,0,-1",
                   "0,-1,0",
                   "-0,0,-1",
                   "0,0,-1",
@@ -2230,65 +2498,65 @@
                   "0,-1,0"
                 ],
                 "TextureScale": [
-                  "0.9999993,0.6743003",
-                  "2,1.348598",
-                  "1.348598,2.000001",
+                  "0.2499998,0.1685751",
+                  "1,0.6742992",
+                  "0.6742991,1",
                   "0.25,0.25",
-                  "1.999998,2.000001",
-                  "2,2.000001",
+                  "0.999999,1",
+                  "1,1",
                   "0.25,0.25",
-                  "2,4.000035",
-                  "2.131303,1.348599",
-                  "8,8.000084",
-                  "4.262606,2.697197",
+                  "0.9999998,2.000018",
+                  "0.2664129,0.1685749",
+                  "0.9999999,1.000009",
+                  "2.131303,1.3486",
                   "1.348599,2.000013",
-                  "3.999995,4.000027",
+                  "1.999998,2.000013",
                   "0.2499994,0.1685749",
                   "1.999997,2.000018",
-                  "4.000007,2.697197",
-                  "2.000009,1.348597",
+                  "2.000004,1.348598",
+                  "0.2500011,0.1685746",
                   "1.697694,2.000013",
-                  "4.000005,2.697196",
+                  "1.999998,1.348599",
                   "1.70203,2.000015",
-                  "4.000005,2.697207",
+                  "2.000002,1.348604",
                   "0.250001,0.1685748"
                 ],
                 "TextureOffset": [
-                  "113.3031,41.24011",
-                  "172.344,81.5144",
-                  "81.51443,254.8356",
+                  "453.2124,164.9604",
+                  "344.688,163.0288",
+                  "163.0289,509.6711",
                   "403.0308,90.98779",
-                  "339.6557,254.8356",
-                  "172.3441,254.8356",
+                  "679.3114,509.6711",
+                  "344.6883,509.6713",
                   "403.0308,90.98779",
-                  "112.7032,163.8366",
-                  "41.02338,2.999023",
-                  "399.2968,163.8381",
-                  "465.6149,484.5456",
+                  "225.4065,327.6732",
+                  "328.1871,23.99194",
+                  "399.2964,163.8386",
+                  "652.9198,804.365",
                   "860.9705,509.5908",
-                  "28.17651,40.94977",
+                  "56.35303,81.89954",
                   "200.1699,23.99164",
                   "399.2961,163.7972",
-                  "399.319,484.5457",
-                  "25.02588,3.000757",
+                  "798.6379,969.0914",
+                  "200.207,24.00606",
                   "479.5471,509.5909",
-                  "399.3204,484.5455",
+                  "399.3147,484.5455",
                   "674.3998,509.5883",
                   "399.3203,484.5457",
                   "200.207,23.99137"
                 ],
                 "MaterialIndex": [
+                  4,
+                  8,
                   5,
-                  7,
-                  7,
                   0,
-                  7,
-                  7,
+                  5,
+                  5,
                   0,
                   5,
                   4,
-                  7,
-                  4,
+                  5,
+                  8,
                   5,
                   5,
                   4,
@@ -2296,9 +2564,9 @@
                   8,
                   4,
                   5,
-                  7,
+                  8,
                   5,
-                  7,
+                  8,
                   4
                 ],
                 "EdgeFlags": [
@@ -2400,7 +2668,8 @@
                 ]
               },
               "SmoothingAngle": 40,
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2416,8 +2685,15 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "dbf6e8e0-187f-4e18-bbe7-056901db4df3",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/runner_base_darker.vmat",
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2427,7 +2703,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2443,8 +2720,15 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "a0880eb0-ecf5-496d-b41c-293e54ada102",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/runner_base_darker.vmat",
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2454,7 +2738,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2471,8 +2756,15 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "81947304-7aef-471d-b959-2ee1c455820f",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/runner_base_darker.vmat",
               "Model": "models/cylinder.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2481,7 +2773,8 @@
               "__guid": "64ff23a9-79de-414c-a695-0522e176013e",
               "IsTrigger": false,
               "Model": "models/cylinder.vmdl",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2498,8 +2791,15 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "18016ce7-c923-4494-8b79-0c5101fb9cad",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/runner_base_darker.vmat",
               "Model": "models/cylinder.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2508,7 +2808,8 @@
               "__guid": "8421d34e-a794-4d5d-9de5-c65b04458fb8",
               "IsTrigger": false,
               "Model": "models/cylinder.vmdl",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2527,6 +2828,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "1174.3,391.3004",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -2550,8 +2857,23 @@
               "__type": "Sandbox.SkinnedModelRenderer",
               "__guid": "baf9346e-59fc-4280-9cc8-626ba12dfac4",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "CreateBoneObjects": false,
               "Model": "models/button/button.vmdl",
+              "Morphs": {},
+              "Parameters": {
+                "bools": {},
+                "ints": {},
+                "floats": {},
+                "vectors": {},
+                "rotations": {}
+              },
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1",
               "UseAnimGraph": true
@@ -2562,7 +2884,8 @@
               "Center": "-37.60006,0,0",
               "IsTrigger": false,
               "Scale": "100,200,400",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "KillButton",
@@ -2987,8 +3310,15 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "8a0b1e4a-b7b2-46d9-9435-2d6f14821b55",
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/glass/glass_dotted_a.vmat",
+          "CreateAttachments": false,
+          "MaterialOverride": "materials/glass/glass_a.vmat",
           "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "999.9999,999.9999,999.9999,1"
         },
@@ -2999,7 +3329,8 @@
           "IsTrigger": false,
           "Scale": "100.0004,102.6999",
           "Static": true,
-          "Surface": "surfaces/plastic.hollow.surface"
+          "Surface": "surfaces/default.surface",
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -3022,7 +3353,8 @@
           "Center": "0,0,-130.5",
           "IsTrigger": true,
           "Scale": "10000,7500,270",
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "ObjectDespawner",
@@ -3064,7 +3396,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3033035e-d233-4a76-b334-8b1a75313011",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3074,7 +3413,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3091,7 +3431,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "aee1ac4f-1677-4344-85c9-16f6df0313fd",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3101,7 +3448,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3117,7 +3465,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "ecad35a4-6986-4a70-8c01-ec827427b840",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3127,7 +3482,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3143,7 +3499,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "9f2a5620-e6d6-4be1-92b5-98fb0de00b4c",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3153,7 +3516,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         }
@@ -3180,7 +3544,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "243f5013-8db5-4be0-baab-b38d7575c329",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3190,7 +3561,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3207,7 +3579,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "885edda8-f09b-4bf9-9996-7822b321d775",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3217,7 +3596,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3233,7 +3613,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "9d309144-6001-48d5-b38a-b042a00d8ddc",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3243,7 +3630,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3259,7 +3647,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "c2b5088d-01cd-4053-b1b0-359a2cfe2466",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3269,7 +3664,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         }
@@ -3298,6 +3694,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "1174.3,391.3004",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -3323,6 +3725,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "1174.3,391.3004",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -3359,6 +3767,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "10000,6000",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -3395,6 +3809,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "10000,6000",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -3430,6 +3850,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "10000,6000",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -3487,13 +3913,21 @@
       "Name": "jaggedplatform",
       "Position": "993.1801,-544.3464,1699.787",
       "Rotation": "0,0,-0.7933534,-0.6087613",
+      "Tags": "map_item",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "84ccb2e7-ed2c-4d40-863a-afde395343f8",
           "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
           "Model": "models/jagged_platform/jaggedplatform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -3503,7 +3937,8 @@
           "IsTrigger": false,
           "Model": "models/jagged_platform/jaggedplatform.vmdl",
           "Static": false,
-          "Surface": "surfaces/concrete.surface"
+          "Surface": "surfaces/concrete.surface",
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "Sandbox.Rigidbody",
@@ -3524,16 +3959,24 @@
     {
       "__guid": "7aad1bc2-cb33-40d1-9260-acde8bebbdf4",
       "Flags": 0,
-      "Name": "jaggedplatform (1)",
+      "Name": "jaggedplatform",
       "Position": "989.6467,546.2821,1699.787",
       "Rotation": "0,0,0.7933533,-0.6087615",
+      "Tags": "map_item",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "dbfa1fa9-1d06-4e01-a3d6-f2eca5fb00fa",
           "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
           "Model": "models/jagged_platform/jaggedplatform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -3543,7 +3986,8 @@
           "IsTrigger": false,
           "Model": "models/jagged_platform/jaggedplatform.vmdl",
           "Static": false,
-          "Surface": "surfaces/concrete.surface"
+          "Surface": "surfaces/concrete.surface",
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "Sandbox.Rigidbody",
@@ -3567,9 +4011,13 @@
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
     "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "smashtower"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -3583,16 +4031,16 @@
       "IncludedBodies": ""
     }
   },
+  "ResourceVersion": 2,
   "Title": "smashtower",
-  "Description": "",
-  "ResourceVersion": 1,
+  "Description": null,
   "__references": [
-    "chase.cylinder",
-    "facepunch.glass_dotted_a",
-    "facepunch.wall_limestone_brick_large",
-    "kvien.concretewall04_pixel",
-    "rust.brick_wall_b_plasterblend",
-    "wujekfoliarz.pano_20230818_171551_171"
+    "chase.cylinder#57472",
+    "facepunch.glass_a#70686",
+    "facepunch.wall_limestone_brick_large#18706",
+    "kvien.concretewall04_pixel#37127",
+    "rust.brick_wall_b_plasterblend#25359",
+    "wujekfoliarz.pano_20230818_171551_171#34395"
   ],
-  "__version": 1
+  "__version": 2
 }
