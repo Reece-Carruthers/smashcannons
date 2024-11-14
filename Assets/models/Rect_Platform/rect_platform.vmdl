@@ -11,7 +11,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/rect_platform/dmx/mesh/rect_platform_tex.dmx"
+						filename = "models\\Rect_Platform\\dmx\\mesh\\rect_platform.dmx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -33,17 +33,17 @@
 				[
 					{
 						_class = "PhysicsHullFile"
-						name = "rect_platform_base"
+						name = "rect_platform_long1"
 						parent_bone = ""
 						surface_prop = "default"
 						collision_tags = "solid"
 						recenter_on_parent_bone = false
-						offset_origin = [ 0.0, 0.0, -32.0 ]
+						offset_origin = [ -2064.0, 1208.0, -1152.0 ]
 						offset_angles = [ 0.0, 0.0, 0.0 ]
 						align_origin_x_type = "None"
 						align_origin_y_type = "None"
 						align_origin_z_type = "None"
-						filename = "models/Rect_Platform/rect_platform_base.fbx"
+						filename = "models/Rect_Platform/rect_platform_long.fbx"
 						import_scale = 1.0
 						faceMergeAngle = 10.0
 						maxHullVertices = 0
@@ -57,7 +57,31 @@
 					},
 					{
 						_class = "PhysicsHullFile"
-						name = "rect_platform_short"
+						name = "rect_platform_long"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_tags = "solid"
+						recenter_on_parent_bone = false
+						offset_origin = [ -1712.0, 1208.0, -1152.0 ]
+						offset_angles = [ 0.0, 0.0, 0.0 ]
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						filename = "models/Rect_Platform/rect_platform_long.fbx"
+						import_scale = 1.0
+						faceMergeAngle = 10.0
+						maxHullVertices = 0
+						import_mode = "SingleHull"
+						optimization_algorithm = "QEM"
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "PhysicsHullFile"
+						name = "rect_platform_short1"
 						parent_bone = ""
 						surface_prop = "default"
 						collision_tags = "solid"
@@ -81,13 +105,13 @@
 					},
 					{
 						_class = "PhysicsHullFile"
-						name = "rect_platform_short1"
+						name = "rect_platform_short"
 						parent_bone = ""
 						surface_prop = "default"
 						collision_tags = "solid"
 						recenter_on_parent_bone = false
 						offset_origin = [ 0.0, 432.0, -28.0 ]
-						offset_angles = [ 0.0, 180.0, 0.0 ]
+						offset_angles = [ 0.0, 0.0, 0.0 ]
 						align_origin_x_type = "None"
 						align_origin_y_type = "None"
 						align_origin_z_type = "None"
@@ -105,41 +129,17 @@
 					},
 					{
 						_class = "PhysicsHullFile"
-						name = "rect_platform_long"
+						name = "rect_platform_base"
 						parent_bone = ""
 						surface_prop = "default"
 						collision_tags = "solid"
 						recenter_on_parent_bone = false
-						offset_origin = [ 1712.0, -1208.0, -1152.0 ]
-						offset_angles = [ 0.0, 180.0, 0.0 ]
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						filename = "models/Rect_Platform/rect_platform_long.fbx"
-						import_scale = 1.0
-						faceMergeAngle = 10.0
-						maxHullVertices = 0
-						import_mode = "SingleHull"
-						optimization_algorithm = "QEM"
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "PhysicsHullFile"
-						name = "rect_platform_long1"
-						parent_bone = ""
-						surface_prop = "default"
-						collision_tags = "solid"
-						recenter_on_parent_bone = false
-						offset_origin = [ -1712.0, 1208.0, -1152.0 ]
+						offset_origin = [ 0.0, 0.0, -32.0 ]
 						offset_angles = [ 0.0, 0.0, 0.0 ]
 						align_origin_x_type = "None"
 						align_origin_y_type = "None"
 						align_origin_z_type = "None"
-						filename = "models/Rect_Platform/rect_platform_long.fbx"
+						filename = "models/Rect_Platform/rect_platform_base.fbx"
 						import_scale = 1.0
 						faceMergeAngle = 10.0
 						maxHullVertices = 0

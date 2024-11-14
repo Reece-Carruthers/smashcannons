@@ -1,0 +1,42 @@
+TutorialPanelRules
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 15px;
+	flex-direction: column;
+	
+
+		.world-panel {
+			color: rgb(131, 222, 255);
+			font-family: Poppins;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			background-color: rgba(57, 57, 57, 0.737);
+			align-items: center;
+			border-radius: 50px;
+			text-align: center;
+			padding: 5rem 0;
+
+			.title {
+				font-weight: bold;
+				font-size: 132px;   // Larger text for labels
+				margin-bottom: 5px; // Space between label and value
+				text-align: center;
+				align-items: center;
+			}
+		
+			.content {
+					font-weight: bold;
+					font-size: 67px;  // Larger text for values
+					margin: 0 5rem;
+			}
+		}
+	}
+	

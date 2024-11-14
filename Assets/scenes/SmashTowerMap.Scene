@@ -2,22 +2,36 @@
   "__guid": "3bb6a32d-84a6-4bb5-a05a-87ab7b4c33aa",
   "GameObjects": [
     {
+      "__guid": "30f2df1d-09fd-478b-96ec-be114f159396",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "e9a476fe-9bf4-4168-b551-74db75722e78",
+          "Description": "",
+          "SceneTags": "",
+          "Title": "smashtower"
+        }
+      ]
+    },
+    {
       "__guid": "5372e293-a570-43ea-9d44-ef04a0b1c05c",
       "Flags": 0,
       "Name": "Directional Light",
       "Position": "1347.003,-54.62218,3733.435",
       "Rotation": "0.1349223,0.6941153,0.1349224,0.6941154",
       "Tags": "light_directional,light",
-      "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.DirectionalLight",
           "__guid": "df11de7f-6ce6-4500-a4b8-3c26bb324da2",
-          "FogMode": "Disabled",
+          "FogMode": "Enabled",
           "FogStrength": 0,
           "LightColor": "0.91373,0.98039,1,1",
-          "Shadows": true,
-          "SkyColor": "0.05882,0.07451,0.08235,1"
+          "Shadows": false,
+          "SkyColor": "0.49302,0.49302,0.49302,1"
         }
       ]
     },
@@ -34,6 +48,8 @@
           "EnableCollision": true,
           "MapName": "maps/smashtower.vmap",
           "NoOrigin": true,
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
@@ -58,7 +74,8 @@
           "Center": "0,0,-130.5",
           "IsTrigger": true,
           "Scale": "10000,7500,300",
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -76,7 +93,8 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -85,7 +103,7 @@
       "Flags": 0,
       "Name": "Cannon2",
       "Position": "4790.604,-612.2267,2347.664",
-      "Tags": "cannon,trigger,cannon_zone",
+      "Tags": "cannon_zone,trigger,cannon",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 3,
@@ -98,7 +116,7 @@
       "Flags": 0,
       "Name": "Cannon1",
       "Position": "4777.567,624,2347.664",
-      "Tags": "cannon,cannon_zone,trigger",
+      "Tags": "trigger,cannon_zone,cannon",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 3,
@@ -119,7 +137,6 @@
           "__guid": "f1c61ba2-a348-4033-82ca-b61ccf6aa528",
           "Flags": 0,
           "Name": "Platforms",
-          "Position": "0,0,0",
           "Enabled": true,
           "NetworkMode": 1,
           "NetworkOrphaned": 1,
@@ -128,7 +145,7 @@
               "__guid": "76d167e2-6733-4ca3-a30d-6cb6e063bb81",
               "Flags": 0,
               "Name": "tunnel",
-              "Position": "-1650.036,658.1692,-1546.518",
+              "Position": "-1650.036,666.1427,-1301.116",
               "Rotation": "0,0,-0.7071067,0.7071068",
               "Tags": "map_item",
               "Enabled": true,
@@ -139,7 +156,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "9576b51b-ca53-477d-a30a-47becc57da17",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -149,7 +173,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -171,7 +196,7 @@
               "__guid": "0e7c302e-8523-4b8a-b361-f565f09bf3f9",
               "Flags": 0,
               "Name": "square_platform",
-              "Position": "-2446.409,688.5032,-1590.518",
+              "Position": "-2446.409,688.5032,-1335.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -181,7 +206,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "7f2094eb-acd1-4f56-884c-c8ee33f2ff36",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -191,7 +223,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -213,7 +246,7 @@
               "__guid": "d997a5c4-a3d4-4fc1-b3f4-83bf862e6e16",
               "Flags": 0,
               "Name": "rect_platform",
-              "Position": "-2426.417,1495.366,-1562.518",
+              "Position": "-2426.417,1495.366,-1307.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -223,7 +256,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "f04e7dcf-b60d-46f7-b3dd-0c68034de0cb",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -233,7 +273,8 @@
                   "IsTrigger": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -255,7 +296,7 @@
               "__guid": "f5c62872-4ce0-49cc-a0d7-012f559219bf",
               "Flags": 0,
               "Name": "starting_platform",
-              "Position": "-2426.036,2694.545,-1562.518",
+              "Position": "-2426.036,2694.545,-1307.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -265,7 +306,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "0ade1cec-ecc3-4e0a-a9b1-45780d425ada",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/starting_platform/starting_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -275,7 +323,8 @@
                   "IsTrigger": false,
                   "Model": "models/starting_platform/starting_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -297,7 +346,7 @@
               "__guid": "2acc8af8-e69b-4436-a321-07efb244ff5a",
               "Flags": 0,
               "Name": "rect_platform",
-              "Position": "-2426.036,3904.577,-1562.518",
+              "Position": "-2426.036,3904.577,-1307.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -307,7 +356,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "7711a73b-00cb-4221-8051-318e417c2fc4",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -317,7 +373,8 @@
                   "IsTrigger": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -339,7 +396,7 @@
               "__guid": "88ca94fd-ca1f-469a-9a5c-120ef99c26e2",
               "Flags": 0,
               "Name": "square_platform",
-              "Position": "-2434.036,4718.336,-1590.518",
+              "Position": "-2434.036,4718.336,-1335.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -349,7 +406,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "35350b95-4397-4884-8418-f17f372c2113",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -359,7 +423,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -381,7 +446,7 @@
               "__guid": "bdd26f9b-bd91-4ebf-b900-cd37bae044f4",
               "Flags": 0,
               "Name": "tunnel",
-              "Position": "-1650.036,4704.452,-1562.518",
+              "Position": "-1650.036,4704.452,-1304.798",
               "Rotation": "0,0,0.7071067,0.7071068",
               "Tags": "map_item",
               "Enabled": true,
@@ -392,7 +457,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "6a9d18ef-4c34-47e5-b472-d302bef82096",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -402,7 +474,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -424,7 +497,7 @@
               "__guid": "de91a5c8-5d0d-4454-953f-f215f62d2372",
               "Flags": 0,
               "Name": "square_platform",
-              "Position": "-879.838,4707.569,-1590.518",
+              "Position": "-879.838,4707.569,-1335.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -434,7 +507,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "c5c55f46-4e6a-4ead-9a0f-10e836dba9d7",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -444,7 +524,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -466,7 +547,7 @@
               "__guid": "2830c642-ac20-408f-b936-d611155f1e26",
               "Flags": 0,
               "Name": "tunnel",
-              "Position": "-112.5049,4702.085,-1562.518",
+              "Position": "-112.5049,4702.085,-1307.558",
               "Rotation": "0,0,-0.7071067,0.7071068",
               "Tags": "map_item",
               "Enabled": true,
@@ -477,7 +558,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "ec509c8d-1c95-41fc-ad9d-f98560802773",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -487,7 +575,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -509,7 +598,7 @@
               "__guid": "3f1b130b-7d0d-4c90-954f-a5dc1aca1b3c",
               "Flags": 0,
               "Name": "square_platform",
-              "Position": "705.7335,4688.461,-1590.518",
+              "Position": "705.7335,4688.461,-1335.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -519,7 +608,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "05559b74-04d7-4801-9cc6-cc80f3ac7d9b",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -529,7 +625,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -551,7 +648,7 @@
               "__guid": "274a154f-013c-4c8c-af57-ce4c36fd7634",
               "Flags": 0,
               "Name": "square_platform",
-              "Position": "756.2426,3040.452,-1590.518",
+              "Position": "759.7655,3040.452,-1327.458",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -561,7 +658,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "83bed4e1-22c3-44e2-895a-21053a7cea28",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -571,7 +675,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -593,7 +698,7 @@
               "__guid": "931a84d4-e0ca-40f4-b0de-2caaaecc9621",
               "Flags": 0,
               "Name": "square_platform",
-              "Position": "759.6844,2328.452,-1594.518",
+              "Position": "759.6844,2328.452,-1329.274",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -603,7 +708,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "d18992f4-c131-476a-af85-1fc4c5ce7cda",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -613,7 +725,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -635,7 +748,7 @@
               "__guid": "a989692c-8b15-4b6d-a15d-e3a987621bd7",
               "Flags": 0,
               "Name": "rect_platform",
-              "Position": "712.9205,1520.452,-1562.518",
+              "Position": "712.9205,1520.452,-1307.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -645,7 +758,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "56dee88c-040d-4f33-861c-5aa10f0c2f92",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -655,7 +775,8 @@
                   "IsTrigger": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -677,7 +798,7 @@
               "__guid": "95ccfef1-ebf4-4d02-bdd3-d0b6075a2c06",
               "Flags": 0,
               "Name": "rect_platform",
-              "Position": "712.9205,3858.452,-1562.518",
+              "Position": "712.9205,3858.452,-1307.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -687,7 +808,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "a417f5e6-ed95-4643-aebd-9bbad7aa4415",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -697,7 +825,8 @@
                   "IsTrigger": false,
                   "Model": "models/rect_platform/rect_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -719,7 +848,7 @@
               "__guid": "2915ad9a-19a8-4643-88e3-73123c99d4f5",
               "Flags": 0,
               "Name": "square_platform (1)",
-              "Position": "-866.0364,688.5032,-1590.518",
+              "Position": "-866.0364,688.5032,-1335.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -729,7 +858,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "06fd4c57-d5eb-4460-8e31-ee65d4be7d96",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -739,7 +875,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -761,7 +898,7 @@
               "__guid": "3ae6b848-a79f-4c02-a570-d82d3e483b96",
               "Flags": 0,
               "Name": "small_platform",
-              "Position": "-676.4293,1392.452,-1598.518",
+              "Position": "-676.4293,1392.452,-1343.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -771,7 +908,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "dadac99b-ac4d-4fff-a505-0815c0bb3359",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/small_platform/small_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -781,7 +925,8 @@
                   "IsTrigger": false,
                   "Model": "models/small_platform/small_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -803,7 +948,7 @@
               "__guid": "5b0ec987-56e7-4bc3-81af-f15e3f704c6b",
               "Flags": 0,
               "Name": "triangle_platform",
-              "Position": "-498.5765,1842.267,-1554.518",
+              "Position": "-498.5766,1842.267,-1299.558",
               "Rotation": "0,0,0.9238795,0.3826834",
               "Tags": "map_item",
               "Enabled": true,
@@ -814,7 +959,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "cffb64ea-7749-4d8a-867e-cc5320e519c8",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/triangle_platform/triangle_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -824,7 +976,8 @@
                   "IsTrigger": false,
                   "Model": "models/triangle_platform/triangle_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -846,7 +999,7 @@
               "__guid": "5b90a923-419e-48fe-854b-e9af1e2935c3",
               "Flags": 0,
               "Name": "tunnel",
-              "Position": "-992.992,2329.421,-1562.518",
+              "Position": "-992.9921,2329.421,-1307.558",
               "Rotation": "0,0,0.5,0.8660254",
               "Tags": "map_item",
               "Enabled": true,
@@ -857,7 +1010,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "608602ac-c998-4aac-82ca-8e2ec605d779",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -867,7 +1027,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -886,53 +1047,10 @@
               ]
             },
             {
-              "__guid": "167007b0-4195-4016-87d9-101ab451e935",
-              "Flags": 0,
-              "Name": "tunnel",
-              "Position": "-53.59271,2237.699,-1562.518",
-              "Rotation": "0,0,-0.5,0.8660254",
-              "Tags": "map_item",
-              "Enabled": true,
-              "NetworkMode": 1,
-              "NetworkOrphaned": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "a406ce3e-26e3-45d5-8cf0-16a2255ba508",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/tunnel.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.ModelCollider",
-                  "__guid": "b1f5b302-b345-4b04-8c06-6a77b869c355",
-                  "IsTrigger": false,
-                  "Model": "models/tunnel.vmdl",
-                  "Static": false,
-                  "Surface": "surfaces/concrete.surface"
-                },
-                {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "ddb21614-3e9e-4ff3-86c2-4105b5aec7e0",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                }
-              ]
-            },
-            {
               "__guid": "b562a475-a0eb-43dc-bd1f-17889ca3b553",
               "Flags": 0,
               "Name": "tunnel",
-              "Position": "-991.7596,3062.652,-1562.518",
+              "Position": "-991.7596,3062.652,-1307.558",
               "Rotation": "0,0,-0.5,0.8660254",
               "Tags": "map_item",
               "Enabled": true,
@@ -943,7 +1061,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "46fceb14-3071-4231-b07e-9280d3b814c6",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -953,7 +1078,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -972,53 +1098,10 @@
               ]
             },
             {
-              "__guid": "7470a473-59c4-448b-8873-472e1616cde8",
-              "Flags": 0,
-              "Name": "tunnel",
-              "Position": "-43.04352,3129.393,-1562.518",
-              "Rotation": "0,0,0.5,0.8660254",
-              "Tags": "map_item",
-              "Enabled": true,
-              "NetworkMode": 1,
-              "NetworkOrphaned": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "810713bb-7add-4700-8d0a-b715bc16c1dc",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/tunnel.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.ModelCollider",
-                  "__guid": "dbc7b1e4-37d5-4d0a-a628-8533e5a2a4c6",
-                  "IsTrigger": false,
-                  "Model": "models/tunnel.vmdl",
-                  "Static": false,
-                  "Surface": "surfaces/concrete.surface"
-                },
-                {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "a00c9485-3aa0-41a3-b92d-2f575273464d",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                }
-              ]
-            },
-            {
               "__guid": "bd9813fe-fbf4-46c3-9a98-bbfc16344585",
               "Flags": 0,
               "Name": "triangle_platform",
-              "Position": "-555.145,3516.696,-1554.518",
+              "Position": "-555.145,3516.696,-1299.558",
               "Rotation": "0,0,-0.3826834,0.9238796",
               "Tags": "map_item",
               "Enabled": true,
@@ -1029,7 +1112,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "8fb0140c-9614-4692-b204-d9215a7f205e",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/triangle_platform/triangle_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -1039,7 +1129,8 @@
                   "IsTrigger": false,
                   "Model": "models/triangle_platform/triangle_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1061,7 +1152,7 @@
               "__guid": "54185e24-41c1-4930-880b-eafd43d4cc43",
               "Flags": 0,
               "Name": "small_platform",
-              "Position": "-677.1195,4002.119,-1598.518",
+              "Position": "-677.1195,4002.119,-1343.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1071,7 +1162,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "60b41c94-21a2-4674-928e-370ac1e45462",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/small_platform/small_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -1081,7 +1179,8 @@
                   "IsTrigger": false,
                   "Model": "models/small_platform/small_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1103,7 +1202,7 @@
               "__guid": "5974daa8-67ca-4f13-befe-b8276a26b3f6",
               "Flags": 0,
               "Name": "square_platform",
-              "Position": "-1810.036,2672.76,-1590.518",
+              "Position": "-1810.036,2672.76,-1335.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1113,7 +1212,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "4c5bf0f4-17bd-4374-b7f0-bd998948b06c",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -1123,7 +1229,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1145,7 +1252,7 @@
               "__guid": "080a8b38-8141-4989-88c5-9ebe418d01e7",
               "Flags": 0,
               "Name": "tunnel (1)",
-              "Position": "-82.03613,658.1702,-1546.518",
+              "Position": "-82.03625,658.1704,-1305.39",
               "Rotation": "0,0,-0.7071067,0.7071068",
               "Tags": "map_item",
               "Enabled": true,
@@ -1156,7 +1263,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "68fb70c5-89e2-4ca7-8a23-674d7f8cd341",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/tunnel.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -1166,7 +1280,8 @@
                   "IsTrigger": false,
                   "Model": "models/tunnel.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1188,7 +1303,7 @@
               "__guid": "4aebaaf8-7fbd-408f-9fb6-4385174d1a35",
               "Flags": 0,
               "Name": "square_platform (2)",
-              "Position": "701.9636,688.5032,-1590.518",
+              "Position": "701.9636,688.5032,-1335.558",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1198,7 +1313,14 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "fe6a75d4-3e7f-4c8c-a629-7d2ef5b89cc4",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/square_platform/square_platform.vmdl",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 },
@@ -1208,7 +1330,8 @@
                   "IsTrigger": false,
                   "Model": "models/square_platform/square_platform.vmdl",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "Sandbox.Rigidbody",
@@ -1232,7 +1355,6 @@
           "__guid": "d204f3f2-1b4a-4995-b97d-a177c9ae9c9c",
           "Flags": 0,
           "Name": "Pillars",
-          "Position": "0,0,0",
           "Enabled": true,
           "NetworkMode": 1,
           "NetworkOrphaned": 1,
@@ -1241,7 +1363,7 @@
               "__guid": "a55ac1e5-b714-457a-b0cf-ebe106168293",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "758.964,2347.452,-2874.954",
+              "Position": "758.964,2347.452,-2148.8",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1254,30 +1376,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "07ec8ae5-9cbc-4355-a44b-08f43ee897f1",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "bbf9406c-23d5-4fc3-bf7d-49c220e0bb1b",
-                  "Center": "0,0,591.8981",
+                  "__guid": "d8faba07-b313-4dd5-889a-b97b3330622a",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1285,7 +1395,7 @@
               "__guid": "03077c9a-b2da-4a10-9059-20b904b262f3",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "758.964,3048.452,-2874.954",
+              "Position": "758.964,3048.452,-2152.072",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1298,30 +1408,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "e0a76ff8-b4ea-4e2a-8730-b3f3d5663413",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "ba6ef01b-8191-4dc9-a345-a3c189073df7",
-                  "Center": "0,0,591.8981",
+                  "__guid": "94879fc5-d540-4772-9981-72c905b5427e",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1329,7 +1427,7 @@
               "__guid": "d203fcfe-8ecd-4d74-a6b0-c8c565f56364",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "709.964,3872.452,-2874.954",
+              "Position": "709.964,3872.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1342,30 +1440,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "d999b0f2-505b-4ada-a51d-07a523f3b6f2",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "743c65d2-bec9-4312-a393-9bf8038405a6",
-                  "Center": "0,0,591.8981",
+                  "__guid": "56db8ef9-efc2-4e4f-92e5-c2b5cf290237",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1373,7 +1459,7 @@
               "__guid": "86c8b669-8dbe-4488-a74b-ec2afd977576",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-678.036,4008.452,-2874.954",
+              "Position": "-678.036,4008.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1386,30 +1472,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "1ca97609-09a8-400a-b250-97347cf3e155",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "d9281980-1bc5-4c8f-a249-34bc1b0bac7d",
-                  "Center": "0,0,591.8981",
+                  "__guid": "cc81e152-faa4-4865-8119-a38388d90517",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1417,7 +1491,7 @@
               "__guid": "655eba62-4795-40de-bf45-76e74530aa6e",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-538.036,3492.452,-2874.954",
+              "Position": "-538.036,3492.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1430,30 +1504,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "9a015515-7a0b-436b-a85e-b93217cee734",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "83253ac4-67d8-48fe-8d08-6f64463a35f7",
-                  "Center": "0,0,591.8981",
+                  "__guid": "bb12ff37-904a-419d-a8c1-4b7fa9aa716e",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1461,7 +1523,7 @@
               "__guid": "f26bef0a-37d1-4aee-b010-cff057348122",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-986.036,3072.452,-2874.954",
+              "Position": "-986.036,3072.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1474,30 +1536,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "0eecbb89-636a-4d3e-8566-ccef793568e0",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "7e7d5572-148f-4992-96ad-6447b5b13896",
-                  "Center": "0,0,591.8981",
+                  "__guid": "c8e7472f-d914-40a6-bcd6-c9d1e99b3813",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1505,7 +1555,7 @@
               "__guid": "3fd9d181-c033-40e7-b9da-495ca17f1936",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-986.036,2320.452,-2874.954",
+              "Position": "-986.036,2320.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1518,30 +1568,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "27d7d0c2-7646-4521-a5a1-94b273c2ba0d",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "91269a3f-6a99-440c-91ea-a30c6ba2fe7c",
-                  "Center": "0,0,591.8981",
+                  "__guid": "7b2cbef9-9fde-4154-854d-ca5f4ad4c47f",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1549,7 +1587,7 @@
               "__guid": "4c89f246-6ba3-4c14-873f-9f56cc9ab56c",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-538.036,1900.452,-2874.954",
+              "Position": "-538.036,1900.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1562,30 +1600,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "0b90f4ab-5d4d-4cb2-9929-8ee855fe5d6f",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "b71d22e5-da84-438b-b551-633e293178e7",
-                  "Center": "0,0,591.8981",
+                  "__guid": "561deb2e-0fec-4b2d-941d-e8a00187002e",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1593,7 +1619,7 @@
               "__guid": "60e0ef9a-bfd6-4669-ae7d-98ea5e894efc",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-21.12097,2259.447,-2874.954",
+              "Position": "-21.12097,2259.447,-2155.167",
               "Rotation": "0,0,0.5,0.8660254",
               "Tags": "map_item",
               "Enabled": true,
@@ -1607,30 +1633,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "b022b300-704c-48e4-9a61-c30f3824d3fa",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "1d11b645-0db4-4af3-b494-ef0a1475a465",
-                  "Center": "0,0,591.8981",
+                  "__guid": "ebd7c229-aa29-4627-9e9d-6885811b7365",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1638,7 +1652,7 @@
               "__guid": "f4bc1f2e-94f1-4ec8-8178-6e018f6e499d",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-25.12109,3140.385,-2874.954",
+              "Position": "-25.12109,3140.385,-2155.167",
               "Rotation": "0,0,0.9659258,-0.2588189",
               "Tags": "map_item",
               "Enabled": true,
@@ -1652,30 +1666,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "0362203c-e429-4dad-a46b-95184c481e29",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "69d63a1c-3820-4906-90ed-78f50e8ba3aa",
-                  "Center": "0,0,591.8981",
+                  "__guid": "d6143113-06fa-4fe6-ba17-afb024283b15",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1683,7 +1685,7 @@
               "__guid": "da163731-60c8-4d12-9081-ec0259e4a847",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-682.036,1384.452,-2874.954",
+              "Position": "-682.036,1384.452,-2151.978",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1696,30 +1698,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "e42f8a94-3f16-4b94-8d27-00b4a3e98881",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
                   "__guid": "4ff39b8c-d96a-4bb4-913f-3121310ad81c",
-                  "Center": "0,0,591.8981",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1727,7 +1717,7 @@
               "__guid": "29d00714-520f-4e0a-8f51-36294922ecf1",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-1770.036,2696.452,-2874.954",
+              "Position": "-1770.036,2696.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1740,30 +1730,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "9aa035d5-99cf-4e27-8ba7-39a9b4edac24",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "41b0a282-425e-482d-ad85-2ee03372f4f4",
-                  "Center": "0,0,591.8981",
+                  "__guid": "6c0b4af9-160a-452b-a786-9b40f21899b4",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1771,7 +1749,7 @@
               "__guid": "08649004-77f3-40d6-bc90-a9c44edfecbe",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "709.964,4724.452,-2874.954",
+              "Position": "709.964,4724.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1784,30 +1762,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "770dc2fc-f279-490a-9447-bd7eef1fa33a",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "66e951bc-2d15-41e7-a7b5-8d2ac3c16f78",
-                  "Center": "0,0,591.8981",
+                  "__guid": "93e355fb-d804-46b0-8064-74efdd4f3689",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1815,7 +1781,7 @@
               "__guid": "a42d2e5e-fc97-41cb-bed6-195d594d8a63",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-94.03601,4712.452,-2874.954",
+              "Position": "-94.03601,4712.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1828,30 +1794,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "1bdc8fdf-4f07-47d2-bdda-4862acb2b9ef",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "968f11e6-82b0-41a3-a2a4-3cdee81cd2db",
-                  "Center": "0,0,591.8981",
+                  "__guid": "5455a928-dd1a-4591-abc5-8a2650a7466a",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1859,7 +1813,7 @@
               "__guid": "d70fc26c-f45e-4425-8423-e9eb57654a86",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-866.036,4712.452,-2874.954",
+              "Position": "-866.036,4712.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1872,30 +1826,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "cd189c1d-961c-4275-87b9-8b7607ffd532",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "d5636397-a51b-426c-b82b-0ebf8b0f44c2",
-                  "Center": "0,0,591.8981",
+                  "__guid": "aac32777-f59c-485e-ad69-96f9c164f43d",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1903,7 +1845,7 @@
               "__guid": "25be81fa-3d0e-4262-a7f0-0ff93c16c0cc",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-1642.036,4712.452,-2874.954",
+              "Position": "-1642.036,4712.452,-2154.509",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1916,30 +1858,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "fa091eaf-acb9-44be-aff1-c4b0a85b528b",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "414b3846-40c2-4027-98b7-293558857659",
-                  "Center": "0,0,591.8981",
+                  "__guid": "d3b0868b-a5fa-44f6-ac56-38b941903e3c",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1947,7 +1877,7 @@
               "__guid": "b6ddb7f8-412c-453b-9902-563bff86ce48",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-2410.036,4720.452,-2874.954",
+              "Position": "-2410.036,4720.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -1960,30 +1890,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "2d1d87d7-efdb-42c7-bde2-3f80c47824a1",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "f8635428-ad2f-4d4e-adfb-9541690708ee",
-                  "Center": "0,0,591.8981",
+                  "__guid": "2817155b-ddf1-4d59-b115-dacf463fb2ed",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -1991,7 +1909,7 @@
               "__guid": "2a341ff1-93bd-419e-b985-2321d4886889",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-2442.036,3872.452,-2874.954",
+              "Position": "-2442.036,3872.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2004,30 +1922,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "f3d1d7c4-6f49-461f-bc63-6e36c5ae5f44",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "5c3a578f-5ca1-4fbe-9ddd-39c99b5d1e6e",
-                  "Center": "0,0,591.8981",
+                  "__guid": "87771cef-2f59-49c9-86ee-fa1651de57ad",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2035,7 +1941,7 @@
               "__guid": "45adc19a-56da-47d3-b962-8d0950be9884",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-2434.036,3204.452,-2874.954",
+              "Position": "-2434.036,3204.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2048,30 +1954,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "673d5303-0e94-44b2-9a4e-06117f14bc6a",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "ee52f27a-5c8d-4f05-8474-d3f371180944",
-                  "Center": "0,0,591.8981",
+                  "__guid": "89153c70-4571-48dd-98e0-e6426acee2fa",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2079,7 +1973,7 @@
               "__guid": "7f55b259-ad8a-48e8-af0e-66a2650b3447",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-2434.036,2696.452,-2874.954",
+              "Position": "-2434.036,2700.667,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2092,30 +1986,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "5deab901-bd49-4cc3-bea9-d19462783abe",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "369af26a-b553-4a2c-9d6b-502446177fc8",
-                  "Center": "0,0,591.8981",
+                  "__guid": "85de4eed-81ee-47ef-8c3b-707db34e4ade",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2123,7 +2005,7 @@
               "__guid": "efe50d30-f617-47e6-b943-a8ebd7a921b1",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-2434.036,2184.452,-2874.954",
+              "Position": "-2434.036,2184.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2136,30 +2018,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "e9545b0f-4e07-46c9-ae87-77a473f45330",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "bed2560b-82b2-45bb-bbff-ac247777a6f6",
-                  "Center": "0,0,591.8981",
+                  "__guid": "c28e84d6-f7aa-44df-b446-3e36d3d21fc1",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2167,7 +2037,7 @@
               "__guid": "d3ee8684-8086-45f9-804f-ba2ce8b85a8d",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-2442.036,1520.452,-2874.954",
+              "Position": "-2442.036,1520.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2180,30 +2050,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "676d1fdb-061c-4291-9f6b-e50774df4930",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "ca4d5139-dd27-4427-9f59-e9bca39ca914",
-                  "Center": "0,0,591.8981",
+                  "__guid": "3a9c3d13-147d-4fdc-8586-511ba5fe20f8",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2211,7 +2069,7 @@
               "__guid": "b3f8a85f-c2db-4cae-ba66-e78607440e73",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-2410.036,672.4519,-2874.954",
+              "Position": "-2410.036,672.4519,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2224,30 +2082,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "1999853f-ec9e-4b7e-94e0-7c83f2a90be5",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "0104922c-a94a-490e-989e-8bdc039a8ce6",
-                  "Center": "0,0,591.8981",
+                  "__guid": "90ebd400-ae33-4149-a937-ceab2cb0d912",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2255,7 +2101,7 @@
               "__guid": "2530bc25-9a1c-4d18-8cde-16eebf8fe00a",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-1642.036,676.4519,-2874.954",
+              "Position": "-1642.036,676.4519,-2150.156",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2268,30 +2114,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "408a4429-a9af-47dd-90a0-f571cc3bffc1",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "71cd72db-6332-4e5f-817c-39d5cadf8807",
-                  "Center": "0,0,591.8981",
+                  "__guid": "f9095c90-950e-4121-b696-aa52e2cbc4f1",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2299,7 +2133,7 @@
               "__guid": "d9a29955-a884-4b51-bb99-e5d698fbd4fa",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-866.036,680.4519,-2874.954",
+              "Position": "-866.036,680.4519,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2312,30 +2146,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "9245263f-39db-4441-9e33-05a66c4d7fcb",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "91e1e546-b7c8-4e82-abf6-215020e0f556",
-                  "Center": "0,0,591.8981",
+                  "__guid": "885341c1-878d-49cd-9b71-6cedc2e2bca4",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2343,7 +2165,7 @@
               "__guid": "d14b8b04-1e85-4223-a96a-990a4ad0f053",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-98.03601,680.4519,-2874.954",
+              "Position": "-98.03601,680.4519,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2356,30 +2178,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "405ce4a2-48b5-43a0-b745-60e2b6010972",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "a896186a-a52e-4c24-bdd9-8ff06aa3c041",
-                  "Center": "0,0,591.8981",
+                  "__guid": "33f68a1b-18a0-4093-bc30-d06a9778db93",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2387,7 +2197,7 @@
               "__guid": "7368f0cc-b3aa-4c37-b748-577338cf682d",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "697.964,672.4519,-2874.954",
+              "Position": "697.964,672.4519,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2400,30 +2210,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "06d5c99b-bf5b-4ed9-8b4b-527235951b31",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "5acb2ea4-94f9-4926-a881-6510aac32940",
-                  "Center": "0,0,591.8981",
+                  "__guid": "2f5d2fcd-be0c-45f1-aff4-fdd3b41d2730",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2431,7 +2229,7 @@
               "__guid": "095ad0b6-061e-4233-b6f0-9be2eb9e8f7b",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "709.964,1520.452,-2874.954",
+              "Position": "709.964,1520.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2444,30 +2242,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "a34a9a8a-e025-4fe7-b9fb-43b8164e5ab1",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "de586435-3a18-469e-b4ad-6824480bd231",
-                  "Center": "0,0,591.8981",
+                  "__guid": "00a7b00c-8d13-4431-a159-87f6e895970b",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             },
@@ -2475,7 +2261,7 @@
               "__guid": "b079d244-d280-4acb-bf31-f3fb391cb0fe",
               "Flags": 0,
               "Name": "pillar",
-              "Position": "-2958.036,2696.452,-2874.954",
+              "Position": "-2958.036,2696.452,-2155.167",
               "Tags": "map_item",
               "Enabled": true,
               "NetworkMode": 1,
@@ -2488,30 +2274,18 @@
                   "Health": 0,
                   "IsStatic": false,
                   "Model": "models/pillar/pillar.vmdl",
+                  "StartAsleep": false,
                   "Tint": "1,1,1,1"
                 },
                 {
-                  "__type": "Sandbox.Rigidbody",
-                  "__guid": "634b8ec9-15e6-4415-98b8-d83786b6f123",
-                  "AngularDamping": 0,
-                  "Gravity": true,
-                  "LinearDamping": 0,
-                  "Locking": {},
-                  "MassCenterOverride": "0,0,0",
-                  "MassOverride": 0,
-                  "MotionEnabled": true,
-                  "OverrideMassCenter": false,
-                  "RigidbodyFlags": 0,
-                  "StartAsleep": false
-                },
-                {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "842b11dc-6894-4f88-a303-e1646dddb5a4",
-                  "Center": "0,0,591.8981",
+                  "__guid": "81c19ba4-19e0-44c9-a189-52be3c84feef",
+                  "Center": "0,0,0",
                   "IsTrigger": false,
-                  "Scale": "95.99976,95.99964,1312.184",
+                  "Scale": "95.99976,95.99964,1568",
                   "Static": false,
-                  "Surface": "surfaces/concrete.surface"
+                  "Surface": "surfaces/concrete.surface",
+                  "SurfaceVelocity": "0,0,0"
                 }
               ]
             }
@@ -2521,8 +2295,8 @@
           "__guid": "fcbdb7c5-49ce-4e77-babf-1d5a20458e3e",
           "Flags": 0,
           "Name": "2D Skybox",
-          "Position": "0,0,0",
-          "Rotation": "-0,0,-0.6883503,-0.7253784",
+          "Position": "-4.997314,-1.499756,-110.0845",
+          "Rotation": "0,0,0.8660255,0.5",
           "Tags": "skybox",
           "Enabled": true,
           "NetworkMode": 1,
@@ -2531,8 +2305,9 @@
             {
               "__type": "Sandbox.SkyBox2D",
               "__guid": "2bf9f660-8c0f-4a54-9aa2-12bd8b7e75ff",
-              "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
-              "Tint": "1,1,1,1"
+              "SkyIndirectLighting": true,
+              "SkyMaterial": "pano_20230818_171551_171.vmat",
+              "Tint": "1,1,1,0"
             }
           ]
         }
@@ -2561,7 +2336,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2UiVITURBFM0SSSciELKhRQZBVQUVR3FBBFnHf//9X9J6qM1VTTtWteTPdfft2v35v1mq1/gTXAp654ErQCcqgHwyCYTALjoLl4GtwN3gZ3A8ug4/B5\u002BB18DZ4H3wIPgVfgkKQo/mMg3n/t83favhuqqWtX\u002Bc/rdcbMd0Gb1vfib7E9qypMAbeaaPmBest9Md3wzfclb0o9Mf3qr5wLMpZ6I/vqFHz2P98d7VVjfipHHUvJg1bx1zb1kGOpYbWOXuxJve8\u002B9oznvWN4Lc8pXt6xzU13gqeqZu4m8GWa7StBBfq6jsLO67hWA0e2Rd6eTtYV09prtVGD9ass1Tvhjq7xq87a301bDmDdY837UG9rzvW0LNf2/L0rfle8N1aBs7wY23UvOc8j92X3eBQGzU/CM60D/V9rg2\u002BfTnrfXwYHGgbmGvfdWmvZuZH5xN7NjD\u002BwLO1qJ5Dz1xljU/dI7QM1bLnuu9eLquvMnZX/czei\u002BCkwXckZ6XPK890aZ/fBN/UOvGsn2tj9o6Dn35PvQdW1ALfOzkr8594b4zkO5NzwX\u002BnahzLdyHnkv7n7snEHl3a86k\u002B3EE/tI3MdSo/Ped\u002B\u002BqWNHNSKRr6ZQ\u002B4uzgz1E8MsskfwUS/3GjXX88VswYkv\u002BekVGtCDP70hhnjsaKOnrMnH2SQn\u002BeFDGzPLmnmu5/BvHvj4z5pzwtnifHAGyMvs0F9mhjxw0V96iE60kO8fZmQRXQQGAAA=",
+                "Topology": "H4sIAAAAAAAACl2UiVITURBFTxIJk5CELKBxQZDVHUUBERdkEff9/38l1i3PVL1yqlLzMt19\u002B/bt7jcF/gBX\u002Bfc0gStAG6iALtADBsAUOAZuAV\u002BBu8AR8BC4BD4Cn4FXwBvgPfAB\u002BAR8ARr\u002BkqN8RsCc31vmp/DdlEtLv/Z/XK8VMfMFbkvfsb6J7VhTw5jgToqaF6y3oX98N3wHu68WDf3ju6xvMBbFbOgf32FR88jvTd9DMev4iRi1FuPC1jbXtnUkx1LBtakWa2LP2deO8TlfB36LU9nTO0WvbwIH8k7cDWDLc7itABfy6joLO56DsQo8UZdoeRtYl09lrtVCgzXrrOS7Ic9549edta4ctpzBWuNNNaj7umMNHfXaFqdrzfeA79bSc4afakvND5znkX25D\u002BxrS82PgDPtA30PtQVvV8y6j4\u002BBPW09c\u002B16rtRqav7wfKZmPeP33K1F\u002Bey7c31rfG6PBv4OrWFgzQf2aGzMkTWNnL0XwEmBdyxmX5\u002BX7nSlzq\u002BBb3Idu\u002Bvn2jJ7b4Gf/p94D6zIJXjvxOyb/8R7YyjemZgLfjuV40i8CzGX9D\u002B3J2M1ulTziT65g35oG5rrVPxl76df2pIjtYZj/mcOc3dlZ1J/YjKL6VHwUm/utdRcz1dmK5jxTf5oFQ7hE/9ok5jExx5u0TTn5MtuJmfyBy/cMrM5Z57rOZzNZrPg5XvO2ZPsVvYjO5C8mZ3om5lJnmBF32gYnuGSfH8BZmQRXQQGAAA=",
                 "Positions": [
                   "-211.834,-622.9443,55.38373",
                   "211.834,-622.9443,55.38373",
@@ -2589,90 +2364,90 @@
                   "4583.52,87.17978,1554.523"
                 ],
                 "TextureCoord": [
-                  "3.464766,11.33676",
-                  "-1.654953,-1.432685",
-                  "3.464766,7.728016",
-                  "4.508351,11.06143",
-                  "2.637289,7.728016",
-                  "-0.6549531,-1.432685",
-                  "2.637289,11.33676",
-                  "-7.217497,-1.432685",
-                  "1.654953,-7.217497",
-                  "2.654953,-0.5673146",
-                  "1.654953,7.217497",
-                  "1.098222,-7.430327",
-                  "-1.654953,7.217497",
-                  "1.654953,-0.5673146",
-                  "-1.654953,-7.217497",
-                  "7.217497,-0.5673146",
-                  "7.217497,-1.432685",
-                  "-1.654953,-0.5673146",
-                  "-7.217497,-0.5673146",
-                  "2.654953,-1.432685",
-                  "1.098222,-0.7450252",
-                  "1.654953,-1.432685",
-                  "-1.098222,-1.610396",
-                  "-0.6549531,-0.5673146",
-                  "12.50903,9.004538",
-                  "13.0468,7.452684",
-                  "35.25202,-13.32242",
-                  "35.25202,-14.18779",
-                  "35.25202,0.7543626",
-                  "35.25202,7.004666",
-                  "-35.25202,-14.18779",
-                  "-35.25202,-13.32242",
-                  "-35.25202,-14.18779",
-                  "4.508351,7.452684",
-                  "-1.098222,-0.7450252",
-                  "35.25202,-7.430327",
-                  "13.0468,11.06143",
-                  "1.098222,-1.610396",
-                  "35.25202,-13.32242",
-                  "1.098222,7.004666",
-                  "2.010074,-14.01008",
-                  "13.2644,7.452682",
-                  "-6.217497,-13.14471",
-                  "38.27352,-14.18779",
-                  "0.03280687,-13.14471",
-                  "38.27352,7.004666",
-                  "8.217497,-14.01008",
-                  "-38.27352,-13.32242",
-                  "-38.27352,-14.18779",
-                  "12.50903,7.452682",
-                  "-35.25202,-13.32242",
-                  "38.27352,-7.430327",
-                  "13.26441,11.06143",
-                  "35.25202,-14.18779",
-                  "38.27352,-13.32242",
-                  "35.25202,7.004666",
-                  "-6.217497,-14.01008",
-                  "14.0701,9.498854",
-                  "12.50903,11.06143",
-                  "13.0468,9.498857",
-                  "2.010074,-13.14471",
-                  "41.49628,0.7543626",
-                  "35.25202,-1.222904",
-                  "35.25202,0.7543626",
-                  "12.50903,9.498854",
-                  "14.07009,9.498883",
-                  "0.03280687,-13.14471",
-                  "0.03280687,-14.01008",
-                  "35.25202,0.7543626",
-                  "41.49628,0.7543626",
-                  "8.217497,-13.14471",
-                  "41.49628,-1.222904",
-                  "0.03280687,-14.01008",
-                  "14.07009,9.004566",
-                  "12.50903,9.498883",
-                  "13.0468,9.004539",
-                  "35.25202,-7.430327",
-                  "35.25202,-1.222904",
-                  "2.010074,-14.01008",
-                  "2.010074,-13.14471",
-                  "35.25202,-1.222904",
-                  "41.49628,-1.222904",
-                  "12.50903,9.004566",
-                  "14.07009,9.004538"
+                  "-0.09955965,1.047558",
+                  "-0.2873356,0.1314245",
+                  "-0.09955965,-0.7568132",
+                  "0.01380397,1.013143",
+                  "-0.5132982,-0.7568132",
+                  "0.8735973,0.1314244",
+                  "-0.5132982,1.047558",
+                  "-0.6378803,0.1314244",
+                  "0.1264023,-0.6378803",
+                  "1.287336,0.2395957",
+                  "0.1264023,1.166494",
+                  "3.586918,3.386969",
+                  "-0.2873359,1.166494",
+                  "0.1264026,0.2395958",
+                  "-0.2873359,-0.6378803",
+                  "1.166494,0.2395957",
+                  "1.166494,0.1314244",
+                  "-0.2873356,0.2395958",
+                  "-0.6378803,0.2395957",
+                  "1.287336,0.1314244",
+                  "0.179731,-0.09812853",
+                  "0.1264026,0.1314245",
+                  "0.4303304,0.1368445",
+                  "0.8735973,0.2395957",
+                  "4.107879,-0.01530302",
+                  "4.283029,-0.7912303",
+                  "4.838898,-1.510372",
+                  "4.448956,-1.778474",
+                  "2.419467,0.586188",
+                  "5.721531,4.289155",
+                  "-1.974479,-0.8892518",
+                  "-3.838895,-0.5951574",
+                  "-3.838895,-0.6492429",
+                  "0.01380397,-0.7912303",
+                  "0.4303304,0.1909297",
+                  "5.721531,3.386969",
+                  "4.283029,1.013143",
+                  "0.179731,-0.2062989",
+                  "4.448956,-1.670303",
+                  "3.586918,4.289155",
+                  "-1.069439,-0.4715865",
+                  "4.485565,-0.7912307",
+                  "1.737945,-0.4174991",
+                  "5.216586,-1.618543",
+                  "2.128589,-0.4174991",
+                  "2.608311,0.976832",
+                  "-0.681475,-0.4715865",
+                  "-2.163323,-0.8351662",
+                  "-2.163323,-0.8892518",
+                  "4.107879,-0.7912307",
+                  "-1.974479,-0.8351662",
+                  "2.998269,0.5478343",
+                  "4.485586,1.013143",
+                  "4.838898,-1.618543",
+                  "5.216586,-1.510372",
+                  "2.419467,0.976832",
+                  "1.737945,-0.4715847",
+                  "4.888432,0.2318553",
+                  "4.107897,1.013143",
+                  "4.283029,0.2318553",
+                  "0.8513716,-0.4174991",
+                  "2.809734,0.5861878",
+                  "2.419468,0.4626091",
+                  "5.721531,3.898512",
+                  "4.107897,0.2318553",
+                  "4.888409,0.2318591",
+                  "0.7277925,-0.4174991",
+                  "2.128589,-0.4715847",
+                  "2.419468,0.5861878",
+                  "2.809734,0.586188",
+                  "-0.681475,-0.4175009",
+                  "3.199691,0.9357982",
+                  "0.7277925,-0.4715847",
+                  "4.888409,-0.01529946",
+                  "4.107879,0.2318591",
+                  "4.283029,-0.01530287",
+                  "2.809425,0.5478343",
+                  "5.721531,3.774933",
+                  "0.8513716,-0.4715847",
+                  "-1.069439,-0.4175009",
+                  "2.809425,0.9357982",
+                  "2.809734,0.4626091",
+                  "4.107879,-0.01529946",
+                  "4.888409,-0.01530302"
                 ],
                 "TextureUAxis": [
                   "1,0,0",
@@ -2685,7 +2460,7 @@
                   "-1,0,0",
                   "0.9383928,0,0.3455704",
                   "1,-0,0",
-                  "0.9383928,-0,0.3455703",
+                  "0.9383929,-0,0.3455703",
                   "0,1,0",
                   "-1,0,0",
                   "1,0,0",
@@ -2706,9 +2481,9 @@
                   "0,0,-1",
                   "-0,0,-1",
                   "-0,0,-1",
-                  "-0.000002258694,0,-1",
+                  "-0.000003194446,0,-1",
                   "0,-1,0",
-                  "-0.000002387762,0,-1",
+                  "-0.000003226713,0,-1",
                   "0,-1,0",
                   "-0,0,-1",
                   "0,0,-1",
@@ -2723,76 +2498,76 @@
                   "0,-1,0"
                 ],
                 "TextureScale": [
-                  "0.9999994,0.6743001",
-                  "0.25,0.1685748",
-                  "0.1685748,0.2500001",
+                  "0.2499998,0.1685751",
+                  "1,0.6742992",
+                  "0.6742991,1",
                   "0.25,0.25",
-                  "0.25,0.2500001",
-                  "0.125,0.125",
+                  "0.999999,1",
+                  "1,1",
                   "0.25,0.25",
-                  "0.125,0.1250008",
-                  "1.065652,0.6742996",
-                  "0.125,0.1250008",
-                  "0.1332065,0.08428741",
-                  "0.08428738,0.1250007",
-                  "0.125,0.1250008",
-                  "0.9999982,0.6742991",
-                  "0.125,0.1250008",
-                  "0.1250001,0.08428741",
-                  "1.000004,0.6742986",
-                  "0.1061059,0.1250007",
-                  "0.1250002,0.08428741",
-                  "0.1063769,0.1250007",
-                  "0.1250002,0.08428742",
-                  "1.000004,0.6742993"
+                  "0.9999998,2.000018",
+                  "0.2664129,0.1685749",
+                  "0.9999999,1.000009",
+                  "2.131303,1.3486",
+                  "1.348599,2.000013",
+                  "1.999998,2.000013",
+                  "0.2499994,0.1685749",
+                  "1.999997,2.000018",
+                  "2.000004,1.348598",
+                  "0.2500011,0.1685746",
+                  "1.697694,2.000013",
+                  "1.999998,1.348599",
+                  "1.70203,2.000015",
+                  "2.000002,1.348604",
+                  "0.250001,0.1685748"
                 ],
                 "TextureOffset": [
-                  "453.2124,164.9614",
-                  "172.344,81.5144",
-                  "81.5144,254.8356",
+                  "453.2124,164.9604",
+                  "344.688,163.0288",
+                  "163.0289,509.6711",
                   "403.0308,90.98779",
-                  "339.6558,254.8356",
-                  "344.6884,509.6713",
+                  "679.3114,509.6711",
+                  "344.6883,509.6713",
                   "403.0308,90.98779",
-                  "225.4062,327.6738",
-                  "328.1872,23.99194",
-                  "798.5938,327.6777",
-                  "931.2299,969.0913",
-                  "860.9705,509.5918",
-                  "225.4023,327.5986",
-                  "200.1821,23.99104",
-                  "798.5977,327.5986",
-                  "798.6367,969.0914",
-                  "200.207,24.00605",
-                  "479.5474,509.5918",
-                  "798.6406,969.0916",
-                  "674.3997,509.5898",
-                  "798.6406,969.0914",
-                  "200.2075,23.99138"
+                  "225.4065,327.6732",
+                  "328.1871,23.99194",
+                  "399.2964,163.8386",
+                  "652.9198,804.365",
+                  "860.9705,509.5908",
+                  "56.35303,81.89954",
+                  "200.1699,23.99164",
+                  "399.2961,163.7972",
+                  "798.6379,969.0914",
+                  "200.207,24.00606",
+                  "479.5471,509.5909",
+                  "399.3147,484.5455",
+                  "674.3998,509.5883",
+                  "399.3203,484.5457",
+                  "200.207,23.99137"
                 ],
                 "MaterialIndex": [
-                  1,
+                  4,
+                  8,
+                  5,
                   0,
+                  5,
+                  5,
                   0,
-                  0,
-                  0,
-                  3,
-                  0,
-                  3,
-                  1,
-                  3,
-                  3,
-                  3,
-                  3,
-                  1,
-                  3,
-                  3,
-                  1,
-                  3,
-                  3,
-                  3,
-                  3,
-                  1
+                  5,
+                  4,
+                  5,
+                  8,
+                  5,
+                  5,
+                  4,
+                  7,
+                  8,
+                  4,
+                  5,
+                  8,
+                  5,
+                  8,
+                  4
                 ],
                 "EdgeFlags": [
                   0,
@@ -2884,11 +2659,17 @@
                   "materials/dev/reflectivity_30.vmat",
                   "materials/generic/wall_limestone_brick_large.vmat",
                   "models/rust_structures/fences_walls/brick_wall_b_plasterblend.vmat",
-                  "materials/zombieworld/concretewall04_pixel.vmat"
+                  "materials/zombieworld/concretewall04_pixel.vmat",
+                  "materials/runner_floor.vmat",
+                  "materials/runner_base.vmat",
+                  "materials/cnanon_base.vmat",
+                  "materials/error.vmat",
+                  "materials/runner_base_darker.vmat"
                 ]
               },
               "SmoothingAngle": 40,
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2904,8 +2685,15 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "dbf6e8e0-187f-4e18-bbe7-056901db4df3",
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/stone/stonewall02.vmat",
+              "CreateAttachments": false,
+              "MaterialOverride": "materials/runner_base_darker.vmat",
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2915,7 +2703,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2931,8 +2720,15 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "a0880eb0-ecf5-496d-b41c-293e54ada102",
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/stone/stonewall02.vmat",
+              "CreateAttachments": false,
+              "MaterialOverride": "materials/runner_base_darker.vmat",
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2942,7 +2738,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2959,8 +2756,15 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "81947304-7aef-471d-b959-2ee1c455820f",
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/generic/floor_rough_asphalt.vmat",
+              "CreateAttachments": false,
+              "MaterialOverride": "materials/runner_base_darker.vmat",
               "Model": "models/cylinder.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2969,7 +2773,8 @@
               "__guid": "64ff23a9-79de-414c-a695-0522e176013e",
               "IsTrigger": false,
               "Model": "models/cylinder.vmdl",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -2986,8 +2791,15 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "18016ce7-c923-4494-8b79-0c5101fb9cad",
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/generic/floor_rough_asphalt.vmat",
+              "CreateAttachments": false,
+              "MaterialOverride": "materials/runner_base_darker.vmat",
               "Model": "models/cylinder.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2996,7 +2808,8 @@
               "__guid": "8421d34e-a794-4d5d-9de5-c65b04458fb8",
               "IsTrigger": false,
               "Model": "models/cylinder.vmdl",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3015,6 +2828,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "1174.3,391.3004",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -3031,14 +2850,30 @@
           "Name": "Button",
           "Position": "3424.002,-1092.194,96.03113",
           "Tags": "button,trigger",
+          "Enabled": true,
           "NetworkOrphaned": 1,
           "Components": [
             {
               "__type": "Sandbox.SkinnedModelRenderer",
               "__guid": "baf9346e-59fc-4280-9cc8-626ba12dfac4",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "CreateBoneObjects": false,
               "Model": "models/button/button.vmdl",
+              "Morphs": {},
+              "Parameters": {
+                "bools": {},
+                "ints": {},
+                "floats": {},
+                "vectors": {},
+                "rotations": {}
+              },
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1",
               "UseAnimGraph": true
@@ -3049,7 +2884,8 @@
               "Center": "-37.60006,0,0",
               "IsTrigger": false,
               "Scale": "100,200,400",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "KillButton",
@@ -3070,7 +2906,7 @@
           "__guid": "1be74bfb-30d8-4491-aa17-d1b63af196a6",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "0,-113.7726,-30",
+          "Position": "0,-113.7726,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3085,7 +2921,7 @@
           "__guid": "1f228b57-5140-407f-87ed-282fb7998a0e",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "0,-546.7881,-30",
+          "Position": "0,-546.7881,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3100,7 +2936,7 @@
           "__guid": "c9eaca28-ab85-4220-bd1a-213950b16d0f",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3848,-1134.99,-30",
+          "Position": "129.3848,-1134.99,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3115,7 +2951,7 @@
           "__guid": "d7f31bdb-470f-4110-bf25-6fb5e1a0a7f8",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3848,-1815.424,-30",
+          "Position": "129.3848,-1815.424,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3130,7 +2966,7 @@
           "__guid": "7e335056-b9c3-419b-a7ac-6ca936e23256",
           "Flags": 0,
           "Name": "RunnerSpawn1",
-          "Position": "129.3849,-2165.233,-30",
+          "Position": "129.3849,-2165.233,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3145,7 +2981,7 @@
           "__guid": "0fa55dc8-0140-4bc7-91db-f709d1c2e30d",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "0,140.9131,-30",
+          "Position": "0,140.9131,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3160,7 +2996,7 @@
           "__guid": "1482bca0-7310-4f50-8cb6-419e1552fb3b",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "-0.0008544922,481.7376,-30",
+          "Position": "-0.0008544922,481.7376,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3175,7 +3011,7 @@
           "__guid": "efc6457f-579b-4556-9373-633c35031a73",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6099,1168.032,-30",
+          "Position": "118.6099,1168.032,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3190,7 +3026,7 @@
           "__guid": "1b8090e3-db15-4652-92c5-cbab094f5b37",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6095,2221.226,-30",
+          "Position": "118.6095,2221.226,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3205,7 +3041,7 @@
           "__guid": "ebd7d423-9eba-4b7d-b366-643a33928c2a",
           "Flags": 0,
           "Name": "RunnerSpawn2",
-          "Position": "118.6095,1929.651,-30",
+          "Position": "118.6095,1929.651,233.7168",
           "Tags": "runner_spawn",
           "Enabled": true,
           "Components": [
@@ -3357,7 +3193,7 @@
           "__guid": "d44d7014-a7c5-4198-97da-762b4f97134b",
           "Flags": 0,
           "Name": "DeadSpawn1",
-          "Position": "2107.317,76.66534,2299.048",
+          "Position": "2107.317,76.66534,2299.058",
           "Rotation": "0,0,1,-0.00000004371139",
           "Tags": "dead_spawn",
           "Enabled": true,
@@ -3375,7 +3211,7 @@
       "__guid": "45fd3577-1078-43cd-aa89-7f85d04c68bf",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "5386.716,-3.210266,3375.98",
+      "Position": "5608.104,-3.210248,2992.528",
       "Rotation": "-0.258819,-0.00000001131334,0.9659258,-0.00000004222196",
       "Tags": "maincamera",
       "Enabled": true,
@@ -3411,6 +3247,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
         },
         {
@@ -3473,10 +3310,17 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "8a0b1e4a-b7b2-46d9-9435-2d6f14821b55",
           "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
           "MaterialOverride": "materials/glass/glass_a.vmat",
           "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
-          "Tint": "1,1,1,0.52"
+          "Tint": "999.9999,999.9999,999.9999,1"
         },
         {
           "__type": "Sandbox.PlaneCollider",
@@ -3485,7 +3329,8 @@
           "IsTrigger": false,
           "Scale": "100.0004,102.6999",
           "Static": true,
-          "Surface": "surfaces/concrete.surface"
+          "Surface": "surfaces/default.surface",
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -3508,7 +3353,8 @@
           "Center": "0,0,-130.5",
           "IsTrigger": true,
           "Scale": "10000,7500,270",
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "ObjectDespawner",
@@ -3550,7 +3396,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3033035e-d233-4a76-b334-8b1a75313011",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3560,7 +3413,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3577,7 +3431,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "aee1ac4f-1677-4344-85c9-16f6df0313fd",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3587,7 +3448,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3603,7 +3465,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "ecad35a4-6986-4a70-8c01-ec827427b840",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3613,7 +3482,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3629,7 +3499,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "9f2a5620-e6d6-4be1-92b5-98fb0de00b4c",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3639,7 +3516,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         }
@@ -3666,7 +3544,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "243f5013-8db5-4be0-baab-b38d7575c329",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3676,7 +3561,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3693,7 +3579,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "885edda8-f09b-4bf9-9996-7822b321d775",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3703,7 +3596,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3719,7 +3613,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "9d309144-6001-48d5-b38a-b042a00d8ddc",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3729,7 +3630,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -3745,7 +3647,14 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "c2b5088d-01cd-4053-b1b0-359a2cfe2466",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "Off",
               "Tint": "1,1,1,0"
             },
@@ -3755,7 +3664,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true
+              "Static": true,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         }
@@ -3774,6 +3684,7 @@
           "Name": "CannonUI(1)",
           "Position": "5313.275,477.3816,-1613.326",
           "Rotation": "0,0,-1,0.0000001937151",
+          "Scale": "1.586697,1.586697,1.586697",
           "Enabled": true,
           "Components": [
             {
@@ -3783,6 +3694,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "1174.3,391.3004",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -3808,6 +3725,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "1174.3,391.3004",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -3829,177 +3752,34 @@
       "Enabled": true,
       "Children": [
         {
-          "__guid": "75a59bbb-2b1a-4347-be46-367dcdffe62c",
+          "__guid": "5345e230-af32-47a1-a2f5-2c9f6d733797",
           "Flags": 0,
-          "Name": "Rules(1)",
-          "Position": "1190.875,1139.176,-89.84448",
-          "Rotation": "0,0,-1,0.0000001937151",
+          "Name": "World",
+          "Position": "1154.411,1187.667,-299.5957",
+          "Rotation": "0,0,-0.9659258,0.2588191",
+          "Scale": "1.922256,1.922256,1.922256",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.WorldPanel",
-              "__guid": "3856229b-6f09-4d29-af13-da6a7fcdf853",
+              "__guid": "0b3772fe-8901-48eb-b374-9b4f4cad017a",
               "HorizontalAlign": "Center",
               "InteractionRange": 1000,
               "LookAtCamera": false,
-              "PanelSize": "2000,1000",
-              "RenderScale": 2,
+              "PanelSize": "10000,6000",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderScale": 1,
               "VerticalAlign": "Center"
             },
             {
-              "__type": "CannonTutorial",
-              "__guid": "6b8ac8a8-8497-4f93-8bcb-0da35834b2e0",
-              "MyStringValue": "Rules"
-            }
-          ]
-        },
-        {
-          "__guid": "0ddfb908-6926-41e3-b8d7-8ce4ca8f8d5d",
-          "Flags": 0,
-          "Name": "Rules(2)",
-          "Position": "1190.873,1139.178,-139.9187",
-          "Rotation": "0,0,-1,0.0000001192093",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "e3bef094-18bc-46b6-84e1-dd7a6b015378",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,1000",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "c70c8631-ca2d-4822-a11d-057c84bb4971",
-              "MyStringValue": "Two stages, platform stage and ramp stage"
-            }
-          ]
-        },
-        {
-          "__guid": "b3512c88-c63f-462c-ba8b-8d5da8dd3a3e",
-          "Flags": 0,
-          "Name": "Rules(3)",
-          "Position": "1190.874,1139.176,-190.1641",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "0822dfaa-cc4d-4c6f-88bf-4f3405d053d1",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,1000",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "55023bc1-a041-4cef-879b-5797f72b1a80",
-              "MyStringValue": "Survive the platform stage to get a chance to win the game"
-            }
-          ]
-        },
-        {
-          "__guid": "7f4466c3-146a-4d60-835a-d052a87bb27a",
-          "Flags": 0,
-          "Name": "Rules(4)",
-          "Position": "1190.874,1139.177,-240.9761",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "20bfd91e-0895-49a8-8761-bee853f8fe79",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,1000",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "ae5fe546-3417-4c79-bc8a-ac4ff6933bbd",
-              "MyStringValue": "Press the button at the top of the ramp for a runner win"
-            }
-          ]
-        },
-        {
-          "__guid": "5c746715-b629-45d3-bb66-72d9d93a5bc2",
-          "Flags": 0,
-          "Name": "Rules(5)",
-          "Position": "1190.874,1139.177,-292.0269",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "65c2c1f8-359a-475d-a86a-e3f376d966d2",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,1000",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "9ab9b36c-f163-4604-9e5b-b5a6dffefa79",
-              "MyStringValue": "Cannoniers win by killing all runners"
-            }
-          ]
-        },
-        {
-          "__guid": "e775b37d-e1ad-4f15-a4b6-c99b48883f70",
-          "Flags": 0,
-          "Name": "Rules(6)",
-          "Position": "1190.872,1139.177,-342.9163",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "0ea8594e-db00-4859-9b30-bbb5efc3994e",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,1000",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "970124b7-1a39-425f-a144-8b3342511c2e",
-              "MyStringValue": "6 second per cannon shot on platform stage"
-            }
-          ]
-        },
-        {
-          "__guid": "fee60197-ba65-464c-abd3-c5dca9f17f89",
-          "Flags": 0,
-          "Name": "Rules(7)",
-          "Position": "1190.873,1139.177,-394.4045",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "f57bddad-76d1-4d6e-84a6-04c264b7d195",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,1000",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "1639497e-2cf0-41d0-a499-39073f3dcfde",
-              "MyStringValue": "2 seconds per shot on the ramp stage, blast away!"
+              "__type": "TutorialPanelRules",
+              "__guid": "4da9ec41-f4e3-4f15-b813-27d7a60aee04",
+              "MyStringValue": "Hello World!"
             }
           ]
         }
@@ -4014,202 +3794,34 @@
       "Enabled": true,
       "Children": [
         {
-          "__guid": "80332c5d-b9fb-4543-b9a5-cbd6fa7f5be2",
+          "__guid": "43198ff5-6ead-4f46-82e3-4dc008377531",
           "Flags": 0,
-          "Name": "GameInfo",
-          "Position": "1190.875,1139.176,-111.3025",
-          "Rotation": "0,0,-1,0.0000001937151",
+          "Name": "World",
+          "Position": "1173.084,1101.135,-218.2749",
+          "Rotation": "0,0,0.9659258,0.2588192",
+          "Scale": "1.586697,1.586697,1.586697",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.WorldPanel",
-              "__guid": "7230fd7a-f785-49c9-a17c-faeafd2b4b6e",
+              "__guid": "5688bdb4-827f-4860-a346-877a228bc4d2",
               "HorizontalAlign": "Center",
               "InteractionRange": 1000,
               "LookAtCamera": false,
-              "PanelSize": "2000,1000",
-              "RenderScale": 2,
+              "PanelSize": "10000,6000",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderScale": 1,
               "VerticalAlign": "Center"
             },
             {
-              "__type": "CannonTutorial",
-              "__guid": "c16d3ab3-2257-4994-94f6-f4368026eee9",
-              "MyStringValue": "Game Info"
-            }
-          ]
-        },
-        {
-          "__guid": "3e2a43b1-7d1c-47e3-be45-cfa16b7f739a",
-          "Flags": 0,
-          "Name": "GameInfo (1)",
-          "Position": "1190.874,1139.177,-175.9124",
-          "Rotation": "0,0,-1,0.0000001192093",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "83ce2846-fc14-497f-8e4f-b938ac4264f4",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "7b4fa836-4ae0-4467-81a0-8a4244019b0a",
-              "MyStringValue": "Required 2\u002B players to play"
-            }
-          ]
-        },
-        {
-          "__guid": "08390f23-0638-4103-ad3f-8110a36a4c44",
-          "Flags": 0,
-          "Name": "GameInfo(2)",
-          "Position": "1190.875,1139.176,-149.9436",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "84983df0-df4b-427c-8416-24a01f5913ec",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "329d8ffa-1ee3-4e7b-bf5c-30ab3c6ce57d",
-              "MyStringValue": "Max 32 players"
-            }
-          ]
-        },
-        {
-          "__guid": "c94987e5-76dc-4648-bf1e-3717014c1e8d",
-          "Flags": 0,
-          "Name": "GameInfo(3)",
-          "Position": "1190.874,1139.177,-201.5696",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "df1bb753-8961-4a1c-bb1f-09e60cae37c8",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "05a0fcd7-ba9c-4687-9fe2-e8a012621fa9",
-              "MyStringValue": "Amount of cannoniers depends on players"
-            }
-          ]
-        },
-        {
-          "__guid": "9045b176-eb8e-4482-aade-39987f3ea08e",
-          "Flags": 0,
-          "Name": "GameInfo(4)",
-          "Position": "1190.874,1139.177,-227.0898",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "37d04eb4-a80e-4459-8998-1a88bf3151ce",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "84fc0ef0-aa12-4729-a1d8-9414e78ce377",
-              "MyStringValue": "2 players = 1 cannonier / 1 runner"
-            }
-          ]
-        },
-        {
-          "__guid": "dfd8d431-ce1d-4589-9a6c-ad4c1d460488",
-          "Flags": 0,
-          "Name": "GameInfo(5)",
-          "Position": "1190.873,1139.177,-252.9141",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "fc392fee-a39a-4e35-b91b-f5f305d79585",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "c7cb3096-2645-48fe-ba4e-d8cf6bd6b7ee",
-              "MyStringValue": "3 players = 1 cannonier / 2 runners"
-            }
-          ]
-        },
-        {
-          "__guid": "48b49d44-ea6b-4f81-91c0-0ac66d472096",
-          "Flags": 0,
-          "Name": "GameInfo(6)",
-          "Position": "1190.873,1139.177,-278.6841",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "6c2b11ee-b723-443e-9b94-8eeea07e5af4",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "73b10345-6290-423e-a3b8-1136be7c5074",
-              "MyStringValue": "4 players = 1 cannonier / 3 runners"
-            }
-          ]
-        },
-        {
-          "__guid": "337d54ef-3eca-4b1f-bb88-fd1d47a188ed",
-          "Flags": 0,
-          "Name": "GameInfo(7)",
-          "Position": "1190.874,1139.177,-304.8967",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "f7f9633c-227e-4bc4-8620-3f8c6d3c529f",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "1711d373-a44a-4ec2-aca9-8599898e9eaa",
-              "MyStringValue": "5\u002B players = 2 cannoniers / 3\u002B runners"
+              "__type": "TutorialPanelInfo",
+              "__guid": "10767af9-11d6-44bc-8cea-bbb2b91886b4",
+              "MyStringValue": "Hello World!"
             }
           ]
         }
@@ -4223,204 +3835,173 @@
       "Enabled": true,
       "Children": [
         {
-          "__guid": "0bbb6b08-c8fe-4aac-bea6-e35ef2d6bc5c",
+          "__guid": "ae02b136-59a8-419c-a05b-8591d883579b",
           "Flags": 0,
-          "Name": "ControlUI(1)",
-          "Position": "1190.875,1139.176,-111.3025",
-          "Rotation": "0,0,-1,0.0000001937151",
+          "Name": "World",
+          "Position": "1201.876,1131.316,-218.2754",
+          "Rotation": "0,0,1,0.0000001947072",
+          "Scale": "2.030703,2.030703,2.030703",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.WorldPanel",
-              "__guid": "3bae4bab-881a-4c66-b90e-a9658951944e",
+              "__guid": "8754861d-3112-46f5-bdc3-ad8901003f85",
               "HorizontalAlign": "Center",
               "InteractionRange": 1000,
               "LookAtCamera": false,
-              "PanelSize": "2000,1000",
-              "RenderScale": 2,
+              "PanelSize": "10000,6000",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderScale": 1,
               "VerticalAlign": "Center"
             },
             {
-              "__type": "CannonTutorial",
-              "__guid": "0a0ed41a-6a67-4c9b-8661-af812bbd6ed2",
-              "MyStringValue": "Controls"
+              "__type": "TutorialPanelControls",
+              "__guid": "ab9c460a-9cb0-4891-9d81-cfe810b75fc3",
+              "MyStringValue": "Hello World!"
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "15dd1f9e-c370-4c62-a422-a1452f04685d",
+      "Flags": 0,
+      "Name": "Gradient Fog",
+      "Position": "3992.014,660.2778,27.93923",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.GradientFog",
+          "__guid": "cabacd36-4bfd-448b-bca2-bccf37710c59",
+          "Color": "32.95396,10.62701,3.83186,0.33",
+          "EndDistance": 70,
+          "FalloffExponent": 1,
+          "Height": 425.0011,
+          "StartDistance": 50,
+          "VerticalFalloffExponent": 3
+        }
+      ]
+    },
+    {
+      "__guid": "692ae7e4-2a14-427f-bb6e-53719a34352f",
+      "Flags": 0,
+      "Name": "Sun",
+      "Position": "767.1783,-1352.211,2864.507",
+      "Rotation": "-0.3535534,0.3535534,0.6123726,0.6123726",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "87fb399b-334a-4ccc-aded-469f5f5edeaf",
+          "FogMode": "Disabled",
+          "FogStrength": 1,
+          "LightColor": "4,2.56093,1.78605,0",
+          "Shadows": true,
+          "SkyColor": "0.88372,0.70287,0.70287,0"
+        }
+      ]
+    },
+    {
+      "__guid": "f45afb16-96f3-4788-b36e-ee3ea5feca08",
+      "Flags": 0,
+      "Name": "jaggedplatform",
+      "Position": "993.1801,-544.3464,1699.787",
+      "Rotation": "0,0,-0.7933534,-0.6087613",
+      "Tags": "map_item",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "84ccb2e7-ed2c-4d40-863a-afde395343f8",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/jagged_platform/jaggedplatform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         },
         {
-          "__guid": "9b6e9973-d9e5-4efa-8ae2-1104b7341e3d",
-          "Flags": 0,
-          "Name": "ControlUI(2)",
-          "Position": "1190.875,1139.176,-149.9436",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "ea1ded79-7d28-4d98-86bc-3ed61dd470a2",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "4000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "fd544c04-81fe-4793-a504-7d26d5a3fa4e",
-              "MyStringValue": "WASD - Move"
-            }
-          ]
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "f52c623f-0cf8-467e-a997-222d92fef74f",
+          "IsTrigger": false,
+          "Model": "models/jagged_platform/jaggedplatform.vmdl",
+          "Static": false,
+          "Surface": "surfaces/concrete.surface",
+          "SurfaceVelocity": "0,0,0"
         },
         {
-          "__guid": "6dec2121-277a-4242-bc3c-c9a1aafb7f17",
-          "Flags": 0,
-          "Name": "ControlUI(3)",
-          "Position": "1190.875,1139.176,-175.6975",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "109c4e04-b31e-4d8c-9ab8-0c0dedef688f",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "4000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "0a93b127-5b95-4a3c-8f99-77dd1b6e94ba",
-              "MyStringValue": "Space - Jump"
-            }
-          ]
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "cd2649b8-40f0-434a-a7a6-8a059c8b2cdf",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "7aad1bc2-cb33-40d1-9260-acde8bebbdf4",
+      "Flags": 0,
+      "Name": "jaggedplatform",
+      "Position": "989.6467,546.2821,1699.787",
+      "Rotation": "0,0,0.7933533,-0.6087615",
+      "Tags": "map_item",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "dbfa1fa9-1d06-4e01-a3d6-f2eca5fb00fa",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/jagged_platform/jaggedplatform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         },
         {
-          "__guid": "ae2ce4bd-6fb6-4395-93ef-42e3ed171f3a",
-          "Flags": 0,
-          "Name": "ControlUI(4)",
-          "Position": "1190.875,1139.176,-254.4766",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "d6b80005-fbf7-43d6-b722-58fad8358f35",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "4000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "a84b31fa-bfcd-4403-aad4-a7b1682814dc",
-              "MyStringValue": "Enter - Open chat"
-            }
-          ]
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "eb82c75a-c74e-4489-9eb8-fecc8a49a0d3",
+          "IsTrigger": false,
+          "Model": "models/jagged_platform/jaggedplatform.vmdl",
+          "Static": false,
+          "Surface": "surfaces/concrete.surface",
+          "SurfaceVelocity": "0,0,0"
         },
         {
-          "__guid": "3169724d-d42d-4886-9245-a66d396636c8",
-          "Flags": 0,
-          "Name": "ControlUI (1)",
-          "Position": "1190.875,1139.176,-306.8428",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "36ff6028-8050-4c95-b456-d04113c61e2c",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "89b59106-fc7f-4334-a989-0b316212d981",
-              "MyStringValue": "Game requires at least 2 players to play"
-            }
-          ]
-        },
-        {
-          "__guid": "f21323fd-6cfc-41e5-8137-12f79327dea3",
-          "Flags": 0,
-          "Name": "ControlUI(5)",
-          "Position": "1190.875,1139.176,-280.2637",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "fc3ed474-8a2b-4bac-a3ec-204d0bc27bbe",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "4000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "63afee53-a5e3-480a-92c2-bd8e7cfce115",
-              "MyStringValue": "V - Voice Chat"
-            }
-          ]
-        },
-        {
-          "__guid": "5ea56c42-a3aa-4484-a1cc-33db9305e82a",
-          "Flags": 0,
-          "Name": "ControlUI(6)",
-          "Position": "1190.875,1139.176,-202.4065",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "f6422a4c-c908-4984-bafd-f449c261e77d",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "6000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "28e73a16-d7b1-490f-9c52-7f51fed0fe9c",
-              "MyStringValue": "Scrollwheel - Zoom camera in and out"
-            }
-          ]
-        },
-        {
-          "__guid": "c30db1b8-a81a-460e-99d2-bbdfc7b566cc",
-          "Flags": 0,
-          "Name": "ControlUI(7)",
-          "Position": "1190.875,1139.176,-228.9006",
-          "Rotation": "0,0,-1,0.0000001937151",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "194f609e-8bd7-4b8d-8583-b878fd4a77e3",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "8000,500",
-              "RenderScale": 2,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "CannonTutorial",
-              "__guid": "4249710d-daf4-4eef-8f08-f81e5cf55137",
-              "MyStringValue": "E - Take control of the cannon, or to press the kill button"
-            }
-          ]
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "98caf088-6af4-4330-bd2b-3e9b4cebc0c0",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
         }
       ]
     }
@@ -4430,9 +4011,13 @@
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
     "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "smashtower"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -4446,17 +4031,13 @@
       "IncludedBodies": ""
     }
   },
+  "ResourceVersion": 2,
   "Title": "smashtower",
-  "Description": "",
-  "ResourceVersion": 1,
+  "Description": null,
   "__references": [
-    "agentep.stonewall02",
-    "chase.cylinder",
-    "eurorp.door01_right_01",
-    "facepunch.floor_rough_asphalt",
-    "facepunch.wall_limestone_brick_large",
-    "kvien.concretewall04_pixel",
-    "rust.brick_wall_b_plasterblend"
+    "chase.cylinder#57472",
+    "facepunch.glass_a#70686",
+    "wujekfoliarz.pano_20230818_171551_171#34395"
   ],
-  "__version": 1
+  "__version": 2
 }
