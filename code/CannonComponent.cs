@@ -12,15 +12,15 @@ public sealed class CannonComponent : Component
 
 	float turretYaw;
 	float turretPitch;
-
-	TimeSince timeSinceLastPrimary = 10;
-
+	
 	public Connection CurrentController { get; set; } = null;
 	public SmashRunnerMovement CurrentPlayer { get; set; } = null;
 
 	public float TimeBetweenShots = 5.0f;
 
 	public float CannonForce = 2200.0f;
+	
+	[HostSync] public TimeSince timeSinceLastPrimary { get; set; } = 10;
 
 
 	protected override void OnFixedUpdate()
@@ -79,11 +79,17 @@ public sealed class CannonComponent : Component
 		turretPitch += pitchValue;
 	}
 
+	[Broadcast(NetPermission.Anyone)]
 	private void Shoot()
 	{
+		if ( !Networking.IsHost ) return; // Make the host shoot the cannon balls, work around for weird networking issue here clients cannon balls were not hurting the platforms, made timeSinceLastPrimary a host sync to allow it to work with this method
+		
+		Log.Info( "before assert" );
 		Assert.NotNull( Bullet );
+		Log.Info( "after assert" );
 
 		var obj = Bullet.Clone( Muzzle.WorldPosition, Muzzle.WorldRotation );
+		Log.Info( "after assert and clone" );
 
 		var physics = obj.Components.Get<Rigidbody>();
 

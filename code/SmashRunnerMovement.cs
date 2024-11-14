@@ -56,7 +56,7 @@ public sealed class SmashRunnerMovement : Component
 	[HostSync] public bool DeathTimerAssigned { get; set; } = false;
 
 	[Property] public RagdollController RagdollController { get; set; }
-
+	
 	public static SmashRunnerMovement Local
 	{
 		get

@@ -40,6 +40,7 @@
       "Flags": 0,
       "Name": "Map",
       "Enabled": true,
+      "NetworkOrphaned": 1,
       "Components": [
         {
           "__type": "Sandbox.MapInstance",
@@ -4039,6 +4040,9 @@
   "__references": [
     "chase.cylinder#57472",
     "facepunch.glass_a#70686",
+    "facepunch.wall_limestone_brick_large#18706",
+    "kvien.concretewall04_pixel#37127",
+    "rust.brick_wall_b_plasterblend#25359",
     "wujekfoliarz.pano_20230818_171551_171#34395"
   ],
   "__version": 2
