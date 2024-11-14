@@ -284,7 +284,7 @@ public sealed class SmashRunnerMovement : Component
 	}
 
 
-	[Broadcast( NetPermission.HostOnly )]
+	[Broadcast( NetPermission.Anyone )]
 	public void Respawn(Vector3 location)
 	{
 		MoveToSpawnpoint(location);
@@ -302,17 +302,15 @@ public sealed class SmashRunnerMovement : Component
 	}
 
 
-	[Broadcast( NetPermission.HostOnly )]
+	[Broadcast( NetPermission.Anyone )]
 	public void MoveToSpawnpoint(Vector3 location)
 	{
 		WorldPosition = location;
 	}
 
-	[Broadcast( NetPermission.HostOnly )]
+	[Broadcast( NetPermission.Anyone )]
 	public void Teleport( Vector3 location )
 	{
-		if ( IsProxy ) return;
-
 		WorldPosition = location;
 	}
 

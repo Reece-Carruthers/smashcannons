@@ -4,7 +4,6 @@
     "Flags": 0,
     "Name": "cannonbox",
     "Scale": "0.8925198,0.8925198,0.8925198",
-    "NetworkMode": 1,
     "NetworkOrphaned": 1,
     "OwnerTransfer": 0,
     "Components": [
