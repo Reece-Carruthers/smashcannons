@@ -189,7 +189,6 @@ public sealed class SmashRunnerMovement : Component
 
 	private void Jump()
 	{
-		if ( !Networking.IsHost ) Log.Info( TeamCategory );
 		if ( !characterController.IsOnGround ) return;
 		characterController.Punch( Vector3.Up * JumpForce );
 		BroadcastJumpAnimation();
