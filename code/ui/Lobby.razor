@@ -102,7 +102,7 @@
 	{
 		if ( TimeSinceLastConnect < 3f ) return;
 		if ( lobby.Members >= 32 ) return;
-		GameNetworkSystem.Connect( lobby.LobbyId );
+		Networking.Connect( lobby.LobbyId );
 		TimeSinceLastConnect = 0f;
 	}
     

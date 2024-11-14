@@ -3,10 +3,10 @@
 @inherits PanelComponent
 
 <root class="@(Network.IsProxy ? "" : "hidden")">
-	<div class="title">@(Network.OwnerConnection.DisplayName)</div>
+	<div class="title">@(Network.Owner.DisplayName)</div>
 </root>
 
 @code
 {
-	protected override int BuildHash() => System.HashCode.Combine( Network.OwnerConnection.DisplayName );
+	protected override int BuildHash() => System.HashCode.Combine( Network.Owner.DisplayName );
 }

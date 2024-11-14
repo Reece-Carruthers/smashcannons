@@ -27,7 +27,7 @@ public sealed class CannonComponent : Component
 	{
 		if ( Network.IsProxy && !Network.IsOwner ) return;
 
-		if ( CurrentController != Network.OwnerConnection || CurrentController is null ) return;
+		if ( CurrentController != Network.Owner || CurrentController is null ) return;
 
 		if ( CurrentPlayer.LifeState is LifeState.Dead or LifeState.Spectate ) return;
 
@@ -43,7 +43,7 @@ public sealed class CannonComponent : Component
 
 		turretPitch = turretPitch.Clamp( -30, 30 );
 		turretYaw = turretYaw.Clamp( -70, 70 );
-		Gun.Transform.Rotation = Rotation.From( turretPitch, turretYaw, 0 );
+		Gun.WorldRotation = Rotation.From( turretPitch, turretYaw, 0 );
 
 		if ( Input.Pressed( "Attack1" ))
 		{
@@ -83,16 +83,14 @@ public sealed class CannonComponent : Component
 	{
 		Assert.NotNull( Bullet );
 
-		var obj = Bullet.Clone( Muzzle.Transform.Position, Muzzle.Transform.Rotation );
+		var obj = Bullet.Clone( Muzzle.WorldPosition, Muzzle.WorldRotation );
 
 		var physics = obj.Components.Get<Rigidbody>();
 
 		if ( physics is null ) return;
 
 		obj.NetworkSpawn();
-		physics.Velocity = Muzzle.Transform.Rotation.Forward * CannonForce;
-
-		Stats.Increment("cannon_ball_fired", 1 );
+		physics.Velocity = Muzzle.WorldRotation.Forward * CannonForce;
 		
 		PlaySound( "cannonshot" );
 		timeSinceLastPrimary = 0;

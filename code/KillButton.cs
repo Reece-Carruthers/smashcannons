@@ -24,7 +24,7 @@ public sealed class KillButton : Component
 
 		if ( Networking.IsHost )
 		{
-			Chat.AddPlayerEvent( "cannon_kill", presser.Network.OwnerConnection.DisplayName,
+			Chat.AddPlayerEvent( "cannon_kill", presser.Network.Owner.DisplayName,
 				presser.TeamCategory.Colour(), $"has killed the Cannoniers!" );
 		}
 	}
