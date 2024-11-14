@@ -53,12 +53,12 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 
 		if ( Player is null ) return;
 
-		var eyeAngles = Head.Transform.Rotation.Angles();
+		var eyeAngles = Head.WorldRotation.Angles();
 		eyeAngles.pitch += Input.MouseDelta.y * 0.1f;
 		eyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		eyeAngles.roll = 0f;
 		eyeAngles.pitch = eyeAngles.pitch.Clamp( -80f, 80f );
-		Head.Transform.Rotation = eyeAngles.ToRotation();
+		Head.WorldRotation = eyeAngles.ToRotation();
 
 		var targetOffset = Vector3.Zero;
 		CurrentOffset = Vector3.Lerp( CurrentOffset, targetOffset, Time.Delta * 10f );
@@ -67,7 +67,7 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 
 		HandleCameraZoom();
 
-		var camPos = Head.Transform.Position + CurrentOffset;
+		var camPos = Head.WorldPosition + CurrentOffset;
 		if ( !IsFirstPerson )
 		{
 			var camForward = eyeAngles.ToRotation().Forward;
@@ -90,8 +90,8 @@ public sealed class SmashRunnerCameraMovement : Component, Component.ICollisionL
 			lastIsFirstPerson = IsFirstPerson;
 		}
 
-		Camera.Transform.Position = camPos;
-		Camera.Transform.Rotation = eyeAngles.ToRotation();
+		Camera.WorldPosition = camPos;
+		Camera.WorldRotation = eyeAngles.ToRotation();
 	}
 
 	private void HandleCameraZoom()

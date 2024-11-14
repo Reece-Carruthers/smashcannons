@@ -1,0 +1,122 @@
+{
+  "RootObject": {
+    "__guid": "18643c1f-d621-442e-bf3c-8218ef44ec8e",
+    "Flags": 0,
+    "Name": "cannonbox",
+    "Scale": "0.8925198,0.8925198,0.8925198",
+    "NetworkMode": 1,
+    "NetworkOrphaned": 1,
+    "OwnerTransfer": 0,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "d5979778-47e8-4474-aff7-205e032e105e",
+        "BodyGroups": 18446744073709551615,
+        "CreateAttachments": false,
+        "Model": "models/cannon_box/cannonbox.vmdl",
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "71fa17f7-7acb-49c7-aeec-df6de5b7f4da",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "128.1998,128.2997,128.4997",
+        "Static": false,
+        "Surface": "surfaces/plastic.surface",
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "053b0b66-5aeb-4ead-b3cd-efe5345ef119",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 50000,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "BoxForce",
+        "__guid": "7783e2f7-13a1-410f-850e-a2331a41e592"
+      },
+      {
+        "__type": "SelfDestructComponent",
+        "__guid": "fc09d301-e747-4f6f-b12a-020de66aac60",
+        "Seconds": 30
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "3834273b-2863-49af-8fa9-20c68602231f",
+        "Color": "1,1,1,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "ObscuredColor": "0,0,0,0.4",
+        "Width": 1
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "36a3bff8-ca54-4d04-a7cc-ca44f36bda4b",
+        "Flags": 0,
+        "Name": "Point Light",
+        "Tags": "light_point,light",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.PointLight",
+            "__guid": "ee15e2d3-4ec2-404c-aaa6-802d2f8b4012",
+            "Attenuation": 0.91,
+            "FogMode": "Enabled",
+            "FogStrength": 1,
+            "LightColor": "28.58,0,0,1",
+            "Radius": 400,
+            "Shadows": true
+          }
+        ]
+      }
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

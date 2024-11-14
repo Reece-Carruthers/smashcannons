@@ -57,9 +57,9 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 
 	protected override void OnStart()
 	{
-		if ( !GameNetworkSystem.IsActive )
+		if ( !Networking.IsActive )
 		{
-			GameNetworkSystem.CreateLobby();
+			Networking.CreateLobby();
 		}
 
 		if ( Networking.IsHost )
@@ -87,7 +87,7 @@ public sealed class SmashCannon : Component, Component.INetworkListener
 		var playerComponent = player.Components.Get<SmashRunnerMovement>();
 
 		AddPlayer( playerSlot, playerComponent );
-		player.Transform.LocalPosition = DeadSpawnPoint.First().Transform.Position;
+		player.LocalPosition = DeadSpawnPoint.First().WorldPosition;
 
 		if ( !activeState.IsValid() )
 		{

@@ -52,13 +52,11 @@ public sealed class SmashRunnerMovement : Component
 	private CannonComponent cannon { get; set; } = null;
 
 	[Property] Collider playerCollider { get; set; }
-	[HostSync] public Vector3 CannonSpawnpoint { get; set; }
-
 	[HostSync] public TimeUntil DeathTimer { get; set; }
 	[HostSync] public bool DeathTimerAssigned { get; set; } = false;
 
 	[Property] public RagdollController RagdollController { get; set; }
-
+	
 	public static SmashRunnerMovement Local
 	{
 		get
@@ -86,8 +84,8 @@ public sealed class SmashRunnerMovement : Component
 	protected override void OnUpdate()
 	{
 		if ( cannon is not null &&
-		     cannon.Network.OwnerConnection !=
-		     Network.OwnerConnection )
+		     cannon.Network.Owner !=
+		     Network.Owner )
 		{
 			isControllingCannon = false;
 		}
@@ -112,7 +110,7 @@ public sealed class SmashRunnerMovement : Component
 					TryKillCannons();
 				}
 
-				TargetAngle = new Angles( 0, Head.Transform.Rotation.Yaw(), 0 ).ToRotation();
+				TargetAngle = new Angles( 0, Head.WorldRotation.Yaw(), 0 ).ToRotation();
 			}
 
 			RotateBody();
@@ -163,7 +161,7 @@ public sealed class SmashRunnerMovement : Component
 	{
 		WishVelocity = 0;
 
-		var rot = Head.Transform.Rotation;
+		var rot = Head.WorldRotation;
 		if ( Input.Down( "Forward" ) ) WishVelocity += rot.Forward;
 		if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward;
 		if ( Input.Down( "Left" ) ) WishVelocity += rot.Left;
@@ -181,16 +179,17 @@ public sealed class SmashRunnerMovement : Component
 	{
 		if ( Body is null ) return;
 
-		var rotateDifference = Body.Transform.Rotation.Distance( TargetAngle );
+		var rotateDifference = Body.WorldRotation.Distance( TargetAngle );
 
 		if ( rotateDifference > 50f || characterController.Velocity.Length > 10f )
 		{
-			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, TargetAngle, Time.Delta * 4f );
+			Body.WorldRotation = Rotation.Lerp( Body.WorldRotation, TargetAngle, Time.Delta * 4f );
 		}
 	}
 
 	private void Jump()
 	{
+		if ( !Networking.IsHost ) Log.Info( TeamCategory );
 		if ( !characterController.IsOnGround ) return;
 		characterController.Punch( Vector3.Up * JumpForce );
 		BroadcastJumpAnimation();
@@ -222,7 +221,7 @@ public sealed class SmashRunnerMovement : Component
 
 	private void TryTakeCannon()
 	{
-		var position = Head.Transform.Position.WithZ( Head.Transform.Position.z + 50f );
+		var position = Head.WorldPosition.WithZ( Head.WorldPosition.z + 50f );
 
 		var tr = Scene.Trace.WithoutTags( "player" )
 			.Sphere( 32, position,
@@ -242,7 +241,7 @@ public sealed class SmashRunnerMovement : Component
 			return;
 		}
 
-		cannonComponent.CurrentController = Network.OwnerConnection;
+		cannonComponent.CurrentController = Network.Owner;
 		cannonComponent.CurrentPlayer = this;
 
 		isControllingCannon = true;
@@ -252,10 +251,10 @@ public sealed class SmashRunnerMovement : Component
 
 	private void TryKillCannons()
 	{
-		var position = Head.Transform.Position.WithZ( Head.Transform.Position.z + 50f );
+		var position = Head.WorldPosition.WithZ( Head.WorldPosition.z + 50f );
 
 		var tr = Scene.Trace.WithoutTags( "player" )
-			.Sphere( 32, Head.Transform.Position,
+			.Sphere( 32, Head.WorldPosition,
 				position )
 			.Run();
 
@@ -284,10 +283,11 @@ public sealed class SmashRunnerMovement : Component
 		}
 	}
 
+
 	[Broadcast( NetPermission.HostOnly )]
-	public void Respawn()
+	public void Respawn(Vector3 location)
 	{
-		MoveToSpawnpoint();
+		MoveToSpawnpoint(location);
 
 		if ( Networking.IsHost )
 		{
@@ -298,28 +298,14 @@ public sealed class SmashRunnerMovement : Component
 
 	public void UpdateTeam( Team team )
 	{
-		if ( Networking.IsHost )
-		{
-			TeamCategory = team;
-		}
+		TeamCategory = team;
 	}
 
-	public void MoveToSpawnpoint()
+
+	[Broadcast( NetPermission.HostOnly )]
+	public void MoveToSpawnpoint(Vector3 location)
 	{
-		if ( IsProxy ) return;
-
-
-		if ( TeamCategory is RunnerTeam )
-		{
-			Transform.Position = AssignRunnerSpawnPoint();
-		}
-
-		if ( TeamCategory is SmashTeam )
-		{
-			if ( CannonSpawnpoint == new Vector3( 0 ) ) return;
-
-			Transform.Position = CannonSpawnpoint;
-		}
+		WorldPosition = location;
 	}
 
 	[Broadcast( NetPermission.HostOnly )]
@@ -327,19 +313,7 @@ public sealed class SmashRunnerMovement : Component
 	{
 		if ( IsProxy ) return;
 
-		Transform.Position = location;
-	}
-
-	private Vector3 AssignRunnerSpawnPoint()
-	{
-		var random = new Random();
-		var runnerSpawns = Game.ActiveScene.Components.GetAll<PlayerSpawn>().Where( x => x.Tags.Has( "runner_spawn" ) )
-			.ToList();
-
-		var randomIndex = random.Next( runnerSpawns.Count );
-		var selectedSpawn = runnerSpawns[randomIndex];
-
-		return selectedSpawn.Transform.Position;
+		WorldPosition = location;
 	}
 
 	[Broadcast( NetPermission.HostOnly )]
@@ -353,9 +327,9 @@ public sealed class SmashRunnerMovement : Component
 
 		characterController.Velocity = 0;
 
-		Body.Transform.LocalPosition = Vector3.Zero;
+		Body.LocalPosition = Vector3.Zero;
 
-		Teleport( deadSpawn.Transform.Position );
+		Teleport( deadSpawn.WorldPosition );
 
 		LifeState = LifeState.Spectate;
 	}
@@ -365,7 +339,7 @@ public sealed class SmashRunnerMovement : Component
 		if ( LifeState == LifeState.Dead ) return;
 		LifeState = LifeState.Dead;
 
-		var playerPosition = Transform.Position;
+		var playerPosition = WorldPosition;
 
 		var direction = Vector3.Up +
 		                new Vector3( Game.Random.Float( -0.25f, 0.25f ), Game.Random.Float( -0.25f, 0.25f ), 0f );
@@ -381,15 +355,14 @@ public sealed class SmashRunnerMovement : Component
 
 		DeathMessage();
 		PlayDeathNoise();
-
 	}
 
-	[Broadcast(NetPermission.HostOnly)]
+	[Broadcast( NetPermission.HostOnly )]
 	private void DeathMessage()
 	{
 		if ( !Networking.IsHost ) return;
-		
-		Chat.AddPlayerEvent( "dead", Network.OwnerConnection.DisplayName, TeamCategory.Colour(),
+
+		Chat.AddPlayerEvent( "dead", Network.Owner.DisplayName, TeamCategory.Colour(),
 			$"has been killed" );
 	}
 
@@ -415,12 +388,5 @@ public sealed class SmashRunnerMovement : Component
 	private void UnragdollPlayer()
 	{
 		RagdollController.Unragdoll();
-	}
-
-	public void AddStat( string statId )
-	{
-		if ( Network.IsProxy ) return;
-
-		Sandbox.Services.Stats.Increment( statId, 1 );
 	}
 }
