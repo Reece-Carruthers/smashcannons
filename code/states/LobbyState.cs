@@ -54,7 +54,7 @@ public class LobbyState : ExtendedState
 			1 => 1,
 			2 => 1,
 			> 4 => 2,
-			_ => 1
+			_ => 2
 		};
 
 		// Assign cannon players

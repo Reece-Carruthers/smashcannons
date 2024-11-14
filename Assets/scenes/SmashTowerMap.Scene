@@ -4039,7 +4039,7 @@
   "Description": null,
   "__references": [
     "chase.cylinder#57472",
-    "facepunch.glass_a#70686",
+    "eurorp.door01_right_01#12553",
     "facepunch.wall_limestone_brick_large#18706",
     "kvien.concretewall04_pixel#37127",
     "rust.brick_wall_b_plasterblend#25359",
